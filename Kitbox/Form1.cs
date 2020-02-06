@@ -16,5 +16,10 @@ namespace Kitbox
         {
             InitializeComponent();
         }
+
+        private void personnaliserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
