@@ -1,3 +1,3 @@
 # Kitbox ECAM Group 2
 
-Run kitbox.sln
+## Lancer le projet avec kitbox.sln 
