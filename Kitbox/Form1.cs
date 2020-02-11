@@ -116,7 +116,7 @@ namespace Kitbox
             string panelColor = pepCombobox1.Text;
             string doorColor = pepCombobox2.Text;
             string height = pepCombobox3.Text;
-            string deep = pepCombobox4.Text;
+            string depth = pepCombobox4.Text;
             string width = pepCombobox5.Text;
 
             TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", boxNum));
@@ -124,13 +124,13 @@ namespace Kitbox
             TreeNode panelColorNode = new TreeNode(String.Format("Panel color : {0}", panelColor));
             TreeNode doorColorNode = new TreeNode(String.Format("Door color : {0}", doorColor ));
             TreeNode heightNode = new TreeNode(String.Format("Height : {0}", height));
-            TreeNode deepNode = new TreeNode(String.Format("Deep : {0}", deep));
+            TreeNode depthNode = new TreeNode(String.Format("Deep : {0}", depth));
             TreeNode widthNode = new TreeNode(String.Format("Width : {0}", width));
 
             newTreeNode.Nodes.Add(panelColorNode);
             newTreeNode.Nodes.Add(doorColorNode);
             newTreeNode.Nodes.Add(heightNode);
-            newTreeNode.Nodes.Add(deepNode);
+            newTreeNode.Nodes.Add(depthNode);
             newTreeNode.Nodes.Add(widthNode);
 
             treeView1.Nodes.Add(newTreeNode);
@@ -139,6 +139,16 @@ namespace Kitbox
             toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
             boxNum++;
 
+
+        }
+
+        private void pepCombobox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
 
         }
     }
