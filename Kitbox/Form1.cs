@@ -18,6 +18,7 @@ namespace Kitbox
     {
         List<Panel> listPanel = new List<Panel>();
         int index = 0;
+        int boxNum = 1;
         public Form1()
         {
             InitializeComponent();
@@ -102,6 +103,42 @@ namespace Kitbox
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void pepButton2_Click(object sender, EventArgs e)
+        {
+            string panelColor = pepCombobox1.Text;
+            string doorColor = pepCombobox2.Text;
+            string height = pepCombobox3.Text;
+            string deep = pepCombobox4.Text;
+            string width = pepCombobox5.Text;
+
+            TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", boxNum));
+
+            TreeNode panelColorNode = new TreeNode(String.Format("Panel color : {0}", panelColor));
+            TreeNode doorColorNode = new TreeNode(String.Format("Door color : {0}", doorColor ));
+            TreeNode heightNode = new TreeNode(String.Format("Height : {0}", height));
+            TreeNode deepNode = new TreeNode(String.Format("Deep : {0}", deep));
+            TreeNode widthNode = new TreeNode(String.Format("Width : {0}", width));
+
+            newTreeNode.Nodes.Add(panelColorNode);
+            newTreeNode.Nodes.Add(doorColorNode);
+            newTreeNode.Nodes.Add(heightNode);
+            newTreeNode.Nodes.Add(deepNode);
+            newTreeNode.Nodes.Add(widthNode);
+
+            treeView1.Nodes.Add(newTreeNode);
+
+            toolStripStatusLabel1.Text = String.Format("Box {0} added!", boxNum);
+            toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
+            boxNum++;
+
 
         }
     }

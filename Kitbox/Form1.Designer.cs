@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Test");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("My Kitbox", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,13 +56,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pepCombobox5 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox4 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox3 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox2 = new KitboxEcamGUI.PepCombobox();
             this.pepCombobox1 = new KitboxEcamGUI.PepCombobox();
             this.label7 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.pepCombobox2 = new KitboxEcamGUI.PepCombobox();
-            this.pepCombobox3 = new KitboxEcamGUI.PepCombobox();
-            this.pepCombobox4 = new KitboxEcamGUI.PepCombobox();
-            this.pepCombobox5 = new KitboxEcamGUI.PepCombobox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,6 +76,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -78,7 +86,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(877, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1053, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -89,7 +97,7 @@
             this.createNewCommandToolStripMenuItem});
             this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(105, 42);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.fichierToolStripMenuItem.Text = "&Fichier";
             // 
             // createNewCustomerToolStripMenuItem
@@ -110,14 +118,14 @@
             // 
             this.editionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
-            this.editionToolStripMenuItem.Size = new System.Drawing.Size(109, 42);
+            this.editionToolStripMenuItem.Size = new System.Drawing.Size(109, 36);
             this.editionToolStripMenuItem.Text = "&Edition";
             // 
             // outilsToolStripMenuItem
             // 
             this.outilsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(97, 42);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(97, 36);
             this.outilsToolStripMenuItem.Text = "&Outils";
             // 
             // aideToolStripMenuItem
@@ -127,7 +135,7 @@
             this.àproposdeToolStripMenuItem});
             this.aideToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(83, 42);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(83, 36);
             this.aideToolStripMenuItem.Text = "&Aide";
             // 
             // toolStripSeparator5
@@ -147,10 +155,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 715);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 716);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(877, 42);
+            this.statusStrip1.Size = new System.Drawing.Size(1053, 42);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -340,11 +348,15 @@
             this.panel1.Controls.Add(this.pepTextbox6);
             this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 667);
+            this.panel1.Size = new System.Drawing.Size(1050, 667);
             this.panel1.TabIndex = 16;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.treeView1);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.pepCombobox5);
             this.panel2.Controls.Add(this.pepCombobox4);
             this.panel2.Controls.Add(this.pepCombobox3);
@@ -354,8 +366,60 @@
             this.panel2.Controls.Add(this.pepButton2);
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(877, 667);
+            this.panel2.Size = new System.Drawing.Size(1050, 667);
             this.panel2.TabIndex = 17;
+            // 
+            // pepCombobox5
+            // 
+            this.pepCombobox5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox5.FormattingEnabled = true;
+            this.pepCombobox5.ItemHeight = 20;
+            this.pepCombobox5.Location = new System.Drawing.Point(215, 438);
+            this.pepCombobox5.Name = "pepCombobox5";
+            this.pepCombobox5.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox5.TabIndex = 20;
+            // 
+            // pepCombobox4
+            // 
+            this.pepCombobox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox4.FormattingEnabled = true;
+            this.pepCombobox4.ItemHeight = 20;
+            this.pepCombobox4.Location = new System.Drawing.Point(215, 347);
+            this.pepCombobox4.Name = "pepCombobox4";
+            this.pepCombobox4.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox4.TabIndex = 19;
+            // 
+            // pepCombobox3
+            // 
+            this.pepCombobox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox3.FormattingEnabled = true;
+            this.pepCombobox3.ItemHeight = 20;
+            this.pepCombobox3.Location = new System.Drawing.Point(215, 275);
+            this.pepCombobox3.Name = "pepCombobox3";
+            this.pepCombobox3.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox3.TabIndex = 18;
+            // 
+            // pepCombobox2
+            // 
+            this.pepCombobox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox2.FormattingEnabled = true;
+            this.pepCombobox2.ItemHeight = 20;
+            this.pepCombobox2.Location = new System.Drawing.Point(215, 202);
+            this.pepCombobox2.Name = "pepCombobox2";
+            this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox2.TabIndex = 17;
             // 
             // pepCombobox1
             // 
@@ -365,7 +429,11 @@
             this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox1.FormattingEnabled = true;
             this.pepCombobox1.ItemHeight = 20;
-            this.pepCombobox1.Location = new System.Drawing.Point(678, 142);
+            this.pepCombobox1.Items.AddRange(new object[] {
+            "Test",
+            "Teds",
+            "df"});
+            this.pepCombobox1.Location = new System.Drawing.Point(215, 120);
             this.pepCombobox1.Name = "pepCombobox1";
             this.pepCombobox1.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox1.TabIndex = 16;
@@ -376,7 +444,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(166, 24);
+            this.label7.Location = new System.Drawing.Point(342, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(381, 63);
             this.label7.TabIndex = 15;
@@ -386,71 +454,64 @@
             // 
             this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton2.Location = new System.Drawing.Point(263, 579);
+            this.pepButton2.Location = new System.Drawing.Point(33, 525);
             this.pepButton2.Name = "pepButton2";
-            this.pepButton2.Size = new System.Drawing.Size(496, 51);
+            this.pepButton2.Size = new System.Drawing.Size(303, 51);
             this.pepButton2.TabIndex = 2;
-            this.pepButton2.Text = "Create to command";
+            this.pepButton2.Text = "Add this box";
             this.pepButton2.UseVisualStyleBackColor = true;
+            this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
-            // pepCombobox2
+            // label9
             // 
-            this.pepCombobox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox2.FormattingEnabled = true;
-            this.pepCombobox2.ItemHeight = 20;
-            this.pepCombobox2.Location = new System.Drawing.Point(678, 224);
-            this.pepCombobox2.Name = "pepCombobox2";
-            this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
-            this.pepCombobox2.TabIndex = 17;
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label9.Location = new System.Drawing.Point(43, 123);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 25);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Panel color";
             // 
-            // pepCombobox3
+            // label10
             // 
-            this.pepCombobox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox3.FormattingEnabled = true;
-            this.pepCombobox3.ItemHeight = 20;
-            this.pepCombobox3.Location = new System.Drawing.Point(678, 297);
-            this.pepCombobox3.Name = "pepCombobox3";
-            this.pepCombobox3.Size = new System.Drawing.Size(121, 26);
-            this.pepCombobox3.TabIndex = 18;
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(43, 203);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 25);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Door color";
             // 
-            // pepCombobox4
+            // label11
             // 
-            this.pepCombobox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox4.FormattingEnabled = true;
-            this.pepCombobox4.ItemHeight = 20;
-            this.pepCombobox4.Location = new System.Drawing.Point(678, 369);
-            this.pepCombobox4.Name = "pepCombobox4";
-            this.pepCombobox4.Size = new System.Drawing.Size(121, 26);
-            this.pepCombobox4.TabIndex = 19;
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label11.Location = new System.Drawing.Point(43, 278);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(119, 25);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Dimentions";
             // 
-            // pepCombobox5
+            // treeView1
             // 
-            this.pepCombobox5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox5.FormattingEnabled = true;
-            this.pepCombobox5.ItemHeight = 20;
-            this.pepCombobox5.Location = new System.Drawing.Point(678, 460);
-            this.pepCombobox5.Name = "pepCombobox5";
-            this.pepCombobox5.Size = new System.Drawing.Size(121, 26);
-            this.pepCombobox5.TabIndex = 20;
+            this.treeView1.Location = new System.Drawing.Point(537, 123);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Nœud8";
+            treeNode1.Text = "Test";
+            treeNode2.Name = "Nœud0";
+            treeNode2.Text = "My Kitbox";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(445, 453);
+            this.treeView1.TabIndex = 24;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(877, 757);
+            this.ClientSize = new System.Drawing.Size(1053, 758);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -506,6 +567,10 @@
         private KitboxEcamGUI.PepCombobox pepCombobox4;
         private KitboxEcamGUI.PepCombobox pepCombobox3;
         private KitboxEcamGUI.PepCombobox pepCombobox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 
