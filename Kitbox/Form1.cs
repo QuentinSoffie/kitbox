@@ -99,5 +99,10 @@ namespace Kitbox
         {
             listPanel[0].BringToFront();
         }
+
+        private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

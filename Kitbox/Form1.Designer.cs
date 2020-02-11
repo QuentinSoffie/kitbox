@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewCommandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outilsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pepCombobox1 = new KitboxEcamGUI.PepCombobox();
             this.label7 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.createNewCommandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pepCombobox2 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox3 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox4 = new KitboxEcamGUI.PepCombobox();
+            this.pepCombobox5 = new KitboxEcamGUI.PepCombobox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,7 +69,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -85,7 +89,7 @@
             this.createNewCommandToolStripMenuItem});
             this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(105, 38);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(105, 42);
             this.fichierToolStripMenuItem.Text = "&Fichier";
             // 
             // createNewCustomerToolStripMenuItem
@@ -95,18 +99,25 @@
             this.createNewCustomerToolStripMenuItem.Text = "Create new customer";
             this.createNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.createNewCustomerToolStripMenuItem_Click);
             // 
+            // createNewCommandToolStripMenuItem
+            // 
+            this.createNewCommandToolStripMenuItem.Name = "createNewCommandToolStripMenuItem";
+            this.createNewCommandToolStripMenuItem.Size = new System.Drawing.Size(383, 44);
+            this.createNewCommandToolStripMenuItem.Text = "Create new command";
+            this.createNewCommandToolStripMenuItem.Click += new System.EventHandler(this.createNewCommandToolStripMenuItem_Click);
+            // 
             // editionToolStripMenuItem
             // 
             this.editionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
-            this.editionToolStripMenuItem.Size = new System.Drawing.Size(109, 36);
+            this.editionToolStripMenuItem.Size = new System.Drawing.Size(109, 42);
             this.editionToolStripMenuItem.Text = "&Edition";
             // 
             // outilsToolStripMenuItem
             // 
             this.outilsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(97, 36);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(97, 42);
             this.outilsToolStripMenuItem.Text = "&Outils";
             // 
             // aideToolStripMenuItem
@@ -116,7 +127,7 @@
             this.àproposdeToolStripMenuItem});
             this.aideToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(83, 36);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(83, 42);
             this.aideToolStripMenuItem.Text = "&Aide";
             // 
             // toolStripSeparator5
@@ -334,12 +345,31 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.pepCombobox5);
+            this.panel2.Controls.Add(this.pepCombobox4);
+            this.panel2.Controls.Add(this.pepCombobox3);
+            this.panel2.Controls.Add(this.pepCombobox2);
+            this.panel2.Controls.Add(this.pepCombobox1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pepButton2);
             this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(889, 670);
+            this.panel2.Size = new System.Drawing.Size(877, 667);
             this.panel2.TabIndex = 17;
+            // 
+            // pepCombobox1
+            // 
+            this.pepCombobox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox1.FormattingEnabled = true;
+            this.pepCombobox1.ItemHeight = 20;
+            this.pepCombobox1.Location = new System.Drawing.Point(678, 142);
+            this.pepCombobox1.Name = "pepCombobox1";
+            this.pepCombobox1.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox1.TabIndex = 16;
+            this.pepCombobox1.SelectedIndexChanged += new System.EventHandler(this.pepCombobox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -348,9 +378,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(166, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(531, 63);
+            this.label7.Size = new System.Drawing.Size(381, 63);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Add a new command";
+            this.label7.Text = "Add a new box";
             // 
             // pepButton2
             // 
@@ -360,15 +390,60 @@
             this.pepButton2.Name = "pepButton2";
             this.pepButton2.Size = new System.Drawing.Size(496, 51);
             this.pepButton2.TabIndex = 2;
-            this.pepButton2.Text = "Create new command";
+            this.pepButton2.Text = "Create to command";
             this.pepButton2.UseVisualStyleBackColor = true;
             // 
-            // createNewCommandToolStripMenuItem
+            // pepCombobox2
             // 
-            this.createNewCommandToolStripMenuItem.Name = "createNewCommandToolStripMenuItem";
-            this.createNewCommandToolStripMenuItem.Size = new System.Drawing.Size(383, 44);
-            this.createNewCommandToolStripMenuItem.Text = "Create new command";
-            this.createNewCommandToolStripMenuItem.Click += new System.EventHandler(this.createNewCommandToolStripMenuItem_Click);
+            this.pepCombobox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox2.FormattingEnabled = true;
+            this.pepCombobox2.ItemHeight = 20;
+            this.pepCombobox2.Location = new System.Drawing.Point(678, 224);
+            this.pepCombobox2.Name = "pepCombobox2";
+            this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox2.TabIndex = 17;
+            // 
+            // pepCombobox3
+            // 
+            this.pepCombobox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox3.FormattingEnabled = true;
+            this.pepCombobox3.ItemHeight = 20;
+            this.pepCombobox3.Location = new System.Drawing.Point(678, 297);
+            this.pepCombobox3.Name = "pepCombobox3";
+            this.pepCombobox3.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox3.TabIndex = 18;
+            // 
+            // pepCombobox4
+            // 
+            this.pepCombobox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox4.FormattingEnabled = true;
+            this.pepCombobox4.ItemHeight = 20;
+            this.pepCombobox4.Location = new System.Drawing.Point(678, 369);
+            this.pepCombobox4.Name = "pepCombobox4";
+            this.pepCombobox4.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox4.TabIndex = 19;
+            // 
+            // pepCombobox5
+            // 
+            this.pepCombobox5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox5.FormattingEnabled = true;
+            this.pepCombobox5.ItemHeight = 20;
+            this.pepCombobox5.Location = new System.Drawing.Point(678, 460);
+            this.pepCombobox5.Name = "pepCombobox5";
+            this.pepCombobox5.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox5.TabIndex = 20;
             // 
             // Form1
             // 
@@ -426,6 +501,11 @@
         private System.Windows.Forms.Label label7;
         private KitboxEcamGUI.PepButton pepButton2;
         private System.Windows.Forms.ToolStripMenuItem createNewCommandToolStripMenuItem;
+        private KitboxEcamGUI.PepCombobox pepCombobox1;
+        private KitboxEcamGUI.PepCombobox pepCombobox5;
+        private KitboxEcamGUI.PepCombobox pepCombobox4;
+        private KitboxEcamGUI.PepCombobox pepCombobox3;
+        private KitboxEcamGUI.PepCombobox pepCombobox2;
     }
 }
 
