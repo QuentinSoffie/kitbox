@@ -526,7 +526,7 @@
             this.pepCombobox2.Name = "pepCombobox2";
             this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox2.TabIndex = 17;
-            this.pepCombobox2.SelectedIndexChanged += new System.EventHandler(this.pepCombobox2_SelectedIndexChanged);
+            //this.pepCombobox2.SelectedIndexChanged += new System.EventHandler(this.pepCombobox2_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -547,7 +547,7 @@
             this.label10.Size = new System.Drawing.Size(58, 25);
             this.label10.TabIndex = 22;
             this.label10.Text = "Door";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            //this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // treeView1
             // 
@@ -557,7 +557,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(330, 524);
             this.treeView1.TabIndex = 24;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            //this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // label7
             // 

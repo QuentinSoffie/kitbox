@@ -102,16 +102,6 @@ namespace Kitbox
             listPanel[0].BringToFront();
         }
 
-        private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
-        }
-
         private void pepButton2_Click(object sender, EventArgs e)
         {
 
@@ -149,16 +139,6 @@ namespace Kitbox
             {
                 MessageBox.Show("Sorry, 7 boxes allowed!", "Too much boxes");
             }
-
-        }
-
-        private void pepCombobox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
 
         }
 
