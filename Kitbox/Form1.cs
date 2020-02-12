@@ -18,6 +18,7 @@ namespace Kitbox
     {
         List<Panel> listPanel = new List<Panel>();
         int index = 0;
+
         int boxNum = 1;
         public Form1()
         {
@@ -113,32 +114,41 @@ namespace Kitbox
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
-            string panelColor = pepCombobox1.Text;
-            string doorColor = pepCombobox2.Text;
-            string height = pepCombobox3.Text;
-            string depth = pepCombobox4.Text;
-            string width = pepCombobox5.Text;
 
-            TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", boxNum));
+            if (boxNum <= 7)
+            {
 
-            TreeNode panelColorNode = new TreeNode(String.Format("Panel color : {0}", panelColor));
-            TreeNode doorColorNode = new TreeNode(String.Format("Door color : {0}", doorColor ));
-            TreeNode heightNode = new TreeNode(String.Format("Height : {0}", height));
-            TreeNode depthNode = new TreeNode(String.Format("Deep : {0}", depth));
-            TreeNode widthNode = new TreeNode(String.Format("Width : {0}", width));
+                string panelColor = pepCombobox1.Text;
+                string doorColor = pepCombobox2.Text;
+                string height = pepCombobox3.Text;
+                string depth = pepCombobox4.Text;
+                string width = pepCombobox5.Text;
 
-            newTreeNode.Nodes.Add(panelColorNode);
-            newTreeNode.Nodes.Add(doorColorNode);
-            newTreeNode.Nodes.Add(heightNode);
-            newTreeNode.Nodes.Add(depthNode);
-            newTreeNode.Nodes.Add(widthNode);
+                TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", boxNum));
 
-            treeView1.Nodes.Add(newTreeNode);
+                TreeNode panelColorNode = new TreeNode(String.Format("Panel color : {0}", panelColor));
+                TreeNode doorColorNode = new TreeNode(String.Format("Door color : {0}", doorColor));
+                TreeNode heightNode = new TreeNode(String.Format("Height : {0}", height));
+                TreeNode depthNode = new TreeNode(String.Format("Deep : {0}", depth));
+                TreeNode widthNode = new TreeNode(String.Format("Width : {0}", width));
 
-            toolStripStatusLabel1.Text = String.Format("Box {0} added!", boxNum);
-            toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
-            boxNum++;
+                newTreeNode.Nodes.Add(panelColorNode);
+                newTreeNode.Nodes.Add(doorColorNode);
+                newTreeNode.Nodes.Add(heightNode);
+                newTreeNode.Nodes.Add(depthNode);
+                newTreeNode.Nodes.Add(widthNode);
 
+                treeView1.Nodes.Add(newTreeNode);
+
+                toolStripStatusLabel1.Text = String.Format("Box {0} added!", boxNum);
+                toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
+                boxNum++;
+
+            }
+            else
+            {
+                MessageBox.Show("Sorry, 7 boxes allowed!", "Too much boxes");
+            }
 
         }
 
@@ -150,6 +160,41 @@ namespace Kitbox
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pepButton3_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Clear();
+            boxNum = 1;
+        }
+
+        private void pepButton5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TreeNode selected = treeView1.SelectedNode;
+
+                if (treeView1.SelectedNode == selected.Nodes[0])
+                {
+                    Console.WriteLine("Error: can't delete property");
+                    toolStripStatusLabel1.Text = "Error: can't delete property";
+                    toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    treeView1.SelectedNode.Remove();
+                    boxNum--;
+                }
+                
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+                toolStripStatusLabel1.Text = "Error: see cmd !";
+                toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
+
+            }
+            
         }
     }
 }
