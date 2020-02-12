@@ -53,6 +53,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pepButton5 = new KitboxEcamGUI.PepButton();
+            this.pepButton4 = new KitboxEcamGUI.PepButton();
+            this.pepButton3 = new KitboxEcamGUI.PepButton();
             this.pepGroupBox2 = new KitboxEcamGUI.PepGroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -70,9 +73,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label7 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.pepButton3 = new KitboxEcamGUI.PepButton();
-            this.pepButton4 = new KitboxEcamGUI.PepButton();
-            this.pepButton5 = new KitboxEcamGUI.PepButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,7 +85,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -94,7 +94,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1053, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1054, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -163,10 +163,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 716);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 717);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1053, 42);
+            this.statusStrip1.Size = new System.Drawing.Size(1054, 42);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -374,6 +374,43 @@
             this.panel2.Size = new System.Drawing.Size(1050, 667);
             this.panel2.TabIndex = 17;
             // 
+            // pepButton5
+            // 
+            this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton5.Location = new System.Drawing.Point(874, 503);
+            this.pepButton5.Name = "pepButton5";
+            this.pepButton5.Size = new System.Drawing.Size(176, 45);
+            this.pepButton5.TabIndex = 29;
+            this.pepButton5.Text = "Delete box";
+            this.pepButton5.UseVisualStyleBackColor = true;
+            this.pepButton5.Click += new System.EventHandler(this.pepButton5_Click);
+            // 
+            // pepButton4
+            // 
+            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton4.Location = new System.Drawing.Point(874, 605);
+            this.pepButton4.Name = "pepButton4";
+            this.pepButton4.Size = new System.Drawing.Size(176, 45);
+            this.pepButton4.TabIndex = 28;
+            this.pepButton4.Text = "Next step";
+            this.pepButton4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.pepButton4.UseVisualStyleBackColor = true;
+            this.pepButton4.Click += new System.EventHandler(this.pepButton4_Click);
+            // 
+            // pepButton3
+            // 
+            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton3.Location = new System.Drawing.Point(874, 554);
+            this.pepButton3.Name = "pepButton3";
+            this.pepButton3.Size = new System.Drawing.Size(176, 45);
+            this.pepButton3.TabIndex = 27;
+            this.pepButton3.Text = "Delete all boxes";
+            this.pepButton3.UseVisualStyleBackColor = true;
+            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
+            // 
             // pepGroupBox2
             // 
             this.pepGroupBox2.Controls.Add(this.label13);
@@ -506,11 +543,15 @@
             this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox1.FormattingEnabled = true;
             this.pepCombobox1.ItemHeight = 20;
+            this.pepCombobox1.Items.AddRange(new object[] {
+            "",
+            "Rouge",
+            "Bleu",
+            "Orange"});
             this.pepCombobox1.Location = new System.Drawing.Point(320, 47);
             this.pepCombobox1.Name = "pepCombobox1";
             this.pepCombobox1.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox1.TabIndex = 16;
-            this.pepCombobox1.SelectedIndexChanged += new System.EventHandler(this.pepCombobox1_SelectedIndexChanged);
             // 
             // pepCombobox2
             // 
@@ -526,7 +567,6 @@
             this.pepCombobox2.Name = "pepCombobox2";
             this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox2.TabIndex = 17;
-            //this.pepCombobox2.SelectedIndexChanged += new System.EventHandler(this.pepCombobox2_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -547,7 +587,6 @@
             this.label10.Size = new System.Drawing.Size(58, 25);
             this.label10.TabIndex = 22;
             this.label10.Text = "Door";
-            //this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // treeView1
             // 
@@ -557,7 +596,6 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(330, 524);
             this.treeView1.TabIndex = 24;
-            //this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // label7
             // 
@@ -582,48 +620,20 @@
             this.pepButton2.UseVisualStyleBackColor = true;
             this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
-            // pepButton3
+            // panel3
             // 
-            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton3.Location = new System.Drawing.Point(874, 554);
-            this.pepButton3.Name = "pepButton3";
-            this.pepButton3.Size = new System.Drawing.Size(176, 45);
-            this.pepButton3.TabIndex = 27;
-            this.pepButton3.Text = "Delete all boxes";
-            this.pepButton3.UseVisualStyleBackColor = true;
-            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
-            // 
-            // pepButton4
-            // 
-            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton4.Location = new System.Drawing.Point(874, 605);
-            this.pepButton4.Name = "pepButton4";
-            this.pepButton4.Size = new System.Drawing.Size(176, 45);
-            this.pepButton4.TabIndex = 28;
-            this.pepButton4.Text = "Next step";
-            this.pepButton4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.pepButton4.UseVisualStyleBackColor = true;
-            // 
-            // pepButton5
-            // 
-            this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton5.Location = new System.Drawing.Point(874, 503);
-            this.pepButton5.Name = "pepButton5";
-            this.pepButton5.Size = new System.Drawing.Size(176, 45);
-            this.pepButton5.TabIndex = 29;
-            this.pepButton5.Text = "Delete last box";
-            this.pepButton5.UseVisualStyleBackColor = true;
-            this.pepButton5.Click += new System.EventHandler(this.pepButton5_Click);
+            this.panel3.Location = new System.Drawing.Point(3, 39);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1050, 670);
+            this.panel3.TabIndex = 30;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(1053, 758);
+            this.ClientSize = new System.Drawing.Size(1054, 759);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -696,6 +706,7 @@
         private KitboxEcamGUI.PepButton pepButton4;
         private KitboxEcamGUI.PepButton pepButton3;
         private KitboxEcamGUI.PepButton pepButton5;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

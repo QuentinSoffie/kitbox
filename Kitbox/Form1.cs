@@ -19,7 +19,6 @@ namespace Kitbox
         List<Panel> listPanel = new List<Panel>();
         int index = 0;
 
-        int boxNum = 1;
         public Form1()
         {
             InitializeComponent();
@@ -88,8 +87,9 @@ namespace Kitbox
         {
             listPanel.Add(panel1);
             listPanel.Add(panel2);
+            listPanel.Add(panel3);
 
-            listPanel[index].BringToFront();
+            listPanel[0].BringToFront();
         }
 
         private void createNewCommandToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,8 +104,9 @@ namespace Kitbox
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            int nbrBox =  treeView1.GetNodeCount(false);
 
-            if (boxNum <= 7)
+            if (nbrBox <= 7)
             {
 
                 string panelColor = pepCombobox1.Text;
@@ -114,7 +115,7 @@ namespace Kitbox
                 string depth = pepCombobox4.Text;
                 string width = pepCombobox5.Text;
 
-                TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", boxNum));
+                TreeNode newTreeNode = new TreeNode(String.Format("Box {0}", nbrBox+1));
 
                 TreeNode panelColorNode = new TreeNode(String.Format("Panel color : {0}", panelColor));
                 TreeNode doorColorNode = new TreeNode(String.Format("Door color : {0}", doorColor));
@@ -130,9 +131,8 @@ namespace Kitbox
 
                 treeView1.Nodes.Add(newTreeNode);
 
-                toolStripStatusLabel1.Text = String.Format("Box {0} added!", boxNum);
+                toolStripStatusLabel1.Text = String.Format("Box {0} added!", nbrBox +1);
                 toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
-                boxNum++;
 
             }
             else
@@ -145,13 +145,13 @@ namespace Kitbox
         private void pepButton3_Click(object sender, EventArgs e)
         {
             treeView1.Nodes.Clear();
-            boxNum = 1;
         }
 
         private void pepButton5_Click(object sender, EventArgs e)
         {
             try
             {
+                
                 TreeNode selected = treeView1.SelectedNode;
 
                 if (treeView1.SelectedNode == selected.Nodes[0])
@@ -163,7 +163,17 @@ namespace Kitbox
                 else
                 {
                     treeView1.SelectedNode.Remove();
-                    boxNum--;
+
+                    int nbrBox = treeView1.GetNodeCount(false);
+
+                    int i = 0;
+
+                    while(i < nbrBox)
+                    {
+                        treeView1.Nodes[i].Text = String.Format("Box {0}", i+1);
+                        i++;
+                    }
+                    
                 }
                 
             }
@@ -173,6 +183,19 @@ namespace Kitbox
                 toolStripStatusLabel1.Text = "Error: see cmd !";
                 toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
 
+            }
+            
+        }
+
+        private void pepButton4_Click(object sender, EventArgs e)
+        {
+            if (treeView1.GetNodeCount(true) == 0)
+            {
+                MessageBox.Show("Please create a box !", "There is no box");
+            }
+            else
+            {
+                listPanel[2].BringToFront();
             }
             
         }
