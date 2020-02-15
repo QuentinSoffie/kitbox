@@ -199,5 +199,21 @@ namespace Kitbox
             }
             
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Getting Connection ...");
+            toolStripStatusLabel1.Text = "Getting Connection ...";
+
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            DB.DBMethods.SqlChoose("Panneau", "Piece", "Panneau", conn);
+
+
+        }
     }
 }
