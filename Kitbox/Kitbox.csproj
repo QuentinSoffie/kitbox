@@ -37,11 +37,15 @@
     <StartupObject>Kitbox.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DBMethods">
+      <HintPath>..\DBMethods\bin\Release\netstandard2.0\DBMethods.dll</HintPath>
+    </Reference>
     <Reference Include="KitboxEcamGUI">
       <HintPath>..\References\KitboxEcamGUI.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\References\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DBMethods\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,7 +60,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB\DBMethods.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

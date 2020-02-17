@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pepButton5 = new KitboxEcamGUI.PepButton();
             this.pepButton4 = new KitboxEcamGUI.PepButton();
             this.pepButton3 = new KitboxEcamGUI.PepButton();
@@ -73,7 +74,6 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label7 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +85,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -93,7 +94,8 @@
             this.aideToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(703, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1054, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,20 +106,20 @@
             this.createNewCommandToolStripMenuItem});
             this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.fichierToolStripMenuItem.Text = "&Fichier";
             // 
             // createNewCustomerToolStripMenuItem
             // 
             this.createNewCustomerToolStripMenuItem.Name = "createNewCustomerToolStripMenuItem";
-            this.createNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.createNewCustomerToolStripMenuItem.Size = new System.Drawing.Size(383, 44);
             this.createNewCustomerToolStripMenuItem.Text = "Create new customer";
             this.createNewCustomerToolStripMenuItem.Click += new System.EventHandler(this.createNewCustomerToolStripMenuItem_Click);
             // 
             // createNewCommandToolStripMenuItem
             // 
             this.createNewCommandToolStripMenuItem.Name = "createNewCommandToolStripMenuItem";
-            this.createNewCommandToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.createNewCommandToolStripMenuItem.Size = new System.Drawing.Size(383, 44);
             this.createNewCommandToolStripMenuItem.Text = "Create new command";
             this.createNewCommandToolStripMenuItem.Click += new System.EventHandler(this.createNewCommandToolStripMenuItem_Click);
             // 
@@ -125,14 +127,14 @@
             // 
             this.editionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
-            this.editionToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.editionToolStripMenuItem.Size = new System.Drawing.Size(109, 36);
             this.editionToolStripMenuItem.Text = "&Edition";
             // 
             // outilsToolStripMenuItem
             // 
             this.outilsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.outilsToolStripMenuItem.Name = "outilsToolStripMenuItem";
-            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.outilsToolStripMenuItem.Size = new System.Drawing.Size(97, 36);
             this.outilsToolStripMenuItem.Text = "&Outils";
             // 
             // aideToolStripMenuItem
@@ -142,18 +144,18 @@
             this.àproposdeToolStripMenuItem});
             this.aideToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(83, 36);
             this.aideToolStripMenuItem.Text = "&Aide";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(180, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(291, 6);
             // 
             // àproposdeToolStripMenuItem
             // 
             this.àproposdeToolStripMenuItem.Name = "àproposdeToolStripMenuItem";
-            this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.àproposdeToolStripMenuItem.Size = new System.Drawing.Size(294, 44);
             this.àproposdeToolStripMenuItem.Text = "À &propos de...";
             // 
             // statusStrip1
@@ -162,9 +164,10 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 460);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 717);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(703, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1054, 42);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -172,17 +175,16 @@
             // 
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.White;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(174, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(286, 32);
             this.toolStripStatusLabel1.Text = "En attente d\'une action ...";
             // 
             // pepButton1
             // 
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton1.Location = new System.Drawing.Point(175, 371);
-            this.pepButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.pepButton1.Location = new System.Drawing.Point(262, 580);
             this.pepButton1.Name = "pepButton1";
-            this.pepButton1.Size = new System.Drawing.Size(331, 33);
+            this.pepButton1.Size = new System.Drawing.Size(496, 52);
             this.pepButton1.TabIndex = 2;
             this.pepButton1.Text = "Create new customer";
             this.pepButton1.UseVisualStyleBackColor = true;
@@ -195,13 +197,12 @@
             this.pepTextbox2.EnabledCalc = true;
             this.pepTextbox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox2.Location = new System.Drawing.Point(175, 86);
-            this.pepTextbox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pepTextbox2.Location = new System.Drawing.Point(262, 134);
             this.pepTextbox2.MaxLength = 32767;
             this.pepTextbox2.MultiLine = false;
             this.pepTextbox2.Name = "pepTextbox2";
             this.pepTextbox2.ReadOnly = false;
-            this.pepTextbox2.Size = new System.Drawing.Size(331, 27);
+            this.pepTextbox2.Size = new System.Drawing.Size(496, 27);
             this.pepTextbox2.TabIndex = 4;
             this.pepTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox2.UseSystemPasswordChar = false;
@@ -213,13 +214,12 @@
             this.pepTextbox3.EnabledCalc = true;
             this.pepTextbox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox3.Location = new System.Drawing.Point(175, 137);
-            this.pepTextbox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pepTextbox3.Location = new System.Drawing.Point(262, 214);
             this.pepTextbox3.MaxLength = 32767;
             this.pepTextbox3.MultiLine = false;
             this.pepTextbox3.Name = "pepTextbox3";
             this.pepTextbox3.ReadOnly = false;
-            this.pepTextbox3.Size = new System.Drawing.Size(331, 27);
+            this.pepTextbox3.Size = new System.Drawing.Size(496, 27);
             this.pepTextbox3.TabIndex = 5;
             this.pepTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox3.UseSystemPasswordChar = false;
@@ -231,13 +231,12 @@
             this.pepTextbox4.EnabledCalc = true;
             this.pepTextbox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox4.Location = new System.Drawing.Point(175, 195);
-            this.pepTextbox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pepTextbox4.Location = new System.Drawing.Point(262, 305);
             this.pepTextbox4.MaxLength = 32767;
             this.pepTextbox4.MultiLine = false;
             this.pepTextbox4.Name = "pepTextbox4";
             this.pepTextbox4.ReadOnly = false;
-            this.pepTextbox4.Size = new System.Drawing.Size(331, 27);
+            this.pepTextbox4.Size = new System.Drawing.Size(496, 27);
             this.pepTextbox4.TabIndex = 6;
             this.pepTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox4.UseSystemPasswordChar = false;
@@ -249,13 +248,12 @@
             this.pepTextbox5.EnabledCalc = true;
             this.pepTextbox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox5.Location = new System.Drawing.Point(175, 255);
-            this.pepTextbox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pepTextbox5.Location = new System.Drawing.Point(262, 398);
             this.pepTextbox5.MaxLength = 32767;
             this.pepTextbox5.MultiLine = false;
             this.pepTextbox5.Name = "pepTextbox5";
             this.pepTextbox5.ReadOnly = false;
-            this.pepTextbox5.Size = new System.Drawing.Size(331, 27);
+            this.pepTextbox5.Size = new System.Drawing.Size(496, 27);
             this.pepTextbox5.TabIndex = 7;
             this.pepTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox5.UseSystemPasswordChar = false;
@@ -267,13 +265,12 @@
             this.pepTextbox6.EnabledCalc = true;
             this.pepTextbox6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox6.Location = new System.Drawing.Point(175, 307);
-            this.pepTextbox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pepTextbox6.Location = new System.Drawing.Point(262, 480);
             this.pepTextbox6.MaxLength = 32767;
             this.pepTextbox6.MultiLine = false;
             this.pepTextbox6.Name = "pepTextbox6";
             this.pepTextbox6.ReadOnly = false;
-            this.pepTextbox6.Size = new System.Drawing.Size(331, 27);
+            this.pepTextbox6.Size = new System.Drawing.Size(496, 27);
             this.pepTextbox6.TabIndex = 8;
             this.pepTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox6.UseSystemPasswordChar = false;
@@ -283,10 +280,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(65, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(98, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 20);
+            this.label2.Size = new System.Drawing.Size(135, 31);
             this.label2.TabIndex = 10;
             this.label2.Text = "Firstname";
             // 
@@ -295,10 +291,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(71, 137);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(106, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 20);
+            this.label3.Size = new System.Drawing.Size(123, 31);
             this.label3.TabIndex = 11;
             this.label3.Text = "Surname";
             // 
@@ -307,10 +302,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(83, 195);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(124, 305);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.Size = new System.Drawing.Size(99, 31);
             this.label4.TabIndex = 12;
             this.label4.Text = "Adress";
             // 
@@ -319,10 +313,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(89, 256);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(134, 400);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 20);
+            this.label5.Size = new System.Drawing.Size(87, 31);
             this.label5.TabIndex = 13;
             this.label5.Text = "e-mail";
             // 
@@ -331,10 +324,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(35, 307);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(52, 480);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 20);
+            this.label6.Size = new System.Drawing.Size(190, 31);
             this.label6.TabIndex = 14;
             this.label6.Text = "Phone number";
             // 
@@ -343,10 +335,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(111, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(166, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 39);
+            this.label1.Size = new System.Drawing.Size(516, 63);
             this.label1.TabIndex = 15;
             this.label1.Text = "Add a new customer";
             // 
@@ -364,10 +355,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pepTextbox5);
             this.panel1.Controls.Add(this.pepTextbox6);
-            this.panel1.Location = new System.Drawing.Point(0, 29);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(0, 45);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 427);
+            this.panel1.Size = new System.Drawing.Size(1050, 667);
             this.panel1.TabIndex = 16;
             // 
             // panel2
@@ -381,20 +371,26 @@
             this.panel2.Controls.Add(this.treeView1);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pepButton2);
-            this.panel2.Location = new System.Drawing.Point(0, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(700, 427);
+            this.panel2.Size = new System.Drawing.Size(1050, 667);
             this.panel2.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(962, 27);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1050, 670);
+            this.panel3.TabIndex = 30;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pepButton5
             // 
             this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton5.Location = new System.Drawing.Point(583, 322);
-            this.pepButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.pepButton5.Location = new System.Drawing.Point(874, 503);
             this.pepButton5.Name = "pepButton5";
-            this.pepButton5.Size = new System.Drawing.Size(117, 29);
+            this.pepButton5.Size = new System.Drawing.Size(176, 45);
             this.pepButton5.TabIndex = 29;
             this.pepButton5.Text = "Delete box";
             this.pepButton5.UseVisualStyleBackColor = true;
@@ -404,10 +400,9 @@
             // 
             this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton4.Location = new System.Drawing.Point(583, 387);
-            this.pepButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.pepButton4.Location = new System.Drawing.Point(874, 605);
             this.pepButton4.Name = "pepButton4";
-            this.pepButton4.Size = new System.Drawing.Size(117, 29);
+            this.pepButton4.Size = new System.Drawing.Size(176, 45);
             this.pepButton4.TabIndex = 28;
             this.pepButton4.Text = "Next step";
             this.pepButton4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -418,10 +413,9 @@
             // 
             this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton3.Location = new System.Drawing.Point(583, 355);
-            this.pepButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.pepButton3.Location = new System.Drawing.Point(874, 555);
             this.pepButton3.Name = "pepButton3";
-            this.pepButton3.Size = new System.Drawing.Size(117, 29);
+            this.pepButton3.Size = new System.Drawing.Size(176, 45);
             this.pepButton3.TabIndex = 27;
             this.pepButton3.Text = "Delete all boxes";
             this.pepButton3.UseVisualStyleBackColor = true;
@@ -435,11 +429,9 @@
             this.pepGroupBox2.Controls.Add(this.pepCombobox3);
             this.pepGroupBox2.Controls.Add(this.pepCombobox4);
             this.pepGroupBox2.Controls.Add(this.pepCombobox5);
-            this.pepGroupBox2.Location = new System.Drawing.Point(22, 219);
-            this.pepGroupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pepGroupBox2.Location = new System.Drawing.Point(33, 342);
             this.pepGroupBox2.Name = "pepGroupBox2";
-            this.pepGroupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.pepGroupBox2.Size = new System.Drawing.Size(310, 150);
+            this.pepGroupBox2.Size = new System.Drawing.Size(465, 234);
             this.pepGroupBox2.TabIndex = 26;
             this.pepGroupBox2.TabStop = false;
             this.pepGroupBox2.Text = "Dimentions";
@@ -448,10 +440,9 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(7, 110);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(10, 172);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 17);
+            this.label13.Size = new System.Drawing.Size(67, 25);
             this.label13.TabIndex = 23;
             this.label13.Text = "Width";
             // 
@@ -459,10 +450,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(7, 70);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(10, 109);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 17);
+            this.label12.Size = new System.Drawing.Size(69, 25);
             this.label12.TabIndex = 22;
             this.label12.Text = "Depth";
             // 
@@ -470,10 +460,9 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(7, 30);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(10, 47);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 17);
+            this.label11.Size = new System.Drawing.Size(74, 25);
             this.label11.TabIndex = 21;
             this.label11.Text = "Height";
             // 
@@ -485,10 +474,9 @@
             this.pepCombobox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox3.FormattingEnabled = true;
             this.pepCombobox3.ItemHeight = 20;
-            this.pepCombobox3.Location = new System.Drawing.Point(213, 30);
-            this.pepCombobox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox3.Location = new System.Drawing.Point(320, 47);
             this.pepCombobox3.Name = "pepCombobox3";
-            this.pepCombobox3.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox3.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox3.TabIndex = 18;
             // 
             // pepCombobox4
@@ -499,10 +487,9 @@
             this.pepCombobox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox4.FormattingEnabled = true;
             this.pepCombobox4.ItemHeight = 20;
-            this.pepCombobox4.Location = new System.Drawing.Point(213, 70);
-            this.pepCombobox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox4.Location = new System.Drawing.Point(320, 109);
             this.pepCombobox4.Name = "pepCombobox4";
-            this.pepCombobox4.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox4.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox4.TabIndex = 19;
             // 
             // pepCombobox5
@@ -513,10 +500,9 @@
             this.pepCombobox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox5.FormattingEnabled = true;
             this.pepCombobox5.ItemHeight = 20;
-            this.pepCombobox5.Location = new System.Drawing.Point(213, 113);
-            this.pepCombobox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox5.Location = new System.Drawing.Point(320, 177);
             this.pepCombobox5.Name = "pepCombobox5";
-            this.pepCombobox5.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox5.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox5.TabIndex = 20;
             // 
             // pepGroupBox1
@@ -527,11 +513,9 @@
             this.pepGroupBox1.Controls.Add(this.pepCombobox2);
             this.pepGroupBox1.Controls.Add(this.label9);
             this.pepGroupBox1.Controls.Add(this.label10);
-            this.pepGroupBox1.Location = new System.Drawing.Point(22, 60);
-            this.pepGroupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pepGroupBox1.Location = new System.Drawing.Point(33, 94);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.pepGroupBox1.Size = new System.Drawing.Size(310, 147);
+            this.pepGroupBox1.Size = new System.Drawing.Size(465, 230);
             this.pepGroupBox1.TabIndex = 25;
             this.pepGroupBox1.TabStop = false;
             this.pepGroupBox1.Text = "Colors";
@@ -546,20 +530,18 @@
             this.pepCombobox6.ItemHeight = 20;
             this.pepCombobox6.Items.AddRange(new object[] {
             ""});
-            this.pepCombobox6.Location = new System.Drawing.Point(213, 109);
-            this.pepCombobox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox6.Location = new System.Drawing.Point(320, 170);
             this.pepCombobox6.Name = "pepCombobox6";
-            this.pepCombobox6.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox6.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox6.TabIndex = 23;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(7, 102);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(10, 159);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 17);
+            this.label8.Size = new System.Drawing.Size(165, 25);
             this.label8.TabIndex = 24;
             this.label8.Text = "Cupboard angle";
             // 
@@ -571,10 +553,13 @@
             this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox1.FormattingEnabled = true;
             this.pepCombobox1.ItemHeight = 20;
-            this.pepCombobox1.Location = new System.Drawing.Point(213, 30);
-            this.pepCombobox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox1.Items.AddRange(new object[] {
+            "",
+            "Test",
+            "Test2"});
+            this.pepCombobox1.Location = new System.Drawing.Point(320, 47);
             this.pepCombobox1.Name = "pepCombobox1";
-            this.pepCombobox1.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox1.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox1.TabIndex = 16;
             this.pepCombobox1.SelectedIndexChanged += new System.EventHandler(this.pepCombobox1_SelectedIndexChanged);
             // 
@@ -588,20 +573,18 @@
             this.pepCombobox2.ItemHeight = 20;
             this.pepCombobox2.Items.AddRange(new object[] {
             ""});
-            this.pepCombobox2.Location = new System.Drawing.Point(213, 70);
-            this.pepCombobox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox2.Location = new System.Drawing.Point(320, 109);
             this.pepCombobox2.Name = "pepCombobox2";
-            this.pepCombobox2.Size = new System.Drawing.Size(82, 26);
+            this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
             this.pepCombobox2.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(7, 29);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(10, 45);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 17);
+            this.label9.Size = new System.Drawing.Size(67, 25);
             this.label9.TabIndex = 21;
             this.label9.Text = "Panel";
             // 
@@ -609,10 +592,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(7, 63);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(10, 98);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 17);
+            this.label10.Size = new System.Drawing.Size(58, 25);
             this.label10.TabIndex = 22;
             this.label10.Text = "Door";
             // 
@@ -620,10 +602,9 @@
             // 
             this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.treeView1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.treeView1.Location = new System.Drawing.Point(358, 79);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(2);
+            this.treeView1.Location = new System.Drawing.Point(537, 123);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(221, 337);
+            this.treeView1.Size = new System.Drawing.Size(330, 524);
             this.treeView1.TabIndex = 24;
             // 
             // label7
@@ -631,10 +612,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(228, 17);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(342, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 39);
+            this.label7.Size = new System.Drawing.Size(381, 63);
             this.label7.TabIndex = 15;
             this.label7.Text = "Add a new box";
             // 
@@ -642,34 +622,25 @@
             // 
             this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton2.Location = new System.Drawing.Point(22, 381);
-            this.pepButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.pepButton2.Location = new System.Drawing.Point(33, 595);
             this.pepButton2.Name = "pepButton2";
-            this.pepButton2.Size = new System.Drawing.Size(310, 33);
+            this.pepButton2.Size = new System.Drawing.Size(465, 52);
             this.pepButton2.TabIndex = 2;
             this.pepButton2.Text = "Add this box";
             this.pepButton2.UseVisualStyleBackColor = true;
             this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(641, 17);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(700, 429);
-            this.panel3.TabIndex = 30;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(703, 486);
+            this.ClientSize = new System.Drawing.Size(1054, 759);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Kitbox - Ecam";
             this.Load += new System.EventHandler(this.Form1_Load);

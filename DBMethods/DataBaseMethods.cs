@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Kitbox.DB
+
+namespace DBMethods
 {
-    class DBMethods
+    public class DataBaseMethods
     {
         public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, MySqlConnection conn)
         {
@@ -44,9 +45,9 @@ namespace Kitbox.DB
             reader.Close();
 
         }
-        public static void SqlChoose(string param, string table, string value,  MySqlConnection conn)
+        public static void SqlChoose(string param, string table, string value, MySqlConnection conn)
         {
-            string query = "SELECT * FROM " + table + "WHERE" + param + "=" + value;
+            string query = "SELECT * FROM " + table + " WHERE " + param + "=" + value;
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
             while (reader.Read())
             {
@@ -54,33 +55,6 @@ namespace Kitbox.DB
             }
             reader.Close();
 
-        }
-    }
-    class DBMySQLUtils
-    {
-        public static MySqlConnection
-                 GetDBConnection(string host, int port, string database, string username, string password)
-        {
-            // Connection String.
-            String connString = "Server=" + host + ";Database=" + database
-                + ";port=" + port + ";User Id=" + username + ";password=" + password;
-
-            MySqlConnection conn = new MySqlConnection(connString);
-
-            return conn;
-        }
-    }
-    class DBUtils
-    {
-        public static MySqlConnection GetDBConnection()
-        {
-            string host = "mysql-kitbox2020.alwaysdata.net";
-            int port = 3306;
-            string database = "kitbox2020_ecam";
-            string username = "199703";
-            string password = "groupe2020";
-
-            return DBMySQLUtils.GetDBConnection(host, port, database, username, password);
         }
     }
 }

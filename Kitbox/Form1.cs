@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using DBMethods;
 using MySql.Data.MySqlClient;
-
-using Kitbox.DB;
-
 
 namespace Kitbox
 {
@@ -51,7 +50,7 @@ namespace Kitbox
                 Console.WriteLine("Getting Connection ...");
                 toolStripStatusLabel1.Text = "Getting Connection ...";
 
-                MySqlConnection conn = DBUtils.GetDBConnection();
+                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection();
 
                 try
                 {
@@ -63,7 +62,7 @@ namespace Kitbox
                     toolStripStatusLabel1.Text = "Connection successful!";
                     toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
 
-                    DBMethods.SqlAddCustomer(firstname, surname, adress, email, phonenumber, conn);
+                    DBMethods.DataBaseMethods.SqlAddCustomer(firstname, surname, adress, email, phonenumber, conn);
 
                     toolStripStatusLabel1.Text = "Customer added!";
                     toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
@@ -207,11 +206,23 @@ namespace Kitbox
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Getting Connection ...");
-            toolStripStatusLabel1.Text = "Getting Connection ...";
+            try
+            {
+                Console.WriteLine("Getting Connection ...");
+                toolStripStatusLabel1.Text = "Getting Connection ...";
 
-            MySqlConnection conn = DBUtils.GetDBConnection();
-            DB.DBMethods.SqlChoose("Panneau", "Piece", "Panneau", conn);
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
+                DBMethods.DataBaseMethods.SqlChoose("Ref", "Piece", "'Panneau HB'", conn);
+            }
+
+            catch (Exception exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+                toolStripStatusLabel1.Text = "Error: see cmd !";
+                toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
+            }
+
 
 
         }

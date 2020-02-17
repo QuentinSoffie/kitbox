@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2019
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kitbox", "Kitbox\Kitbox.csproj", "{081F2CA2-F8F4-49D8-8F33-5943BCAFF943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBMethods", "DBMethods\DBMethods.csproj", "{CC5BF3A0-1B22-4366-A719-C0B734745416}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{081F2CA2-F8F4-49D8-8F33-5943BCAFF943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{081F2CA2-F8F4-49D8-8F33-5943BCAFF943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{081F2CA2-F8F4-49D8-8F33-5943BCAFF943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5BF3A0-1B22-4366-A719-C0B734745416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5BF3A0-1B22-4366-A719-C0B734745416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5BF3A0-1B22-4366-A719-C0B734745416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5BF3A0-1B22-4366-A719-C0B734745416}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
