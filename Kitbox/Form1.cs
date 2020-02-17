@@ -139,6 +139,8 @@ namespace Kitbox
                 MessageBox.Show("Sorry, 7 boxes allowed!", "Too much boxes");
             }
 
+            var variable = new Form1();
+            variable.Show();
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
