@@ -94,6 +94,37 @@ namespace Kitbox
         private void createNewCommandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             listPanel[1].BringToFront();
+
+            try
+            {
+                Console.WriteLine("Getting Connection ...");
+                toolStripStatusLabel1.Text = "Getting Connection ...";
+
+                MySqlConnection conn = DBUtils.GetDBConnection();
+                conn.Open();
+                var reader = DBMethods.DataBaseMethods.SqlLoadComboBox("Ref", "Piece", "'Panneau HB'", conn);
+
+
+                while(reader.Read())
+                {
+                    if (pepCombobox1.Items.Contains(reader.GetString(6)) == false)
+                    {
+                        pepCombobox1.Items.Add(reader.GetString(6));
+                    }
+                }
+
+                
+
+
+
+            }
+
+            catch (Exception exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+                toolStripStatusLabel1.Text = "Error: see cmd !";
+                toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private void createNewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,24 +239,9 @@ namespace Kitbox
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                Console.WriteLine("Getting Connection ...");
-                toolStripStatusLabel1.Text = "Getting Connection ...";
+            
 
-                MySqlConnection conn = DBUtils.GetDBConnection();
-                conn.Open();
-                DBMethods.DataBaseMethods.SqlChoose("Ref", "Piece", "'Panneau HB'", conn);
-            }
-
-            catch (Exception exception)
-            {
-                Console.WriteLine("Error: " + exception.Message);
-                toolStripStatusLabel1.Text = "Error: see cmd !";
-                toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
-            }
-
-
+           
 
         }
     }

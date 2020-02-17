@@ -45,15 +45,13 @@ namespace DBMethods
             reader.Close();
 
         }
-        public static void SqlChoose(string param, string table, string value, MySqlConnection conn)
+        public static MySqlDataReader SqlLoadComboBox(string param, string table, string value, MySqlConnection conn)
         {
             string query = "SELECT * FROM " + table + " WHERE " + param + "=" + value;
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
-            while (reader.Read())
-            {
-                Console.WriteLine(reader[param]);
-            }
-            reader.Close();
+
+
+            return reader;
 
         }
     }

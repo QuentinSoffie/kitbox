@@ -85,7 +85,6 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -474,9 +473,9 @@
             this.pepCombobox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox3.FormattingEnabled = true;
             this.pepCombobox3.ItemHeight = 20;
-            this.pepCombobox3.Location = new System.Drawing.Point(320, 47);
+            this.pepCombobox3.Location = new System.Drawing.Point(259, 47);
             this.pepCombobox3.Name = "pepCombobox3";
-            this.pepCombobox3.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox3.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox3.TabIndex = 18;
             // 
             // pepCombobox4
@@ -487,9 +486,9 @@
             this.pepCombobox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox4.FormattingEnabled = true;
             this.pepCombobox4.ItemHeight = 20;
-            this.pepCombobox4.Location = new System.Drawing.Point(320, 109);
+            this.pepCombobox4.Location = new System.Drawing.Point(259, 109);
             this.pepCombobox4.Name = "pepCombobox4";
-            this.pepCombobox4.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox4.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox4.TabIndex = 19;
             // 
             // pepCombobox5
@@ -500,9 +499,9 @@
             this.pepCombobox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox5.FormattingEnabled = true;
             this.pepCombobox5.ItemHeight = 20;
-            this.pepCombobox5.Location = new System.Drawing.Point(320, 177);
+            this.pepCombobox5.Location = new System.Drawing.Point(259, 177);
             this.pepCombobox5.Name = "pepCombobox5";
-            this.pepCombobox5.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox5.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox5.TabIndex = 20;
             // 
             // pepGroupBox1
@@ -530,9 +529,9 @@
             this.pepCombobox6.ItemHeight = 20;
             this.pepCombobox6.Items.AddRange(new object[] {
             ""});
-            this.pepCombobox6.Location = new System.Drawing.Point(320, 170);
+            this.pepCombobox6.Location = new System.Drawing.Point(259, 170);
             this.pepCombobox6.Name = "pepCombobox6";
-            this.pepCombobox6.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox6.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox6.TabIndex = 23;
             // 
             // label8
@@ -553,13 +552,9 @@
             this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
             this.pepCombobox1.FormattingEnabled = true;
             this.pepCombobox1.ItemHeight = 20;
-            this.pepCombobox1.Items.AddRange(new object[] {
-            "",
-            "Test",
-            "Test2"});
-            this.pepCombobox1.Location = new System.Drawing.Point(320, 47);
+            this.pepCombobox1.Location = new System.Drawing.Point(259, 47);
             this.pepCombobox1.Name = "pepCombobox1";
-            this.pepCombobox1.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox1.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox1.TabIndex = 16;
             this.pepCombobox1.SelectedIndexChanged += new System.EventHandler(this.pepCombobox1_SelectedIndexChanged);
             // 
@@ -573,9 +568,9 @@
             this.pepCombobox2.ItemHeight = 20;
             this.pepCombobox2.Items.AddRange(new object[] {
             ""});
-            this.pepCombobox2.Location = new System.Drawing.Point(320, 109);
+            this.pepCombobox2.Location = new System.Drawing.Point(259, 109);
             this.pepCombobox2.Name = "pepCombobox2";
-            this.pepCombobox2.Size = new System.Drawing.Size(121, 26);
+            this.pepCombobox2.Size = new System.Drawing.Size(182, 26);
             this.pepCombobox2.TabIndex = 17;
             // 
             // label9
