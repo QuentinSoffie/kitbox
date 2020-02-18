@@ -23,10 +23,6 @@ namespace Kitbox
             InitializeComponent();
         }
 
-        private void personnaliserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
@@ -50,26 +46,21 @@ namespace Kitbox
                 Console.WriteLine("Getting Connection ...");
                 toolStripStatusLabel1.Text = "Getting Connection ...";
 
-                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection();
 
                 try
                 {
                     Console.WriteLine("Openning Connection ...");
                     toolStripStatusLabel1.Text = "Openning Connection ...";
 
-                    conn.Open();
                     Console.WriteLine("Connection successful!");
                     toolStripStatusLabel1.Text = "Connection successful!";
                     toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
 
-                    DBMethods.DataBaseMethods.SqlAddCustomer(firstname, surname, adress, email, phonenumber, conn);
+                    DBMethods.DataBaseMethods.SqlAddCustomer(firstname, surname, adress, email, phonenumber);
 
                     toolStripStatusLabel1.Text = "Customer added!";
                     toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
 
-                    
-
-                    
 
                 }
                 catch (Exception exception)
@@ -97,25 +88,12 @@ namespace Kitbox
 
             try
             {
-                Console.WriteLine("Getting Connection ...");
-                toolStripStatusLabel1.Text = "Getting Connection ...";
+                SetComboboxValues("Piece", "Ref", "Panneau HB", "Couleur", pepCombobox1);
+                SetComboboxValues("Piece", "Ref", "Porte", "Couleur", pepCombobox2);  
 
-                MySqlConnection conn = DBUtils.GetDBConnection();
-                conn.Open();
-                var reader = DBMethods.DataBaseMethods.SqlLoadComboBox("Ref", "Piece", "'Panneau HB'", conn);
-
-
-                while(reader.Read())
-                {
-                    if (pepCombobox1.Items.Contains(reader.GetString(6)) == false)
-                    {
-                        pepCombobox1.Items.Add(reader.GetString(6));
-                    }
-                }
-
-                
-
-
+                SetComboboxValues("Piece", "Ref", "Panneau GD", "hauteur", pepCombobox3);
+                SetComboboxValues("Piece", "Ref", "Panneau GD", "profondeur", pepCombobox4);
+                SetComboboxValues("Piece", "Ref", "Panneau Ar", "largeur", pepCombobox5);
 
             }
 
@@ -136,7 +114,7 @@ namespace Kitbox
         {
             int nbrBox =  treeView1.GetNodeCount(false);
 
-            if (nbrBox <= 7)
+            if (nbrBox < 7)
             {
 
                 string panelColor = pepCombobox1.Text;
@@ -170,8 +148,7 @@ namespace Kitbox
                 MessageBox.Show("Sorry, 7 boxes allowed!", "Too much boxes");
             }
 
-            var variable = new Form1();
-            variable.Show();
+            
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
@@ -228,21 +205,45 @@ namespace Kitbox
             else
             {
                 listPanel[2].BringToFront();
+
+                SetComboboxValues("Piece", "Ref", "Cornieres", "Couleur", pepCombobox6);
+
+
+                int nbrTree = treeView1.GetNodeCount(false);
+
+
+                for (int i = 1; i < nbrTree + 1; i++)
+                {
+                    dataGridView1.Columns.Add("Box" + i, "Box " + i);
+                }
+
+                dataGridView1.Rows.Add(treeView1.Nodes[0].Nodes[0].Text);
+                
+
             }
             
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        public void SetComboboxValues(string table, string param, string value, string cond, ComboBox pepCombobox)
         {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
 
-        }
+            Console.WriteLine("Getting Connection ...");
+            toolStripStatusLabel1.Text = "Getting Connection ...";
 
-        private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+            var reader = DBMethods.DataBaseMethods.SqlSearch(table, param, "'" + value + "'", conn);
 
-           
-
+            while (reader.Read())
+            {
+                if (pepCombobox.Items.Contains(reader.GetString(cond)) == false)
+                {
+                    pepCombobox.Items.Add(reader.GetString(cond));
+                }
+            }
+            reader.Close();
+            conn.Close();
         }
     }
 }
+
