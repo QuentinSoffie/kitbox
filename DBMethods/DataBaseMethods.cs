@@ -7,18 +7,19 @@ using MySql.Data.MySqlClient;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;  
 
 
 namespace DBMethods
 {
     public static class DataBaseMethods
     {
-        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone)
+        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, string username, string password)
         {
             MySqlConnection conn = DBMethods.DBUtils.GetDBConnection();
             conn.Open();
-
-            string query = String.Format("INSERT INTO ClientMagasin (Nom, Prenom, Adresse, Email, Tel ) VALUE('{0}', '{1}', '{2}', '{3}', '{4}')", firstname, surname, adress, email, phone);
+            password = sha256_hash(password);
+            string query = "INSERT INTO users (surname, firstname, address, email, phone, username, password) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "','" + username + "','" + password + "');";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -59,6 +60,22 @@ namespace DBMethods
 
             return reader;
 
+        }
+
+        public static String sha256_hash(String value)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(value));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
         }
 
     }
