@@ -8,11 +8,12 @@ namespace Kitbox.Classes
 {
     class Cupboard
     {
-        public string UID { get; set; } 
+        public int Uid { get; set; } 
         public List<Box> ListeBoxes { get; set; }
         public CupboardAngle CupboardAngle { get; set; }
-        public Cupboard()
+        public Cupboard(int uid)
         {
+            this.Uid = uid;
         }
 
         public void AddBox(Box box)
