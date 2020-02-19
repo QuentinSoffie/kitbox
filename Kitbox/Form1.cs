@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using DBMethods;
 using MySql.Data.MySqlClient;
 
+using Kitbox.Classes;
+
 namespace Kitbox
 {
     public partial class Form1 : Form
@@ -208,13 +210,27 @@ namespace Kitbox
 
                 SetComboboxValues("Piece", "Ref", "Cornieres", "Couleur", pepCombobox6);
 
+                foreach(TreeNode boxe in treeView1.Nodes)
+                {
+                    Console.WriteLine(boxe.Text);
+                    foreach (TreeNode node in boxe.Nodes)
+                    {
+                        Console.WriteLine(node.Text);
+                        
+                    }
+                    
+                }
+                
+
 
                 int nbrTree = treeView1.GetNodeCount(false);
 
-
+                
                 for (int i = 1; i < nbrTree + 1; i++)
                 {
+
                     dataGridView1.Columns.Add("Box" + i, "Box " + i);
+                    dataGridView1.Rows[0].HeaderCell.Value = "test";
                 }
 
                 dataGridView1.Rows.Add(treeView1.Nodes[0].Nodes[0].Text);

@@ -60,6 +60,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Box.cs" />
+    <Compile Include="Classes\Slider.cs" />
+    <Compile Include="Classes\Cupboard.cs" />
+    <Compile Include="Classes\CupboardAngle.cs" />
+    <Compile Include="Classes\Door.cs" />
+    <Compile Include="Classes\Panel.cs" />
+    <Compile Include="Classes\Specs.cs" />
+    <Compile Include="Classes\Traverses.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
