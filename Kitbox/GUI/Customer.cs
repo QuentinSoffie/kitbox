@@ -32,26 +32,29 @@ namespace GUI
             Console.WriteLine(UidTreeview);
             AddCupboard(UidTreeview, UidTreeview);
 
+            AddBox(UidTreeview, 1, 1);
+
 
         }
 
-        private void AddCupboard(int Uid, int Index)//, string Tag)
+        private void AddCupboard(int Uid, int index)//, string Tag)
         {
             
             Cupboard newCupboard = new Cupboard();
 
             cupboardList.Add(newCupboard);
             
-            pepTreeView1.Nodes.Add(Uid.ToString(), "Cupboard - N" + Index);
-            //pepTreeView1.Nodes[Index -1].Tag = Tag;
-            pepTreeView1.Nodes[Index -1].ImageIndex = 1;
+            pepTreeView1.Nodes.Add(Uid.ToString(), "Cupboard - N" + index);
+            //pepTreeView1.Nodes[index -1].Tag = Tag;
+            pepTreeView1.Nodes[index -1].ImageIndex = 1;
             toolStripStatusLabel1.Text = "Cupboard added!";
+
         }
-        private void AddBox(int Uid, int IndexCupboard, int Index)//, string Tag)
+        private void AddBox(int Uid, int indexCupboard, int index)//, string Tag)
         {
-            pepTreeView1.Nodes[IndexCupboard].Nodes.Add(Uid.ToString(), "Box - N" + Index);
-            pepTreeView1.Nodes[IndexCupboard].Nodes[Index -1].Tag = "Order in progress";
-            pepTreeView1.Nodes[IndexCupboard].Nodes[Index -1].ImageIndex = 0;
+            pepTreeView1.Nodes[indexCupboard -1].Nodes.Add(Uid.ToString(), "Box - N" + index);
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[index -1].Tag = "Order in progress";
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[index -1].ImageIndex = 0;
             toolStripStatusLabel1.Text = "Box added!";
         }
 
