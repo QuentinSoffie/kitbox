@@ -8,7 +8,7 @@ namespace Kitbox.Classes
 {
     class Traverses : Specs
     {
-        public Traverses(string color, float height, float width, float depth) : base(height, width, depth)
+        public Traverses(string color, int height, int width, int depth) : base(height, width, depth)
         {
         }
     }

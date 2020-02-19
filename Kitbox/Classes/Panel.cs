@@ -9,7 +9,7 @@ namespace Kitbox.Classes
     class Panel : Specs
     {
         public string Color { get; set; }
-        public Panel(string color, float height, float width, float depth) : base (height, width, depth)
+        public Panel(string color, int height, int width, int depth) : base (height, width, depth)
         {
             this.Color = color;
         }

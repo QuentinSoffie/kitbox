@@ -11,8 +11,6 @@ using System.Windows.Forms;
 using DBMethods;
 using MySql.Data.MySqlClient;
 
-using Kitbox.Classes;
-
 namespace Kitbox
 {
     public partial class Form1 : Form
@@ -24,7 +22,6 @@ namespace Kitbox
         {
             InitializeComponent();
         }
-
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
@@ -40,14 +37,12 @@ namespace Kitbox
             if (firstname == "" || surname == "" || adress == "" || email == "")
             {
                 MessageBox.Show("Field(s) missing !", "Error ! ");
-    
             }
             else
             {
 
                 Console.WriteLine("Getting Connection ...");
                 toolStripStatusLabel1.Text = "Getting Connection ...";
-
 
                 try
                 {
@@ -63,7 +58,6 @@ namespace Kitbox
                     toolStripStatusLabel1.Text = "Customer added!";
                     toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
 
-
                 }
                 catch (Exception exception)
                 {
@@ -71,7 +65,6 @@ namespace Kitbox
                     toolStripStatusLabel1.Text = "Error: see cmd !";
                     toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
                 }
-
             }
         }
 
@@ -96,7 +89,6 @@ namespace Kitbox
                 SetComboboxValues("Piece", "Ref", "Panneau GD", "hauteur", pepCombobox3);
                 SetComboboxValues("Piece", "Ref", "Panneau GD", "profondeur", pepCombobox4);
                 SetComboboxValues("Piece", "Ref", "Panneau Ar", "largeur", pepCombobox5);
-
             }
 
             catch (Exception exception)
@@ -118,7 +110,6 @@ namespace Kitbox
 
             if (nbrBox < 7)
             {
-
                 string panelColor = pepCombobox1.Text;
                 string doorColor = pepCombobox2.Text;
                 string height = pepCombobox3.Text;
@@ -149,8 +140,6 @@ namespace Kitbox
             {
                 MessageBox.Show("Sorry, 7 boxes allowed!", "Too much boxes");
             }
-
-            
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
@@ -162,7 +151,6 @@ namespace Kitbox
         {
             try
             {
-                
                 TreeNode selected = treeView1.SelectedNode;
 
                 if (treeView1.SelectedNode == selected.Nodes[0])
@@ -184,9 +172,7 @@ namespace Kitbox
                         treeView1.Nodes[i].Text = String.Format("Box {0}", i+1);
                         i++;
                     }
-                    
                 }
-                
             }
             catch (Exception exception)
             {
@@ -195,7 +181,6 @@ namespace Kitbox
                 toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
 
             }
-            
         }
 
         private void pepButton4_Click(object sender, EventArgs e)
@@ -213,19 +198,14 @@ namespace Kitbox
                 foreach(TreeNode boxe in treeView1.Nodes)
                 {
                     Console.WriteLine(boxe.Text);
-                    foreach (TreeNode node in boxe.Nodes)
-                    {
-                        Console.WriteLine(node.Text);
-                        
-                    }
+                    
+                    
+
                     
                 }
-                
-
 
                 int nbrTree = treeView1.GetNodeCount(false);
 
-                
                 for (int i = 1; i < nbrTree + 1; i++)
                 {
 
@@ -234,7 +214,6 @@ namespace Kitbox
                 }
 
                 dataGridView1.Rows.Add(treeView1.Nodes[0].Nodes[0].Text);
-                
 
             }
             
@@ -254,9 +233,24 @@ namespace Kitbox
             {
                 if (pepCombobox.Items.Contains(reader.GetString(cond)) == false)
                 {
-                    pepCombobox.Items.Add(reader.GetString(cond));
+                    if (cond == "hauteur")
+                    {
+                        var height = int.Parse(reader.GetString("hauteur"));
+                        height += 4;
+                        height.ToString();
+
+                        if (pepCombobox.Items.Contains(height) == false)
+                        {
+                            pepCombobox.Items.Add(height);
+                        }
+                    }
+                    else
+                    { 
+                        pepCombobox.Items.Add(reader.GetString(cond));
+                    }
                 }
             }
+            
             reader.Close();
             conn.Close();
         }

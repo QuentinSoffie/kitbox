@@ -8,6 +8,7 @@ namespace Kitbox.Classes
 {
     class Cupboard
     {
+        public string UID { get; set; } 
         public List<Box> ListeBoxes { get; set; }
         public CupboardAngle CupboardAngle { get; set; }
         public Cupboard()

@@ -8,15 +8,20 @@ namespace Kitbox.Classes
 {
     class Specs
     {
-        public float Height { get; set; }
-        public float Width { get; set; }
-        public float Depth { get; set; }
+        public int Height { get; set; }
+        public int Width { get; set; }
+        public int Depth { get; set; }
 
-        public Specs(float height, float width, float depth)
+        public Specs(int height, int width, int depth)
         {
             this.Height = height;
             this.Width = width;
             this.Depth = depth;
+        }
+
+        public void Show()
+        {
+            Console.WriteLine(string.Format("Height: {0}, Width: {1}, Depth: {2}", Height, Width, Depth));
         }
 
     }

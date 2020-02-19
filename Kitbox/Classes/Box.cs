@@ -8,6 +8,7 @@ namespace Kitbox.Classes
 {
     class Box
     {
+        public string UID { get; set; }
         public Door Door { get; set; }
         public Slider Cleat { get; set; }
         public Panel Panel { get; set; }
