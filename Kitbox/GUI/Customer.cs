@@ -29,27 +29,28 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             UidTreeview += 1;
+            
 
 
-            AddCupboard(UidTreeview);
+            AddCupboard(UidTreeview, UidTreeview);
             
 
         }
 
-        private void AddCupboard(int Uid)//,int Index, string Tag)
+        private void AddCupboard(int uid ,int index, string Tag = "default")
         {
-            pepTreeView1.Nodes.Add(Uid.ToString(), "Cupboard - N" + Uid);
-            //pepTreeView1.Nodes[Uid -1].Tag = Tag;
-            pepTreeView1.Nodes[Uid -1].ImageIndex = 1;
+            pepTreeView1.Nodes.Add(uid.ToString(), "Cupboard - N" + index);
+            pepTreeView1.Nodes[index -1].Tag = Tag;
+            pepTreeView1.Nodes[index -1].ImageIndex = 1;
 
-            Cupboard newCupboard = new Cupboard(Uid);
+            Cupboard newCupboard = new Cupboard(uid);
             cupboardList.Add(newCupboard);
 
-            toolStripStatusLabel1.Text = string.Format("Cupboard - N{0} added!", Uid);
+            toolStripStatusLabel1.Text = string.Format("Cupboard - N{0} added!", uid);
             toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
         }
 
-        private void RemoveCupboard(int Uid)
+        private void RemoveCupboard(int uid)
         {
             TreeNode selectedNode = pepTreeView1.SelectedNode;
             selectedNode.Remove();
@@ -57,11 +58,11 @@ namespace GUI
             //cupboardList.RemoveAt(1);
 
         }
-        private void AddBox(int Uid, int IndexCupboard)//,int Index), string Tag)
+        private void AddBox(int uid, int indexCupboard, int index, string tag = "Order in progress")
         {
-            pepTreeView1.Nodes[IndexCupboard -1].Nodes.Add(Uid.ToString(), "Box - N" + Uid);
-            pepTreeView1.Nodes[IndexCupboard -1].Nodes[Uid -1].Tag = "Order in progress";
-            pepTreeView1.Nodes[IndexCupboard -1].Nodes[Uid -1].ImageIndex = 0;
+            pepTreeView1.Nodes[indexCupboard -1].Nodes.Add(uid.ToString(), "Box - N" + uid);
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[uid -1].Tag = tag ;
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[uid -1].ImageIndex = 0;
         }
 
         private void RemoveBox(int Uid)
