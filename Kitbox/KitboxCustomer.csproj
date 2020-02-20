@@ -60,16 +60,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Box.cs" />
-    <Compile Include="Classes\ChoosePart.cs" />
-    <Compile Include="Classes\Order.cs" />
-    <Compile Include="Classes\Slider.cs" />
-    <Compile Include="Classes\Cupboard.cs" />
-    <Compile Include="Classes\CupboardAngle.cs" />
-    <Compile Include="Classes\Door.cs" />
-    <Compile Include="Classes\Panel.cs" />
-    <Compile Include="Classes\Specs.cs" />
-    <Compile Include="Classes\Traverses.cs" />
+    <Compile Include="Components\Box.cs" />
+    <Compile Include="GUI\Views\ViewCupboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Views\ViewCupboard.Designer.cs">
+      <DependentUpon>ViewCupboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\ChoosePart.cs" />
+    <Compile Include="Order\Order.cs" />
+    <Compile Include="Components\Slider.cs" />
+    <Compile Include="Components\Cupboard.cs" />
+    <Compile Include="Components\CupboardAngle.cs" />
+    <Compile Include="Components\Door.cs" />
+    <Compile Include="Components\Panel.cs" />
+    <Compile Include="Components\Specs.cs" />
+    <Compile Include="Components\Traverses.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
+      <DependentUpon>ViewCupboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
