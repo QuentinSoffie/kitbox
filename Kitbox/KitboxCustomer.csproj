@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Classes\Box.cs" />
     <Compile Include="Classes\ChoosePart.cs" />
+    <Compile Include="Classes\Order.cs" />
     <Compile Include="Classes\Slider.cs" />
     <Compile Include="Classes\Cupboard.cs" />
     <Compile Include="Classes\CupboardAngle.cs" />

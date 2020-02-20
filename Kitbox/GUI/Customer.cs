@@ -29,8 +29,6 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             UidTreeview += 1;
-            
-
 
             AddCupboard(UidTreeview, UidTreeview);
             
@@ -52,17 +50,14 @@ namespace GUI
 
         private void RemoveCupboard(int uid)
         {
-            TreeNode selectedNode = pepTreeView1.SelectedNode;
-            selectedNode.Remove();
-
-            //cupboardList.RemoveAt(1);
+    
 
         }
         private void AddBox(int uid, int indexCupboard, int index, string tag = "Order in progress")
         {
-            pepTreeView1.Nodes[indexCupboard -1].Nodes.Add(uid.ToString(), "Box - N" + uid);
-            pepTreeView1.Nodes[indexCupboard -1].Nodes[uid -1].Tag = tag ;
-            pepTreeView1.Nodes[indexCupboard -1].Nodes[uid -1].ImageIndex = 0;
+            pepTreeView1.Nodes[indexCupboard -1].Nodes.Add(uid.ToString(), "Box - N" + index);
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[index -1].Tag = tag ;
+            pepTreeView1.Nodes[indexCupboard -1].Nodes[index -1].ImageIndex = 0;
         }
 
         private void RemoveBox(int Uid)
