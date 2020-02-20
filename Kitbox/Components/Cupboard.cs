@@ -9,24 +9,28 @@ namespace Kitbox.Components
     class Cupboard
     {
         public int Uid { get; set; } 
-        public List<Box> ListeBoxes { get; set; }
+        public List<Box> ListBoxes { get; set; }
+        public List<CupboardAngle> ListCupboardAngle { get; set; }
         public CupboardAngle CupboardAngle { get; set; }
+
         public Cupboard(int uid)
         {
             this.Uid = uid;
+            ListBoxes = new List<Box>();
+            ListCupboardAngle = new List<CupboardAngle>();
         }
-
-        public void AddBox(Box box)
+        
+        public void AddBox(int uid)
         {
-            ListeBoxes.Add(box);
+            ListBoxes.Add(new Box(uid));
         }
         public void RemoveBox(Box box)
         {
-            ListeBoxes.Remove(box);
+            ListBoxes.Remove(box);
         }
         public void RemoveAll()
         {
-            ListeBoxes.Clear();
+            ListBoxes.Clear();
         }
     }
 }
