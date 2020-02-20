@@ -53,6 +53,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pepGroupBox3 = new KitboxEcamGUI.PepGroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pepCombobox6 = new KitboxEcamGUI.PepCombobox();
+            this.label8 = new System.Windows.Forms.Label();
             this.pepButton5 = new KitboxEcamGUI.PepButton();
             this.pepButton4 = new KitboxEcamGUI.PepButton();
             this.pepButton3 = new KitboxEcamGUI.PepButton();
@@ -71,21 +77,15 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label7 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.pepCombobox6 = new KitboxEcamGUI.PepCombobox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pepGroupBox3 = new KitboxEcamGUI.PepGroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pepGroupBox2.SuspendLayout();
-            this.pepGroupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pepGroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pepGroupBox2.SuspendLayout();
+            this.pepGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -188,7 +188,7 @@
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepButton1.Location = new System.Drawing.Point(131, 302);
-            this.pepButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepButton1.Margin = new System.Windows.Forms.Padding(2);
             this.pepButton1.Name = "pepButton1";
             this.pepButton1.Size = new System.Drawing.Size(248, 27);
             this.pepButton1.TabIndex = 2;
@@ -204,7 +204,7 @@
             this.pepTextbox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepTextbox2.Location = new System.Drawing.Point(131, 70);
-            this.pepTextbox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepTextbox2.Margin = new System.Windows.Forms.Padding(2);
             this.pepTextbox2.MaxLength = 32767;
             this.pepTextbox2.MultiLine = false;
             this.pepTextbox2.Name = "pepTextbox2";
@@ -222,7 +222,7 @@
             this.pepTextbox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepTextbox3.Location = new System.Drawing.Point(131, 111);
-            this.pepTextbox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepTextbox3.Margin = new System.Windows.Forms.Padding(2);
             this.pepTextbox3.MaxLength = 32767;
             this.pepTextbox3.MultiLine = false;
             this.pepTextbox3.Name = "pepTextbox3";
@@ -240,7 +240,7 @@
             this.pepTextbox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepTextbox4.Location = new System.Drawing.Point(131, 159);
-            this.pepTextbox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepTextbox4.Margin = new System.Windows.Forms.Padding(2);
             this.pepTextbox4.MaxLength = 32767;
             this.pepTextbox4.MultiLine = false;
             this.pepTextbox4.Name = "pepTextbox4";
@@ -258,7 +258,7 @@
             this.pepTextbox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepTextbox5.Location = new System.Drawing.Point(131, 207);
-            this.pepTextbox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepTextbox5.Margin = new System.Windows.Forms.Padding(2);
             this.pepTextbox5.MaxLength = 32767;
             this.pepTextbox5.MultiLine = false;
             this.pepTextbox5.Name = "pepTextbox5";
@@ -276,7 +276,7 @@
             this.pepTextbox6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepTextbox6.Location = new System.Drawing.Point(131, 250);
-            this.pepTextbox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepTextbox6.Margin = new System.Windows.Forms.Padding(2);
             this.pepTextbox6.MaxLength = 32767;
             this.pepTextbox6.MultiLine = false;
             this.pepTextbox6.Name = "pepTextbox6";
@@ -373,14 +373,13 @@
             this.panel1.Controls.Add(this.pepTextbox5);
             this.panel1.Controls.Add(this.pepTextbox6);
             this.panel1.Location = new System.Drawing.Point(0, 23);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(525, 347);
             this.panel1.TabIndex = 16;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pepButton5);
             this.panel2.Controls.Add(this.pepButton4);
             this.panel2.Controls.Add(this.pepButton3);
@@ -390,17 +389,92 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pepButton2);
             this.panel2.Location = new System.Drawing.Point(0, 22);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(525, 347);
             this.panel2.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pepGroupBox3);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.pepCombobox6);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(2, 19);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(525, 348);
+            this.panel3.TabIndex = 30;
+            // 
+            // pepGroupBox3
+            // 
+            this.pepGroupBox3.Controls.Add(this.dataGridView1);
+            this.pepGroupBox3.Location = new System.Drawing.Point(12, 86);
+            this.pepGroupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pepGroupBox3.Name = "pepGroupBox3";
+            this.pepGroupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.pepGroupBox3.Size = new System.Drawing.Size(498, 244);
+            this.pepGroupBox3.TabIndex = 26;
+            this.pepGroupBox3.TabStop = false;
+            this.pepGroupBox3.Text = "Overview";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(5, 30);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(490, 211);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label14.Location = new System.Drawing.Point(139, 17);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(219, 31);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "Order finalization";
+            // 
+            // pepCombobox6
+            // 
+            this.pepCombobox6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pepCombobox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pepCombobox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepCombobox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.pepCombobox6.FormattingEnabled = true;
+            this.pepCombobox6.ItemHeight = 20;
+            this.pepCombobox6.Items.AddRange(new object[] {
+            ""});
+            this.pepCombobox6.Location = new System.Drawing.Point(277, 60);
+            this.pepCombobox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pepCombobox6.Name = "pepCombobox6";
+            this.pepCombobox6.Size = new System.Drawing.Size(93, 26);
+            this.pepCombobox6.TabIndex = 23;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label8.Location = new System.Drawing.Point(132, 58);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 17);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Cupboard angle color";
             // 
             // pepButton5
             // 
             this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepButton5.Location = new System.Drawing.Point(437, 262);
-            this.pepButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepButton5.Margin = new System.Windows.Forms.Padding(2);
             this.pepButton5.Name = "pepButton5";
             this.pepButton5.Size = new System.Drawing.Size(88, 23);
             this.pepButton5.TabIndex = 29;
@@ -413,7 +487,7 @@
             this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepButton4.Location = new System.Drawing.Point(437, 315);
-            this.pepButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepButton4.Margin = new System.Windows.Forms.Padding(2);
             this.pepButton4.Name = "pepButton4";
             this.pepButton4.Size = new System.Drawing.Size(88, 23);
             this.pepButton4.TabIndex = 28;
@@ -427,7 +501,7 @@
             this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepButton3.Location = new System.Drawing.Point(437, 289);
-            this.pepButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepButton3.Margin = new System.Windows.Forms.Padding(2);
             this.pepButton3.Name = "pepButton3";
             this.pepButton3.Size = new System.Drawing.Size(88, 23);
             this.pepButton3.TabIndex = 27;
@@ -444,9 +518,9 @@
             this.pepGroupBox2.Controls.Add(this.pepCombobox4);
             this.pepGroupBox2.Controls.Add(this.pepCombobox5);
             this.pepGroupBox2.Location = new System.Drawing.Point(16, 169);
-            this.pepGroupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepGroupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pepGroupBox2.Name = "pepGroupBox2";
-            this.pepGroupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepGroupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.pepGroupBox2.Size = new System.Drawing.Size(232, 122);
             this.pepGroupBox2.TabIndex = 26;
             this.pepGroupBox2.TabStop = false;
@@ -496,7 +570,7 @@
             this.pepCombobox3.Items.AddRange(new object[] {
             ""});
             this.pepCombobox3.Location = new System.Drawing.Point(130, 24);
-            this.pepCombobox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepCombobox3.Margin = new System.Windows.Forms.Padding(2);
             this.pepCombobox3.Name = "pepCombobox3";
             this.pepCombobox3.Size = new System.Drawing.Size(93, 26);
             this.pepCombobox3.TabIndex = 18;
@@ -512,7 +586,7 @@
             this.pepCombobox4.Items.AddRange(new object[] {
             ""});
             this.pepCombobox4.Location = new System.Drawing.Point(130, 57);
-            this.pepCombobox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepCombobox4.Margin = new System.Windows.Forms.Padding(2);
             this.pepCombobox4.Name = "pepCombobox4";
             this.pepCombobox4.Size = new System.Drawing.Size(93, 26);
             this.pepCombobox4.TabIndex = 19;
@@ -528,7 +602,7 @@
             this.pepCombobox5.Items.AddRange(new object[] {
             ""});
             this.pepCombobox5.Location = new System.Drawing.Point(130, 92);
-            this.pepCombobox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepCombobox5.Margin = new System.Windows.Forms.Padding(2);
             this.pepCombobox5.Name = "pepCombobox5";
             this.pepCombobox5.Size = new System.Drawing.Size(93, 26);
             this.pepCombobox5.TabIndex = 20;
@@ -540,9 +614,9 @@
             this.pepGroupBox1.Controls.Add(this.label9);
             this.pepGroupBox1.Controls.Add(this.label10);
             this.pepGroupBox1.Location = new System.Drawing.Point(16, 64);
-            this.pepGroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepGroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepGroupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.pepGroupBox1.Size = new System.Drawing.Size(232, 86);
             this.pepGroupBox1.TabIndex = 25;
             this.pepGroupBox1.TabStop = false;
@@ -559,7 +633,7 @@
             this.pepCombobox1.Items.AddRange(new object[] {
             ""});
             this.pepCombobox1.Location = new System.Drawing.Point(130, 24);
-            this.pepCombobox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepCombobox1.Margin = new System.Windows.Forms.Padding(2);
             this.pepCombobox1.Name = "pepCombobox1";
             this.pepCombobox1.Size = new System.Drawing.Size(93, 26);
             this.pepCombobox1.TabIndex = 16;
@@ -575,7 +649,7 @@
             this.pepCombobox2.Items.AddRange(new object[] {
             ""});
             this.pepCombobox2.Location = new System.Drawing.Point(130, 57);
-            this.pepCombobox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepCombobox2.Margin = new System.Windows.Forms.Padding(2);
             this.pepCombobox2.Name = "pepCombobox2";
             this.pepCombobox2.Size = new System.Drawing.Size(93, 26);
             this.pepCombobox2.TabIndex = 17;
@@ -607,7 +681,7 @@
             this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.treeView1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.treeView1.Location = new System.Drawing.Point(268, 64);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(2);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(167, 274);
             this.treeView1.TabIndex = 24;
@@ -629,7 +703,7 @@
             this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pepButton2.Location = new System.Drawing.Point(16, 309);
-            this.pepButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pepButton2.Margin = new System.Windows.Forms.Padding(2);
             this.pepButton2.Name = "pepButton2";
             this.pepButton2.Size = new System.Drawing.Size(232, 27);
             this.pepButton2.TabIndex = 2;
@@ -637,87 +711,13 @@
             this.pepButton2.UseVisualStyleBackColor = true;
             this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
-            // pepCombobox6
-            // 
-            this.pepCombobox6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox6.FormattingEnabled = true;
-            this.pepCombobox6.ItemHeight = 20;
-            this.pepCombobox6.Items.AddRange(new object[] {
-            ""});
-            this.pepCombobox6.Location = new System.Drawing.Point(277, 60);
-            this.pepCombobox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pepCombobox6.Name = "pepCombobox6";
-            this.pepCombobox6.Size = new System.Drawing.Size(93, 26);
-            this.pepCombobox6.TabIndex = 23;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(132, 58);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 17);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Cupboard angle color";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pepGroupBox3);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.pepCombobox6);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(489, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(525, 348);
-            this.panel3.TabIndex = 30;
-            // 
-            // pepGroupBox3
-            // 
-            this.pepGroupBox3.Controls.Add(this.dataGridView1);
-            this.pepGroupBox3.Location = new System.Drawing.Point(12, 86);
-            this.pepGroupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pepGroupBox3.Name = "pepGroupBox3";
-            this.pepGroupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pepGroupBox3.Size = new System.Drawing.Size(498, 244);
-            this.pepGroupBox3.TabIndex = 26;
-            this.pepGroupBox3.TabStop = false;
-            this.pepGroupBox3.Text = "Overview";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 30);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(490, 211);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(139, 17);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(219, 31);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Order finalization";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(528, 392);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
@@ -734,14 +734,14 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.pepGroupBox2.ResumeLayout(false);
-            this.pepGroupBox2.PerformLayout();
-            this.pepGroupBox1.ResumeLayout(false);
-            this.pepGroupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pepGroupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.pepGroupBox2.ResumeLayout(false);
+            this.pepGroupBox2.PerformLayout();
+            this.pepGroupBox1.ResumeLayout(false);
+            this.pepGroupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

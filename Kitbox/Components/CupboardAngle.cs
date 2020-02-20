@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kitbox.Classes
+namespace Kitbox.Components
 {
-    class Door : Specs
+    class CupboardAngle : Specs
     {
         public string Color { get; set; }
-        public Door(string color, int height, int width, int depth) : base(height, width, depth)
+        public CupboardAngle(string color, int height, int width, int depth) : base(height, width, depth)
         {
             this.Color = color;
         }

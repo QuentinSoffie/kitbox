@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Kitbox.Classes;
+using Kitbox.Components;
 
 namespace GUI
 {
