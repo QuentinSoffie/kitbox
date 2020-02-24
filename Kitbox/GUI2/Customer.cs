@@ -40,10 +40,10 @@ namespace Kitbox.GUI2
 
         }
 
-        public void AddCupboard(int uid ,int index, string Tag = "Contains 0 box")
+        public void AddCupboard(int uid ,int index, string tag = "Contains 0 box")
         {
             pepTreeView1.Nodes.Add(uid.ToString(), "Cupboard - Uid " + uid);
-            pepTreeView1.Nodes[index -1].Tag = Tag;
+            pepTreeView1.Nodes[index -1].Tag = tag;
             pepTreeView1.Nodes[index -1].ImageIndex = 1;
 
             ourOrder.Add(uid);
@@ -63,8 +63,9 @@ namespace Kitbox.GUI2
             pepTreeView1.Nodes[indexCupboard -1].Nodes[index -1].ImageIndex = 0;
         }
 
-        private void RemoveBox(int Uid)
+        private void RemoveBox(int uid)
         {
+            
 
         }
 
