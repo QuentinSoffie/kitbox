@@ -10,48 +10,51 @@ using System.Windows.Forms;
 
 using Kitbox.Components;
 
-namespace GUI
+namespace Kitbox.GUI2
 {
     public partial class Customer : Form
     {
 
-        private List<Cupboard> cupboardList = new List<Cupboard>(); 
+       
         public Customer()
         {
             InitializeComponent();
+            ourOrder = new Kitbox.Order.Order();
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
         }
-        private int UidTreeview = 0;
+        private int uidTreeview = 0;
+        private Kitbox.Order.Order ourOrder;
         private void button1_Click(object sender, EventArgs e)
         {
-            UidTreeview += 1;
-
-            AddCupboard(UidTreeview, UidTreeview);
-            
+            uidTreeview += 1;
+            AddCupboard(uidTreeview, uidTreeview);
+            Kitbox.GUI2.ViewCupboard mypanel = new Kitbox.GUI2.ViewCupboard();
+       
+            splitContainer1.Panel2.Controls.Add(mypanel);
+            mypanel.BringToFront();
+            mypanel.Dock = DockStyle.Fill;
 
         }
 
-        private void AddCupboard(int uid ,int index, string Tag = "default")
+        public void AddCupboard(int uid ,int index, string Tag = "Contains 0 box")
         {
-            pepTreeView1.Nodes.Add(uid.ToString(), "Cupboard - N" + index);
+            pepTreeView1.Nodes.Add(uid.ToString(), "Cupboard - Uid " + uid);
             pepTreeView1.Nodes[index -1].Tag = Tag;
             pepTreeView1.Nodes[index -1].ImageIndex = 1;
 
-            Cupboard newCupboard = new Cupboard(uid);
-            cupboardList.Add(newCupboard);
+            ourOrder.Add(uid);
 
-            toolStripStatusLabel1.Text = string.Format("Cupboard - N{0} added!", uid);
-            toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
+            
         }
 
-        private void RemoveCupboard(int uid)
+        public void RemoveCupboard(int uid)
         {
-    
-
+            Console.WriteLine("ypooo");
+            
         }
         private void AddBox(int uid, int indexCupboard, int index, string tag = "Order in progress")
         {
@@ -69,6 +72,5 @@ namespace GUI
         {
             int uidClicked = int.Parse(e.Node.Name);
         }
-
     }
 }

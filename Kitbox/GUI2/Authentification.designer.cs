@@ -1,4 +1,4 @@
-﻿namespace GUI
+﻿namespace Kitbox.GUI2
 {
     partial class Authentification
     {
