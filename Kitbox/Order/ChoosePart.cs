@@ -8,7 +8,7 @@ using Kitbox.Components;
 
 namespace Kitbox.Order
 {
-    class ChoosePart
+    public class ChoosePart
     {
         public ChoosePart()
         {

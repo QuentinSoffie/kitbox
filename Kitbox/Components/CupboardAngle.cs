@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Components
 {
-    class CupboardAngle : Specs
+    public class CupboardAngle : Specs
     {
         public string Color { get; set; }
         public CupboardAngle(string color, int height, int width, int depth) : base(height, width, depth)

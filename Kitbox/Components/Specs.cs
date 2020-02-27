@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Components
 {
-    class Specs
+    public class Specs
     {
         public int Height { get; set; }
         public int Width { get; set; }

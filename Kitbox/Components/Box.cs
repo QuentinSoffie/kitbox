@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Components
 {
-    class Box
+    public class Box
     {
         public int Uid { get; set; }
         public Door Door { get; set; }

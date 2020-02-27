@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Components
 {
-    class Slider : Specs
+    public class Slider : Specs
     {
         public Slider(string color, int height, int width, int depth) : base(height, width, depth)
         {

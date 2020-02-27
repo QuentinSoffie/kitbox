@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Components
 {
-    class Traverses : Specs
+    public class Traverses : Specs
     {
         public Traverses(string color, int height, int width, int depth) : base(height, width, depth)
         {
