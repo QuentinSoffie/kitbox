@@ -26,3 +26,19 @@ C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MethodsDB.dll
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MySql.Data.dll
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MethodsDB.pdb
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\Kitbox.exe.config
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\Kitbox.exe
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\Kitbox.pdb
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\MethodsDB.dll
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\MySql.Data.dll
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\bin\Debug\MethodsDB.pdb
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\KitboxCustomer.csprojAssemblyReference.cache
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.Form1.resources
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Authentification.resources
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Customer.resources
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewCupboard.resources
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.Properties.Resources.resources
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.GenerateResource.cache
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.CopyComplete
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.exe
+C:\Users\guill.DESKTOP-Q1B1FEO\OneDrive - ECAM\ECAM\Bloc 3\2° quadri\Projet génié logiciel\kitbox\Kitbox\obj\Debug\Kitbox.pdb
