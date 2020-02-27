@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitboxCustomer", "KitboxCustomer.csproj", "{3C602FA4-A078-404D-9E26-D0A1BDE146F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBMethods", "..\DBMethods\DBMethods.csproj", "{5D74ED7E-1E3E-46BB-B9B1-ADA226A504CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitboxStoreKeeper", "..\KitboxStoreKeeper\KitboxStoreKeeper.csproj", "{14CE0D02-689A-4FD2-B2E6-A4082450EB28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsDB", "..\MethodsDB\MethodsDB.csproj", "{5037F050-3ACA-4065-BA72-23008C26EDCB}"
@@ -21,10 +19,6 @@ Global
 		{3C602FA4-A078-404D-9E26-D0A1BDE146F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C602FA4-A078-404D-9E26-D0A1BDE146F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C602FA4-A078-404D-9E26-D0A1BDE146F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D74ED7E-1E3E-46BB-B9B1-ADA226A504CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D74ED7E-1E3E-46BB-B9B1-ADA226A504CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D74ED7E-1E3E-46BB-B9B1-ADA226A504CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D74ED7E-1E3E-46BB-B9B1-ADA226A504CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14CE0D02-689A-4FD2-B2E6-A4082450EB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14CE0D02-689A-4FD2-B2E6-A4082450EB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CE0D02-689A-4FD2-B2E6-A4082450EB28}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Kitbox.Components;
+using Kitbox.GUI;
 
 namespace Kitbox.Order
 {
@@ -16,9 +17,9 @@ namespace Kitbox.Order
             cupboardList = new List<Cupboard>();
         }
 
-        public void Add(int uid)
+        public void Add(int uid, ViewCupboard view)
         {
-            cupboardList.Add(new Cupboard(uid));
+            cupboardList.Add(new Cupboard(uid, view));
         }
 
         public Cupboard GetCupboard(int index)

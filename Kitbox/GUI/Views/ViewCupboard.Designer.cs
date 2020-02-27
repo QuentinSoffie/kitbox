@@ -125,7 +125,7 @@
             this.pepRichTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pepRichTextBox1.Name = "pepRichTextBox1";
             this.pepRichTextBox1.ReadOnly = false;
-            this.pepRichTextBox1.Size = new System.Drawing.Size(364, 432);
+            this.pepRichTextBox1.Size = new System.Drawing.Size(366, 432);
             this.pepRichTextBox1.TabIndex = 3;
             this.pepRichTextBox1.WordWrap = true;
             // 
@@ -218,6 +218,7 @@
             this.label4.Size = new System.Drawing.Size(26, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "74";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox1
             // 
@@ -247,7 +248,7 @@
             this.pepGroupBox1.Controls.Add(this.label6);
             this.pepGroupBox1.Location = new System.Drawing.Point(10, 3);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(369, 55);
+            this.pepGroupBox1.Size = new System.Drawing.Size(371, 55);
             this.pepGroupBox1.TabIndex = 7;
             this.pepGroupBox1.TabStop = false;
             // 
@@ -257,7 +258,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(22)))));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(16, 27);
+            this.label6.Location = new System.Drawing.Point(17, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(336, 19);

@@ -31,24 +31,23 @@ namespace Kitbox.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             uidTreeview += 1;
-            AddCupboard(uidTreeview, uidTreeview);
+            
 
             Kitbox.GUI.ViewCupboard mypanel = new Kitbox.GUI.ViewCupboard(pepTreeView1, ourOrder.GetCupboard(uidTreeview), uidTreeview);
-       
+            AddCupboard(uidTreeview, uidTreeview, mypanel);
             splitContainer1.Panel2.Controls.Add(mypanel);
             mypanel.BringToFront();
             mypanel.Dock = DockStyle.Fill;
 
         }
 
-        public void AddCupboard(int uid, int index, string tag = "Contains 0 box")
+        public void AddCupboard(int uid, int index, ViewCupboard view, string tag = "Contains 0 box")
         {
             pepTreeView1.Nodes.Add(uid.ToString(), "Cupboard - Uid " + uid);
             pepTreeView1.Nodes[index -1].Tag = tag;
             pepTreeView1.Nodes[index -1].ImageIndex = 1;
 
-            ourOrder.Add(uid);
-
+            ourOrder.Add(uid, view);
             
         }
 
@@ -74,15 +73,10 @@ namespace Kitbox.GUI
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             int uidClicked = int.Parse(e.Node.Name);
+            Cupboard selectedCupboard = ourOrder.GetCupboard(uidClicked);
+            selectedCupboard.BringToFront();
+            Console.WriteLine(uidClicked);
         }
-        public void RefreshPage()
-        {
-            pepTreeView1.Nodes.Clear();
-
-            foreach (Cupboard cup in ourOrder.GetCupboardList())
-            {
-                AddCupboard(cup.Uid, cup.Uid);
-            }
-        }
+        
     }
 }
