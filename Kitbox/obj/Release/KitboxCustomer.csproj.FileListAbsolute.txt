@@ -1,0 +1,9 @@
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\KitboxCustomer.csprojAssemblyReference.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.Form1.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.GUI.Authentification.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.GUI.Customer.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.GUI.ViewCupboard.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.Properties.Resources.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\KitboxCustomer.csproj.GenerateResource.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.exe
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Release\Kitbox.pdb

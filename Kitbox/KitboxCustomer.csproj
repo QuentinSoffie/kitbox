@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3C602FA4-A078-404D-9E26-D0A1BDE146F6}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Kitbox</RootNamespace>
     <AssemblyName>Kitbox</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,15 +32,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DBMethods">
-      <HintPath>..\..\kitbox\DBMethods\bin\Release\netstandard2.0\DBMethods.dll</HintPath>
-    </Reference>
     <Reference Include="KitboxEcamGUI">
       <HintPath>..\..\kitbox\References\KitboxEcamGUI.dll</HintPath>
     </Reference>
+    <Reference Include="MethodsDB">
+      <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MethodsDB.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\kitbox\DBMethods\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
+      <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +66,12 @@
     <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Specs.cs" />
     <Compile Include="Components\Traverses.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +94,9 @@
     <Compile Include="Order\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>

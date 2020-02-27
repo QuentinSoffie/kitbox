@@ -16,10 +16,16 @@ namespace Kitbox.GUI
 {
     public partial class ViewCupboard : UserControl
     {
-        public int Uid;  
-        public ViewCupboard()
+        public int Uid { get; set; }
+        private TreeView pep;
+        private Cupboard cupboard;
+
+        public ViewCupboard(TreeView pep, Cupboard cupboard, int uid)
         {
             InitializeComponent();
+            this.Uid = uid;
+            this.pep = pep;
+            this.cupboard = cupboard;
 
         }
 
@@ -41,9 +47,15 @@ namespace Kitbox.GUI
 
         public void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("hey");
-            Kitbox.GUI.Customer.RemoveCupboard(1);
-           
+            Console.WriteLine("testr");
+            RemoveCupboard();
+
+        }
+        public void RemoveCupboard()
+        {
+            Console.WriteLine("suppr");
+            pep.Nodes.RemoveAt(Uid);
+
         }
     }
 }

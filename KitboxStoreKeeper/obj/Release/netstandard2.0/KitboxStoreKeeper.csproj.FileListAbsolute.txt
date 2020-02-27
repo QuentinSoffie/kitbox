@@ -1,0 +1,8 @@
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\bin\Release\netstandard2.0\KitboxStoreKeeper.deps.json
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\bin\Release\netstandard2.0\KitboxStoreKeeper.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\bin\Release\netstandard2.0\KitboxStoreKeeper.pdb
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\obj\Release\netstandard2.0\KitboxStoreKeeper.csprojAssemblyReference.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\obj\Release\netstandard2.0\KitboxStoreKeeper.AssemblyInfoInputs.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\obj\Release\netstandard2.0\KitboxStoreKeeper.AssemblyInfo.cs
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\obj\Release\netstandard2.0\KitboxStoreKeeper.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\KitboxStoreKeeper\obj\Release\netstandard2.0\KitboxStoreKeeper.pdb

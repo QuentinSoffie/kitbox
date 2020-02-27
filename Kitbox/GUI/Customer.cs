@@ -32,7 +32,8 @@ namespace Kitbox.GUI
         {
             uidTreeview += 1;
             AddCupboard(uidTreeview, uidTreeview);
-            Kitbox.GUI.ViewCupboard mypanel = new Kitbox.GUI.ViewCupboard();
+
+            Kitbox.GUI.ViewCupboard mypanel = new Kitbox.GUI.ViewCupboard(pepTreeView1, ourOrder.GetCupboard(uidTreeview), uidTreeview);
        
             splitContainer1.Panel2.Controls.Add(mypanel);
             mypanel.BringToFront();
@@ -55,7 +56,6 @@ namespace Kitbox.GUI
         {
             Console.WriteLine("ypooo");
             ourOrder.Remove(uid);
-            
 
         }
         private void AddBox(int uid, int indexCupboard, int index, string tag = "Order in progress")
@@ -75,13 +75,13 @@ namespace Kitbox.GUI
         {
             int uidClicked = int.Parse(e.Node.Name);
         }
-        public static void Refresh()
+        public void RefreshPage()
         {
-            //pepTreeView1.Nodes.Clear();
+            pepTreeView1.Nodes.Clear();
+
             foreach (Cupboard cup in ourOrder.GetCupboardList())
             {
-                //AddCupboard(cup.Uid, cup.Uid);
-                //test salut
+                AddCupboard(cup.Uid, cup.Uid);
             }
         }
     }

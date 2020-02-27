@@ -22,3 +22,7 @@ C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.CopyComplete
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.exe
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.pdb
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.Form1.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MethodsDB.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MySql.Data.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\MethodsDB.pdb
