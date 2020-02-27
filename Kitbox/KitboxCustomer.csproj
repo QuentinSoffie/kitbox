@@ -4,25 +4,24 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{081F2CA2-F8F4-49D8-8F33-5943BCAFF943}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{3C602FA4-A078-404D-9E26-D0A1BDE146F6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>Kitbox</RootNamespace>
     <AssemblyName>Kitbox</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>0</WarningLevel>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,19 +32,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Kitbox.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DBMethods">
-      <HintPath>..\DBMethods\bin\Release\netstandard2.0\DBMethods.dll</HintPath>
+      <HintPath>..\..\kitbox\DBMethods\bin\Release\netstandard2.0\DBMethods.dll</HintPath>
     </Reference>
     <Reference Include="KitboxEcamGUI">
-      <HintPath>..\References\KitboxEcamGUI.dll</HintPath>
+      <HintPath>..\..\kitbox\References\KitboxEcamGUI.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DBMethods\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\kitbox\DBMethods\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,51 +56,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Box.cs" />
-    <Compile Include="GUI2\Authentification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI2\Authentification.designer.cs">
-      <DependentUpon>Authentification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI2\Customer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI2\Customer.designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI2\Views\ViewCupboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI2\Views\ViewCupboard.Designer.cs">
-      <DependentUpon>ViewCupboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Order\ChoosePart.cs" />
-    <Compile Include="Order\Order.cs" />
-    <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Cupboard.cs" />
     <Compile Include="Components\CupboardAngle.cs" />
     <Compile Include="Components\Door.cs" />
     <Compile Include="Components\Panel.cs" />
+    <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Specs.cs" />
     <Compile Include="Components\Traverses.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="GUI\Authentification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\Authentification.designer.cs">
+      <DependentUpon>Authentification.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer.designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Views\ViewCupboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Views\ViewCupboard.Designer.cs">
+      <DependentUpon>ViewCupboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\ChoosePart.cs" />
+    <Compile Include="Order\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI2\Authentification.resx">
+    <EmbeddedResource Include="GUI\Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI2\Customer.resx">
+    <EmbeddedResource Include="GUI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI2\Views\ViewCupboard.resx">
+    <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
       <DependentUpon>ViewCupboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -116,7 +102,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,9 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

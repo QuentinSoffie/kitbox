@@ -1,0 +1,13 @@
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Debug\Kitbox.exe.config
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Debug\Kitbox.exe
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Debug\Kitbox.pdb
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Debug\KitboxEcamGUI.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.csprojAssemblyReference.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.Properties.Resources.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.csproj.GenerateResource.cache
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.csproj.CopyComplete
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.exe
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.pdb
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.GUI.Authentification.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.GUI.Customer.resources
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewCupboard.resources

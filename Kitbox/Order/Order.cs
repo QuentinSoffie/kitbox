@@ -39,5 +39,9 @@ namespace Kitbox.Order
                 cupboardList.RemoveAt(index);
             }
         }
+        public List<Cupboard> GetCupboardList()
+        {
+            return cupboardList;
+        }
     }
 }

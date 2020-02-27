@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Kitbox.GUI2;
+using Kitbox.GUI;
 
 namespace Kitbox
 {
@@ -13,6 +13,7 @@ namespace Kitbox
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
+        
         [STAThread]
         static void Main()
         {

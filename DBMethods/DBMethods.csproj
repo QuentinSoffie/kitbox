@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\References\MySql.Data.dll</HintPath>
+      <HintPath>..\..\kitbox\DBMethods\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
 
