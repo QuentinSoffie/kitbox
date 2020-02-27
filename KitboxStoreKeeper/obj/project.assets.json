@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\DBMethods\\DBMethods.csproj",
-      "projectName": "DBMethods",
-      "projectPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\DBMethods\\DBMethods.csproj",
+      "projectUniqueName": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
+      "projectName": "KitboxStoreKeeper",
+      "projectPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
       "packagesPath": "C:\\Users\\guigx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\DBMethods\\obj\\",
+      "outputPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
