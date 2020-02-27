@@ -8,7 +8,7 @@ using Kitbox.Components;
 
 namespace Kitbox.Order
 {
-    class Order
+    public class Order
     {
         private List<Cupboard> cupboardList;
         public Order()
