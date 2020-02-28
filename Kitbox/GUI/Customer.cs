@@ -77,6 +77,8 @@ namespace Kitbox.GUI
             Console.WriteLine("select " + uidClicked);
             selectedCupboard.BringFront();
 
+            //update by gui
+
         }
         
     }
