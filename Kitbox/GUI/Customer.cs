@@ -74,8 +74,9 @@ namespace Kitbox.GUI
         {
             int uidClicked = int.Parse(e.Node.Name);
             Cupboard selectedCupboard = ourOrder.GetCupboard(uidClicked);
-            selectedCupboard.BringToFront();
-            Console.WriteLine(uidClicked);
+            Console.WriteLine("select " + uidClicked);
+            selectedCupboard.BringFront();
+
         }
         
     }

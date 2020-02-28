@@ -35,7 +35,7 @@ namespace Kitbox.Components
         {
             ListBoxes.Clear();
         }
-        public void BringToFront()
+        public void BringFront()
         {
             View.BringToFront();
         }

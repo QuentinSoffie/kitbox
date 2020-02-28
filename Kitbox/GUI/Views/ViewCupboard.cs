@@ -28,12 +28,15 @@ namespace Kitbox.GUI
             this.Uid = uid;
             this.tree = tree;
             this.cupboard = cupboard;
-            label4.Text = (uid-1).ToString();
+            label4.Text = (uid).ToString();
+            label13.Text = "Cupboard - " + uid;
+
 
         }
 
         private void ViewCupboard_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("go");
             SetComboboxValues("Piece", "Ref", "Panneau HB", "Couleur", pepCombobox4);
             SetComboboxValues("Piece", "Ref", "Porte", "Couleur", pepCombobox3);
 
