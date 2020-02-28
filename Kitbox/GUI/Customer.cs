@@ -76,12 +76,6 @@ namespace Kitbox.GUI
             Cupboard selectedCupboard = ourOrder.GetCupboard(uidClicked);
             Console.WriteLine("select " + uidClicked);
             selectedCupboard.BringFront();
-<<<<<<< HEAD
-            //from Guillaume Bouillon
-||||||| b33203e
-=======
-            //FROM G.C.
->>>>>>> 8e341c567b2965478e79899b1e16a7ab483840fb
 
         }
         
