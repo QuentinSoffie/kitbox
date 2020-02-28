@@ -78,6 +78,7 @@ namespace Kitbox.GUI
             selectedCupboard.BringFront();
 
             //update by gui
+            //update by github
         }
         
     }
