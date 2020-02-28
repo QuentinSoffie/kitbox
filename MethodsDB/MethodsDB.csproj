@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\..\..\OneDrive\Bureau\MySql.Data.dll</HintPath>
+      <HintPath>..\..\MySql.Data.DLL</HintPath>
     </Reference>
   </ItemGroup>
 

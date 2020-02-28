@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using Kitbox.Order;
 using Kitbox.Components;
 using Kitbox;
+using DBMethods;
+using MySql.Data.MySqlClient;
 
 namespace Kitbox.GUI
 {
@@ -32,7 +34,12 @@ namespace Kitbox.GUI
 
         private void ViewCupboard_Load(object sender, EventArgs e)
         {
+            SetComboboxValues("Piece", "Ref", "Panneau HB", "Couleur", pepCombobox4);
+            SetComboboxValues("Piece", "Ref", "Porte", "Couleur", pepCombobox3);
 
+            SetComboboxValues("Piece", "Ref", "Panneau GD", "hauteur", pepCombobox5);
+            SetComboboxValues("Piece", "Ref", "Panneau GD", "profondeur", pepCombobox2);
+            SetComboboxValues("Piece", "Ref", "Panneau Ar", "largeur", pepCombobox1);
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -63,5 +70,45 @@ namespace Kitbox.GUI
         {
 
         }
+
+
+        public void SetComboboxValues(string table, string param, string value, string cond, ComboBox pepCombobox)
+        {
+            MySqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+
+            Console.WriteLine("Getting Connection ...");
+            //toolStripStatusLabel1.Text = "Getting Connection ...";
+
+            var reader = DBMethods.DataBaseMethods.SqlSearch(table, param, "'" + value + "'", conn);
+
+            while (reader.Read())
+            {
+                if (pepCombobox.Items.Contains(reader.GetString(cond)) == false)
+                {
+                    if (cond == "hauteur")
+                    {
+                        var height = int.Parse(reader.GetString("hauteur"));
+                        height += 4;
+                        height.ToString();
+
+                        if (pepCombobox.Items.Contains(height) == false)
+                        {
+                            pepCombobox.Items.Add(height);
+                        }
+                    }
+                    else
+                    {
+                        pepCombobox.Items.Add(reader.GetString(cond));
+                    }
+                }
+            }
+
+            reader.Close();
+            conn.Close();
+        }
+
+
+
     }
 }
