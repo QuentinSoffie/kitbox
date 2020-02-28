@@ -72,7 +72,7 @@ namespace Kitbox.GUI
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            int uidClicked = int.Parse(e.Node.Name);
+            int uidClicked = int.Parse(e.Node.Name) -1;
             Cupboard selectedCupboard = ourOrder.GetCupboard(uidClicked);
             Console.WriteLine("select " + uidClicked);
             selectedCupboard.BringFront();
