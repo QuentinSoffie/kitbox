@@ -76,6 +76,7 @@ namespace Kitbox.GUI
             Cupboard selectedCupboard = ourOrder.GetCupboard(uidClicked);
             Console.WriteLine("select " + uidClicked);
             selectedCupboard.BringFront();
+            //FROM G.C.
 
         }
         

@@ -43,7 +43,7 @@ namespace Kitbox.GUI
             SetComboboxValues("Piece", "Ref", "Panneau GD", "hauteur", pepCombobox5);
             SetComboboxValues("Piece", "Ref", "Panneau GD", "profondeur", pepCombobox2);
             SetComboboxValues("Piece", "Ref", "Panneau Ar", "largeur", pepCombobox1);
-            //test
+            SetComboboxValues("Piece", "Ref", "Cornieres", "Couleur", pepCombobox6);
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
