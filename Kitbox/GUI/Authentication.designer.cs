@@ -73,6 +73,7 @@
             this.pepTextbox1.Tag = "Username";
             this.pepTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox1.UseSystemPasswordChar = false;
+            this.pepTextbox1.TextChanged += new System.EventHandler(this.pepTextbox1_TextChanged);
             // 
             // pepTextbox2
             // 
@@ -90,6 +91,9 @@
             this.pepTextbox2.Tag = "Password";
             this.pepTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox2.UseSystemPasswordChar = false;
+            this.pepTextbox2.TextChanged += new System.EventHandler(this.pepTextbox2_TextChanged);
+            this.pepTextbox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyUp);
+            this.pepTextbox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyUp);
             // 
             // pepButton1
             // 
@@ -103,7 +107,7 @@
             this.pepButton1.UseVisualStyleBackColor = true;
             this.pepButton1.Click += new System.EventHandler(this.pepButton1_Click);
             // 
-            // Authentification
+            // Authentication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,7 +122,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(450, 320);
             this.MinimumSize = new System.Drawing.Size(450, 320);
-            this.Name = "Authentification";
+            this.Name = "Authentication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

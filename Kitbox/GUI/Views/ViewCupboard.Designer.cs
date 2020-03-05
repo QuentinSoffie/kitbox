@@ -68,11 +68,11 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pepProgressBar3 = new KitboxEcamGUI.PepProgressBar();
             this.pepButton3 = new KitboxEcamGUI.PepButton();
+            this.pepProgressBar3 = new KitboxEcamGUI.PepProgressBar();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pepButton2 = new KitboxEcamGUI.PepButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -128,7 +128,7 @@
             this.RichTextBox_console.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.RichTextBox_console.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.RichTextBox_console.Location = new System.Drawing.Point(10, 74);
-            this.RichTextBox_console.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RichTextBox_console.Margin = new System.Windows.Forms.Padding(2);
             this.RichTextBox_console.Name = "RichTextBox_console";
             this.RichTextBox_console.ReadOnly = false;
             this.RichTextBox_console.Size = new System.Drawing.Size(363, 436);
@@ -140,7 +140,7 @@
             this.panel1.Controls.Add(this.pepProgressBar1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 656);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 69);
             this.panel1.TabIndex = 4;
@@ -158,6 +158,7 @@
             this.pepProgressBar1.TabIndex = 0;
             this.pepProgressBar1.Text = "Maximum number box - 0 / 7";
             this.pepProgressBar1.Value = 0;
+            this.pepProgressBar1.Click += new System.EventHandler(this.pepProgressBar1_Click);
             // 
             // panel2
             // 
@@ -171,7 +172,7 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(774, 122);
             this.panel2.TabIndex = 5;
@@ -230,7 +231,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(599, 74);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(44, 46);
             this.pictureBox1.TabIndex = 5;
@@ -240,7 +241,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 65);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 54);
             this.pictureBox2.TabIndex = 6;
@@ -581,7 +582,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(9, 309);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(35, 35);
             this.pictureBox4.TabIndex = 24;
@@ -593,7 +594,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(9, 260);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(35, 35);
             this.pictureBox5.TabIndex = 25;
@@ -604,7 +605,7 @@
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(9, 73);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(35, 35);
             this.pictureBox6.TabIndex = 26;
@@ -615,7 +616,7 @@
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(9, 118);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(35, 35);
             this.pictureBox7.TabIndex = 27;
@@ -626,7 +627,7 @@
             this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(9, 356);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(35, 35);
             this.pictureBox8.TabIndex = 28;
@@ -680,19 +681,46 @@
             this.splitContainer1.SplitterDistance = 381;
             this.splitContainer1.TabIndex = 30;
             // 
-            // pepButton2
+            // pepButton3
             // 
-            this.pepButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton2.Location = new System.Drawing.Point(73, 432);
-            this.pepButton2.Name = "pepButton2";
-            this.pepButton2.Size = new System.Drawing.Size(100, 24);
-            this.pepButton2.TabIndex = 29;
-            this.pepButton2.Text = "Preview box";
-            this.pepButton2.UseVisualStyleBackColor = true;
-            this.pepButton2.Visible = false;
-            this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
+            this.pepButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pepButton3.Enabled = false;
+            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton3.Location = new System.Drawing.Point(148, 194);
+            this.pepButton3.Name = "pepButton3";
+            this.pepButton3.Size = new System.Drawing.Size(75, 23);
+            this.pepButton3.TabIndex = 7;
+            this.pepButton3.Text = "I confirm";
+            this.pepButton3.UseVisualStyleBackColor = true;
+            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
+            // 
+            // pepProgressBar3
+            // 
+            this.pepProgressBar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepProgressBar3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.pepProgressBar3.Location = new System.Drawing.Point(9, 164);
+            this.pepProgressBar3.Maximum = 100;
+            this.pepProgressBar3.Minimum = 0;
+            this.pepProgressBar3.Name = "pepProgressBar3";
+            this.pepProgressBar3.Size = new System.Drawing.Size(359, 23);
+            this.pepProgressBar3.TabIndex = 7;
+            this.pepProgressBar3.Text = "Completion percentage - 0%";
+            this.pepProgressBar3.Value = 0;
+            this.pepProgressBar3.Click += new System.EventHandler(this.pepProgressBar3_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(10, 164);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox9.TabIndex = 31;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Visible = false;
             // 
             // label14
             // 
@@ -709,45 +737,19 @@
             this.label14.Visible = false;
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // pictureBox9
+            // pepButton2
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(10, 164);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox9.TabIndex = 31;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Visible = false;
-            // 
-            // pepProgressBar3
-            // 
-            this.pepProgressBar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepProgressBar3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepProgressBar3.Location = new System.Drawing.Point(9, 164);
-            this.pepProgressBar3.Maximum = 100;
-            this.pepProgressBar3.Minimum = 0;
-            this.pepProgressBar3.Name = "pepProgressBar3";
-            this.pepProgressBar3.Size = new System.Drawing.Size(359, 23);
-            this.pepProgressBar3.TabIndex = 7;
-            this.pepProgressBar3.Text = "Completion percentage - 0%";
-            this.pepProgressBar3.Value = 0;
-            // 
-            // pepButton3
-            // 
-            this.pepButton3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pepButton3.Enabled = false;
-            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton3.Location = new System.Drawing.Point(148, 194);
-            this.pepButton3.Name = "pepButton3";
-            this.pepButton3.Size = new System.Drawing.Size(75, 23);
-            this.pepButton3.TabIndex = 7;
-            this.pepButton3.Text = "I confirm";
-            this.pepButton3.UseVisualStyleBackColor = true;
-            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
+            this.pepButton2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton2.Location = new System.Drawing.Point(73, 432);
+            this.pepButton2.Name = "pepButton2";
+            this.pepButton2.Size = new System.Drawing.Size(100, 24);
+            this.pepButton2.TabIndex = 29;
+            this.pepButton2.Text = "Preview box";
+            this.pepButton2.UseVisualStyleBackColor = true;
+            this.pepButton2.Visible = false;
+            this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
             // ViewCupboard
             // 

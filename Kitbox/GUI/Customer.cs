@@ -23,7 +23,7 @@ namespace GUI
         private readonly string Username;
         private readonly string Password;
         private Kitbox.Order.Order OurOrder;
-        public Customer(MySqlConnection _database, Authentication _authentification,string _username,string _password)
+        public Customer(MySqlConnection _database, Authentication _authentification,string _username, string _password)
         {
             InitializeComponent();
             OurOrder = new Kitbox.Order.Order();

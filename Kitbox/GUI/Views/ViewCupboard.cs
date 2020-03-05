@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.Database;
 
+using Kitbox.Components;
 
 namespace Kitbox.GUI
 {
@@ -55,7 +56,9 @@ namespace Kitbox.GUI
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-           
+            TreeviewManager.AddBox(Uid);
+            
+            ReloadProgressBar();
         }
 
         private void AddBox()
@@ -260,6 +263,22 @@ namespace Kitbox.GUI
             ReduceGUI();
             AddChat("Woh nice dimensions for your cupboard !", Color.Chartreuse);
             EnlargesGUI();
+        }
+
+        private void pepProgressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReloadProgressBar()
+        {
+            Console.WriteLine("Coucou");
+            pepProgressBar1.Value = Cupboard.CountBox();
+        }
+
+        private void pepProgressBar3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

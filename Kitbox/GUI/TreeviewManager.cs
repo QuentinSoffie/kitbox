@@ -35,13 +35,31 @@ namespace Kitbox.GUI
 
         public void BringToFrontView(int uid)
         {
-            foreach (Kitbox.GUI.ViewCupboard view in ViewCupboardList)
+            foreach (Object view in ViewCupboardList)
             {
-              if (view.Uid == uid)
+                if (view is Kitbox.GUI.ViewBox)
                 {
-                    view.BringToFront();
-                    break;
+                    ViewBox viewType = (ViewBox)view;
+
+                    if (viewType.Uid == uid)
+                    {
+                        viewType.BringToFront();
+                        break;
+                    }
+
                 }
+                else if(view is Kitbox.GUI.ViewCupboard)
+                {
+                    ViewCupboard viewType = (ViewCupboard)view;
+
+                    if (viewType.Uid == uid)
+                    {
+                        viewType.BringToFront();
+                        break;
+                    }
+                }
+
+              
             }
         }
 
