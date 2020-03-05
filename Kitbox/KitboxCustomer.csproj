@@ -77,7 +77,9 @@
     <Compile Include="GUI\Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Authentification.designer.cs" />
+    <Compile Include="GUI\Authentication.designer.cs">
+      <DependentUpon>Authentication.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Customer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,7 +120,9 @@
     <EmbeddedResource Include="GUI\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Authentification.resx" />
+    <EmbeddedResource Include="GUI\Authentication.resx">
+      <DependentUpon>Authentication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
