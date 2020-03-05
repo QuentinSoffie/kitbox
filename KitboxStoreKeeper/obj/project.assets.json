@@ -180,20 +180,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\guill.DESKTOP-Q1B1FEO\\.nuget\\packages\\": {}
+    "C:\\Users\\guigx\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\guill.DESKTOP-Q1B1FEO\\OneDrive - ECAM\\ECAM\\Bloc 3\\2° quadri\\Projet génié logiciel\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
+      "projectUniqueName": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
       "projectName": "KitboxStoreKeeper",
-      "projectPath": "C:\\Users\\guill.DESKTOP-Q1B1FEO\\OneDrive - ECAM\\ECAM\\Bloc 3\\2° quadri\\Projet génié logiciel\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
-      "packagesPath": "C:\\Users\\guill.DESKTOP-Q1B1FEO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\guill.DESKTOP-Q1B1FEO\\OneDrive - ECAM\\ECAM\\Bloc 3\\2° quadri\\Projet génié logiciel\\kitbox\\KitboxStoreKeeper\\obj\\",
+      "projectPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\KitboxStoreKeeper.csproj",
+      "packagesPath": "C:\\Users\\guigx\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guigx\\OneDrive - ECAM\\Ecole\\Bac 3\\Q2\\Software Engineering\\Projet\\kitbox\\KitboxStoreKeeper\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\guill.DESKTOP-Q1B1FEO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\guigx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
