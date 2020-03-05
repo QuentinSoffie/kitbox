@@ -39,7 +39,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = null;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(71, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -114,7 +114,7 @@
             this.Controls.Add(this.pepTextbox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Icon = null;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(450, 320);
             this.MinimumSize = new System.Drawing.Size(450, 320);
