@@ -1,9 +1,0 @@
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\bin\Release\netstandard2.0\MethodsDB.deps.json
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\bin\Release\netstandard2.0\MethodsDB.dll
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\bin\Release\netstandard2.0\MethodsDB.pdb
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.csprojAssemblyReference.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.AssemblyInfoInputs.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.AssemblyInfo.cs
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.csproj.CopyComplete
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.dll
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\MethodsDB\obj\Release\netstandard2.0\MethodsDB.pdb

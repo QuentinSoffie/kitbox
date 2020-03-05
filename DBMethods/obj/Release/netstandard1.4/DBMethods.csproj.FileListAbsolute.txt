@@ -1,3 +1,0 @@
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\DBMethods\obj\Release\netstandard1.4\DBMethods.csprojAssemblyReference.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\DBMethods\obj\Release\netstandard1.4\DBMethods.AssemblyInfoInputs.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\DBMethods\obj\Release\netstandard1.4\DBMethods.AssemblyInfo.cs

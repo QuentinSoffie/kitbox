@@ -22,8 +22,8 @@ namespace Kitbox
             Application.Run(new Authentication());
 
             //test
-            //test2
             //test3
+            //test2
         }
     }
 }
