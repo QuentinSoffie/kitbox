@@ -37,11 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="KitboxEcamGUI">
-      <HintPath>..\..\kitbox\References\KitboxEcamGUI.dll</HintPath>
+      <HintPath>.\KitboxEcamGUI.dll</HintPath>
     </Reference>
-    <Reference Include="MethodsDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MethodsDB\obj\Release\netstandard2.0\MethodsDB.dll</HintPath>
+    <Reference Include="MethodsDB">
+      <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MethodsDB.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>

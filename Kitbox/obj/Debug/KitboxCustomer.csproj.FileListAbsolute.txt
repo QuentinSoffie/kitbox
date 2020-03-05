@@ -65,3 +65,4 @@ C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.cspro
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.CopyComplete
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.exe
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.pdb
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\KitboxEcamGUI.dll
