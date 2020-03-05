@@ -45,3 +45,23 @@ C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.GUI.CustomPopup.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Preview.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewBox.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\Kitbox.exe.config
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\Kitbox.exe
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\Kitbox.pdb
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\MethodsDB.dll
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\MySql.Data.dll
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\MethodsDB.pdb
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.csprojAssemblyReference.cache
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.About.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Authentification.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\GUI.Customer.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.CustomPopup.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Preview.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewBox.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewCupboard.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.Properties.Resources.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.GenerateResource.cache
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.CoreCompileInputs.cache
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.CopyComplete
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.exe
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.pdb
