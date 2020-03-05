@@ -8,7 +8,7 @@ namespace Kitbox.Components
 {
     public class CupboardAngle : Specs
     {
-        public string Color { get; set; }
+        public readonly string Color;
         public CupboardAngle(string color, int height, int width, int depth) : base(height, width, depth)
         {
             this.Color = color;

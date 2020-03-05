@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Kitbox.GUI
 {
-    public partial class Authentification : Form
+    public partial class CustomPopup : Form
     {
-        public Authentification()
+        public CustomPopup(string message)
         {
             InitializeComponent();
+            label1.Text = message;
         }
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-            Customer obj = new Customer();
-            obj.Show();
+            this.Close();
         }
     }
 }

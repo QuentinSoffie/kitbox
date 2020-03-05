@@ -39,8 +39,9 @@
     <Reference Include="KitboxEcamGUI">
       <HintPath>..\..\kitbox\References\KitboxEcamGUI.dll</HintPath>
     </Reference>
-    <Reference Include="MethodsDB">
-      <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MethodsDB.dll</HintPath>
+    <Reference Include="MethodsDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MethodsDB\obj\Release\netstandard2.0\MethodsDB.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\MethodsDB\bin\Release\netstandard2.0\MySql.Data.dll</HintPath>
@@ -58,31 +59,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Box.cs" />
-    <Compile Include="Components\Cupboard.cs" />
     <Compile Include="Components\CupboardAngle.cs" />
     <Compile Include="Components\Door.cs" />
     <Compile Include="Components\Panel.cs" />
     <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Specs.cs" />
     <Compile Include="Components\Traverses.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Database\Components\Doors.cs" />
+    <Compile Include="Database\Components\Panels.cs" />
+    <Compile Include="Database\Reader.cs" />
+    <Compile Include="GUI\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Authentification.cs">
+    <Compile Include="GUI\Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Authentification.designer.cs">
-      <DependentUpon>Authentification.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GUI\Authentification.designer.cs" />
     <Compile Include="GUI\Customer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Customer.designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CustomPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CustomPopup.Designer.cs">
+      <DependentUpon>CustomPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Preview.Designer.cs">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TreeviewManager.cs" />
+    <Compile Include="GUI\Views\ViewBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Views\ViewBox.designer.cs">
+      <DependentUpon>ViewBox.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Views\ViewCupboard.cs">
       <SubType>UserControl</SubType>
@@ -90,18 +109,27 @@
     <Compile Include="GUI\Views\ViewCupboard.Designer.cs">
       <DependentUpon>ViewCupboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\Box.cs" />
     <Compile Include="Order\ChoosePart.cs" />
+    <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Authentification.resx">
-      <DependentUpon>Authentification.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Authentification.resx" />
     <EmbeddedResource Include="GUI\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CustomPopup.resx">
+      <DependentUpon>CustomPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Preview.resx">
+      <DependentUpon>Preview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Views\ViewBox.resx">
+      <DependentUpon>ViewBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
       <DependentUpon>ViewCupboard.cs</DependentUpon>

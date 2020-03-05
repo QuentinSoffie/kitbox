@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Kitbox.Components;
-
-namespace Kitbox.Order
+namespace Kitbox.Components
 {
-    public class ChoosePart
+    class ChoosePart
     {
         public ChoosePart()
         {

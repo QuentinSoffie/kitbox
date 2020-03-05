@@ -16,7 +16,7 @@ namespace DBMethods
     {
         public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, string username, string password)
         {
-            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection();
+            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection(username,password);
             conn.Open();
             password = sha256_hash(password);
             string query = "INSERT INTO users (surname, firstname, address, email, phone, username, password) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "','" + username + "','" + password + "');";

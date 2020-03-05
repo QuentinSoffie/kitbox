@@ -8,15 +8,14 @@ namespace DBMethods
 {
     public class DBUtils
     {
-        public static MySqlConnection GetDBConnection()
+        public static MySqlConnection GetDBConnection(string username, string password)
         {
             string host = "mysql-kitbox2020.alwaysdata.net";
             int port = 3306;
             string database = "kitbox2020_ecam";
-            string username = "199703";
-            string password = "groupe2020";
 
-            return DBMySQLUtils.GetDBConnection(host, port, database, username, password);
+
+            return DBMySQLUtils.GetDBConnection(host, port, database, "199703_" + username, password);
         }
     }
 }

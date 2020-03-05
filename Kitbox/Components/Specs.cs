@@ -8,9 +8,9 @@ namespace Kitbox.Components
 {
     public class Specs
     {
-        public int Height { get; set; }
-        public int Width { get; set; }
-        public int Depth { get; set; }
+        public readonly int Height;
+        public readonly int Width;
+        public readonly int Depth;
 
         public Specs(int height, int width, int depth)
         {
