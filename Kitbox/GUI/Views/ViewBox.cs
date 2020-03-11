@@ -12,6 +12,7 @@ namespace Kitbox.GUI
 {
     public partial class ViewBox : UserControl
     {
+        public int Uid { get; set; } 
         public ViewBox()
         {
             InitializeComponent();

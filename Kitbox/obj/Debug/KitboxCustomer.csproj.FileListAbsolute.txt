@@ -14,7 +14,6 @@ C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\Kitbox.exe
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\Kitbox.pdb
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\KitboxCustomer.csprojAssemblyReference.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.GUI.Authentification.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.GUI.ViewCupboard.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\Kitbox.Properties.Resources.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\KitboxCustomer.csproj.GenerateResource.cache
@@ -67,4 +66,4 @@ C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\Kitbox.pdb
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\bin\Debug\KitboxEcamGUI.dll
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\KitboxEcamGUI.dll
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\GUI.Authentication.resources
-C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\Newtonsoft.Json.dll
+C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\GUI.Authentication.resources

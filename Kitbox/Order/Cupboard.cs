@@ -30,5 +30,10 @@ namespace Kitbox.Components
         {
             ListeBoxes.Clear();
         }
+
+        public int CountBox()
+        {
+            return ListeBoxes.Count();
+        }
     }
 }
