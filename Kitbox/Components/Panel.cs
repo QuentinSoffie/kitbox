@@ -10,7 +10,7 @@ namespace Kitbox.Components
     {
         public readonly string Color;
         public readonly string Type; 
-        public Panel(string color,string type, int height, int width, int depth) : base (height, width, depth)
+        public Panel(string color,string type, int height, int width, int depth, int availableStock, int minStock) : base (height, width, depth, availableStock, minStock)
         {
             this.Color = color;
             this.Type = type;

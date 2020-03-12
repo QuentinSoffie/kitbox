@@ -9,7 +9,7 @@ namespace Kitbox.Components
     public class Door : Specs
     {
         public readonly string Color; 
-        public Door(string color, int height, int width, int depth) : base(height, width, depth)
+        public Door(string color, int height, int width, int depth, int availableStock, int minStock) : base(height, width, depth, availableStock, minStock)
         {
             this.Color = color;
         }

@@ -11,12 +11,17 @@ namespace Kitbox.Components
         public readonly int Height;
         public readonly int Width;
         public readonly int Depth;
+        public readonly int AvailableStock;
+        public readonly int MinStock;
 
-        public Specs(int height, int width, int depth)
+
+        public Specs(int height, int width, int depth, int availableStock, int minStock)
         {
             this.Height = height;
             this.Width = width;
             this.Depth = depth;
+            this.AvailableStock = availableStock;
+            this.MinStock = minStock;
         }
 
         public void Show()
