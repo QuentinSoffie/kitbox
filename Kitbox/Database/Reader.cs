@@ -75,15 +75,15 @@ namespace Kitbox.Database
             sliderBox = (Slider)ReaderData(slider, typeof(Slider));
             slider.Close();
 
-            var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, "0", "", conn);
+            var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", width, "0", "Traverse Av", conn);
             traverseBox.Add((Traverses)ReaderData(traverseFront, typeof(Traverses)));
             traverseFront.Close();
 
-            var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, "0", "", conn);
+            var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", width, "0", "Traverse Ar", conn);
             traverseBox.Add((Traverses)ReaderData(traverseBack, typeof(Traverses)));
             traverseBack.Close();
 
-            var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", width, "0", "", conn);
+            var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", depth, "0", "Traverse GD", conn);
             traverseBox.Add((Traverses)ReaderData(traverseSides, typeof(Traverses)));
             traverseSides.Close();
 
@@ -117,14 +117,10 @@ namespace Kitbox.Database
             }
             else if (type.Name == "Traverses")
             {
-                while (component.Read())
-                {
-
-                    Traverses traverses = new Traverses(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
-                    Console.WriteLine(traverses);
-                    return traverses;                 
-                }
-
+                component.Read();
+                Traverses traverses = new Traverses(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Console.WriteLine(traverses);
+                return traverses;                 
             }
             return null;
 
