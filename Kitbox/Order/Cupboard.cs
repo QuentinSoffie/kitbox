@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kitbox.GUI;
+using Kitbox.Components;
 
-namespace Kitbox.Components
+namespace Kitbox.Order
 {
    public  class Cupboard
     {
@@ -21,9 +22,9 @@ namespace Kitbox.Components
            
         }
 
-        public void AddBox(int uid, Door door, Slider cleat, Panel panel, Traverses traverses)
+        public void AddBox(int uid, Door door, Slider cleat, List<Panel> panels, List<Traverses> traverses)
         {
-            ListeBoxes.Add(new Box(uid,door,cleat,panel,traverses));
+            ListeBoxes.Add(new Box(uid, door, cleat, panels, traverses));
         }
       
         public void RemoveAt(int uid)

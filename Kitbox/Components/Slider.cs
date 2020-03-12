@@ -8,7 +8,7 @@ namespace Kitbox.Components
 {
     public class Slider : Specs
     {
-        public Slider(string color, int height, int width, int depth) : base(height, width, depth)
+        public Slider(int height) : base(height, 0, 0)
         {
         }
     }

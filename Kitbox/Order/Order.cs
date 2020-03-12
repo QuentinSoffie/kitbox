@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using Kitbox.Components;
 using Kitbox.GUI;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
+
+
 namespace Kitbox.Order
 {
    public class Order

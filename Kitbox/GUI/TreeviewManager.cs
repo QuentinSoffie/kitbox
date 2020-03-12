@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using Kitbox.Components;
 using KitboxEcamGUI;
 using System.Windows.Forms;
+using Kitbox.Order;
+using MySql.Data.MySqlClient;
+using Kitbox.Database;
+
 namespace Kitbox.GUI
 {
     public class TreeviewManager
@@ -18,11 +22,14 @@ namespace Kitbox.GUI
 
         private Order.Order OurOrder;
 
-        public TreeviewManager(KitboxEcamGUI.PepTreeView mainTreeview, Control.ControlCollection viewCupboardList,Order.Order ourOrder)
+        private MySqlConnection Database;
+
+        public TreeviewManager(KitboxEcamGUI.PepTreeView mainTreeview, Control.ControlCollection viewCupboardList, Order.Order ourOrder, MySqlConnection database)
         {
             this.MainTreeview = mainTreeview;
             this.ViewCupboardList = viewCupboardList;
             this.OurOrder = ourOrder;
+            this.Database = database;
         }
 
         public void AddViewCupboard(int uid, Cupboard cupboard)
@@ -112,12 +119,14 @@ namespace Kitbox.GUI
 
 
         }
-        public void AddBox( int uidCupboard ,string tag = "Completed")
+        public void AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed")
         {
             UidTreeview += 1;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes.Add(UidTreeview.ToString(), "Box - UID" + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].ImageIndex = 0;
+            Reader.SearchComponent(width, depth, height, colorDoor, colorPanel, cupboard, Database);
+
         }
 
         private void RemoveBox(int uid)

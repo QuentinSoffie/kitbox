@@ -29,7 +29,9 @@ namespace GUI
                 pepButton1.Enabled = false;
                 MySqlConnection myDataBase = DBUtils.GetDBConnection(pepTextbox1.Text, pepTextbox2.Text);
                 myDataBase.Open();
+                myDataBase.Close();
                 Customer obj = new Customer(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
+                
                 obj.Show();
                 this.Visible = false;
                 
@@ -40,7 +42,6 @@ namespace GUI
                 obj.Show(this);
             }
             pepTextbox1.Text = "";
-//test
             pepTextbox2.Text = "";
             pepButton1.Enabled = true;
             Connecting = false;

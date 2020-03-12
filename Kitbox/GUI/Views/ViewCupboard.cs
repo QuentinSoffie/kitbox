@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.Database;
+using Kitbox.Order;
+using MySql.Data.MySqlClient;
 
 using Kitbox.Components;
 
@@ -17,8 +19,8 @@ namespace Kitbox.GUI
     {
         private TreeviewManager TreeviewManager;
         public int Uid;
-        private Kitbox.Components.Cupboard Cupboard;
-        public ViewCupboard(int uid, Kitbox.Components.Cupboard cupboard, TreeviewManager treeView)
+        private Cupboard Cupboard;
+        public ViewCupboard(int uid, Cupboard cupboard, TreeviewManager treeView)
         {
             InitializeComponent();
             this.Uid = uid;
@@ -56,20 +58,25 @@ namespace Kitbox.GUI
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-            TreeviewManager.AddBox(Uid);
+            AddBox();
             
-            ReloadProgressBar();
         }
 
         private void AddBox()
         {
-           
+            string colorPanel = pepCombobox4.SelectedItem == null || pepCombobox4.SelectedIndex == 0 ? "?" : pepCombobox4.SelectedItem.ToString();
+            string colorDoor = pepCombobox3.SelectedItem == null || pepCombobox3.SelectedIndex == 0 ? "?" : pepCombobox3.SelectedItem.ToString();
+            string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
+            string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
+            string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
+
+            TreeviewManager.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+            ReloadProgressBar();
         }
 
         private void AddChat(string message, Color color)
         {
             string hours = DateTime.Now.ToString("[HH:mm:ss] ");
-            bool boldCaracter = false;
             RichTextBox_console.RT.AppendText(hours  + message + Environment.NewLine);
             RichTextBox_console.RT.SelectionStart = RichTextBox_console.RT.Find(hours + message, RichTextBoxFinds.Reverse);
             RichTextBox_console.RT.SelectionColor = color;
@@ -272,7 +279,6 @@ namespace Kitbox.GUI
 
         private void ReloadProgressBar()
         {
-            Console.WriteLine("Coucou");
             pepProgressBar1.Value = Cupboard.CountBox();
         }
 

@@ -62,6 +62,16 @@ namespace DBMethods
 
         }
 
+        public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string value1, string value2, string value3, MySqlConnection conn)
+        {
+
+            string query = "SELECT * FROM " + table + " WHERE " + param1 + "= '" + value1 + "' AND " + param2 + "='" + value2 + "' AND " + param3 + "='" + value3 +"'";
+            MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+            return reader;
+
+        }
+
         public static String sha256_hash(String value)
         {
             StringBuilder Sb = new StringBuilder();

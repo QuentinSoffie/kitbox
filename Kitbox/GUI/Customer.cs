@@ -26,14 +26,14 @@ namespace GUI
         public Customer(MySqlConnection _database, Authentication _authentification,string _username, string _password)
         {
             InitializeComponent();
-            OurOrder = new Kitbox.Order.Order();
-            MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls,OurOrder);
             DataBase = _database;
+            OurOrder = new Kitbox.Order.Order();
+            MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls,OurOrder, DataBase);
             Authentification = _authentification;
             Username = _username;
             Password = _password;
             Kitbox.Database.Reader.InitializeComponents(DataBase);
-             toolStripStatusLabel1.Text = "Welcome " + Username;
+            toolStripStatusLabel1.Text = "Welcome " + Username;
             
         }
 
