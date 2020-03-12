@@ -1,8 +1,0 @@
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Release\Kitbox.exe.config
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Release\Kitbox.exe
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\bin\Release\Kitbox.pdb
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Release\Kitbox.csprojAssemblyReference.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Release\Kitbox.Properties.Resources.resources
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Release\Kitbox.csproj.GenerateResource.cache
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Release\Kitbox.exe
-C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\New kitbox\Kitbox\obj\Release\Kitbox.pdb
