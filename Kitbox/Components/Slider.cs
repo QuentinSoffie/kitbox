@@ -11,5 +11,9 @@ namespace Kitbox.Components
         public Slider(int height, int availableStock, int minStock) : base(height, 0, 0, availableStock, minStock)
         {
         }
+        public override string ToString()
+        {
+            return string.Format("\n----Slider----\nHeight: {0}\nWidth: {1}\nDepth: {2}\nAvailableStock: {3}\nMinStock: {4}\n", Height, Width, Depth, AvailableStock, MinStock);
+        }
     }
 }

@@ -10,10 +10,14 @@ namespace Kitbox.Components
     {
         public readonly string Color;
         public readonly string Type; 
-        public Panel(string color,string type, int height, int width, int depth, int availableStock, int minStock) : base (height, width, depth, availableStock, minStock)
+        public Panel(string color, string type, int height, int width, int depth, int availableStock, int minStock) : base (height, width, depth, availableStock, minStock)
         {
             this.Color = color;
             this.Type = type;
+        }
+        public override string ToString()
+        {
+            return string.Format("\n----Panel----\nColor: {0}Height: {1}\nWidth: {2}\nDepth: {3}\nAvailableStock: {4}\nMinStock: {5}\nType: {6}", Color, Height, Width, Depth, AvailableStock, MinStock, Type) ;
         }
     }
 }

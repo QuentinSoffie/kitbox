@@ -28,6 +28,10 @@ namespace Kitbox.Components
         {
             Console.WriteLine(string.Format("Height: {0}, Width: {1}, Depth: {2}", Height, Width, Depth));
         }
+        public override string ToString()
+        {
+            return string.Format("\n----Specs----\nHeight: {0}\nWidth: {1}\nDepth: {2}\nAvailableStock: {3}\nMinStock: {4}\n", Height, Width, Depth, AvailableStock, MinStock);
+        }
 
     }
 }
