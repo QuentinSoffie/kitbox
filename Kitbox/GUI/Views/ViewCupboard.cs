@@ -64,14 +64,21 @@ namespace Kitbox.GUI
 
         private void AddBox()
         {
-            string colorPanel = pepCombobox4.SelectedItem == null || pepCombobox4.SelectedIndex == 0 ? "?" : pepCombobox4.SelectedItem.ToString();
-            string colorDoor = pepCombobox3.SelectedItem == null || pepCombobox3.SelectedIndex == 0 ? "?" : pepCombobox3.SelectedItem.ToString();
-            string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
-            string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
-            string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
+            if (Cupboard.CountBox() < 7)
+            {
+                string colorPanel = pepCombobox4.SelectedItem == null || pepCombobox4.SelectedIndex == 0 ? "?" : pepCombobox4.SelectedItem.ToString();
+                string colorDoor = pepCombobox3.SelectedItem == null || pepCombobox3.SelectedIndex == 0 ? "?" : pepCombobox3.SelectedItem.ToString();
+                string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
+                string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
+                string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 
-            TreeviewManager.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
-            ReloadProgressBar();
+                TreeviewManager.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                RefreshView();
+            }
+            else
+            {
+                AddChat("You have too many boxes in your cupboard !", Color.Red);
+            }
         }
 
         private void AddChat(string message, Color color)
@@ -176,7 +183,7 @@ namespace Kitbox.GUI
             if (percentage == 100)
             {
                 pepButton3.Enabled = true;
-                AddChat("Attention you can not go back are you sure of your choice?", Color.White);
+                AddChat("Attention you can not go back, are you sure of your choice?", Color.White);
             }
             else
             {
@@ -277,14 +284,20 @@ namespace Kitbox.GUI
 
         }
 
-        private void ReloadProgressBar()
+        private void RefreshProgressBar()
         {
-            pepProgressBar1.Value = Cupboard.CountBox();
+            pepProgressBar1.Value = Cupboard.CountBox()*(15);
+
         }
 
         private void pepProgressBar3_Click(object sender, EventArgs e)
         {
 
+        }
+        private void RefreshView()
+        {
+            pepProgressBar1.Text = string.Format("{0}/7", Cupboard.CountBox());
+            RefreshProgressBar();
         }
     }
 }

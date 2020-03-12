@@ -156,7 +156,7 @@
             this.pepProgressBar1.Name = "pepProgressBar1";
             this.pepProgressBar1.Size = new System.Drawing.Size(752, 23);
             this.pepProgressBar1.TabIndex = 0;
-            this.pepProgressBar1.Text = "Maximum number box - 0 / 7";
+            this.pepProgressBar1.Text = "0 / 7";
             this.pepProgressBar1.Value = 0;
             this.pepProgressBar1.Click += new System.EventHandler(this.pepProgressBar1_Click);
             // 
