@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Kitbox.Components;
 using GUI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

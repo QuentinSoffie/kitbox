@@ -12,9 +12,9 @@ namespace Kitbox.Database.Components
         private readonly static List<Door> doorList = new List<Door>();
 
         #region Door methods
-        public static void AddDoor(string color, int height, int width, int depth)
+        public static void AddDoor(string color, int height, int width, int depth, int availableStock, int minStock)
         {
-            doorList.Add(new Door(color, height, width, depth));
+            doorList.Add(new Door(color, height, width, depth, availableStock, minStock));
         }
 
         public static int CountDoor()

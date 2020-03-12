@@ -31,7 +31,7 @@ namespace Kitbox.Database
 
             while (reader.Read())
             {
-                Kitbox.Database.Components.Doors.AddDoor(reader.GetString("Couleur"), Int32.Parse(reader.GetString("hauteur")), Int32.Parse(reader.GetString("largeur")), 0);
+                Kitbox.Database.Components.Doors.AddDoor(reader.GetString("Couleur"), reader.GetInt32("hauteur"), reader.GetInt32("largeur"), 0, reader.GetInt32("Enstock"), reader.GetInt32("Stock minimum"));
             }
             reader.Close();
         }
@@ -42,7 +42,7 @@ namespace Kitbox.Database
 
             while (reader.Read())
             {
-                Kitbox.Database.Components.Panels.AddPanel(reader.GetString("Couleur"), value.Replace("Panneau ", ""), Int32.Parse(reader.GetString("hauteur")), Int32.Parse(reader.GetString("largeur")), Int32.Parse(reader.GetString("profondeur")));
+                Kitbox.Database.Components.Panels.AddPanel(reader.GetString("Couleur"), value.Replace("Panneau ", ""), reader.GetInt32("hauteur"), reader.GetInt32("largeur"), reader.GetInt32("profondeur"), reader.GetInt32("Enstock"), reader.GetInt32("Stock minimum"));
             }
             reader.Close();
         }
@@ -78,6 +78,10 @@ namespace Kitbox.Database
             var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, "0", "", conn);
             traverseBox.Add((Traverses)ReaderData(traverseFront, typeof(Traverses)));
             traverseFront.Close();
+
+            var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, "0", "", conn);
+            traverseBox.Add((Traverses)ReaderData(traverseBack, typeof(Traverses)));
+            traverseBack.Close();
 
             var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", width, "0", "", conn);
             traverseBox.Add((Traverses)ReaderData(traverseSides, typeof(Traverses)));
