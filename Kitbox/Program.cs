@@ -26,9 +26,7 @@ namespace Kitbox
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authentication());
 
-            //test
-            //test3
-            //test2
+     
         }
 
         private static void LoadLangFile()

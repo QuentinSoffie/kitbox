@@ -67,3 +67,4 @@ C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\KitboxEcamGUI.dll
 C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\obj\Debug\GUI.Authentication.resources
 C:\Users\guigx\OneDrive - ECAM\Ecole\Bac 3\Q2\Software Engineering\Projet\kitbox\Kitbox\obj\Debug\GUI.Authentication.resources
+C:\Users\quent\Documents\ecamKitbox\kitbox\Kitbox\bin\Debug\Newtonsoft.Json.dll
