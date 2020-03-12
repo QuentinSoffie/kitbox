@@ -40,6 +40,7 @@ namespace GUI
                 obj.Show(this);
             }
             pepTextbox1.Text = "";
+//test
             pepTextbox2.Text = "";
             pepButton1.Enabled = true;
             Connecting = false;
