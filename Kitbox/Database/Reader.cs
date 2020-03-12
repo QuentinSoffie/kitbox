@@ -97,22 +97,33 @@ namespace Kitbox.Database
             if (type.Name == "Door")
             {
                 component.Read();
-                return new Door(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Door door = new Door(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Console.WriteLine(door);
+                return door;
             }
             else if (type.Name == "Panel")
             {
                 component.Read();
-                return new Panel(component.GetString("Couleur"), component.GetString("Ref").Replace("Panneau ", ""), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Panel panel = new Panel(component.GetString("Couleur"), component.GetString("Ref").Replace("Panneau ", ""), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Console.WriteLine(panel);
+                return panel;
             }
             else if (type.Name == "Slider")
             {
                 component.Read();
-                return new Slider(component.GetInt32("hauteur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Slider slider = new Slider(component.GetInt32("hauteur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                Console.WriteLine(slider);
+                return slider;
             }
             else if (type.Name == "Traverses")
             {
-                component.Read();
-                return new Traverses(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                while (component.Read())
+                {
+
+                    Traverses traverses = new Traverses(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"));
+                    Console.WriteLine(traverses);
+                    return traverses;                 
+                }
 
             }
             return null;
