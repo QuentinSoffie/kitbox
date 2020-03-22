@@ -46,12 +46,14 @@ namespace Kitbox.Database
             }
             reader.Close();
         }
-        public static void SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
+        public static List<object> SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
         {
             Door doorBox;
             List<Panel> panelBox = new List<Panel>();
             List<Traverses> traverseBox = new List<Traverses>();
             Slider sliderBox;
+
+            List<object> components = new List<object>();
 
             conn.Open();
 
@@ -97,7 +99,14 @@ namespace Kitbox.Database
 
             conn.Close();
 
-            cupboard.AddBox(uid, doorBox, sliderBox, panelBox, traverseBox);
+            components.Add(doorBox);
+            components.Add(sliderBox);
+            components.Add(panelBox);
+            components.Add(traverseBox);
+
+            return components;
+
+
 
         }
         private static Object ReaderData(MySqlDataReader component, Type type)
