@@ -17,7 +17,7 @@ namespace Kitbox.GUI
 {
     public partial class ViewCupboard : UserControl
     {
-        private TreeviewManager TreeviewManager;
+        private TreeviewManager MainTreeview;
         public int Uid;
         private Cupboard Cupboard;
         public ViewCupboard(int uid, Cupboard cupboard, TreeviewManager treeView)
@@ -25,7 +25,7 @@ namespace Kitbox.GUI
             InitializeComponent();
             this.Uid = uid;
             this.Cupboard = cupboard;
-            TreeviewManager = treeView;
+            MainTreeview = treeView;
             LoadGUI();
             
         }
@@ -72,7 +72,8 @@ namespace Kitbox.GUI
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 
-                TreeviewManager.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                MainTreeview.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                Vew
                 RefreshView();
             }
             else
@@ -162,9 +163,6 @@ namespace Kitbox.GUI
             
             pepProgressBar2.Text = "Add box progress - " + percentage +"%";
 
-
-
-
         }
 
         private void refreshProgressionCupboard()
@@ -192,9 +190,6 @@ namespace Kitbox.GUI
             pepProgressBar3.Value = percentage;
 
             pepProgressBar3.Text = "Completion percentage - " + percentage + "%";
-
-
-
 
         }
 
@@ -236,7 +231,7 @@ namespace Kitbox.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TreeviewManager.RemoveCupboard(Uid);
+            MainTreeview.RemoveCupboard(Uid);
         }
 
         private void label14_Click(object sender, EventArgs e)

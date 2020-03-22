@@ -37,11 +37,11 @@ namespace Kitbox.Order
         }
         private int ComputeWidth()
         {
-            return Door.Width;
+            return Panels[0].Width;
         }
         private int ComputeDepth()
         {
-            return Panels[0].Depth;
+            return Panels[1].Depth;
         }
         public override string ToString()
         {

@@ -46,7 +46,7 @@ namespace Kitbox.Database
             }
             reader.Close();
         }
-        public static void SearchComponent(string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
+        public static void SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
         {
             Door doorBox;
             List<Panel> panelBox = new List<Panel>();
@@ -67,9 +67,17 @@ namespace Kitbox.Database
             panelBox.Add((Panel)ReaderData(panelHB, typeof(Panel)));
             panelHB.Close();
 
-            var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, height, colorDoor, conn);
-            doorBox = (Door)ReaderData(door, typeof(Door));
-            door.Close();
+
+            if (colorDoor != "I don't want a door")
+            {
+                var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, height, colorDoor, conn);
+                doorBox = (Door)ReaderData(door, typeof(Door));
+                door.Close();
+            }
+            else
+            {
+                doorBox = null;
+            }
 
             var slider = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "0", height, "", conn);
             sliderBox = (Slider)ReaderData(slider, typeof(Slider));
@@ -89,7 +97,7 @@ namespace Kitbox.Database
 
             conn.Close();
 
-            cupboard.AddBox(2, doorBox, sliderBox, panelBox, traverseBox);
+            cupboard.AddBox(uid, doorBox, sliderBox, panelBox, traverseBox);
 
         }
         private static Object ReaderData(MySqlDataReader component, Type type)
@@ -122,6 +130,7 @@ namespace Kitbox.Database
                 Console.WriteLine(traverses);
                 return traverses;                 
             }
+
             return null;
 
         }

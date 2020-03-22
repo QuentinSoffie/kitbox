@@ -117,15 +117,14 @@ namespace Kitbox.GUI
             MainTreeview.Nodes.RemoveAt(ReturnIndexTreeview(uid));
             RemoveView(uid);
 
-
         }
         public void AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed")
         {
             UidTreeview += 1;
-            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes.Add(UidTreeview.ToString(), "Box - UID" + UidTreeview);
+            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].ImageIndex = 0;
-            Reader.SearchComponent(width, depth, height, colorDoor, colorPanel, cupboard, Database);
+            Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
 
         }
 

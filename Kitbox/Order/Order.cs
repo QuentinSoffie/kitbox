@@ -23,7 +23,7 @@ namespace Kitbox.Order
           
            
         }
-        public void Add(int uid ,TreeviewManager ViewManager)
+        public void Add(int uid, TreeviewManager ViewManager)
         {
             Cupboard cupboard = new Cupboard(uid);
             ViewManager.AddViewCupboard(uid, cupboard);

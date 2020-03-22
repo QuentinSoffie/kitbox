@@ -23,15 +23,16 @@ namespace GUI
         private readonly string Username;
         private readonly string Password;
         private Kitbox.Order.Order OurOrder;
-        public Customer(MySqlConnection _database, Authentication _authentification,string _username, string _password)
+
+        public Customer(MySqlConnection database, Authentication authentification, string username, string password)
         {
             InitializeComponent();
-            DataBase = _database;
+            DataBase = database;
             OurOrder = new Kitbox.Order.Order();
             MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls,OurOrder, DataBase);
-            Authentification = _authentification;
-            Username = _username;
-            Password = _password;
+            Authentification = authentification;
+            Username = username;
+            Password = password;
             Kitbox.Database.Reader.InitializeComponents(DataBase);
             toolStripStatusLabel1.Text = "Welcome " + Username;
             
@@ -57,7 +58,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
           
-            MainTreeview.AddCupboard(OurOrder);    
+            MainTreeview.AddCupboard(OurOrder);
         }
 
        
