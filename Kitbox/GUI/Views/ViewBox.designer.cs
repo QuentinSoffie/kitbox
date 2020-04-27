@@ -97,9 +97,9 @@
             this.label1.Location = new System.Drawing.Point(66, 81);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Box Uid :";
+            this.label1.Text = "Box UID :";
             // 
             // label2
             // 
@@ -125,7 +125,7 @@
             this.pepRichTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pepRichTextBox1.Name = "pepRichTextBox1";
             this.pepRichTextBox1.ReadOnly = false;
-            this.pepRichTextBox1.Size = new System.Drawing.Size(368, 432);
+            this.pepRichTextBox1.Size = new System.Drawing.Size(366, 432);
             this.pepRichTextBox1.TabIndex = 3;
             this.pepRichTextBox1.WordWrap = true;
             // 
@@ -203,9 +203,9 @@
             this.label3.Location = new System.Drawing.Point(633, 81);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 17);
+            this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Cupboard Uid :";
+            this.label3.Text = "Cupboard UID :";
             // 
             // label4
             // 
@@ -247,7 +247,7 @@
             this.pepGroupBox1.Controls.Add(this.label6);
             this.pepGroupBox1.Location = new System.Drawing.Point(10, 3);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(373, 55);
+            this.pepGroupBox1.Size = new System.Drawing.Size(371, 55);
             this.pepGroupBox1.TabIndex = 7;
             this.pepGroupBox1.TabStop = false;
             // 
@@ -257,7 +257,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(22)))));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(18, 27);
+            this.label6.Location = new System.Drawing.Point(17, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(336, 19);
