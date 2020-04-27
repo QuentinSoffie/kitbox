@@ -17,7 +17,7 @@ namespace Kitbox.GUI
 {
     public partial class ViewCupboard : UserControl
     {
-        private TreeviewManager MainTreeview;
+        private TreeviewManager MainTreeView;
         public int Uid;
         private Cupboard Cupboard;
         public ViewCupboard(int uid, Cupboard cupboard, TreeviewManager treeView)
@@ -25,7 +25,7 @@ namespace Kitbox.GUI
             InitializeComponent();
             this.Uid = uid;
             this.Cupboard = cupboard;
-            MainTreeview = treeView;
+            MainTreeView = treeView;
             LoadGUI();
             
         }
@@ -72,7 +72,7 @@ namespace Kitbox.GUI
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 
-                MainTreeview.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
 
                 RefreshView();
             }
@@ -231,7 +231,7 @@ namespace Kitbox.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainTreeview.RemoveCupboard(Uid);
+            MainTreeView.RemoveCupboard(Uid);
         }
 
         private void label14_Click(object sender, EventArgs e)

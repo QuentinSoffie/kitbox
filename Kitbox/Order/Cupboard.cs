@@ -22,9 +22,12 @@ namespace Kitbox.Order
            
         }
 
-        public void AddBox(int uid, Door door, Slider cleat, List<Panel> panels, List<Traverses> traverses)
+        public Box AddBox(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, TreeviewManager viewManager)
         {
-            ListeBoxes.Add(new Box(uid, door, cleat, panels, traverses));
+            Box newBox = new Box(uid, door, slider, panels, traverses);
+            viewManager.AddViewBox(uid, newBox);
+            ListeBoxes.Add(newBox);
+            return newBox;
         }
       
         public void RemoveAt(int uid)

@@ -18,6 +18,8 @@ namespace Kitbox.GUI
        
         private Control.ControlCollection ViewCupboardList;
 
+        private Control.ControlCollection ViewBoxList;
+
         private int UidTreeview = 0;
 
         private Order.Order OurOrder;
@@ -38,6 +40,14 @@ namespace Kitbox.GUI
             view.Dock = DockStyle.Fill;
             ViewCupboardList.Add(view);
             view.BringToFront();
+        }
+
+        public void AddViewBox(int uid, Box box)
+        {
+            ViewBox viewBox = new ViewBox(uid, box, this);
+            viewBox.Dock = DockStyle.Fill;
+            ViewCupboardList.Add(viewBox);
+            viewBox.BringToFront();
         }
 
         public void BringToFrontView(int uid)
@@ -124,7 +134,9 @@ namespace Kitbox.GUI
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].ImageIndex = 0;
-            Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+            List<object> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+
+            cupboard.AddBox(UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], (List<Components.Panel>)components[2], (List<Components.Traverses>)components[3], this);
 
         }
 
