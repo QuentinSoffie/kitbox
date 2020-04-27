@@ -59,7 +59,6 @@ namespace Kitbox.GUI
         private void pepButton1_Click(object sender, EventArgs e)
         {
             AddBox();
-            
         }
 
         private void AddBox()
@@ -94,7 +93,7 @@ namespace Kitbox.GUI
         private void LoadChat()
         {
             AddChat("Welcome to Kitbox designer !", Color.Chartreuse);
-            AddChat("Please choose a width and depth to make your cupboard...", Color.Khaki);
+            AddChat("Please choose width and depth to make your cupboard...", Color.Khaki);
         }
 
         private void LoadCombobox()

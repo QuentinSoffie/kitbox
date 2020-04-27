@@ -65,7 +65,7 @@ namespace Kitbox.GUI
                     }
 
                 }
-                else if(view is Kitbox.GUI.ViewCupboard)
+                if (view is Kitbox.GUI.ViewCupboard)
                 {
                     ViewCupboard viewType = (ViewCupboard)view;
 
@@ -78,16 +78,33 @@ namespace Kitbox.GUI
 
               
             }
+
         }
 
         private void RemoveView(int uid)
         {
-            foreach (Kitbox.GUI.ViewCupboard view in ViewCupboardList)
+            foreach (Object view in ViewCupboardList)
             {
-                if (view.Uid == uid)
+                if (view is Kitbox.GUI.ViewBox)
                 {
-                    ViewCupboardList.Remove(view);
-                    break;
+                    ViewBox viewType = (ViewBox)view;
+
+                    if (viewType.Uid == uid)
+                    {
+                        ViewCupboardList.Remove(viewType);
+                        break;
+                    }
+                }
+
+                else if (view is Kitbox.GUI.ViewCupboard)
+                {
+                    ViewCupboard viewType = (ViewCupboard)view;
+
+                    if (viewType.Uid == uid)
+                    {
+                        ViewCupboardList.Remove(viewType);
+                        break;
+                    }
                 }
             }
         }
@@ -96,12 +113,12 @@ namespace Kitbox.GUI
         {
             UidTreeview += 1;
             MainTreeview.Nodes.Add(UidTreeview.ToString(), "Cupboard - Uid " + UidTreeview);
-            MainTreeview.Nodes[ReturnIndexTreeview(UidTreeview)].Tag = Tag;
-            MainTreeview.Nodes[ReturnIndexTreeview(UidTreeview)].ImageIndex = 1;
+            MainTreeview.Nodes[ReturnIndexTreeview(UidTreeview)[0]].Tag = Tag;
+            MainTreeview.Nodes[ReturnIndexTreeview(UidTreeview)[0]].ImageIndex = 1;
             ourOrder.Add(UidTreeview, this);
         }
 
-        private int ReturnIndexTreeview(int uid)
+        private int[] ReturnIndexTreeview(int uid)
         {
             for (int countCupboard = 0; countCupboard < MainTreeview.Nodes.Count; countCupboard++)
             {
@@ -109,40 +126,42 @@ namespace Kitbox.GUI
                 {
                     if (MainTreeview.Nodes[countCupboard].Nodes[countBox].Name == uid.ToString())
                     {
-                        return countBox;
+                        return new int[] {countCupboard, countBox};
                     }
                 }
                 if (MainTreeview.Nodes[countCupboard].Name == uid.ToString())
                 {
-                    return countCupboard;
+                    return new int[] { countCupboard, 0 };
                 }
             }
 
-            return -1;
+            return new int[] { -1, -1 };
         }
 
         public void RemoveCupboard(int uid)
         {
             OurOrder.RemoveAt(uid);
-            MainTreeview.Nodes.RemoveAt(ReturnIndexTreeview(uid));
+            MainTreeview.Nodes.RemoveAt(ReturnIndexTreeview(uid)[0]);
             RemoveView(uid);
 
         }
         public void AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed")
         {
             UidTreeview += 1;
-            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
-            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].Tag = tag;
-            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)].Nodes[ReturnIndexTreeview(UidTreeview)].ImageIndex = 0;
+            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
+            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
+            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
             List<object> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
 
             cupboard.AddBox(UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], (List<Components.Panel>)components[2], (List<Components.Traverses>)components[3], this);
 
         }
 
-        private void RemoveBox(int uid)
+        public void RemoveBox(int uid)
         {
-           
+            Console.WriteLine(uid);
+            MainTreeview.Nodes[ReturnIndexTreeview(uid)[0]].Nodes.RemoveAt(ReturnIndexTreeview(uid)[1]);
+            RemoveView(uid);
         }
     }
 }

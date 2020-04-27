@@ -29,7 +29,7 @@ namespace GUI
             InitializeComponent();
             DataBase = database;
             OurOrder = new Kitbox.Order.Order();
-            MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls,OurOrder, DataBase);
+            MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls, OurOrder, DataBase);
             Authentification = authentification;
             Username = username;
             Password = password;

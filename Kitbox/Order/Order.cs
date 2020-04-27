@@ -19,8 +19,7 @@ namespace Kitbox.Order
 
         public Order()
         {
-            CupboardList = new List<Cupboard>();
-          
+            CupboardList = new List<Cupboard>();   
            
         }
         public void Add(int uid, TreeviewManager ViewManager)
