@@ -73,7 +73,7 @@ namespace Kitbox.GUI
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 
                 MainTreeview.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
-                Vew
+
                 RefreshView();
             }
             else
