@@ -30,10 +30,21 @@ namespace GUI
                 MySqlConnection myDataBase = DBUtils.GetDBConnection(pepTextbox1.Text, pepTextbox2.Text);
                 myDataBase.Open();
                 myDataBase.Close();
-                Customer obj = new Customer(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
+
+                if (pepTextbox1.Text == "customer")
+                {
+                    Customer obj = new Customer(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
+                    obj.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    StoreKeeper obj = new StoreKeeper(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
+                    obj.Show();
+                    this.Visible = false;
+
+                }
                 
-                obj.Show();
-                this.Visible = false;
                 
             }
             catch (Exception ex)
