@@ -13,6 +13,9 @@ namespace StockDB
 			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
 			return reader;
+
+			//DANS LE READER RECUPERER LA VALEUR DU STOCK POUR POUVOIR L'ENVOYER DANS LA METHODE D'UPDATE DU STOCK
+
 		}
 
 		public static MySqlDataReader SearchOrderByName(string customerName, MySqlConnection conn)
@@ -39,10 +42,21 @@ namespace StockDB
 			cmd.ExecuteNonQuery();
 		}
 
-		public static void Updateqtty(int code, int qtty, MySqlConnection conn)
+		public static void Addqtty(int code, int stock, int qtty, MySqlConnection conn)
 		{
+			int newStock = qtty + stock;
 			conn.Open();
-			string query = "UPDATE Piece SET Enstock = '" + qtty + "' WHERE Code ='" + code +"'";
+			string query = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code +"'";
+			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+			SDA.SelectCommand.ExecuteNonQuery();
+			conn.Close();
+		}
+
+		public static void Deleteqtty(int code, int stock, int qtty, MySqlConnection conn)
+		{
+			int newStock = stock - qtty;
+			conn.Open();
+			string query = "UPDATE Piece SET Enstock = '" + qtty + "' WHERE Code ='" + code + "'";
 			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
 			SDA.SelectCommand.ExecuteNonQuery();
 			conn.Close();
