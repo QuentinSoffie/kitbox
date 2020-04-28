@@ -27,9 +27,9 @@ namespace Kitbox
             LoadLangFile();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Authentication());
-            MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
-            Application.Run(new Customer(myDataBase, new Authentication(), "customer", "groupe2020"));
+            Application.Run(new Authentication());
+            //MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
+            //Application.Run(new Customer(myDataBase, new Authentication(), "customer", "groupe2020"));
         }
 
         private static void LoadLangFile()
