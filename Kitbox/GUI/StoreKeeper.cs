@@ -23,8 +23,9 @@ namespace Kitbox.GUI
         private Authentication Authentification;
         private readonly string Username;
         private readonly string Password;
-        private ViewComponentSearch ViewComponentSearch;
-        private List<Order.StoreKeeperOrder> orderList = new List<StoreKeeperOrder>();
+        private List<ViewComponentSearch> ViewComponentSearchList;
+        private List<StoreKeeperOrder> orderList = new List<StoreKeeperOrder>();
+        private Dictionary<StoreKeeperOrder, ViewComponentSearch> viewDict = new Dictionary<StoreKeeperOrder, ViewComponentSearch>();
 
         public StoreKeeper(MySqlConnection database, Authentication authentification, string username, string password)
         {
@@ -33,8 +34,6 @@ namespace Kitbox.GUI
             Authentification = authentification;
             Username = username;
             Password = password;
-            ViewComponentSearch = new ViewComponentSearch();
-            Controls.Add(ViewComponentSearch);
 
         }
 
@@ -60,9 +59,15 @@ namespace Kitbox.GUI
 
             foreach (Dictionary<String, Object> item in orders)
             {
-                Order.StoreKeeperOrder newOrder = new Order.StoreKeeperOrder(item);
+                StoreKeeperOrder newOrder = new StoreKeeperOrder(item);
+                ViewComponentSearch newView = new ViewComponentSearch(newOrder);
+
+                viewDict.Add(newOrder, newView);
+
+                splitContainer1.Panel2.Controls.Add(newView);
+                newView.Hide();
+
                 Console.WriteLine(newOrder);
-                orderList.Add(newOrder);
             }
 
             reloadTreeView();
@@ -72,19 +77,30 @@ namespace Kitbox.GUI
         {
             pepTreeView1.Nodes.Clear();
             int i = 0;
-            foreach(Order.StoreKeeperOrder order in orderList)
+
+            foreach(KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in viewDict)
             {
-                pepTreeView1.Nodes.Add(String.Format("Order number : {0}, Owner : {1}", order.OrderNumber, order.Customer));
-                pepTreeView1.Nodes[i].Tag = order.State;
-                //pepTreeView1.Nodes[i].;
+                pepTreeView1.Nodes.Add(order.Key.Name);
+                pepTreeView1.Nodes[i].Tag = order.Key.State;
+
                 i++;
             }
         }
 
  
-        public void removeItem(String text)
+        public void removeItem(TreeNode node)
         {
+            foreach(KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in viewDict)
+            {
+                if (order.Key.Name == node.Text)
+                {
+                    order.Value.Hide();
+                    viewDict.Remove(order.Key);
+                    break;
+                }
+            }
 
+            reloadTreeView();
         }
 
 
@@ -139,7 +155,7 @@ namespace Kitbox.GUI
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-            orderList.Clear();
+            viewDict.Clear();
 
             if (pepTextbox1.Text == "")
             {
@@ -155,20 +171,25 @@ namespace Kitbox.GUI
             {
                 getOrder();
             }
-            
-            //splitContainer1.Panel2.Controls.Add(ViewComponentSearch);
-            //ViewComponentSearch.BringToFront();
-            
-        }
-
-        private Order.Order buildOrder()
-        {
-            return null;
         }
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            Console.WriteLine(e.Node.Text);
+
+            foreach (KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in viewDict)
+            {
+                if (order.Key.Name == e.Node.Text)
+                {
+                    order.Value.Show();
+                    order.Value.BringToFront();
+                }
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            removeItem(pepTreeView1.SelectedNode);
         }
     }
 }

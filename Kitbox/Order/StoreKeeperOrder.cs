@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Order
 {
-    class StoreKeeperOrder
+    public class StoreKeeperOrder
     {
         public List<string> KeyList { get; set; }
         public Dictionary<String, Object> Components { get; set; }
@@ -15,12 +15,15 @@ namespace Kitbox.Order
         public String Customer { get; set; }
         public String OrderNumber { get; set; }
 
+        public String Name { get; set; }
+
         public StoreKeeperOrder(Dictionary<String, Object> item)
         {
             Components = JsonConvert.DeserializeObject<Dictionary<String, Object>>(item["Components"].ToString());
             OrderNumber = item["OrderNumber"].ToString();
             State = item["State"].ToString();
             Customer = item["Customer"].ToString();
+            Name = String.Format("Order number : {0}, Owner : {1}", OrderNumber, Customer);
 
             KeyList = new List<string>(Components.Keys);
         }
@@ -35,6 +38,8 @@ namespace Kitbox.Order
             }
             return value;
         }
+
+
 
 
     }

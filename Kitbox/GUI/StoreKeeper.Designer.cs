@@ -45,6 +45,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -52,6 +54,7 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pepGroupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pepCombobox1
@@ -181,6 +184,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
             this.splitContainer1.Panel1.Controls.Add(this.pepTreeView1);
             this.splitContainer1.Panel1.Font = new System.Drawing.Font("Calibri", 12F);
             this.splitContainer1.Panel1MinSize = 300;
@@ -197,16 +201,18 @@
             // 
             // pepTreeView1
             // 
+            this.pepTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pepTreeView1.Caption = false;
-            this.pepTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.pepTreeView1.ItemHeight = 40;
             this.pepTreeView1.Location = new System.Drawing.Point(0, 0);
             this.pepTreeView1.Name = "pepTreeView1";
             this.pepTreeView1.Online = false;
-            this.pepTreeView1.Size = new System.Drawing.Size(300, 561);
+            this.pepTreeView1.Size = new System.Drawing.Size(300, 518);
             this.pepTreeView1.TabIndex = 0;
             this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
@@ -215,7 +221,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(446, 272);
+            this.pictureBox1.Location = new System.Drawing.Point(442, 272);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -236,11 +242,41 @@
             this.pepGroupBox1.Controls.Add(this.pepCombobox1);
             this.pepGroupBox1.Controls.Add(this.pepTextbox1);
             this.pepGroupBox1.Controls.Add(this.label1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(119, 27);
+            this.pepGroupBox1.Location = new System.Drawing.Point(128, 27);
             this.pepGroupBox1.Name = "pepGroupBox1";
             this.pepGroupBox1.Size = new System.Drawing.Size(1003, 52);
             this.pepGroupBox1.TabIndex = 4;
             this.pepGroupBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 509);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 52);
+            this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(128, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 34);
+            this.button1.TabIndex = 1;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StoreKeeper
             // 
@@ -269,6 +305,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pepGroupBox1.ResumeLayout(false);
             this.pepGroupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +329,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private KitboxEcamGUI.PepGroupBox pepGroupBox1;
         private KitboxEcamGUI.PepTreeView pepTreeView1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }
