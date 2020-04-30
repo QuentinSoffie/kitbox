@@ -24,6 +24,7 @@ namespace Kitbox.GUI
         private readonly string Username;
         private readonly string Password;
         private ViewComponentSearch ViewComponentSearch;
+        private List<Order.StoreKeeperOrder> orderList = new List<StoreKeeperOrder>();
 
         public StoreKeeper(MySqlConnection database, Authentication authentification, string username, string password)
         {
@@ -34,8 +35,7 @@ namespace Kitbox.GUI
             Password = password;
             ViewComponentSearch = new ViewComponentSearch();
             Controls.Add(ViewComponentSearch);
-            
-            
+
         }
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,24 +54,34 @@ namespace Kitbox.GUI
         /// <summary>
         /// Add Nodes in the treeview
         /// </summary>
-        /// <param name="value"></param>
-        public void addItems(List<String> value)
+        /// <param name="orders"></param>
+        public void addItems(List<Object> orders)
         {
-            //pepTreeView1.Nodes.Add(value);
-            //pepTreeView1.Nodes[0].Tag = "Send";
-            foreach (String item in value)
+
+            foreach (Dictionary<String, Object> item in orders)
             {
-                Console.WriteLine(item);
-                createOrder(item);
+                Order.StoreKeeperOrder newOrder = new Order.StoreKeeperOrder(item);
+                Console.WriteLine(newOrder);
+                orderList.Add(newOrder);
             }
 
+            reloadTreeView();
         }
 
-        private Order.StoreKeeperOrder createOrder(String item)
+        public void reloadTreeView()
         {
-            return new Order.StoreKeeperOrder(item);
+            pepTreeView1.Nodes.Clear();
+            int i = 0;
+            foreach(Order.StoreKeeperOrder order in orderList)
+            {
+                pepTreeView1.Nodes.Add(String.Format("Order number : {0}, Owner : {1}", order.OrderNumber, order.Customer));
+                pepTreeView1.Nodes[i].Tag = order.State;
+                //pepTreeView1.Nodes[i].;
+                i++;
+            }
         }
 
+ 
         public void removeItem(String text)
         {
 
@@ -83,27 +93,33 @@ namespace Kitbox.GUI
             Cursor.Current = Cursors.WaitCursor;
             DataBase.Open();
 
-            List<String> resp = new List<string>();
+            MySqlDataReader reader;
+            List<Object> resp = new List<Object>();
 
             if (pepCombobox1.GetItemText(pepCombobox1.SelectedItem) == "Order number")
             {
 
-                MySqlDataReader reader = StockDB.StockMethod.SearchOrderByNum(pepTextbox1.Text, DataBase);
+                reader = StockDB.StockMethod.SearchOrderByNum(pepTextbox1.Text, DataBase);
 
-                while (reader.Read())
-                {
-                    resp.Add(reader["ItemsCode"].ToString());
-
-                }
             }
             else
             {
-                MySqlDataReader reader = StockDB.StockMethod.SearchOrderByName(pepTextbox1.Text, DataBase);
 
-                while (reader.Read())
+                reader = StockDB.StockMethod.SearchOrderByName(pepTextbox1.Text, DataBase);
+
+            }
+
+            while (reader.Read())
+            {
+                Dictionary<String, Object> order = new Dictionary<string, object>
                 {
-                    resp.Add(reader["ItemsCode"].ToString());
-                }
+                    { "OrderNumber", reader["NumOrder"].ToString() },
+                    { "Customer", reader["Customer"].ToString() },
+                    { "Components", reader["ItemsCode"].ToString() },
+                    { "State", reader["State"].ToString() }
+                };
+
+                resp.Add(order);
             }
 
             DataBase.Close();
@@ -123,7 +139,8 @@ namespace Kitbox.GUI
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(pepCombobox1.SelectedItem);
+            orderList.Clear();
+
             if (pepTextbox1.Text == "")
             {
                 showError("Please enter an order number or a customer name");

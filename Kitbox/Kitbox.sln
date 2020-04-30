@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitboxStoreKeeper", "..\Kit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MethodsDB", "..\MethodsDB\MethodsDB.csproj", "{5037F050-3ACA-4065-BA72-23008C26EDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockDB", "..\StockDB\StockDB.csproj", "{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockDB", "..\StockDB\StockDB.csproj", "{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EFEBE133-CF42-459C-B239-0331BE09C523}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
