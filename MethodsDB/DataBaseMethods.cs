@@ -88,5 +88,18 @@ namespace DBMethods
             return Sb.ToString();
         }
 
+        public static void SqlAddOrder(string name, string NumOrder, string ItemsCode, string state,  string username, string password)
+        {
+            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection(username, password);
+            conn.Open();
+            password = sha256_hash(password);
+            string query = "INSERT INTO Orders (Customer, NumOrder, ItemsCode, State) VALUE('" + name + "','" + NumOrder + "','" + ItemsCode + "','" + state + "');";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            Console.WriteLine("Connection closed");
+        }
+
     }
 }
