@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using StockDB;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Kitbox.Order;
 
 namespace Kitbox.GUI
 {
@@ -39,24 +40,54 @@ namespace Kitbox.GUI
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (pepCombobox1.SelectedIndex == 0)
+            {
+                showError("Please choose a searching method");
+            }
+        }
+
+        private void showError(String message)
+        {
+            MessageBox.Show(message, "Error !");
+        }
+
+        /// <summary>
+        /// Add Nodes in the treeview
+        /// </summary>
+        /// <param name="value"></param>
+        public void addItems(List<String> value)
+        {
+            //pepTreeView1.Nodes.Add(value);
+            //pepTreeView1.Nodes[0].Tag = "Send";
+            foreach (String item in value)
+            {
+                Console.WriteLine(item);
+                createOrder(item);
+            }
 
         }
 
-        public void addItem(String value)
+        private Order.StoreKeeperOrder createOrder(String item)
         {
-            pepTreeView1.Nodes.Add(value);
-            pepTreeView1.Nodes[0].Tag = "Send";
+            return new Order.StoreKeeperOrder(item);
         }
 
-        private void pepButton1_Click(object sender, EventArgs e)
+        public void removeItem(String text)
         {
+
+        }
+
+
+        private void getOrder()
+        {
+            Cursor.Current = Cursors.WaitCursor;
             DataBase.Open();
-            addItem("201450".ToString());
 
             List<String> resp = new List<string>();
 
-            if (pepCombobox1.GetItemText(pepCombobox1.SelectedItem) == "Order number"){
-                
+            if (pepCombobox1.GetItemText(pepCombobox1.SelectedItem) == "Order number")
+            {
+
                 MySqlDataReader reader = StockDB.StockMethod.SearchOrderByNum(pepTextbox1.Text, DataBase);
 
                 while (reader.Read())
@@ -71,21 +102,56 @@ namespace Kitbox.GUI
 
                 while (reader.Read())
                 {
-                    resp.Add(reader["Order"].ToString());
+                    resp.Add(reader["ItemsCode"].ToString());
                 }
             }
 
-            foreach(String item in resp)
+            DataBase.Close();
+
+            if (resp.Count == 0)
             {
-                Console.WriteLine(item);
-                Dictionary<String, Object> a = JsonConvert.DeserializeObject<Dictionary<String, Object>>(item);
-                List<string> keyList = new List<string>(a.Keys);
-                Console.WriteLine(keyList[0]);
+                showError(String.Format("Error, no value found for \"{0}\"", pepTextbox1.Text));
+            }
+            else
+            {
+                addItems(resp);
             }
 
-            splitContainer1.Panel2.Controls.Add(ViewComponentSearch);
-            ViewComponentSearch.BringToFront();
-            DataBase.Close();
+            Cursor.Current = Cursors.Default;
+
+        }
+
+        private void pepButton1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(pepCombobox1.SelectedItem);
+            if (pepTextbox1.Text == "")
+            {
+                showError("Please enter an order number or a customer name");
+                return;
+            }
+            if (pepCombobox1.SelectedIndex == 0 || pepCombobox1.SelectedItem == null)
+            {
+                showError("Please choose a searching method");
+                return;
+            }
+            else
+            {
+                getOrder();
+            }
+            
+            //splitContainer1.Panel2.Controls.Add(ViewComponentSearch);
+            //ViewComponentSearch.BringToFront();
+            
+        }
+
+        private Order.Order buildOrder()
+        {
+            return null;
+        }
+
+        private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            Console.WriteLine(e.Node.Text);
         }
     }
 }
