@@ -36,6 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="KitboxEcamGUI">
       <HintPath>.\KitboxEcamGUI.dll</HintPath>
     </Reference>
@@ -117,6 +120,7 @@
     </Compile>
     <Compile Include="Order\Box.cs" />
     <Compile Include="Order\ChoosePart.cs" />
+    <Compile Include="Order\bill.cs" />
     <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
     <Compile Include="Program.cs" />
