@@ -11,10 +11,10 @@ namespace Kitbox.Order
     public class Box
     {
         public int Uid { get; set; }
-        private readonly Door Door;
-        private readonly Slider Slider;
-        private readonly List<Panel> Panels;
-        private readonly List<Traverses> Traverses;
+        public readonly Door Door;
+        public readonly Slider Slider;
+        public readonly List<Panel> Panels;
+        public readonly List<Traverses> Traverses;
         private readonly int Height;
         private readonly int Width;
         private readonly int Depth;

@@ -47,15 +47,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pepProgressBar2 = new KitboxEcamGUI.PepProgressBar();
             this.label8 = new System.Windows.Forms.Label();
-            this.pepCombobox1 = new KitboxEcamGUI.PepCombobox();
-            this.pepCombobox2 = new KitboxEcamGUI.PepCombobox();
             this.label9 = new System.Windows.Forms.Label();
             this.pepCombobox3 = new KitboxEcamGUI.PepCombobox();
             this.label10 = new System.Windows.Forms.Label();
             this.pepCombobox4 = new KitboxEcamGUI.PepCombobox();
-            this.label11 = new System.Windows.Forms.Label();
             this.pepCombobox5 = new KitboxEcamGUI.PepCombobox();
-            this.label12 = new System.Windows.Forms.Label();
             this.pepButton1 = new KitboxEcamGUI.PepButton();
             this.pepGroupBox3 = new KitboxEcamGUI.PepGroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -63,8 +59,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
@@ -79,8 +73,6 @@
             this.pepGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -125,7 +117,7 @@
             this.pepRichTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pepRichTextBox1.Name = "pepRichTextBox1";
             this.pepRichTextBox1.ReadOnly = false;
-            this.pepRichTextBox1.Size = new System.Drawing.Size(370, 432);
+            this.pepRichTextBox1.Size = new System.Drawing.Size(372, 432);
             this.pepRichTextBox1.TabIndex = 3;
             this.pepRichTextBox1.WordWrap = true;
             // 
@@ -247,7 +239,7 @@
             this.pepGroupBox1.Controls.Add(this.label6);
             this.pepGroupBox1.Location = new System.Drawing.Point(10, 3);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(375, 55);
+            this.pepGroupBox1.Size = new System.Drawing.Size(377, 55);
             this.pepGroupBox1.TabIndex = 7;
             this.pepGroupBox1.TabStop = false;
             // 
@@ -257,7 +249,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(22)))));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(19, 27);
+            this.label6.Location = new System.Drawing.Point(20, 27);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(336, 19);
@@ -297,13 +289,13 @@
             this.pepProgressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pepProgressBar2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepProgressBar2.Location = new System.Drawing.Point(6, 294);
+            this.pepProgressBar2.Location = new System.Drawing.Point(6, 210);
             this.pepProgressBar2.Maximum = 100;
             this.pepProgressBar2.Minimum = 0;
             this.pepProgressBar2.Name = "pepProgressBar2";
             this.pepProgressBar2.Size = new System.Drawing.Size(363, 24);
             this.pepProgressBar2.TabIndex = 9;
-            this.pepProgressBar2.Text = "Percentage change - 45%";
+            this.pepProgressBar2.Text = "Percentage change - 0%";
             this.pepProgressBar2.Value = 45;
             // 
             // label8
@@ -318,42 +310,6 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "Color panel :";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pepCombobox1
-            // 
-            this.pepCombobox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepCombobox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox1.FormattingEnabled = true;
-            this.pepCombobox1.ItemHeight = 20;
-            this.pepCombobox1.Items.AddRange(new object[] {
-            "Undefined"});
-            this.pepCombobox1.Location = new System.Drawing.Point(140, 256);
-            this.pepCombobox1.Name = "pepCombobox1";
-            this.pepCombobox1.Size = new System.Drawing.Size(229, 26);
-            this.pepCombobox1.TabIndex = 11;
-            this.pepCombobox1.Tag = "";
-            // 
-            // pepCombobox2
-            // 
-            this.pepCombobox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepCombobox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.pepCombobox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.pepCombobox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.pepCombobox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
-            this.pepCombobox2.FormattingEnabled = true;
-            this.pepCombobox2.ItemHeight = 20;
-            this.pepCombobox2.Items.AddRange(new object[] {
-            "Undefined"});
-            this.pepCombobox2.Location = new System.Drawing.Point(140, 211);
-            this.pepCombobox2.Name = "pepCombobox2";
-            this.pepCombobox2.Size = new System.Drawing.Size(229, 26);
-            this.pepCombobox2.TabIndex = 13;
-            this.pepCombobox2.Tag = "";
             // 
             // label9
             // 
@@ -418,19 +374,6 @@
             this.pepCombobox4.TabIndex = 17;
             this.pepCombobox4.Tag = "";
             // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label11.Location = new System.Drawing.Point(48, 212);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 25);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Width box :";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pepCombobox5
             // 
             this.pepCombobox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -449,26 +392,13 @@
             this.pepCombobox5.TabIndex = 19;
             this.pepCombobox5.Tag = "";
             // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(48, 257);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 25);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Depth box :";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // pepButton1
             // 
             this.pepButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pepButton1.Enabled = false;
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton1.Location = new System.Drawing.Point(190, 335);
+            this.pepButton1.Location = new System.Drawing.Point(190, 251);
             this.pepButton1.Name = "pepButton1";
             this.pepButton1.Size = new System.Drawing.Size(79, 24);
             this.pepButton1.TabIndex = 20;
@@ -554,27 +484,6 @@
             this.pictureBox5.TabIndex = 25;
             this.pictureBox5.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(9, 209);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox6.TabIndex = 26;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(9, 254);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -600,20 +509,14 @@
             this.splitContainer1.Panel1.Controls.Add(this.pepCombobox3);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.label11);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox7);
             this.splitContainer1.Panel1.Controls.Add(this.pepCombobox4);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox8);
-            this.splitContainer1.Panel1.Controls.Add(this.pepCombobox1);
-            this.splitContainer1.Panel1.Controls.Add(this.label12);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox4);
             this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox5);
             this.splitContainer1.Panel1.Controls.Add(this.pepProgressBar2);
-            this.splitContainer1.Panel1.Controls.Add(this.pepCombobox2);
             this.splitContainer1.Panel1.Controls.Add(this.pepCombobox5);
             this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox3);
             this.splitContainer1.Panel1MinSize = 380;
@@ -633,7 +536,7 @@
             this.pepButton2.Enabled = false;
             this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton2.Location = new System.Drawing.Point(105, 335);
+            this.pepButton2.Location = new System.Drawing.Point(105, 251);
             this.pepButton2.Name = "pepButton2";
             this.pepButton2.Size = new System.Drawing.Size(79, 24);
             this.pepButton2.TabIndex = 29;
@@ -664,8 +567,6 @@
             this.pepGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -695,15 +596,11 @@
         private System.Windows.Forms.Label label7;
         private KitboxEcamGUI.PepProgressBar pepProgressBar2;
         private System.Windows.Forms.Label label8;
-        private KitboxEcamGUI.PepCombobox pepCombobox1;
-        private KitboxEcamGUI.PepCombobox pepCombobox2;
         private System.Windows.Forms.Label label9;
         private KitboxEcamGUI.PepCombobox pepCombobox3;
         private System.Windows.Forms.Label label10;
         private KitboxEcamGUI.PepCombobox pepCombobox4;
-        private System.Windows.Forms.Label label11;
         private KitboxEcamGUI.PepCombobox pepCombobox5;
-        private System.Windows.Forms.Label label12;
         private KitboxEcamGUI.PepButton pepButton1;
         private KitboxEcamGUI.PepGroupBox pepGroupBox3;
         private System.Windows.Forms.Button button1;
@@ -711,8 +608,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private KitboxEcamGUI.PepButton pepButton2;

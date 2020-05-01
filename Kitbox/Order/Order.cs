@@ -14,7 +14,7 @@ namespace Kitbox.Order
 {
    public class Order
     {
-        private List<Cupboard> CupboardList;
+        private readonly List<Cupboard> CupboardList;
         
 
         public Order()
@@ -30,7 +30,6 @@ namespace Kitbox.Order
         }
 
        
-       
         public void RemoveAt(int uid)
         {
             foreach (Cupboard cupboard in CupboardList)
@@ -42,6 +41,82 @@ namespace Kitbox.Order
                 }
             }
         }
-     
+
+        public List<List<string>> MakeOrder()
+        {
+            List<List<string>> matrix = new List<List<string>>();
+            foreach (Cupboard cupboard in CupboardList)
+            {
+                PrepareOrder(cupboard,matrix);
+            }
+            return matrix;
+        }
+
+        private void PrepareOrder(Cupboard cupboard, List<List<string>> matrix)
+        {
+            if (AddQuantityToOrder(cupboard.CupboardAngle.Code, matrix) == false)
+            {
+                List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, "1" }; ;
+                matrix.Add(line);
+            }
+
+
+            foreach (Box box in cupboard.ListeBoxes)
+            {
+                if (AddQuantityToOrder(box.Door.Code, matrix) == false)
+                {
+                    List<string> line = new List<string>() { box.Door.Code, "Porte", box.Door.DimensionsToString, "1" }; ;
+                    matrix.Add(line);
+                }
+
+                if (AddQuantityToOrder(box.Slider.Code, matrix) == false)
+                {
+                    List<string> line = new List<string>() { box.Slider.Code, "Cornieres", box.Slider.DimensionsToString, "1" }; ;
+                    matrix.Add(line);
+                }
+
+                foreach (Traverses traverse in box.Traverses)
+                {
+                    if (AddQuantityToOrder(traverse.Code, matrix) == false)
+                    {
+                        List<string> line = new List<string>() { traverse.Code, traverse.Type, traverse.DimensionsToString, "1" }; ;
+                        matrix.Add(line);
+                    }
+                }
+
+                foreach (Kitbox.Components.Panel panel in box.Panels)
+                {
+                    if (AddQuantityToOrder(panel.Code, matrix) == false)
+                    {
+                        List<string> line = new List<string>() { panel.Code, panel.Type, "Panneau " + panel.DimensionsToString, "1" }; ;
+                        matrix.Add(line);
+                    }
+                }
+
+            }
+           
+        }
+
+
+
+
+
+
+
+        private bool AddQuantityToOrder(string code, List<List<string>> matrix) // Return index where order contains code (else -1)
+        {
+          
+            foreach (List<string> codeMatrix in matrix)
+            {
+                if (codeMatrix[0] == code) {
+                    codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + 1).ToString();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
     }
 }

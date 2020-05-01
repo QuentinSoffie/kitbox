@@ -11,9 +11,9 @@ namespace Kitbox.Database.Components
     {
         private readonly static List<Panel> panelList = new List<Panel>();
         #region Panel methods
-        public static void AddPanel(string color, string type, int height, int width, int depth, int availableStock, int minStock)
+        public static void AddPanel(string color, string type, int height, int width, int depth, int availableStock, int minStock,string code,string dimensionsToString)
         {
-            panelList.Add(new Panel(color, type, height, width, depth, availableStock, minStock));
+            panelList.Add(new Panel(color, type, height, width, depth, availableStock, minStock,code, dimensionsToString));
         }
 
         public static int CountPanel()

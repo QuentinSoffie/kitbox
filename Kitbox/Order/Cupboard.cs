@@ -10,8 +10,8 @@ namespace Kitbox.Order
 {
    public  class Cupboard
     {
-        public int Uid { get; set; } 
-        public List<Box> ListeBoxes { get; set; }
+        public int Uid { get; set; }
+        public readonly List<Box> ListeBoxes;
         public CupboardAngle CupboardAngle { get; set; }
         private readonly ViewCupboard View;
 
