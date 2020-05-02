@@ -17,5 +17,19 @@ namespace Kitbox.Components
         {
             return string.Format("\n----Traverses----\nHeight: {0}\nWidth: {1}\nDepth: {2}\nAvailableStock: {3}\nMinStock: {4}\nType: {5}", Height, Width, Depth, AvailableStock, MinStock, Type);
         }
+
+        public override int CountComponents()
+        {
+            if(Type == "Traverse Ar" || Type == "Traverse Av")
+            {
+                return 2;
+            }
+            else if (Type == "Traverse GD")
+            {
+                return 4;
+            }
+            return 0;
+         
+        }
     }
 }

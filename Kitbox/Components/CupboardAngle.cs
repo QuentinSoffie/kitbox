@@ -17,5 +17,10 @@ namespace Kitbox.Components
         {
             return string.Format("\n----CupboardAngle----\nColor: {0}Height: {1}\nWidth: {2}\nDepth: {3}\nAvailableStock: {4}\nMinStock: {5}\n", Color, Height, Width, Depth, AvailableStock, MinStock);
         }
+
+        public override int CountComponents()
+        {
+            return 4;
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Kitbox.PDF
     public class PDFUtils
     {
   
-        public static DataTable MakeBill(Kitbox.Order.Order order)
+        public static DataTable MakeBill(Kitbox.Order.Order order,Kitbox.Database.Json.Order orderDataBase)
         {
             DataTable bill = new DataTable();
 
@@ -27,7 +27,9 @@ namespace Kitbox.PDF
 
             foreach (List<string> item in order.MakeOrder())
             {
-                bill.Rows.Add(item);
+                bill.Rows.Add(item.ToArray());
+                orderDataBase.Code.Add(item[0]);
+                orderDataBase.Quantity.Add(Int32.Parse(item[3]));
             }
             return bill;
         }

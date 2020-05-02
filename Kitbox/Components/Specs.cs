@@ -36,7 +36,13 @@ namespace Kitbox.Components
         {
             return quantity + 1 < AvailableStock;
         }
-     
+
+        public virtual int CountComponents()
+        {
+            return 1;
+        }
+        
+
 
 
         public override string ToString()

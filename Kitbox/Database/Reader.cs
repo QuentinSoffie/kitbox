@@ -57,22 +57,22 @@ namespace Kitbox.Database
 
             conn.Open();
 
-            var panelBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, height, colorPanel, conn);
+            var panelBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur","Ref", width, height, colorPanel, "Panneau Ar", conn);
             panelBox.Add((Panel)ReaderData(panelBack, typeof(Panel)));
             panelBack.Close();
 
-            var panelSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", depth, height, colorPanel, conn);
+            var panelSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", "Ref", depth, height, colorPanel, "Panneau GD",  conn);
             panelBox.Add((Panel)ReaderData(panelSides, typeof(Panel)));
             panelSides.Close();
 
-            var panelHB = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Couleur", width, depth, colorPanel, conn);
+            var panelHB = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Couleur", "Ref", width, depth, colorPanel, "Panneau HB", conn);
             panelBox.Add((Panel)ReaderData(panelHB, typeof(Panel)));
             panelHB.Close();
 
 
             if (colorDoor != "I don't want a door")
             {
-                var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", width, height, colorDoor, conn);
+                var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", (Int32.Parse(width) / 2 + 2).ToString(), (height).ToString(), colorDoor,"Porte", conn);
                 doorBox = (Door)ReaderData(door, typeof(Door));
                 door.Close();
             }
@@ -81,19 +81,19 @@ namespace Kitbox.Database
                 doorBox = null;
             }
 
-            var slider = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "0", height, "", conn);
+            var slider = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", "0", height, "", "Tasseau", conn);
             sliderBox = (Slider)ReaderData(slider, typeof(Slider));
             slider.Close();
 
-            var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", width, "0", "Traverse Av", conn);
+            var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Av", "Traverse Av", conn);
             traverseBox.Add((Traverses)ReaderData(traverseFront, typeof(Traverses)));
             traverseFront.Close();
 
-            var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", width, "0", "Traverse Ar", conn);
+            var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Ar", "Traverse Ar", conn);
             traverseBox.Add((Traverses)ReaderData(traverseBack, typeof(Traverses)));
             traverseBack.Close();
 
-            var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", depth, "0", "Traverse GD", conn);
+            var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", depth, "0", "Traverse GD", "Traverse GD", conn);
             traverseBox.Add((Traverses)ReaderData(traverseSides, typeof(Traverses)));
             traverseSides.Close();
 
@@ -120,6 +120,7 @@ namespace Kitbox.Database
             if (type.Name == "Door")
             {
                 component.Read();
+                var test = component.GetString("Couleur");
                 Door door = new Door(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(door);
                 return door;

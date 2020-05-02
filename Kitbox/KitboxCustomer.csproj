@@ -74,6 +74,7 @@
     <Compile Include="Components\Traverses.cs" />
     <Compile Include="Database\Components\Doors.cs" />
     <Compile Include="Database\Components\Panels.cs" />
+    <Compile Include="Database\Json\Order.cs" />
     <Compile Include="Database\Reader.cs" />
     <Compile Include="GUI\About.cs">
       <SubType>Form</SubType>

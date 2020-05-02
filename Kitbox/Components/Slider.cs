@@ -15,5 +15,10 @@ namespace Kitbox.Components
         {
             return string.Format("\n----Slider----\nHeight: {0}\nWidth: {1}\nDepth: {2}\nAvailableStock: {3}\nMinStock: {4}\n", Height, Width, Depth, AvailableStock, MinStock);
         }
+
+        public override int CountComponents()
+        {
+            return 4;
+        }
     }
 }

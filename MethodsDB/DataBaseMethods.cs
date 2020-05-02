@@ -62,10 +62,10 @@ namespace DBMethods
 
         }
 
-        public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string value1, string value2, string value3, MySqlConnection conn)
+        public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string param4, string value1, string value2, string value3,string value4, MySqlConnection conn)
         {
 
-            string query = "SELECT * FROM " + table + " WHERE " + param1 + "= '" + value1 + "' AND " + param2 + "='" + value2 + "' AND " + param3 + "='" + value3 +"'";
+            string query = "SELECT * FROM " + table + " WHERE " + param1 + "= '" + value1 + "' AND " + param2 + "='" + value2 + "' AND " + param3 + "='" + value3 +"'" + "AND "  + param4 + " = '" + value4 +"'";
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;

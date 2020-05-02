@@ -34,10 +34,18 @@ namespace Kitbox.Order
         {
             foreach (Cupboard cupboard in CupboardList)
             {
-                if(cupboard.Uid == uid)
+                if (cupboard.Uid == uid)
                 {
                     CupboardList.Remove(cupboard);
                     break;
+                }
+                foreach (Box box in cupboard.ListeBoxes)
+                {
+                    if (box.Uid == uid)
+                    {
+                        cupboard.ListeBoxes.Remove(box);
+                        break;
+                    }
                 }
             }
         }
@@ -57,31 +65,30 @@ namespace Kitbox.Order
             int quantity = 0;
             foreach (Cupboard cupboard in CupboardList)
             {
-                if (!(cupboard.CupboardAngle is null))
-                {
-                    if (cupboard.CupboardAngle.Code == code)
+            
+                    if (!(cupboard.CupboardAngle is null) && cupboard.CupboardAngle.Code == code)
                     {
-                        quantity += 1;
+                        quantity += cupboard.CupboardAngle.CountComponents();
                     }
-                }
 
                 foreach (Box box in cupboard.ListeBoxes)
                 {
-                    if (box.Door.Code == code)
+                   
+                    if (!(box.Door is null) && box.Door.Code == code)
                     {
-                        quantity += 1;
+                        quantity += box.Door.CountComponents();
                     }
 
                     if (box.Slider.Code == code)
                     {
-                        quantity += 1;
+                        quantity += box.Slider.CountComponents();
                     }
 
                     foreach (Traverses traverse in box.Traverses)
                     {
                         if (traverse.Code == code)
                         {
-                            quantity += 1;
+                            quantity += traverse.CountComponents();
                         }
                     }
 
@@ -89,7 +96,7 @@ namespace Kitbox.Order
                     {
                         if (panel.Code == code)
                         {
-                            quantity += 1;
+                            quantity += panel.CountComponents();
                         }
                     }
 
@@ -100,27 +107,24 @@ namespace Kitbox.Order
 
         private void PrepareOrder(Cupboard cupboard, List<List<string>> matrix)
         {
-            if (!(cupboard.CupboardAngle is null))
-            {
-                if (AddQuantityToOrder(cupboard.CupboardAngle.Code, matrix) == false)
-                {
-                    List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, "1" }; ;
-                    matrix.Add(line);
-                }
-            }
 
+            if (!(cupboard.CupboardAngle is null) && AddQuantityToOrder(cupboard.CupboardAngle.Code, matrix) == false)
+            {
+                List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, cupboard.CupboardAngle.CountComponents().ToString() }; ;
+                matrix.Add(line);
+            }
 
             foreach (Box box in cupboard.ListeBoxes)
             {
-                if (AddQuantityToOrder(box.Door.Code, matrix) == false)
+                if (!(box.Door is null) && AddQuantityToOrder(box.Door.Code, matrix) == false)
                 {
-                    List<string> line = new List<string>() { box.Door.Code, "Porte", box.Door.DimensionsToString, "1" }; ;
+                    List<string> line = new List<string>() { box.Door.Code, "Porte", box.Door.DimensionsToString, box.Door.CountComponents().ToString() }; ;
                     matrix.Add(line);
                 }
 
                 if (AddQuantityToOrder(box.Slider.Code, matrix) == false)
                 {
-                    List<string> line = new List<string>() { box.Slider.Code, "Cornieres", box.Slider.DimensionsToString, "1" }; ;
+                    List<string> line = new List<string>() { box.Slider.Code, "Tasseau", box.Slider.DimensionsToString, box.Slider.CountComponents().ToString() }; ;
                     matrix.Add(line);
                 }
 
@@ -128,7 +132,7 @@ namespace Kitbox.Order
                 {
                     if (AddQuantityToOrder(traverse.Code, matrix) == false)
                     {
-                        List<string> line = new List<string>() { traverse.Code, traverse.Type, traverse.DimensionsToString, "1" }; ;
+                        List<string> line = new List<string>() { traverse.Code, traverse.Type, traverse.DimensionsToString, traverse.CountComponents().ToString() }; ;
                         matrix.Add(line);
                     }
                 }
@@ -137,7 +141,7 @@ namespace Kitbox.Order
                 {
                     if (AddQuantityToOrder(panel.Code, matrix) == false)
                     {
-                        List<string> line = new List<string>() { panel.Code, panel.Type, panel.DimensionsToString, "1" }; ;
+                        List<string> line = new List<string>() { panel.Code, "Panneau " + panel.Type, panel.DimensionsToString, panel.CountComponents().ToString() }; ;
                         matrix.Add(line);
                     }
                 }

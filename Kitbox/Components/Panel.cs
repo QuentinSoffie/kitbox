@@ -19,5 +19,19 @@ namespace Kitbox.Components
         {
             return string.Format("\n----Panel----\nColor: {0}Height: {1}\nWidth: {2}\nDepth: {3}\nAvailableStock: {4}\nMinStock: {5}\nType: {6}", Color, Height, Width, Depth, AvailableStock, MinStock, Type) ;
         }
+
+        public override int CountComponents()
+        {
+            if (Type == "Ar" )
+            {
+                return 1;
+            }
+            else if (Type == "GD" || Type == "HB")
+            {
+                return 2;
+            }
+            return 0;
+
+        }
     }
 }

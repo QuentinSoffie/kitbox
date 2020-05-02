@@ -14,6 +14,7 @@ using Kitbox.Order;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace GUI
 {
@@ -74,8 +75,27 @@ namespace GUI
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
+            exportPDF();
 		}
+
+        public void exportPDF()
+        {
+            try
+            {
+                Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
+                DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
+                string orderJsonString = JsonConvert.SerializeObject(orderJson);
+
+
+                Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture client");
+                System.Diagnostics.Process.Start(@"bill.pdf");
+                this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message");
+            }
+        }
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -84,23 +104,6 @@ namespace GUI
 
 		}
 
-	
-
-		private void button3_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				Console.WriteLine("Bouton cliqué");
-				DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder);
-                Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture client");
-				System.Diagnostics.Process.Start(@"bill.pdf");
-				this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.Message, "Error Message");
-			}
-		}
 	
 	}
 }

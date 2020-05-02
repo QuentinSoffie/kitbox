@@ -150,12 +150,12 @@ namespace Kitbox.GUI
             List<Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
             foreach (Specs component in components)
             {
-                Console.WriteLine(component.GetType().Name);
-                if (component.IsInStock(OurOrder.GetQuantityCode(component.Code) + 1) == false)
+                if (!(component is null) && component.IsInStock(OurOrder.GetQuantityCode(component.Code) + component.CountComponents()) == false  )
                 {
                     return component;
                 }
             }
+
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
@@ -170,6 +170,7 @@ namespace Kitbox.GUI
             Console.WriteLine(uid);
             MainTreeview.Nodes[ReturnIndexTreeview(uid)[0]].Nodes.RemoveAt(ReturnIndexTreeview(uid)[1]);
             RemoveView(uid);
+            OurOrder.RemoveAt(uid);
         }
     }
 }
