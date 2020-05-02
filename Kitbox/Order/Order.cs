@@ -52,12 +52,61 @@ namespace Kitbox.Order
             return matrix;
         }
 
+        public int GetQuantityCode(string code)
+        {
+            int quantity = 0;
+            foreach (Cupboard cupboard in CupboardList)
+            {
+                if (!(cupboard.CupboardAngle is null))
+                {
+                    if (cupboard.CupboardAngle.Code == code)
+                    {
+                        quantity += 1;
+                    }
+                }
+
+                foreach (Box box in cupboard.ListeBoxes)
+                {
+                    if (box.Door.Code == code)
+                    {
+                        quantity += 1;
+                    }
+
+                    if (box.Slider.Code == code)
+                    {
+                        quantity += 1;
+                    }
+
+                    foreach (Traverses traverse in box.Traverses)
+                    {
+                        if (traverse.Code == code)
+                        {
+                            quantity += 1;
+                        }
+                    }
+
+                    foreach (Kitbox.Components.Panel panel in box.Panels)
+                    {
+                        if (panel.Code == code)
+                        {
+                            quantity += 1;
+                        }
+                    }
+
+                }
+            }
+            return quantity;
+        }
+
         private void PrepareOrder(Cupboard cupboard, List<List<string>> matrix)
         {
-            if (AddQuantityToOrder(cupboard.CupboardAngle.Code, matrix) == false)
+            if (!(cupboard.CupboardAngle is null))
             {
-                List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, "1" }; ;
-                matrix.Add(line);
+                if (AddQuantityToOrder(cupboard.CupboardAngle.Code, matrix) == false)
+                {
+                    List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, "1" }; ;
+                    matrix.Add(line);
+                }
             }
 
 
@@ -88,7 +137,7 @@ namespace Kitbox.Order
                 {
                     if (AddQuantityToOrder(panel.Code, matrix) == false)
                     {
-                        List<string> line = new List<string>() { panel.Code, panel.Type, "Panneau " + panel.DimensionsToString, "1" }; ;
+                        List<string> line = new List<string>() { panel.Code, panel.Type, panel.DimensionsToString, "1" }; ;
                         matrix.Add(line);
                     }
                 }

@@ -14,7 +14,7 @@ namespace Kitbox.PDF
     public class PDFUtils
     {
   
-        public static DataTable MakeDataTable(Kitbox.Order.Order order)
+        public static DataTable MakeBill(Kitbox.Order.Order order)
         {
             DataTable bill = new DataTable();
 
@@ -29,7 +29,6 @@ namespace Kitbox.PDF
             {
                 bill.Rows.Add(item);
             }
-          
             return bill;
         }
      

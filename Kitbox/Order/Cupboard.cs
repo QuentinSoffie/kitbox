@@ -19,7 +19,6 @@ namespace Kitbox.Order
         {
             this.Uid = uid;
             ListeBoxes = new List<Box>();
-           
         }
 
         public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, TreeviewManager viewManager)

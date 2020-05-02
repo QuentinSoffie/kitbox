@@ -91,7 +91,7 @@ namespace GUI
 			try
 			{
 				Console.WriteLine("Bouton cliqué");
-				DataTable dtbl = Kitbox.PDF.PDFUtils.MakeDataTable(OurOrder);
+				DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder);
                 Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture client");
 				System.Diagnostics.Process.Start(@"bill.pdf");
 				this.WindowState = System.Windows.Forms.FormWindowState.Minimized;

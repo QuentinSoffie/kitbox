@@ -32,6 +32,10 @@ namespace Kitbox.Components
             Console.WriteLine(string.Format("Height: {0}, Width: {1}, Depth: {2}", Height, Width, Depth));
         }
 
+        public bool IsInStock(int quantity)
+        {
+            return quantity + 1 < AvailableStock;
+        }
      
 
 

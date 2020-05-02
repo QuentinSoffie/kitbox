@@ -70,9 +70,11 @@ namespace Kitbox.GUI
                 string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
-
-                MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
-
+                Specs result = MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                if (!(result is null))
+                {
+                    AddChat($"We are very sorry, your {result.GetType().Name }({result.Code}) is no longer available. Please select an another one.",Color.Red);
+                }
                 RefreshView();
             }
             else

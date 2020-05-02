@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Kitbox.Order;
 using MySql.Data.MySqlClient;
 using Kitbox.Database;
+using Panel = Kitbox.Components.Panel;
 
 namespace Kitbox.GUI
 {
@@ -143,16 +144,25 @@ namespace Kitbox.GUI
             RemoveView(uid);
 
         }
-        public void AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed")
+        public Specs AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed")
         {
             UidTreeview += 1;
+            List<Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+            foreach (Specs component in components)
+            {
+                Console.WriteLine(component.GetType().Name);
+                if (component.IsInStock(OurOrder.GetQuantityCode(component.Code) + 1) == false)
+                {
+                    return component;
+                }
+            }
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
-            List<object> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+          
 
-            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], (List<Components.Panel>)components[2], (List<Components.Traverses>)components[3], this);
-
+            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], new List<Panel>() { (Panel)components[2], (Panel)components[3], (Panel)components[4]}, new List<Traverses>() { (Traverses)components[5], (Traverses)components[6], (Traverses)components[7] }, this);
+            return null;
         }
 
         public void RemoveBox(int uid)
