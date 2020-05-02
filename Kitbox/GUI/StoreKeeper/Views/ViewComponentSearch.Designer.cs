@@ -1,4 +1,4 @@
-﻿namespace Kitbox.GUI.Views
+﻿namespace Kitbox.GUI.StoreKeeper.Views
 {
     partial class ViewComponentSearch
     {
@@ -78,7 +78,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.splitContainer1.Size = new System.Drawing.Size(914, 481);
             this.splitContainer1.SplitterDistance = 304;
             this.splitContainer1.SplitterWidth = 11;
@@ -105,7 +105,7 @@
             // 
             this.pepGroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pepGroupBox1.Controls.Add(this.label1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(85, -4);
+            this.pepGroupBox1.Location = new System.Drawing.Point(85, -7);
             this.pepGroupBox1.Name = "pepGroupBox1";
             this.pepGroupBox1.Size = new System.Drawing.Size(790, 71);
             this.pepGroupBox1.TabIndex = 0;
@@ -134,7 +134,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "ViewComponentSearch";
             this.Size = new System.Drawing.Size(961, 561);
-            this.Load += new System.EventHandler(this.ViewComponentSearch_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);

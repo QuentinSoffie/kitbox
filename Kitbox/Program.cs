@@ -13,6 +13,7 @@ using Newtonsoft.Json.Linq;
 using MySql.Data.MySqlClient;
 using DBMethods;
 using Kitbox.GUI;
+using Kitbox.GUI.StoreKeeper;
 
 namespace Kitbox
 {

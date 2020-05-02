@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.Order;
 
-namespace Kitbox.GUI.Views
+namespace Kitbox.GUI.StoreKeeper.Views
 {
+    /// <summary>
+    /// This is the order view, that shows the order details
+    /// </summary>
     public partial class ViewComponentSearch : UserControl
     {
         StoreKeeperOrder order;
+        /// <summary>
+        /// This is the constructor of the order view. It takes one required argument.
+        /// </summary>
+        /// <param name="order"></param>
         public ViewComponentSearch(StoreKeeperOrder order)
         {
             this.Dock = DockStyle.Fill;
@@ -22,20 +29,23 @@ namespace Kitbox.GUI.Views
             AddChat(string.Format("Loading order n° {0} ...", this.order.OrderNumber), Color.Yellow);
             label1.Text = order.Name;
             AddChat("Loading components ...", Color.Yellow);
-            loadComponents();
+            LoadComponents();
             AddChat("Done", Color.Green);
         }
 
-        private void ViewComponentSearch_Load(object sender, EventArgs e)
+        /// <summary>
+        /// This loads all the informations about the order
+        /// </summary>
+        private void LoadComponents()
         {
-            
+            //TODO: Load the order details   
         }
 
-        private void loadComponents()
-        {
-
-        }
-
+        /// <summary>
+        /// Add console text in the console in the view
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="color"></param>
         private void AddChat(string message, Color color)
         {
             string hours = DateTime.Now.ToString("[HH:mm:ss] ");
