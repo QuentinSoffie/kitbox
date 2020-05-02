@@ -137,8 +137,12 @@ namespace Kitbox.GUI
             return new int[] { -1, -1 };
         }
 
-        public void RemoveCupboard(int uid)
+        public void RemoveCupboard(int uid, Cupboard cupboard)
         {
+            foreach (Box box in cupboard.ListeBoxes)
+            {
+                RemoveView(box.Uid);
+            }
             OurOrder.RemoveAt(uid);
             MainTreeview.Nodes.RemoveAt(ReturnIndexTreeview(uid)[0]);
             RemoveView(uid);

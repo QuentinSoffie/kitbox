@@ -233,7 +233,7 @@ namespace Kitbox.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainTreeView.RemoveCupboard(Uid);
+            MainTreeView.RemoveCupboard(Uid,Cupboard);
         }
 
         private void label14_Click(object sender, EventArgs e)
