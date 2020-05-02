@@ -83,6 +83,7 @@ namespace Kitbox.GUI
             }
         }
 
+
         private void AddChat(string message, Color color)
         {
             string hours = DateTime.Now.ToString("[HH:mm:ss] ");
