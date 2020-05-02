@@ -31,7 +31,6 @@ namespace Kitbox.PDF
             }
           
             return bill;
-
         }
      
 

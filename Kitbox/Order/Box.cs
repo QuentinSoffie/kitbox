@@ -15,9 +15,9 @@ namespace Kitbox.Order
         public readonly Slider Slider;
         public readonly List<Panel> Panels;
         public readonly List<Traverses> Traverses;
-        private readonly int Height;
-        private readonly int Width;
-        private readonly int Depth;
+        public readonly int Height;
+        public readonly int Width;
+        public readonly int Depth;
 
 
         public Box(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses)

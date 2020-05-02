@@ -326,7 +326,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 16);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Color panel :";
+            this.label8.Text = "Panel color :";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Visible = false;
             // 
@@ -379,7 +379,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 25);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Color door :";
+            this.label9.Text = "Door color :";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.Visible = false;
             // 
@@ -415,7 +415,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 25);
             this.label10.TabIndex = 14;
-            this.label10.Text = "Height box :";
+            this.label10.Text = "Box height :";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label10.Visible = false;
             // 
@@ -449,7 +449,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(125, 25);
             this.label11.TabIndex = 16;
-            this.label11.Text = "Width cupboard :";
+            this.label11.Text = "Cupboard width  :";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pepCombobox5
@@ -482,7 +482,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 25);
             this.label12.TabIndex = 18;
-            this.label12.Text = "Depth cupboard :";
+            this.label12.Text = "Cupboard depth  :";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pepButton1
@@ -732,7 +732,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 25);
             this.label14.TabIndex = 30;
-            this.label14.Text = "Color angle :";
+            this.label14.Text = "Angle color :";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.Visible = false;
             this.label14.Click += new System.EventHandler(this.label14_Click);

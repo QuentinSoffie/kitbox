@@ -16,9 +16,7 @@ namespace Kitbox.GUI
     {
         private PepTreeView MainTreeview;
        
-        private Control.ControlCollection ViewCupboardList;
-
-        private Control.ControlCollection ViewBoxList;
+        private Control.ControlCollection ViewList;
 
         private int UidTreeview = 0;
 
@@ -29,7 +27,7 @@ namespace Kitbox.GUI
         public TreeviewManager(KitboxEcamGUI.PepTreeView mainTreeview, Control.ControlCollection viewCupboardList, Order.Order ourOrder, MySqlConnection database)
         {
             this.MainTreeview = mainTreeview;
-            this.ViewCupboardList = viewCupboardList;
+            this.ViewList = viewCupboardList;
             this.OurOrder = ourOrder;
             this.Database = database;
         }
@@ -38,21 +36,21 @@ namespace Kitbox.GUI
         {
             Kitbox.GUI.ViewCupboard view = new Kitbox.GUI.ViewCupboard(uid, cupboard, this);
             view.Dock = DockStyle.Fill;
-            ViewCupboardList.Add(view);
+            ViewList.Add(view);
             view.BringToFront();
         }
 
-        public void AddViewBox(int uid, Box box)
+        public void AddViewBox(int uidCupboard,int uid, Box box)
         {
-            ViewBox viewBox = new ViewBox(uid, box, this);
+            ViewBox viewBox = new ViewBox(uidCupboard, uid, box, this);
             viewBox.Dock = DockStyle.Fill;
-            ViewCupboardList.Add(viewBox);
+            ViewList.Add(viewBox);
             viewBox.BringToFront();
         }
 
         public void BringToFrontView(int uid)
         {
-            foreach (Object view in ViewCupboardList)
+            foreach (Object view in ViewList)
             {
                 if (view is Kitbox.GUI.ViewBox)
                 {
@@ -83,7 +81,7 @@ namespace Kitbox.GUI
 
         private void RemoveView(int uid)
         {
-            foreach (Object view in ViewCupboardList)
+            foreach (Object view in ViewList)
             {
                 if (view is Kitbox.GUI.ViewBox)
                 {
@@ -91,7 +89,7 @@ namespace Kitbox.GUI
 
                     if (viewType.Uid == uid)
                     {
-                        ViewCupboardList.Remove(viewType);
+                        ViewList.Remove(viewType);
                         break;
                     }
                 }
@@ -102,7 +100,7 @@ namespace Kitbox.GUI
 
                     if (viewType.Uid == uid)
                     {
-                        ViewCupboardList.Remove(viewType);
+                        ViewList.Remove(viewType);
                         break;
                     }
                 }
@@ -153,7 +151,7 @@ namespace Kitbox.GUI
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
             List<object> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
 
-            cupboard.AddBox(UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], (List<Components.Panel>)components[2], (List<Components.Traverses>)components[3], this);
+            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], (List<Components.Panel>)components[2], (List<Components.Traverses>)components[3], this);
 
         }
 
