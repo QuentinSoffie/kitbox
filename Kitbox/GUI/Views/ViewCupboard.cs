@@ -110,6 +110,14 @@ namespace Kitbox.GUI
                 }
             }
 
+            for (int i = 0; i < Kitbox.Database.Components.CupboardAngles.CountCupboardAngle(); i += 1)
+            {
+                if (pepCombobox6.Items.Contains(Kitbox.Database.Components.CupboardAngles.GetColorCupboardAngle(i)) == false)
+                {
+                    pepCombobox6.Items.Add(Kitbox.Database.Components.CupboardAngles.GetColorCupboardAngle(i));
+                }
+            }
+
 
             for (int i = 0; i < Kitbox.Database.Components.Panels.CountPanel(); i += 1)
             {
@@ -295,6 +303,16 @@ namespace Kitbox.GUI
         {
             pepProgressBar1.Text = string.Format("{0}/7", Cupboard.CountBox());
             RefreshProgressBar();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pepCombobox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MainTreeView.UpdateTag(Uid);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Kitbox.GUI
             this.Uid = uid;
             this.Box = box;
             this.MainTreeView = treeView;
-            this.UidCupboard = UidCupboard;
+            this.UidCupboard = uidCupboard;
             LoadGUI();
         }
         private void LoadGUI()
@@ -68,7 +68,7 @@ namespace Kitbox.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MainTreeView.RemoveBox(Uid);
+            MainTreeView.RemoveBox(Uid,UidCupboard);
         }
     }
 }

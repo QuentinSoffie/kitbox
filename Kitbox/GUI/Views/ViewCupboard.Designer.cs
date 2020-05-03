@@ -73,7 +73,8 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
-            this.pepButton4 = new KitboxEcamGUI.PepButton();
+            this.pepGroupBox5 = new KitboxEcamGUI.PepGroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -93,6 +94,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.pepGroupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -132,7 +134,7 @@
             this.RichTextBox_console.Margin = new System.Windows.Forms.Padding(2);
             this.RichTextBox_console.Name = "RichTextBox_console";
             this.RichTextBox_console.ReadOnly = false;
-            this.RichTextBox_console.Size = new System.Drawing.Size(363, 436);
+            this.RichTextBox_console.Size = new System.Drawing.Size(363, 376);
             this.RichTextBox_console.TabIndex = 3;
             this.RichTextBox_console.WordWrap = true;
             // 
@@ -574,9 +576,10 @@
             "Undefined"});
             this.pepCombobox6.Location = new System.Drawing.Point(143, 166);
             this.pepCombobox6.Name = "pepCombobox6";
-            this.pepCombobox6.Size = new System.Drawing.Size(152, 26);
+            this.pepCombobox6.Size = new System.Drawing.Size(225, 26);
             this.pepCombobox6.TabIndex = 23;
             this.pepCombobox6.Visible = false;
+            this.pepCombobox6.SelectedIndexChanged += new System.EventHandler(this.pepCombobox6_SelectedIndexChanged);
             // 
             // pictureBox4
             // 
@@ -671,11 +674,11 @@
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
             this.splitContainer1.Panel1.Controls.Add(this.pepCombobox2);
             this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.pepButton4);
             this.splitContainer1.Panel1MinSize = 380;
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.pepGroupBox5);
             this.splitContainer1.Panel2.Controls.Add(this.pepGroupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.RichTextBox_console);
             this.splitContainer1.Panel2MinSize = 380;
@@ -753,16 +756,37 @@
             this.pepButton2.Visible = false;
             this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
-            // pepButton4
+            // pepGroupBox5
             // 
-            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton4.Location = new System.Drawing.Point(315, 170);
-            this.pepButton4.Name = "pepButton4";
-            this.pepButton4.Size = new System.Drawing.Size(53, 23);
-            this.pepButton4.TabIndex = 32;
-            this.pepButton4.Text = "Checked";
-            this.pepButton4.UseVisualStyleBackColor = true;
+            this.pepGroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pepGroupBox5.Controls.Add(this.button2);
+            this.pepGroupBox5.Location = new System.Drawing.Point(10, 455);
+            this.pepGroupBox5.Name = "pepGroupBox5";
+            this.pepGroupBox5.Size = new System.Drawing.Size(359, 55);
+            this.pepGroupBox5.TabIndex = 22;
+            this.pepGroupBox5.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Lime;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(4, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(351, 34);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Check my cupboard";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ViewCupboard
             // 
@@ -797,6 +821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.pepGroupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -847,6 +872,7 @@
         private System.Windows.Forms.Label label14;
         private KitboxEcamGUI.PepButton pepButton3;
         private KitboxEcamGUI.PepProgressBar pepProgressBar3;
-        private KitboxEcamGUI.PepButton pepButton4;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox5;
+        private System.Windows.Forms.Button button2;
     }
 }

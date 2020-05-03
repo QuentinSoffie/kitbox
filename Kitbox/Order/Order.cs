@@ -15,7 +15,6 @@ namespace Kitbox.Order
    public class Order
     {
         private readonly List<Cupboard> CupboardList;
-        
 
         public Order()
         {

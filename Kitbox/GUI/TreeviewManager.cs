@@ -170,13 +170,19 @@ namespace Kitbox.GUI
             cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], new List<Panel>() { (Panel)components[2], (Panel)components[3], (Panel)components[4]}, new List<Traverses>() { (Traverses)components[5], (Traverses)components[6], (Traverses)components[7] }, (Cups)components[8], this);
             return null;
         }
-
-        public void RemoveBox(int uid)
+        public void UpdateTag(int uidCupboard)
+        {
+            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box";
+        }
+        public void RemoveBox(int uid,int uidCupboard)
         {
             Console.WriteLine(uid);
             MainTreeview.Nodes[ReturnIndexTreeview(uid)[0]].Nodes.RemoveAt(ReturnIndexTreeview(uid)[1]);
             RemoveView(uid);
             OurOrder.RemoveAt(uid);
+            UpdateTag(uidCupboard);
+            BringToFrontView(uidCupboard);
+        
         }
     }
 }
