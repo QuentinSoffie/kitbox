@@ -73,6 +73,7 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
+            this.pepButton4 = new KitboxEcamGUI.PepButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -573,7 +574,7 @@
             "Undefined"});
             this.pepCombobox6.Location = new System.Drawing.Point(143, 166);
             this.pepCombobox6.Name = "pepCombobox6";
-            this.pepCombobox6.Size = new System.Drawing.Size(225, 26);
+            this.pepCombobox6.Size = new System.Drawing.Size(152, 26);
             this.pepCombobox6.TabIndex = 23;
             this.pepCombobox6.Visible = false;
             // 
@@ -670,6 +671,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox6);
             this.splitContainer1.Panel1.Controls.Add(this.pepCombobox2);
             this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.pepButton4);
             this.splitContainer1.Panel1MinSize = 380;
             // 
             // splitContainer1.Panel2
@@ -750,6 +752,17 @@
             this.pepButton2.UseVisualStyleBackColor = true;
             this.pepButton2.Visible = false;
             this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
+            // 
+            // pepButton4
+            // 
+            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton4.Location = new System.Drawing.Point(315, 170);
+            this.pepButton4.Name = "pepButton4";
+            this.pepButton4.Size = new System.Drawing.Size(53, 23);
+            this.pepButton4.TabIndex = 32;
+            this.pepButton4.Text = "Checked";
+            this.pepButton4.UseVisualStyleBackColor = true;
             // 
             // ViewCupboard
             // 
@@ -834,5 +847,6 @@
         private System.Windows.Forms.Label label14;
         private KitboxEcamGUI.PepButton pepButton3;
         private KitboxEcamGUI.PepProgressBar pepProgressBar3;
+        private KitboxEcamGUI.PepButton pepButton4;
     }
 }

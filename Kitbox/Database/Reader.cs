@@ -19,10 +19,12 @@ namespace Kitbox.Database
             conn.Open();
             Components.Doors.ClearDoor();
             Components.Panels.ClearPanel();
+            Components.CupboardAngles.ClearCupboardAngle();
             SetDoorComponents("Porte", conn);
             SetPanelComponents("Panneau GD", conn);
             SetPanelComponents("Panneau Ar", conn);
             SetPanelComponents("Panneau HB", conn);
+            SetCupboardAnglesComponents("Cornieres", conn);
             conn.Close();
         }
         private static void SetDoorComponents(string value, MySqlConnection conn)
@@ -46,6 +48,20 @@ namespace Kitbox.Database
             }
             reader.Close();
         }
+
+
+        private static void SetCupboardAnglesComponents(string value, MySqlConnection conn)
+        {
+            var reader = DataBaseMethods.SqlSearch("Piece", "Ref", "'" + value + "'", conn);
+
+            while (reader.Read())
+            {
+                Kitbox.Database.Components.CupboardAngles.AddCupboardAngle(reader.GetString("Couleur"), reader.GetInt32("hauteur"), 0, 0, reader.GetInt32("Enstock"), reader.GetInt32("Stock minimum"), reader.GetString("Code"), reader.GetString("Dimensions(cm)"));
+            }
+            reader.Close();
+        }
+
+
         public static List<Specs> SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
         {
             Door doorBox;
@@ -114,7 +130,8 @@ namespace Kitbox.Database
             {
                 components.Add(traverseComponent);
             }
-            components.Add(cupsBox);
+
+            components.Add(doorBox != null && colorDoor != "Verre" ? cupsBox : null );
 
             return components;
 
@@ -152,7 +169,7 @@ namespace Kitbox.Database
                 Console.WriteLine(traverses);
                 return traverses;                 
             }
-            else if (type.Name == "Coupelles")
+            else if (type.Name == "Cups")
             {
                 component.Read();
                 Cups cups = new Cups(component.GetInt32("Enstock"), component.GetInt32("Stock minimum"),  component.GetString("Code"), component.GetString("Dimensions(cm)"));

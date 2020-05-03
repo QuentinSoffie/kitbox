@@ -73,6 +73,7 @@
     <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Specs.cs" />
     <Compile Include="Components\Traverses.cs" />
+    <Compile Include="Database\Components\CupboardAngles.cs" />
     <Compile Include="Database\Components\Doors.cs" />
     <Compile Include="Database\Components\Panels.cs" />
     <Compile Include="Database\Json\Order.cs" />

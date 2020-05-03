@@ -9,23 +9,23 @@ namespace Kitbox.Database.Components
 {
     public class Panels
     {
-        private readonly static List<Panel> panelList = new List<Panel>();
+        private readonly static List<Panel> PanelList = new List<Panel>();
         #region Panel methods
         public static void AddPanel(string color, string type, int height, int width, int depth, int availableStock, int minStock,string code,string dimensionsToString)
         {
-            panelList.Add(new Panel(color, type, height, width, depth, availableStock, minStock,code, dimensionsToString));
+            PanelList.Add(new Panel(color, type, height, width, depth, availableStock, minStock,code, dimensionsToString));
         }
 
         public static int CountPanel()
         {
-            return panelList.Count();
+            return PanelList.Count();
         }
 
         public static string GetColorPanel(int index, string type)
         {
-            if (panelList[index].Type == type)
+            if (PanelList[index].Type == type)
             {
-                return panelList[index].Color;
+                return PanelList[index].Color;
             }
             return "none";
 
@@ -33,9 +33,9 @@ namespace Kitbox.Database.Components
 
         public static int GetHeightPanel(int index, string type)
         {
-            if (panelList[index].Type == type)
+            if (PanelList[index].Type == type)
             {
-                return panelList[index].Height;
+                return PanelList[index].Height;
             }
             return -1;
 
@@ -43,9 +43,9 @@ namespace Kitbox.Database.Components
 
         public static int GetWidthPanel(int index, string type)
         {
-            if (panelList[index].Type == type)
+            if (PanelList[index].Type == type)
             {
-                return panelList[index].Width;
+                return PanelList[index].Width;
             }
             return -1;
 
@@ -53,20 +53,20 @@ namespace Kitbox.Database.Components
 
         public static int GetDepthPanel(int index, string type)
         {
-            if (panelList[index].Type == type)
+            if (PanelList[index].Type == type)
             {
-                return panelList[index].Depth;
+                return PanelList[index].Depth;
             }
             return -1;
         }
         public static string GetTypePanel(int index)
         {
-            return panelList[index].Type;
+            return PanelList[index].Type;
         }
 
         public static void ClearPanel()
         {
-            panelList.Clear();
+            PanelList.Clear();
         }
         #endregion
     }
