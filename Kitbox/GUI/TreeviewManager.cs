@@ -48,9 +48,10 @@ namespace Kitbox.GUI
             ViewList.Add(viewBox);
             viewBox.BringToFront();
         }
+       
 
-        public void BringToFrontView(int uid)
-        {
+            public void BringToFrontView(int uid)
+            {
             foreach (Object view in ViewList)
             {
                 if (view is Kitbox.GUI.ViewBox)
@@ -70,6 +71,7 @@ namespace Kitbox.GUI
 
                     if (viewType.Uid == uid)
                     {
+                        viewType.RefreshView();
                         viewType.BringToFront();
                         break;
                     }

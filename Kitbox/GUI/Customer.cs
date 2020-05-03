@@ -66,8 +66,7 @@ namespace GUI
 		}
 
 
-
-		private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			int uidClicked = int.Parse(e.Node.Name);
 			MainTreeview.BringToFrontView(uidClicked);

@@ -291,7 +291,7 @@ namespace Kitbox.GUI
         {
 
         }
-        private void RefreshView()
+        public void RefreshView()
         {
             pepProgressBar1.Text = string.Format("{0}/7", Cupboard.CountBox());
             RefreshProgressBar();
