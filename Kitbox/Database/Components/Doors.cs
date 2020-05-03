@@ -46,6 +46,7 @@ namespace Kitbox.Database.Components
         {
             DoorList.Clear();
         }
+
         #endregion
     }
 }
