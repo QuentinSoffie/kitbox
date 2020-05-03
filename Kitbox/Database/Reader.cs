@@ -52,6 +52,7 @@ namespace Kitbox.Database
             List<Panel> panelBox = new List<Panel>();
             List<Traverses> traverseBox = new List<Traverses>();
             Slider sliderBox;
+            Cups cupsBox;
 
             List<Specs> components = new List<Specs>();
 
@@ -97,6 +98,10 @@ namespace Kitbox.Database
             traverseBox.Add((Traverses)ReaderData(traverseSides, typeof(Traverses)));
             traverseSides.Close();
 
+            var cups = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", "0", "0", "Coupelles", "Coupelles", conn);
+            cupsBox = ((Cups)ReaderData(cups, typeof(Cups)));
+            cups.Close();
+
             conn.Close();
 
             components.Add(doorBox);
@@ -109,7 +114,8 @@ namespace Kitbox.Database
             {
                 components.Add(traverseComponent);
             }
-          
+            components.Add(cupsBox);
+
             return components;
 
 
@@ -119,8 +125,8 @@ namespace Kitbox.Database
         {
             if (type.Name == "Door")
             {
+
                 component.Read();
-                var test = component.GetString("Couleur");
                 Door door = new Door(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(door);
                 return door;
@@ -145,6 +151,13 @@ namespace Kitbox.Database
                 Traverses traverses = new Traverses(component.GetString("Ref"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(traverses);
                 return traverses;                 
+            }
+            else if (type.Name == "Coupelles")
+            {
+                component.Read();
+                Cups cups = new Cups(component.GetInt32("Enstock"), component.GetInt32("Stock minimum"),  component.GetString("Code"), component.GetString("Dimensions(cm)"));
+            
+                return cups;
             }
 
             return null;

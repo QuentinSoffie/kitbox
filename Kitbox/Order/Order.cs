@@ -79,6 +79,11 @@ namespace Kitbox.Order
                         quantity += box.Door.CountComponents();
                     }
 
+                    if (!(box.Cups is null) && box.Cups.Code == code)
+                    {
+                        quantity += box.Cups.CountComponents();
+                    }
+
                     if (box.Slider.Code == code)
                     {
                         quantity += box.Slider.CountComponents();
@@ -128,6 +133,12 @@ namespace Kitbox.Order
                     matrix.Add(line);
                 }
 
+                if (!(box.Cups is null) && AddQuantityToOrder(box.Cups.Code, matrix) == false)
+                {
+                    List<string> line = new List<string>() { box.Cups.Code, "Tasseau", box.Cups.DimensionsToString, box.Cups.CountComponents().ToString() }; ;
+                    matrix.Add(line);
+                }
+
                 foreach (Traverses traverse in box.Traverses)
                 {
                     if (AddQuantityToOrder(traverse.Code, matrix) == false)
@@ -149,11 +160,6 @@ namespace Kitbox.Order
             }
            
         }
-
-
-
-
-
 
 
         private bool AddQuantityToOrder(string code, List<List<string>> matrix) // Return index where order contains code (else -1)

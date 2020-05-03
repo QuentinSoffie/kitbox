@@ -12,6 +12,7 @@ namespace Kitbox.Order
     {
         public int Uid { get; set; }
         public readonly Door Door;
+        public readonly Cups Cups;
         public readonly Slider Slider;
         public readonly List<Panel> Panels;
         public readonly List<Traverses> Traverses;
@@ -20,13 +21,14 @@ namespace Kitbox.Order
         public readonly int Depth;
 
 
-        public Box(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses)
+        public Box(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses,Cups cups)
         {
             this.Uid = uid;
             this.Door = door;
             this.Slider = slider;
             this.Panels = panels;
             this.Traverses = traverses;
+            this.Cups = cups;
             this.Height = ComputeHeight();
             this.Width = ComputeWidth();
             this.Depth = ComputeDepth();

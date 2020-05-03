@@ -21,9 +21,9 @@ namespace Kitbox.Order
             ListeBoxes = new List<Box>();
         }
 
-        public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, TreeviewManager viewManager)
+        public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses,Cups cups, TreeviewManager viewManager)
         {
-            Box newBox = new Box(uid, door, slider, panels, traverses);
+            Box newBox = new Box(uid, door, slider, panels, traverses,cups);
             viewManager.AddViewBox(uidCupboard,uid, newBox);
             ListeBoxes.Add(newBox);
             return newBox;
