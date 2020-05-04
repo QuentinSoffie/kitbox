@@ -35,7 +35,6 @@
             this.addCupboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,6 +44,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
+            this.orderMyCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -71,7 +72,8 @@
             // fichierToolStripMenuItem
             // 
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addCupboardToolStripMenuItem});
+            this.addCupboardToolStripMenuItem,
+            this.orderMyCupboardsToolStripMenuItem});
             this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
@@ -80,9 +82,10 @@
             // 
             // addCupboardToolStripMenuItem
             // 
+            this.addCupboardToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addCupboardToolStripMenuItem.Image")));
             this.addCupboardToolStripMenuItem.Name = "addCupboardToolStripMenuItem";
-            this.addCupboardToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.addCupboardToolStripMenuItem.Text = "Add cupboard";
+            this.addCupboardToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.addCupboardToolStripMenuItem.Text = "Add a cupboard";
             // 
             // aboutToolStripMenuItem
             // 
@@ -97,24 +100,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // pepTreeView1
-            // 
-            this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pepTreeView1.Caption = false;
-            this.pepTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.pepTreeView1.ImageIndex = 0;
-            this.pepTreeView1.ImageList = this.imageList1;
-            this.pepTreeView1.ItemHeight = 40;
-            this.pepTreeView1.Location = new System.Drawing.Point(0, 0);
-            this.pepTreeView1.Name = "pepTreeView1";
-            this.pepTreeView1.Online = false;
-            this.pepTreeView1.SelectedImageIndex = 0;
-            this.pepTreeView1.Size = new System.Drawing.Size(599, 551);
-            this.pepTreeView1.TabIndex = 1;
-            this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
             // imageList1
             // 
@@ -240,6 +225,31 @@
             this.toolStripStatusLabel1.Text = "    Welcome Username";
             this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
+            // pepTreeView1
+            // 
+            this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pepTreeView1.Caption = false;
+            this.pepTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.pepTreeView1.ImageIndex = 0;
+            this.pepTreeView1.ImageList = this.imageList1;
+            this.pepTreeView1.ItemHeight = 40;
+            this.pepTreeView1.Location = new System.Drawing.Point(0, 0);
+            this.pepTreeView1.Name = "pepTreeView1";
+            this.pepTreeView1.Online = false;
+            this.pepTreeView1.SelectedImageIndex = 0;
+            this.pepTreeView1.Size = new System.Drawing.Size(599, 551);
+            this.pepTreeView1.TabIndex = 1;
+            this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
+            // 
+            // orderMyCupboardsToolStripMenuItem
+            // 
+            this.orderMyCupboardsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("orderMyCupboardsToolStripMenuItem.Image")));
+            this.orderMyCupboardsToolStripMenuItem.Name = "orderMyCupboardsToolStripMenuItem";
+            this.orderMyCupboardsToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.orderMyCupboardsToolStripMenuItem.Text = "Order my cupboards";
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,5 +299,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-	}
+        private System.Windows.Forms.ToolStripMenuItem orderMyCupboardsToolStripMenuItem;
+    }
 }

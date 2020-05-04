@@ -312,22 +312,30 @@ namespace Kitbox.GUI
 
         private void CheckCupboard()
         {
-            CupboardAngle cupboardAngle = GetGoodCupAngle();
-            if (cupboardAngle is null)
+            if(Cupboard.CountBox() > 0)
             {
-                AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
-                return;
-            }
-            if (MainTreeView.UpdateOrder(cupboardAngle))
-            {
-                Cupboard.CupboardAngle = cupboardAngle;
-                MainTreeView.UpdateTag(Uid, true);
-                AddChat("✓ Your cupboard is approved !", Color.White);
+                CupboardAngle cupboardAngle = GetGoodCupAngle();
+                if (cupboardAngle is null)
+                {
+                    AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
+                    return;
+                }
+                if (MainTreeView.UpdateOrder(cupboardAngle))
+                {
+                    Cupboard.CupboardAngle = cupboardAngle;
+                    MainTreeView.UpdateTag(Uid, true);
+                    AddChat("✓ Your cupboard is approved !", Color.White);
+                }
+                else
+                {
+                    AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                }
             }
             else
             {
-                AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                AddChat($"✗ We are very sorry, your Cupboard contains 0 box. Please make your box.", Color.Red);
             }
+           
             
            
         }
