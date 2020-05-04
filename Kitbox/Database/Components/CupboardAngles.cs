@@ -16,6 +16,11 @@ namespace Kitbox.Database.Components
             CupboardAngleList.Add(new CupboardAngle(color, height, width, depth, availableStock, minStock, code, dimensionsToString));
         }
 
+        public static List<CupboardAngle> SortCupboardAngle()
+        {
+            return CupboardAngleList.OrderBy(o => o.Height).ToList();
+        }
+
         public static int CountCupboardAngle()
         {
             return CupboardAngleList.Count();

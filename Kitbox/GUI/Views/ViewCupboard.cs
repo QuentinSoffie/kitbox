@@ -280,7 +280,7 @@ namespace Kitbox.GUI
         private void pepButton3_Click(object sender, EventArgs e)
         {
             ReduceGUI();
-            AddChat("Woh nice dimensions for your cupboard !", Color.Chartreuse);
+            AddChat("Woh nice dimensions for your cupboard !", Color.White);
             EnlargesGUI();
         }
 
@@ -307,7 +307,43 @@ namespace Kitbox.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            CheckCupboard();
+        }
 
+        private void CheckCupboard()
+        {
+            CupboardAngle cupboardAngle = GetGoodCupAngle();
+            if (cupboardAngle is null)
+            {
+                AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
+                return;
+            }
+            if (MainTreeView.UpdateOrder(cupboardAngle))
+            {
+                Cupboard.CupboardAngle = cupboardAngle;
+                MainTreeView.UpdateTag(Uid, true);
+                AddChat("✓ Your cupboard is approved !", Color.White);
+            }
+            else
+            {
+                AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+            }
+            
+           
+        }
+
+        private CupboardAngle GetGoodCupAngle()
+        {
+            int totalHeight = Cupboard.ListeBoxes.Sum(o => o.Height);
+            List<CupboardAngle> sortedList = Database.Components.CupboardAngles.SortCupboardAngle();
+            for (int i = 0; i < sortedList.Count; i += 1)
+            {
+                if (sortedList[i].Height > totalHeight)
+                {
+                    return sortedList[i];
+                }
+            }
+            return null;
         }
 
         private void pepCombobox6_SelectedIndexChanged(object sender, EventArgs e)

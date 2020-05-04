@@ -74,11 +74,22 @@ namespace GUI
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-            exportPDF();
+            if (MainTreeview.CheckIfAllCupboardIsVerified())
+            {
+                exportPDF();
+            }
+            else
+            {
+                CustomPopup obj = new CustomPopup("Please check each cupboard before confirming your order");
+                obj.Show(this);
+            }
+          
 		}
+      
 
         public void exportPDF()
         {
+
             try
             {
                 Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();

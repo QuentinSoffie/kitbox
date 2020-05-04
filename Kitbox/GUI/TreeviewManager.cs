@@ -170,10 +170,19 @@ namespace Kitbox.GUI
             cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], new List<Panel>() { (Panel)components[2], (Panel)components[3], (Panel)components[4]}, new List<Traverses>() { (Traverses)components[5], (Traverses)components[6], (Traverses)components[7] }, (Cups)components[8], this);
             return null;
         }
-        public void UpdateTag(int uidCupboard)
+        public void UpdateTag(int uidCupboard,bool certified = false)
         {
-            MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box";
+            if (certified == false)
+            {
+                MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box";
+            }
+            else
+            {
+                MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box ✓";
+            }
+            MainTreeview.Refresh();
         }
+
         public void RemoveBox(int uid,int uidCupboard)
         {
             Console.WriteLine(uid);
@@ -183,6 +192,28 @@ namespace Kitbox.GUI
             UpdateTag(uidCupboard);
             BringToFrontView(uidCupboard);
         
+        }
+
+
+        public bool UpdateOrder(CupboardAngle cupboardAngle)
+        {
+        if ((OurOrder.GetQuantityCode(cupboardAngle.Code) + cupboardAngle.CountComponents()) < cupboardAngle.AvailableStock + 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool CheckIfAllCupboardIsVerified()
+        {
+            int allIsChecked = 0;
+            for (int i = 0; i < MainTreeview.Nodes.Count; i++)
+            {
+                if (MainTreeview.Nodes[i].Tag.ToString().Contains("✓"))
+                {
+                    allIsChecked += 1;
+                }
+            }
+            return MainTreeview.Nodes.Count == allIsChecked;
         }
     }
 }

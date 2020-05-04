@@ -70,6 +70,8 @@ namespace Kitbox.Order
                         quantity += cupboard.CupboardAngle.CountComponents();
                     }
 
+
+
                 foreach (Box box in cupboard.ListeBoxes)
                 {
                    

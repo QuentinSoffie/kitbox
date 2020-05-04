@@ -13,6 +13,7 @@ namespace Kitbox.Order
         public int Uid { get; set; }
         public readonly List<Box> ListeBoxes;
         public CupboardAngle CupboardAngle { get; set; }
+       
 
         public Cupboard(int uid)
         {
