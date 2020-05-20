@@ -42,22 +42,38 @@ namespace StockDB
 			cmd.ExecuteNonQuery();
 		}
 
-		public static void Addqtty(int code, int stock, int qtty, MySqlConnection conn)
+		public static void Addqtty(int code,int qtty, MySqlConnection conn)
 		{
+			string query1 = "SELECT * FROM Piece" + " WHERE " + "Code ='" + code + "'";
+			MySqlDataReader reader = new MySqlCommand(query1, conn).ExecuteReader();
+			int stock = 0;
+			while (reader.Read())
+			{
+				stock = reader.GetInt32("stock");
+			}
+			reader.Close();
 			int newStock = qtty + stock;
 			conn.Open();
-			string query = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code +"'";
-			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+			string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code +"'";
+			MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
 			SDA.SelectCommand.ExecuteNonQuery();
 			conn.Close();
 		}
 
-		public static void Deleteqtty(int code, int stock, int qtty, MySqlConnection conn)
+		public static void Deleteqtty(int code, int qtty, MySqlConnection conn)
 		{
+			string query1 = "SELECT * FROM Piece" + " WHERE " + "Code ='" + code + "'";
+			MySqlDataReader reader = new MySqlCommand(query1, conn).ExecuteReader();
+			int stock = 0;
+			while(reader.Read())
+			{
+				stock = reader.GetInt32("stock");
+			}
+			reader.Close();
 			int newStock = stock - qtty;
 			conn.Open();
-			string query = "UPDATE Piece SET Enstock = '" + qtty + "' WHERE Code ='" + code + "'";
-			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+			string query2 = "UPDATE Piece SET Enstock = '" + qtty + "' WHERE Code ='" + code + "'";
+			MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
 			SDA.SelectCommand.ExecuteNonQuery();
 			conn.Close();
 		}
