@@ -31,7 +31,7 @@ namespace Kitbox
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Authentication());
 
-            MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeeper", "groupe2020");
+            MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
             Application.Run(new StoreKeeper(myDataBase, new Authentication(), "customer", "groupe2020"));
         }
 
