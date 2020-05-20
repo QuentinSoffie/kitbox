@@ -96,7 +96,7 @@ namespace GUI
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
                 string orderJsonString = JsonConvert.SerializeObject(orderJson);
 
-
+				
                 Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture client");
                 System.Diagnostics.Process.Start(@"bill.pdf");
                 this.WindowState = System.Windows.Forms.FormWindowState.Minimized;

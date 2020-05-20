@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DBMethods;
+using MySql.Data.MySqlClient;
 
 namespace Kitbox.PDF
 {
@@ -23,14 +24,46 @@ namespace Kitbox.PDF
             bill.Columns.Add("Pièce");
             bill.Columns.Add("Dimension");
             bill.Columns.Add("Quantité");
-
+            bill.Columns.Add("Prix unitaire");
+            bill.Columns.Add("Prix total");
 
             foreach (List<string> item in order.MakeOrder())
             {
+                float cost = 1;
+                string price = "";
+                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection("customer", "groupe2020");
+                conn.Open();
+
+                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
+                while (reader.Read())
+                {
+                    
+                    price = reader["Prix-Client"].ToString();
+                }
+                cost *= Int32.Parse(item[3]) * float.Parse(price);
+                reader.Close();
+                Console.WriteLine(price);
+                item.Add(price);
+                item.Add(cost.ToString());
+                Console.WriteLine(item[4]);
+
                 bill.Rows.Add(item.ToArray());
+
+                //Création du JSON
                 orderDataBase.Code.Add(item[0]);
                 orderDataBase.Quantity.Add(Int32.Parse(item[3]));
+                
+                
+                //List<string> prices = new List<string>();
+
+
+
+
             }
+                
+                
+
+            //}
             return bill;
         }
      
