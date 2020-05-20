@@ -21,7 +21,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         public MySqlConnection DataBase { get; set; }
         public new StoreKeeper Parent { get; set; }
-        public Dictionary<StoreKeeperOrder, ViewComponentSearch> OrderViewDictionary {get;set;}
+        public Dictionary<StoreKeeperOrder, ViewOrderSearch> OrderViewDictionary {get;set;}
         
         /// <summary>
         /// Constructor of the view, it takes 2 required arguments
@@ -31,7 +31,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         public SearchOrder(MySqlConnection database, StoreKeeper parent)
         {
             InitializeComponent();
-            OrderViewDictionary = new Dictionary<StoreKeeperOrder, ViewComponentSearch>();
+            OrderViewDictionary = new Dictionary<StoreKeeperOrder, ViewOrderSearch>();
             DataBase = database;
             Parent = parent;
             pepCombobox1.SelectedIndex = 0;
@@ -47,7 +47,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (Dictionary<String, Object> item in orders)
             {
                 StoreKeeperOrder newOrder = new StoreKeeperOrder(item);
-                ViewComponentSearch newView = new ViewComponentSearch(newOrder);
+                ViewOrderSearch newView = new ViewOrderSearch(newOrder, DataBase);
 
                 OrderViewDictionary.Add(newOrder, newView);
 
@@ -68,7 +68,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             pepTreeView1.Nodes.Clear();
             int i = 0;
 
-            foreach (KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in OrderViewDictionary)
+            foreach (KeyValuePair<StoreKeeperOrder, ViewOrderSearch> order in OrderViewDictionary)
             {
                 pepTreeView1.Nodes.Add(order.Key.Name);
                 pepTreeView1.Nodes[i].Tag = order.Key.State;
@@ -83,7 +83,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// <param name="node"></param>
         public void RemoveItem(TreeNode node)
         {
-            foreach (KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in OrderViewDictionary)
+            foreach (KeyValuePair<StoreKeeperOrder, ViewOrderSearch> order in OrderViewDictionary)
             {
                 if (order.Key.Name == node.Text)
                 {
@@ -109,15 +109,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
             if (pepCombobox1.GetItemText(pepCombobox1.SelectedItem) == "Order number")
             {
-
                 reader = StockDB.StockMethod.SearchOrderByNum(pepTextbox1.Text, DataBase);
-
+            }
+            else if (pepCombobox1.GetItemText(pepCombobox1.SelectedItem) == "Customer Id")
+            {
+                reader = StockDB.StockMethod.SearchOrderById(pepTextbox1.Text, DataBase);
             }
             else
             {
-
                 reader = StockDB.StockMethod.SearchOrderByName(pepTextbox1.Text, DataBase);
-
             }
 
             while (reader.Read())
@@ -125,6 +125,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 Dictionary<String, Object> order = new Dictionary<string, object>
                 {
                     { "OrderNumber", reader["NumOrder"].ToString() },
+                    { "IdClient", reader["IdClient"].ToString() },
                     { "Customer", reader["Customer"].ToString() },
                     { "Components", reader["ItemsCode"].ToString() },
                     { "State", reader["State"].ToString() }
@@ -132,6 +133,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
                 resp.Add(order);
             }
+
 
             DataBase.Close();
 
@@ -191,7 +193,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void pepTreeView1_AfterSelect_1(object sender, TreeViewEventArgs e)
         {
 
-            foreach (KeyValuePair<StoreKeeperOrder, ViewComponentSearch> order in OrderViewDictionary)
+            foreach (KeyValuePair<StoreKeeperOrder, ViewOrderSearch> order in OrderViewDictionary)
             {
                 if (order.Key.Name == e.Node.Text)
                 {
@@ -199,7 +201,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     order.Value.BringToFront();
                 }
             }
-
         }
 
         /// <summary>
