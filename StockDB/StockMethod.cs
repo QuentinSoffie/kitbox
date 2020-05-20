@@ -35,7 +35,7 @@ namespace StockDB
 		}
 		public static MySqlDataReader SearchOrderById(string id, MySqlConnection conn)
 		{
-			string query = "SELECT * FROM Orders" + " WHERE " + "NumOrder ='" + id + "'";
+			string query = "SELECT * FROM Orders" + " WHERE " + "IdClient ='" + id + "'";
 			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
 			return reader;
