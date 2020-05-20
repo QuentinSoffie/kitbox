@@ -33,6 +33,13 @@ namespace StockDB
 
 			return reader;
 		}
+		public static MySqlDataReader SearchOrderById(string id, MySqlConnection conn)
+		{
+			string query = "SELECT * FROM Orders" + " WHERE " + "NumOrder ='" + id + "'";
+			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+			return reader;
+		}
 
 		public static void AddPart(string reference, string code, int dimension, int height, int width, int depth, string color, int inStock, int minStock, int priceCustomer, int qttyPart, int priceFour1, int delayFour1, int priceFour2, int delayFour2,  MySqlConnection conn)
 		{
