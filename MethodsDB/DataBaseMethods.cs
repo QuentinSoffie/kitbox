@@ -72,6 +72,14 @@ namespace DBMethods
 
         }
 
+        public static MySqlDataReader SqlSearchCustomer( string name, MySqlConnection conn)
+        {
+            string query = "SELECT * FROM users WHERE firstname = '" + name + "'";
+            MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+            return reader;
+        }
+
         public static String sha256_hash(String value)
         {
             StringBuilder Sb = new StringBuilder();
