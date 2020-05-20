@@ -13,6 +13,7 @@ namespace Kitbox.Order
         public Dictionary<String, Object> Components { get; set; }
         public String State { get; set; }
         public String Customer { get; set; }
+        public String CustomerId { get; set; }
         public String OrderNumber { get; set; }
 
         public String Name { get; set; }
@@ -23,6 +24,7 @@ namespace Kitbox.Order
             OrderNumber = item["OrderNumber"].ToString();
             State = item["State"].ToString();
             Customer = item["Customer"].ToString();
+            CustomerId = item["IdClient"].ToString();
             Name = String.Format("Order number : {0}, Owner : {1}", OrderNumber, Customer);
 
             KeyList = new List<string>(Components.Keys);
@@ -38,9 +40,6 @@ namespace Kitbox.Order
             }
             return value;
         }
-
-
-
 
     }
 }

@@ -56,7 +56,7 @@
             this.pepGroupBox1.Controls.Add(this.pepCombobox1);
             this.pepGroupBox1.Controls.Add(this.pepTextbox1);
             this.pepGroupBox1.Controls.Add(this.label1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(101, -14);
+            this.pepGroupBox1.Location = new System.Drawing.Point(134, -12);
             this.pepGroupBox1.Name = "pepGroupBox1";
             this.pepGroupBox1.Size = new System.Drawing.Size(1017, 86);
             this.pepGroupBox1.TabIndex = 7;
@@ -86,7 +86,8 @@
             this.pepCombobox1.ItemHeight = 20;
             this.pepCombobox1.Items.AddRange(new object[] {
             "Order number",
-            "Customer"});
+            "Customer name",
+            "Customer Id"});
             this.pepCombobox1.Location = new System.Drawing.Point(172, 39);
             this.pepCombobox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pepCombobox1.Name = "pepCombobox1";
@@ -131,7 +132,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1267, 73);
+            this.panel1.Size = new System.Drawing.Size(1284, 73);
             this.panel1.TabIndex = 9;
             // 
             // splitContainer1
@@ -170,7 +171,7 @@
             this.panel2.Location = new System.Drawing.Point(-3, 491);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 66);
+            this.panel2.Size = new System.Drawing.Size(348, 66);
             this.panel2.TabIndex = 3;
             // 
             // button1
@@ -201,11 +202,11 @@
             this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pepTreeView1.Caption = false;
             this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.pepTreeView1.ItemHeight = 40;
+            this.pepTreeView1.ItemHeight = 50;
             this.pepTreeView1.Location = new System.Drawing.Point(-3, 0);
             this.pepTreeView1.Name = "pepTreeView1";
             this.pepTreeView1.Online = false;
-            this.pepTreeView1.Size = new System.Drawing.Size(331, 499);
+            this.pepTreeView1.Size = new System.Drawing.Size(335, 499);
             this.pepTreeView1.TabIndex = 0;
             this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect_1);
             // 
@@ -214,7 +215,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(477, 266);
+            this.pictureBox1.Location = new System.Drawing.Point(463, 266);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
