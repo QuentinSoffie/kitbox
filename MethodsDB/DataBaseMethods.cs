@@ -55,7 +55,7 @@ namespace DBMethods
         public static MySqlDataReader SqlSearch(string table, string param, string value, MySqlConnection conn)
         {
 
-            string query = "SELECT * FROM " + table + " WHERE '" + param + "'='" + value + "'";
+            string query = "SELECT * FROM " + table + " WHERE " + param + "=" + value;
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
