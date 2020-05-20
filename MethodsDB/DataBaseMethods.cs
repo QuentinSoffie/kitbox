@@ -72,9 +72,9 @@ namespace DBMethods
 
         }
 
-        public static MySqlDataReader SqlSearchCustomer( string name, MySqlConnection conn)
+        public static MySqlDataReader SqlSearchCustomer( string id, MySqlConnection conn)
         {
-            string query = "SELECT * FROM users WHERE firstname = '" + name + "'";
+            string query = "SELECT * FROM users WHERE id = '" + id +"'";
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
