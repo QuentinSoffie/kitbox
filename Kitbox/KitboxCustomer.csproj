@@ -174,8 +174,8 @@
     <Compile Include="Order\ChoosePart.cs" />
     <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
-    <Compile Include="Order\StoreKeeperOrder.cs" />
     <Compile Include="PDF\PDFUtils.cs" />
+    <Compile Include="Order\StoreKeeperOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\About.resx">
