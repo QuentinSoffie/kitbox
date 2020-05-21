@@ -27,7 +27,7 @@ namespace Kitbox.GUI.StoreKeeper
         public Authentication Authentification { get; set; }
         public Dictionary<string, UserControl> ViewDictionary { get; set; }
 
-        public SearchOrder searchOrderView { get; set; }
+        public SearchInfo searchOrderView { get; set; }
         public SearchComponent searchComponentView { get; set; }
 
         public CreateComponent createComponentView { get; set; }
@@ -61,7 +61,7 @@ namespace Kitbox.GUI.StoreKeeper
         /// </summary>
         public void LoadViews()
         {
-            searchOrderView = new SearchOrder(DataBase, this);
+            searchOrderView = new SearchInfo(DataBase, this);
             ViewDictionary.Add("SearchOrder", searchOrderView);
             searchOrderView.Dock = DockStyle.Fill;
             panel1.Controls.Add(searchOrderView);

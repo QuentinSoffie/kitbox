@@ -67,6 +67,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -130,9 +132,9 @@
             this.pepGroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pepGroupBox3.Controls.Add(this.pepTreeView1);
-            this.pepGroupBox3.Location = new System.Drawing.Point(37, 76);
+            this.pepGroupBox3.Location = new System.Drawing.Point(37, 62);
             this.pepGroupBox3.Name = "pepGroupBox3";
-            this.pepGroupBox3.Size = new System.Drawing.Size(391, 256);
+            this.pepGroupBox3.Size = new System.Drawing.Size(391, 270);
             this.pepGroupBox3.TabIndex = 12;
             this.pepGroupBox3.TabStop = false;
             this.pepGroupBox3.Text = "Components";
@@ -150,7 +152,7 @@
             this.pepTreeView1.Location = new System.Drawing.Point(3, 22);
             this.pepTreeView1.Name = "pepTreeView1";
             this.pepTreeView1.Online = false;
-            this.pepTreeView1.Size = new System.Drawing.Size(385, 231);
+            this.pepTreeView1.Size = new System.Drawing.Size(385, 245);
             this.pepTreeView1.TabIndex = 0;
             this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
@@ -180,6 +182,7 @@
             this.pepButton1.TabIndex = 12;
             this.pepButton1.Text = "Update customer";
             this.pepButton1.UseVisualStyleBackColor = true;
+            this.pepButton1.Click += new System.EventHandler(this.pepButton1_Click);
             // 
             // pepGroupBox1
             // 
@@ -375,14 +378,16 @@
             // 
             this.pepGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox2.Controls.Add(this.label28);
+            this.pepGroupBox2.Controls.Add(this.label27);
             this.pepGroupBox2.Controls.Add(this.label3);
             this.pepGroupBox2.Controls.Add(this.label7);
             this.pepGroupBox2.Controls.Add(this.label4);
             this.pepGroupBox2.Controls.Add(this.label6);
             this.pepGroupBox2.Controls.Add(this.label5);
-            this.pepGroupBox2.Location = new System.Drawing.Point(46, 76);
+            this.pepGroupBox2.Location = new System.Drawing.Point(46, 62);
             this.pepGroupBox2.Name = "pepGroupBox2";
-            this.pepGroupBox2.Size = new System.Drawing.Size(396, 116);
+            this.pepGroupBox2.Size = new System.Drawing.Size(396, 157);
             this.pepGroupBox2.TabIndex = 10;
             this.pepGroupBox2.TabStop = false;
             this.pepGroupBox2.Text = "Informations";
@@ -407,7 +412,8 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(202, 58);
+            this.label7.Location = new System.Drawing.Point(202, 64);
+            this.label7.MaximumSize = new System.Drawing.Size(150, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 18);
             this.label7.TabIndex = 9;
@@ -420,7 +426,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(16, 58);
+            this.label4.Location = new System.Drawing.Point(16, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 18);
             this.label4.TabIndex = 6;
@@ -433,7 +439,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(202, 38);
+            this.label6.Location = new System.Drawing.Point(202, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 18);
             this.label6.TabIndex = 8;
@@ -446,7 +452,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(16, 79);
+            this.label5.Location = new System.Drawing.Point(16, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 7;
@@ -623,6 +629,32 @@
             this.label26.Size = new System.Drawing.Size(0, 18);
             this.label26.TabIndex = 12;
             // 
+            // label27
+            // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label27.Location = new System.Drawing.Point(16, 124);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(100, 18);
+            this.label27.TabIndex = 10;
+            this.label27.Text = "Customer ID :";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Khaki;
+            this.label28.Location = new System.Drawing.Point(125, 124);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(56, 18);
+            this.label28.TabIndex = 11;
+            this.label28.Text = "254585";
+            // 
             // ViewInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -688,5 +720,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
     }
 }

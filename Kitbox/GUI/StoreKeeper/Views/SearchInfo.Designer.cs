@@ -1,6 +1,6 @@
 ﻿namespace Kitbox.GUI.StoreKeeper.Views
 {
-    partial class SearchOrder
+    partial class SearchInfo
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchOrder));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchInfo));
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
             this.pepButton1 = new KitboxEcamGUI.PepButton();
             this.pepCombobox1 = new KitboxEcamGUI.PepCombobox();

@@ -30,12 +30,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         List<Dictionary<string, object>> ListComponent;
 
+        new SearchInfo Parent;
+
         /// <summary>
         /// This is the constructor of the order view. It takes one required argument.
         /// </summary>
         /// <param name="order"></param>
-        public ViewInfo(StoreKeeperOrder order, MySqlConnection dataBase)
+        public ViewInfo(StoreKeeperOrder order, MySqlConnection dataBase, SearchInfo parent)
         {
+            this.Parent = parent;
             this.DataBase = dataBase;
             this.Dock = DockStyle.Fill;
             InitializeComponent();
@@ -70,13 +73,18 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label5.Text = Customer["Phone"].ToString();
             label6.Text = Customer["Email"].ToString();
             label7.Text = Customer["Address"].ToString();
+            label28.Text = Customer["IdClient"].ToString();
+            //TODO: Add customer number
         }
 
         private void SetOrder()
         {
+            int i = 0;
             foreach(KeyValuePair<String, object> component in Order.Components)
             {
                 pepTreeView1.Nodes.Add(component.Key);
+                pepTreeView1.Nodes[i].Tag = component.Value.ToString() + " item(s)";
+                i++;
             }
         }
 
@@ -130,8 +138,39 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 DataBase.Close();
                 ListComponent.Add(component);
             }
+        }
 
+        public void UpdateCustomer()
+        {
+            if (pepTextbox1.Text != "")
+            {
+                DBMethods.DataBaseMethods.SqlUpdateCustomer("surname", pepTextbox1.Text, int.Parse(Order.CustomerId), DataBase);
+                DBMethods.DataBaseMethods.SqlUpdateCustomerOrder("Customer", pepTextbox1.Text, int.Parse(Order.CustomerId), DataBase);
 
+            }
+            if (pepTextbox2.Text != "")
+            {
+                DBMethods.DataBaseMethods.SqlUpdateCustomer("firstname", pepTextbox2.Text, int.Parse(Order.CustomerId), DataBase);
+            }
+            if (pepTextbox3.Text != "")
+            {
+                DBMethods.DataBaseMethods.SqlUpdateCustomer("phone", pepTextbox3.Text, int.Parse(Order.CustomerId), DataBase);
+            }
+            if (pepTextbox4.Text != "")
+            {
+                DBMethods.DataBaseMethods.SqlUpdateCustomer("email", pepTextbox4.Text, int.Parse(Order.CustomerId), DataBase);
+            }
+            if (pepTextbox5.Text != "")
+            {
+                DBMethods.DataBaseMethods.SqlUpdateCustomer("address", pepTextbox5.Text, int.Parse(Order.CustomerId), DataBase);
+            }
+
+            Parent.ClearWindow();
+        }
+
+        private void pepButton1_Click(object sender, EventArgs e)
+        {
+            UpdateCustomer();
         }
     }
 }

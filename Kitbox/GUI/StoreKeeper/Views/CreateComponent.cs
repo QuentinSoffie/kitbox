@@ -96,9 +96,16 @@ namespace Kitbox.GUI.StoreKeeper.Views
             string priceFourn2 = textBox3.Text;
             int delivery2 = int.Parse(pepNumericUpDown7.Value.ToString());
 
-            Console.WriteLine(dimensions);
+            Console.WriteLine(initStock);
 
-            StockDB.StockMethod.AddComponent(reference, code, dimensions, height, width, depth, color, initStock, minStock, price, qttyPart, priceFourn1, deleivery1, priceFourn2, delivery2, DataBase);
+            if (code != "" && dimensions != "" && color != "" && initStock != 0 && minStock != 0 && price != "" && qttyPart != 0)
+            {
+                StockDB.StockMethod.AddComponent(reference, code, dimensions, height, width, depth, color, initStock, minStock, price, qttyPart, priceFourn1, deleivery1, priceFourn2, delivery2, DataBase);
+            }
+            else
+            {
+                MessageBox.Show("Please complete all the fields", "Error");
+            }
         }
 
     }

@@ -16,7 +16,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
     /// <summary>
     /// This is the view for searching order 
     /// </summary>
-    public partial class SearchOrder : UserControl
+    public partial class SearchInfo : UserControl
     {
 
         public MySqlConnection DataBase { get; set; }
@@ -28,7 +28,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// </summary>
         /// <param name="database"></param>
         /// <param name="parent"></param>
-        public SearchOrder(MySqlConnection database, StoreKeeper parent)
+        public SearchInfo(MySqlConnection database, StoreKeeper parent)
         {
             InitializeComponent();
             OrderViewDictionary = new Dictionary<StoreKeeperOrder, ViewInfo>();
@@ -47,7 +47,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (Dictionary<String, Object> item in orders)
             {
                 StoreKeeperOrder newOrder = new StoreKeeperOrder(item);
-                ViewInfo newView = new ViewInfo(newOrder, DataBase);
+                ViewInfo newView = new ViewInfo(newOrder, DataBase, this);
 
                 OrderViewDictionary.Add(newOrder, newView);
 
@@ -58,6 +58,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
             }
 
             ReloadTreeView();
+        }
+
+        public void ClearWindow()
+        {
+            OrderViewDictionary.Clear();
+            ReloadTreeView();
+            splitContainer1.Panel2.Controls.Clear();
         }
 
         /// <summary>
@@ -99,9 +106,10 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// <summary>
         /// Get order from db send to AddItems()
         /// </summary>
-        private void GetOrder()
+        public void GetOrder()
         {
             Cursor.Current = Cursors.WaitCursor;
+            OrderViewDictionary.Clear();
             DataBase.Open();
 
             MySqlDataReader reader;
@@ -157,8 +165,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// <param name="e"></param>
         private void pepButton1_Click_1(object sender, EventArgs e)
         {
-            OrderViewDictionary.Clear();
-
+            ClearWindow();
             if (pepTextbox1.Text == "")
             {
                 Parent.ShowError("Please enter an order number or a customer name");
