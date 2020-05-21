@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Kitbox.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +54,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StockDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StockDB\bin\Release\netstandard2.0\StockDB.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,12 +114,55 @@
     <Compile Include="GUI\Preview.Designer.cs">
       <DependentUpon>Preview.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\StoreKeeper\Models\StoreKeeperComponent.cs" />
+    <Compile Include="GUI\StoreKeeper\StoreKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\StoreKeeper.Designer.cs">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\CreateComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\CreateComponent.Designer.cs">
+      <DependentUpon>CreateComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchComponent.Designer.cs">
+      <DependentUpon>SearchComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchInfo.Designer.cs">
+      <DependentUpon>SearchInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.Designer.cs">
+      <DependentUpon>ViewComponentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.Designer.cs">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TreeviewManager.cs" />
     <Compile Include="GUI\Views\ViewBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Views\ViewBox.designer.cs">
       <DependentUpon>ViewBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewInfo.Designer.cs">
+      <DependentUpon>ViewInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Views\ViewCupboard.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +174,7 @@
     <Compile Include="Order\ChoosePart.cs" />
     <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\StoreKeeperOrder.cs" />
     <Compile Include="PDF\PDFUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,8 +193,29 @@
     <EmbeddedResource Include="GUI\Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\StoreKeeper.resx">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\CreateComponent.resx">
+      <DependentUpon>CreateComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchComponent.resx">
+      <DependentUpon>SearchComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchInfo.resx">
+      <DependentUpon>SearchInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewComponentSearch.resx">
+      <DependentUpon>ViewComponentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrder.resx">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewBox.resx">
       <DependentUpon>ViewBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewInfo.resx">
+      <DependentUpon>ViewInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
       <DependentUpon>ViewCupboard.cs</DependentUpon>
@@ -155,6 +225,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Langs\langEn.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -175,6 +246,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

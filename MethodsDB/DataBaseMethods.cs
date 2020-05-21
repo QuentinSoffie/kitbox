@@ -14,17 +14,15 @@ namespace DBMethods
 {
     public static class DataBaseMethods
     {
-        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, string username, string password)
+        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, MySqlConnection conn)
         {
-            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection(username,password);
             conn.Open();
-            password = sha256_hash(password);
-            string query = "INSERT INTO users (surname, firstname, address, email, phone, username, password) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "','" + username + "','" + password + "');";
+            string query = "INSERT INTO users (surname, firstname, address, email, phone,) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "');";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            Console.WriteLine("Connection closed");
+            Console.WriteLine("User addes");
         }
         public static void SqlAdd(string table, string paramage, string paramname, int valueAge, string valueNom, MySqlConnection conn)
         {
@@ -62,14 +60,38 @@ namespace DBMethods
 
         }
 
-        public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string param4, string value1, string value2, string value3,string value4, MySqlConnection conn)
+        public static void SqlUpdateCustomer(string param, string value, int id, MySqlConnection conn)
+        {
+            conn.Open();
+            string query = "UPDATE users SET " + param + " = '" + value + "' WHERE id ='" + id + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+        public static void SqlUpdateCustomerOrder(string param, string value, int id, MySqlConnection conn)
+        {
+            conn.Open();
+            string query = "UPDATE Orders SET " + param + " = '" + value + "' WHERE IdClient ='" + id + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+        public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string value1, string value2, string value3, MySqlConnection conn)
         {
 
-            string query = "SELECT * FROM " + table + " WHERE " + param1 + "= '" + value1 + "' AND " + param2 + "='" + value2 + "' AND " + param3 + "='" + value3 +"'" + "AND "  + param4 + " = '" + value4 +"'";
+            string query = "SELECT * FROM " + table + " WHERE " + param1 + "= '" + value1 + "' AND " + param2 + "='" + value2 + "' AND " + param3 + "='" + value3 +"'";
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
 
+        }
+
+        public static MySqlDataReader SqlSearchCustomer( string id, MySqlConnection conn)
+        {
+            string query = "SELECT * FROM users WHERE id = '" + id +"'";
+            MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+            return reader;
         }
 
         public static String sha256_hash(String value)
@@ -86,19 +108,6 @@ namespace DBMethods
             }
 
             return Sb.ToString();
-        }
-
-        public static void SqlAddOrder(string name, string NumOrder, string ItemsCode, string state,  string username, string password)
-        {
-            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection(username, password);
-            conn.Open();
-            password = sha256_hash(password);
-            string query = "INSERT INTO Orders (Customer, NumOrder, ItemsCode, State) VALUE('" + name + "','" + NumOrder + "','" + ItemsCode + "','" + state + "');";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
-            Console.WriteLine("Connection closed");
         }
 
     }
