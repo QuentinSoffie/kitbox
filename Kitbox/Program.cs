@@ -31,8 +31,8 @@ namespace Kitbox
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Authentication());
 
-            MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
-            Application.Run(new StoreKeeper(myDataBase, new Authentication(), "customer", "groupe2020"));
+            MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeep", "groupe2020");
+            Application.Run(new StoreKeeper(myDataBase, new Authentication(), "storekeep", "groupe2020"));
         }
 
         private static void LoadLangFile()
