@@ -59,7 +59,7 @@ namespace StockDB
 			conn.Close();
 		}
 
-		public static void AddQtty(string code,int qtty, MySqlConnection conn)
+		public static bool AddQtty(string code,int qtty, MySqlConnection conn)
 		{
 			conn.Open();
 			string query1 = "SELECT * FROM Piece" + " WHERE " + "Code ='" + code + "'";
@@ -71,36 +71,21 @@ namespace StockDB
 			}
 			reader.Close();
 			int newStock = qtty + stock;
-			string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code +"'";
-			MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
-			SDA.SelectCommand.ExecuteNonQuery();
-			conn.Close();
-		}
-
-		public static bool DeleteQtty(string code, int qtty, MySqlConnection conn)
-		{
-			conn.Open();
-			string query1 = "SELECT * FROM Piece" + " WHERE " + "Code ='" + code + "'";
-			MySqlDataReader reader = new MySqlCommand(query1, conn).ExecuteReader();
-			int stock = 0;
-			while(reader.Read())
-			{
-				stock = reader.GetInt32("Enstock");
-			}
-			reader.Close();
-			int newStock = stock - qtty;
 			if (newStock > 0)
 			{
 				string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code + "'";
 				MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
 				SDA.SelectCommand.ExecuteNonQuery();
+				conn.Close();
 				return true;
 			}
 			else
 			{
+				conn.Close();
 				return false;
 			}
-			conn.Close();
 		}
+
+
 	}
 }
