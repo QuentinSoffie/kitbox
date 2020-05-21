@@ -14,17 +14,15 @@ namespace DBMethods
 {
     public static class DataBaseMethods
     {
-        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, string username, string password)
+        public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, MySqlConnection conn)
         {
-            MySqlConnection conn = DBMethods.DBUtils.GetDBConnection(username,password);
             conn.Open();
-            password = sha256_hash(password);
-            string query = "INSERT INTO users (surname, firstname, address, email, phone, username, password) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "','" + username + "','" + password + "');";
+            string query = "INSERT INTO users (surname, firstname, address, email, phone,) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "');";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
 
-            Console.WriteLine("Connection closed");
+            Console.WriteLine("User addes");
         }
         public static void SqlAdd(string table, string paramage, string paramname, int valueAge, string valueNom, MySqlConnection conn)
         {
