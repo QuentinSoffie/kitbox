@@ -53,7 +53,7 @@ namespace StockDB
 		public static void DeleteComponent(string code, MySqlConnection conn)
 		{
 			conn.Open();
-			string query = "DELETE FROM PIECE WHERE Code ='" + code +"'";
+			string query = "DELETE FROM Piece WHERE Code ='" + code +"'";
 			MySqlCommand cmd = new MySqlCommand(query, conn);
 			cmd.ExecuteNonQuery();
 			conn.Close();
@@ -94,13 +94,15 @@ namespace StockDB
 				string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code + "'";
 				MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
 				SDA.SelectCommand.ExecuteNonQuery();
+				conn.Close();
 				return true;
 			}
 			else
 			{
+				conn.Close();
 				return false;
 			}
-			conn.Close();
+			
 		}
 	}
 }

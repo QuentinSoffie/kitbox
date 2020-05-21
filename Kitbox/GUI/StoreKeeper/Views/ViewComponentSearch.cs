@@ -32,23 +32,35 @@ namespace Kitbox.GUI.StoreKeeper.Views
         public void Decrease(int value)
         {
             Console.WriteLine(Component.Code);
-            StockDB.StockMethod.DeleteQtty(Component.Code, value, DataBase);
+            if(!StockDB.StockMethod.DeleteQtty(Component.Code, value, DataBase))
+            {
+                Console.WriteLine("Error");
+                //Parent.
+            }
         }
         public void DeleteComponent()
         {
-            //StockDB.StockMethod.RemoveComponent(Component.Code, DataBase);
+            StockDB.StockMethod.DeleteComponent(Component.Code, DataBase);
         }
 
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            pepButton4.Visible = true;
             Increase((int)pepNumericUpDown1.Value);
         }
 
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            pepButton4.Visible = true;
             Decrease((int)pepNumericUpDown1.Value);
+        }
+
+        private void pepButton3_Click(object sender, EventArgs e)
+        {
+            pepButton4.Visible = true;
+            DeleteComponent();
         }
     }
 }
