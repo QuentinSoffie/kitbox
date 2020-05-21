@@ -29,10 +29,10 @@ namespace Kitbox
             LoadLangFile();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Authentication());
+            Application.Run(new Authentication());
 
-            MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeep", "groupe2020");
-            Application.Run(new StoreKeeper(myDataBase, new Authentication(), "storekeep", "groupe2020"));
+            //MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeep", "groupe2020");
+            //Application.Run(new StoreKeeper(myDataBase, new Authentication(), "storekeep", "groupe2020"));
         }
 
         private static void LoadLangFile()
