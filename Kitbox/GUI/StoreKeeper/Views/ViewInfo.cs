@@ -28,7 +28,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         Dictionary<String, Object> component;
 
-        List<object> ListComponent;
+        List<Dictionary<string, object>> ListComponent;
 
         /// <summary>
         /// This is the constructor of the order view. It takes one required argument.
@@ -89,36 +89,47 @@ namespace Kitbox.GUI.StoreKeeper.Views
             SetCustomer();
             SetOrder();
             GetDetailsFromDB(Order.KeyList);
-            //TODO: Load the order details   
         }
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            SetDetails(ListComponent[pepTreeView1.SelectedNode.Index]);
+        }
 
+        public void SetDetails(Dictionary<String, object> component)
+        {
+            label20.Text = Order.KeyList[pepTreeView1.SelectedNode.Index];
+            label24.Text = component["Height"].ToString();
+            label25.Text = component["Width"].ToString();
+            label26.Text = component["Depth"].ToString();
+            label21.Text = component["Ref"].ToString();
+            label22.Text = Order.Components[label20.Text].ToString();
+            label23.Text = component["Color"].ToString();
         }
 
         private void GetDetailsFromDB(List<string> ListCode)
         {
-            
+            ListComponent = new List<Dictionary<string, object>>();
             foreach (string code in ListCode)
             {
                 DataBase.Open();
-                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", code, DataBase);
+                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", code), DataBase);
                 while (reader.Read())
                 {
                     component = new Dictionary<string, object>
                     {
                         {"Ref", reader["Ref"].ToString() },
-                        {"Couleur", reader["Couleur"].ToString() },
-                        {"Dimension", reader["Dimension(cm)"].ToString() },
+                        {"Color", reader["Couleur"].ToString() },
+                        {"Dimensions", reader["Dimensions(cm)"].ToString() },
+                        {"Height", reader["hauteur"].ToString() },
+                        {"Width", reader["largeur"].ToString() },
+                        {"Depth", reader["profondeur"].ToString() },
                     };
                 }
                 reader.Close();
                 DataBase.Close();
                 ListComponent.Add(component);
             }
-
-            Console.WriteLine(ListComponent[0]);
 
 
         }
