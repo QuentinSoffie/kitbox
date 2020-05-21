@@ -64,6 +64,14 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label7.Text = Customer["Address"].ToString();
         }
 
+        private void SetOrder()
+        {
+            foreach(KeyValuePair<String, object> component in Order.Components)
+            {
+                pepTreeView1.Nodes.Add(component.Key);
+            }
+        }
+
         /// <summary>
         /// This loads all the informations about the order
         /// </summary>
@@ -71,14 +79,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
         {
             FetchCustomerData();
             SetCustmer();
+            SetOrder();
             //TODO: Load the order details   
         }
 
+        private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
 
-        /// <summary>
-        /// Add console text in the console in the view
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="color"></param>
+        }
     }
 }

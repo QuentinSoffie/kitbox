@@ -138,6 +138,12 @@
     <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.Designer.cs">
       <DependentUpon>ViewComponentSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.Designer.cs">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TreeviewManager.cs" />
     <Compile Include="GUI\Views\ViewBox.cs">
       <SubType>UserControl</SubType>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewComponentSearch.resx">
       <DependentUpon>ViewComponentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrder.resx">
+      <DependentUpon>ViewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewBox.resx">
       <DependentUpon>ViewBox.cs</DependentUpon>

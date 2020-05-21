@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pepGroupBox4 = new KitboxEcamGUI.PepGroupBox();
+            this.pepGroupBox3 = new KitboxEcamGUI.PepGroupBox();
+            this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
             this.label8 = new System.Windows.Forms.Label();
             this.pepButton1 = new KitboxEcamGUI.PepButton();
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
@@ -49,12 +52,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pepGroupBox5 = new KitboxEcamGUI.PepGroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pepGroupBox4.SuspendLayout();
+            this.pepGroupBox3.SuspendLayout();
             this.pepGroupBox1.SuspendLayout();
             this.pepGroupBox2.SuspendLayout();
+            this.pepGroupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -68,7 +89,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox4);
+            this.splitContainer1.Panel1.Controls.Add(this.pepGroupBox3);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
+            this.splitContainer1.Panel1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // splitContainer1.Panel2
             // 
@@ -80,6 +104,55 @@
             this.splitContainer1.Size = new System.Drawing.Size(949, 564);
             this.splitContainer1.SplitterDistance = 470;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // pepGroupBox4
+            // 
+            this.pepGroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox4.Controls.Add(this.label23);
+            this.pepGroupBox4.Controls.Add(this.label22);
+            this.pepGroupBox4.Controls.Add(this.label21);
+            this.pepGroupBox4.Controls.Add(this.label20);
+            this.pepGroupBox4.Controls.Add(this.label17);
+            this.pepGroupBox4.Controls.Add(this.pepGroupBox5);
+            this.pepGroupBox4.Controls.Add(this.label16);
+            this.pepGroupBox4.Controls.Add(this.label14);
+            this.pepGroupBox4.Controls.Add(this.label13);
+            this.pepGroupBox4.Location = new System.Drawing.Point(40, 345);
+            this.pepGroupBox4.Name = "pepGroupBox4";
+            this.pepGroupBox4.Size = new System.Drawing.Size(388, 187);
+            this.pepGroupBox4.TabIndex = 13;
+            this.pepGroupBox4.TabStop = false;
+            this.pepGroupBox4.Text = "Infomations";
+            // 
+            // pepGroupBox3
+            // 
+            this.pepGroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox3.Controls.Add(this.pepTreeView1);
+            this.pepGroupBox3.Location = new System.Drawing.Point(37, 76);
+            this.pepGroupBox3.Name = "pepGroupBox3";
+            this.pepGroupBox3.Size = new System.Drawing.Size(391, 256);
+            this.pepGroupBox3.TabIndex = 12;
+            this.pepGroupBox3.TabStop = false;
+            this.pepGroupBox3.Text = "Components";
+            // 
+            // pepTreeView1
+            // 
+            this.pepTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pepTreeView1.Caption = false;
+            this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.pepTreeView1.ItemHeight = 50;
+            this.pepTreeView1.Location = new System.Drawing.Point(3, 22);
+            this.pepTreeView1.Name = "pepTreeView1";
+            this.pepTreeView1.Online = false;
+            this.pepTreeView1.Size = new System.Drawing.Size(385, 231);
+            this.pepTreeView1.TabIndex = 0;
+            this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
             // label8
             // 
@@ -97,8 +170,7 @@
             // 
             // pepButton1
             // 
-            this.pepButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pepButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -123,9 +195,9 @@
             this.pepGroupBox1.Controls.Add(this.label10);
             this.pepGroupBox1.Controls.Add(this.label11);
             this.pepGroupBox1.Controls.Add(this.label12);
-            this.pepGroupBox1.Location = new System.Drawing.Point(46, 233);
+            this.pepGroupBox1.Location = new System.Drawing.Point(46, 225);
             this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(396, 225);
+            this.pepGroupBox1.Size = new System.Drawing.Size(396, 245);
             this.pepGroupBox1.TabIndex = 11;
             this.pepGroupBox1.TabStop = false;
             this.pepGroupBox1.Text = "Update";
@@ -137,14 +209,14 @@
             this.pepTextbox5.EnabledCalc = true;
             this.pepTextbox5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox5.Location = new System.Drawing.Point(205, 186);
+            this.pepTextbox5.Location = new System.Drawing.Point(100, 202);
             this.pepTextbox5.MaxLength = 32767;
             this.pepTextbox5.MultiLine = false;
             this.pepTextbox5.Name = "pepTextbox5";
             this.pepTextbox5.ReadOnly = false;
-            this.pepTextbox5.Size = new System.Drawing.Size(167, 27);
+            this.pepTextbox5.Size = new System.Drawing.Size(272, 27);
             this.pepTextbox5.TabIndex = 14;
-            this.pepTextbox5.Text = "pepTextbox5";
+            this.pepTextbox5.Tag = "rue de l\'exemple, 2, 17887 Exemple";
             this.pepTextbox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox5.UseSystemPasswordChar = false;
             // 
@@ -155,14 +227,14 @@
             this.pepTextbox4.EnabledCalc = true;
             this.pepTextbox4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox4.Location = new System.Drawing.Point(205, 152);
+            this.pepTextbox4.Location = new System.Drawing.Point(159, 159);
             this.pepTextbox4.MaxLength = 32767;
             this.pepTextbox4.MultiLine = false;
             this.pepTextbox4.Name = "pepTextbox4";
             this.pepTextbox4.ReadOnly = false;
-            this.pepTextbox4.Size = new System.Drawing.Size(167, 27);
+            this.pepTextbox4.Size = new System.Drawing.Size(213, 27);
             this.pepTextbox4.TabIndex = 13;
-            this.pepTextbox4.Text = "pepTextbox4";
+            this.pepTextbox4.Tag = "Ex: jean@exemple.com";
             this.pepTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox4.UseSystemPasswordChar = false;
             // 
@@ -173,14 +245,14 @@
             this.pepTextbox3.EnabledCalc = true;
             this.pepTextbox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox3.Location = new System.Drawing.Point(205, 112);
+            this.pepTextbox3.Location = new System.Drawing.Point(159, 120);
             this.pepTextbox3.MaxLength = 32767;
             this.pepTextbox3.MultiLine = false;
             this.pepTextbox3.Name = "pepTextbox3";
             this.pepTextbox3.ReadOnly = false;
-            this.pepTextbox3.Size = new System.Drawing.Size(167, 27);
+            this.pepTextbox3.Size = new System.Drawing.Size(213, 27);
             this.pepTextbox3.TabIndex = 12;
-            this.pepTextbox3.Text = "pepTextbox3";
+            this.pepTextbox3.Tag = "Ex : +32477788775";
             this.pepTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox3.UseSystemPasswordChar = false;
             // 
@@ -191,14 +263,14 @@
             this.pepTextbox2.EnabledCalc = true;
             this.pepTextbox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox2.Location = new System.Drawing.Point(205, 73);
+            this.pepTextbox2.Location = new System.Drawing.Point(159, 80);
             this.pepTextbox2.MaxLength = 32767;
             this.pepTextbox2.MultiLine = false;
             this.pepTextbox2.Name = "pepTextbox2";
             this.pepTextbox2.ReadOnly = false;
-            this.pepTextbox2.Size = new System.Drawing.Size(167, 27);
+            this.pepTextbox2.Size = new System.Drawing.Size(213, 27);
             this.pepTextbox2.TabIndex = 11;
-            this.pepTextbox2.Text = "pepTextbox2";
+            this.pepTextbox2.Tag = "Ex: Jean";
             this.pepTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox2.UseSystemPasswordChar = false;
             // 
@@ -209,14 +281,14 @@
             this.pepTextbox1.EnabledCalc = true;
             this.pepTextbox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pepTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox1.Location = new System.Drawing.Point(205, 34);
+            this.pepTextbox1.Location = new System.Drawing.Point(159, 39);
             this.pepTextbox1.MaxLength = 32767;
             this.pepTextbox1.MultiLine = false;
             this.pepTextbox1.Name = "pepTextbox1";
             this.pepTextbox1.ReadOnly = false;
-            this.pepTextbox1.Size = new System.Drawing.Size(167, 27);
+            this.pepTextbox1.Size = new System.Drawing.Size(213, 27);
             this.pepTextbox1.TabIndex = 10;
-            this.pepTextbox1.Text = "pepTextbox1";
+            this.pepTextbox1.Tag = "Ex: Neymar";
             this.pepTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox1.UseSystemPasswordChar = false;
             // 
@@ -224,9 +296,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(16, 34);
+            this.label1.Location = new System.Drawing.Point(16, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 5;
@@ -236,9 +309,10 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(16, 189);
+            this.label9.Location = new System.Drawing.Point(16, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 18);
             this.label9.TabIndex = 9;
@@ -248,9 +322,10 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(16, 73);
+            this.label10.Location = new System.Drawing.Point(16, 89);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 18);
             this.label10.TabIndex = 6;
@@ -260,9 +335,10 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(16, 152);
+            this.label11.Location = new System.Drawing.Point(16, 168);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 18);
             this.label11.TabIndex = 8;
@@ -272,9 +348,10 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(16, 112);
+            this.label12.Location = new System.Drawing.Point(16, 131);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 18);
             this.label12.TabIndex = 7;
@@ -375,6 +452,184 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Phone";
             // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(12, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 18);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Name :";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(223, 86);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 18);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Quantity :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(6, 26);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 18);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Height :";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(223, 33);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 18);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Reference :";
+            // 
+            // pepGroupBox5
+            // 
+            this.pepGroupBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pepGroupBox5.Controls.Add(this.label26);
+            this.pepGroupBox5.Controls.Add(this.label25);
+            this.pepGroupBox5.Controls.Add(this.label24);
+            this.pepGroupBox5.Controls.Add(this.label19);
+            this.pepGroupBox5.Controls.Add(this.label18);
+            this.pepGroupBox5.Controls.Add(this.label15);
+            this.pepGroupBox5.Location = new System.Drawing.Point(6, 63);
+            this.pepGroupBox5.Name = "pepGroupBox5";
+            this.pepGroupBox5.Size = new System.Drawing.Size(200, 107);
+            this.pepGroupBox5.TabIndex = 4;
+            this.pepGroupBox5.TabStop = false;
+            this.pepGroupBox5.Text = "Dimensions";
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(223, 138);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(48, 18);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Color :";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(6, 51);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 18);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Width :";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(6, 76);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 18);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Depth :";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(88, 33);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 18);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Name :";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(308, 33);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 18);
+            this.label21.TabIndex = 7;
+            this.label21.Text = "Name :";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(308, 86);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(52, 18);
+            this.label22.TabIndex = 8;
+            this.label22.Text = "Name :";
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(308, 137);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 18);
+            this.label23.TabIndex = 9;
+            this.label23.Text = "Name :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(82, 23);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(52, 18);
+            this.label24.TabIndex = 10;
+            this.label24.Text = "Name :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(82, 50);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(52, 18);
+            this.label25.TabIndex = 11;
+            this.label25.Text = "Name :";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(82, 76);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 18);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Name :";
+            // 
             // ViewInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -387,10 +642,15 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pepGroupBox4.ResumeLayout(false);
+            this.pepGroupBox4.PerformLayout();
+            this.pepGroupBox3.ResumeLayout(false);
             this.pepGroupBox1.ResumeLayout(false);
             this.pepGroupBox1.PerformLayout();
             this.pepGroupBox2.ResumeLayout(false);
             this.pepGroupBox2.PerformLayout();
+            this.pepGroupBox5.ResumeLayout(false);
+            this.pepGroupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -417,5 +677,23 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox3;
+        private KitboxEcamGUI.PepTreeView pepTreeView1;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox4;
+        private System.Windows.Forms.Label label17;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox5;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
     }
 }
