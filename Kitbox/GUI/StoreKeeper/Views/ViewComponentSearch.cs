@@ -16,51 +16,74 @@ namespace Kitbox.GUI.StoreKeeper.Views
     {
         MySqlConnection DataBase;
         StoreKeeperComponent Component;
-        public ViewComponentSearch(StoreKeeperComponent component, MySqlConnection dataBase)
+        SearchComponent View;
+        int Value;
+        public ViewComponentSearch(SearchComponent view, StoreKeeperComponent component, MySqlConnection dataBase)
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             DataBase = dataBase;
             Component = component;
+            View = view;
         }
 
-        public void Increase(int value)
-        {
-            Console.WriteLine(Component.Code);
-            StockDB.StockMethod.AddQtty(Component.Code, value, DataBase);
-        }
-        public void Decrease(int value)
-        {
-            Console.WriteLine(Component.Code);
-            if(!StockDB.StockMethod.DeleteQtty(Component.Code, value, DataBase))
-            {
-                Console.WriteLine("Error");
-                //Parent.
-            }
-        }
         public void DeleteComponent()
         {
             StockDB.StockMethod.DeleteComponent(Component.Code, DataBase);
         }
 
-
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            Value = int.Parse(pepNumericUpDown1.Value.ToString());
+            pepGroupBox1.Visible = true;
+            label2.Text = (Component.Stock + Value).ToString();
+            label2.ForeColor = Color.Green;
             pepButton4.Visible = true;
-            Increase((int)pepNumericUpDown1.Value);
         }
 
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
-            pepButton4.Visible = true;
-            Decrease((int)pepNumericUpDown1.Value);
+            Value = -int.Parse(pepNumericUpDown1.Value.ToString());
+
+            if (Component.Stock + Value < 0)
+            {
+                MessageBox.Show("Error can't get a negative stock", "Error !");
+            }
+            else
+            {
+                pepGroupBox1.Visible = true;
+                label2.Text = (Component.Stock + Value).ToString();
+                label2.ForeColor = Color.Red;
+                pepButton4.Visible = true;
+            }
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
         {
-            pepButton4.Visible = true;
+            pepButton5.Visible = true;
+            pepButton5.BringToFront();
+        }
+
+        private void pepButton4_Click(object sender, EventArgs e)
+        {
+            if (Component.Stock + Value < 0)
+            {
+                MessageBox.Show("Error can't get a negative stock", "Error !");
+            }
+            else
+            {
+                StockDB.StockMethod.AddQtty(Component.Code, Value, DataBase);
+                View.ClearWindow();
+                View.GetComponents();
+                Console.WriteLine("Done");
+            }
+        }
+
+        private void pepButton5_Click(object sender, EventArgs e)
+        {
             DeleteComponent();
+            View.ClearWindow();
         }
     }
 }

@@ -31,6 +31,8 @@ namespace Kitbox.GUI.StoreKeeper
         public SearchComponent searchComponentView { get; set; }
         public SearchCustomer searchCustomerView { get; set; }
 
+        public CreateComponent createComponentView { get; set; }
+
         private readonly string _username;
         private readonly string _password;
     
@@ -78,6 +80,12 @@ namespace Kitbox.GUI.StoreKeeper
             panel1.Controls.Add(searchCustomerView);
             searchCustomerView.Hide();
 
+            createComponentView = new CreateComponent(DataBase, this);
+            ViewDictionary.Add("CreateComponent", createComponentView);
+            createComponentView.Dock = DockStyle.Fill;
+            panel1.Controls.Add(createComponentView);
+            createComponentView.Hide();
+
         }
 
         /// <summary>
@@ -120,6 +128,12 @@ namespace Kitbox.GUI.StoreKeeper
         {
             searchCustomerView.Show();
             ViewDictionary["SearchCustomer"].BringToFront();
+        }
+
+        private void createNewComponentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createComponentView.Show();
+            ViewDictionary["CreateComponent"].BringToFront();
         }
     }
 }

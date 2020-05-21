@@ -34,7 +34,7 @@
             this.componentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createNewComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -84,16 +84,17 @@
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewPartToolStripMenuItem});
+            this.createNewComponentToolStripMenuItem});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
-            // createNewPartToolStripMenuItem
+            // createNewComponentToolStripMenuItem
             // 
-            this.createNewPartToolStripMenuItem.Name = "createNewPartToolStripMenuItem";
-            this.createNewPartToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.createNewPartToolStripMenuItem.Text = "Create new compnent";
+            this.createNewComponentToolStripMenuItem.Name = "createNewComponentToolStripMenuItem";
+            this.createNewComponentToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.createNewComponentToolStripMenuItem.Text = "Create new compnent";
+            this.createNewComponentToolStripMenuItem.Click += new System.EventHandler(this.createNewComponentToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -133,7 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem componentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createNewPartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewComponentToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
     }
 }

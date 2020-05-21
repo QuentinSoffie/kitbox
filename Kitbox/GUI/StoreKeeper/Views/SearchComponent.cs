@@ -29,8 +29,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
-            ComponentViewDictionary.Clear();
-
             if (pepTextbox1.Text == "")
             {
                 Parent.ShowError("Please enter a component reference or a component code");
@@ -46,8 +44,9 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 GetComponents();
             }
         }
-        private void GetComponents()
+        public void GetComponents()
         {
+            ComponentViewDictionary.Clear();
             Cursor.Current = Cursors.WaitCursor;
             DataBase.Open();
 
@@ -87,7 +86,9 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
             if (resp.Count == 0)
             {
+                ClearWindow();
                 Parent.ShowError(String.Format("Error, no value found for \"{0}\"", pepTextbox1.Text));
+                
             }
             else
             {
@@ -102,7 +103,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (Dictionary<String, Object> item in components)
             {
                 StoreKeeperComponent newComponent = new StoreKeeperComponent(item);
-                ViewComponentSearch newView = new ViewComponentSearch(newComponent, DataBase);
+                ViewComponentSearch newView = new ViewComponentSearch(this, newComponent, DataBase);
 
                 ComponentViewDictionary.Add(newComponent, newView);
 
@@ -117,16 +118,24 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         public void ReloadTreeView()
         {
+
             pepTreeView1.Nodes.Clear();
             int i = 0;
 
             foreach (KeyValuePair<StoreKeeperComponent, ViewComponentSearch> component in ComponentViewDictionary)
             {
-                pepTreeView1.Nodes.Add(component.Key.Ref);
+                pepTreeView1.Nodes.Add(component.Key.Code);
                 pepTreeView1.Nodes[i].Tag = component.Key.Stock.ToString();
 
                 i++;
             }
+        }
+
+        public void ClearWindow()
+        {
+            ComponentViewDictionary.Clear();
+            pepTreeView1.Nodes.Clear();
+            splitContainer1.Panel2.Controls.Clear();
         }
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,8 +147,9 @@ namespace Kitbox.GUI.StoreKeeper.Views
         {
             foreach (KeyValuePair<StoreKeeperComponent, ViewComponentSearch> component in ComponentViewDictionary)
             {
-                if (component.Key.Ref == e.Node.Text)
+                if (component.Key.Code == e.Node.Text)
                 {
+                    Console.WriteLine(e.Node.Text);
                     component.Value.Show();
                     component.Value.BringToFront();
                 }
