@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.Order;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
@@ -22,6 +25,11 @@ namespace Kitbox.GUI.StoreKeeper.Views
         MySqlConnection DataBase;
 
         Dictionary<String, Object> Customer;
+
+        Dictionary<String, Object> component;
+
+        List<object> ListComponent;
+
         /// <summary>
         /// This is the constructor of the order view. It takes one required argument.
         /// </summary>
@@ -55,7 +63,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             DataBase.Close();
         }
 
-        private void SetCustmer()
+        private void SetCustomer()
         {
             label3.Text = Customer["Surname"].ToString().ToUpper();
             label4.Text = Customer["Firstname"].ToString();
@@ -78,13 +86,40 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void LoadComponents()
         {
             FetchCustomerData();
-            SetCustmer();
+            SetCustomer();
             SetOrder();
+            GetDetailsFromDB(Order.KeyList);
             //TODO: Load the order details   
         }
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+
+        }
+
+        private void GetDetailsFromDB(List<string> ListCode)
+        {
+            
+            foreach (string code in ListCode)
+            {
+                DataBase.Open();
+                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", code, DataBase);
+                while (reader.Read())
+                {
+                    component = new Dictionary<string, object>
+                    {
+                        {"Ref", reader["Ref"].ToString() },
+                        {"Couleur", reader["Couleur"].ToString() },
+                        {"Dimension", reader["Dimension(cm)"].ToString() },
+                    };
+                }
+                reader.Close();
+                DataBase.Close();
+                ListComponent.Add(component);
+            }
+
+            Console.WriteLine(ListComponent[0]);
+
 
         }
     }
