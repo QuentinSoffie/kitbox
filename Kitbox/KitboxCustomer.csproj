@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Kitbox.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,10 +37,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="KitboxEcamGUI">
       <HintPath>.\KitboxEcamGUI.dll</HintPath>
     </Reference>
@@ -54,6 +51,10 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>.\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="StockDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\StockDB\bin\Release\netstandard2.0\StockDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -67,17 +68,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Cups.cs" />
     <Compile Include="Components\CupboardAngle.cs" />
     <Compile Include="Components\Door.cs" />
     <Compile Include="Components\Panel.cs" />
     <Compile Include="Components\Slider.cs" />
     <Compile Include="Components\Specs.cs" />
     <Compile Include="Components\Traverses.cs" />
-    <Compile Include="Database\Components\CupboardAngles.cs" />
     <Compile Include="Database\Components\Doors.cs" />
     <Compile Include="Database\Components\Panels.cs" />
-    <Compile Include="Database\Json\Order.cs" />
     <Compile Include="Database\Reader.cs" />
     <Compile Include="GUI\About.cs">
       <SubType>Form</SubType>
@@ -109,12 +107,49 @@
     <Compile Include="GUI\Preview.Designer.cs">
       <DependentUpon>Preview.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\StoreKeeper\Models\StoreKeeperComponent.cs" />
+    <Compile Include="GUI\StoreKeeper\StoreKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\StoreKeeper.Designer.cs">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchComponent.Designer.cs">
+      <DependentUpon>SearchComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\SearchOrder.Designer.cs">
+      <DependentUpon>SearchOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.Designer.cs">
+      <DependentUpon>ViewComponentSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TreeviewManager.cs" />
     <Compile Include="GUI\Views\ViewBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\Views\ViewBox.designer.cs">
       <DependentUpon>ViewBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSearch.Designer.cs">
+      <DependentUpon>ViewOrderSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Views\ViewCupboard.cs">
       <SubType>UserControl</SubType>
@@ -126,7 +161,7 @@
     <Compile Include="Order\ChoosePart.cs" />
     <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
-    <Compile Include="PDF\PDFUtils.cs" />
+    <Compile Include="Order\StoreKeeperOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\About.resx">
@@ -144,8 +179,26 @@
     <EmbeddedResource Include="GUI\Preview.resx">
       <DependentUpon>Preview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\StoreKeeper.resx">
+      <DependentUpon>StoreKeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchComponent.resx">
+      <DependentUpon>SearchComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchOrder.resx">
+      <DependentUpon>SearchOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewComponentSearch.resx">
+      <DependentUpon>ViewComponentSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewBox.resx">
       <DependentUpon>ViewBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrderSearch.resx">
+      <DependentUpon>ViewOrderSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
       <DependentUpon>ViewCupboard.cs</DependentUpon>
@@ -155,8 +208,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Langs\langEn.json" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

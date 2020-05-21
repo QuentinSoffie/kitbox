@@ -41,18 +41,10 @@ namespace StockDB
 			return reader;
 		}
 
-		public static void AddComponent(string reference, string code, int dimension, int height, int width, int depth, string color, int inStock, int minStock, int priceCustomer, int qttyPart, int priceFour1, int delayFour1, int priceFour2, int delayFour2,  MySqlConnection conn)
+		public static void AddPart(string reference, string code, int dimension, int height, int width, int depth, string color, int inStock, int minStock, int priceCustomer, int qttyPart, int priceFour1, int delayFour1, int priceFour2, int delayFour2,  MySqlConnection conn)
 		{
 
 			string query = "INSERT INTO PIECE (Ref, Code, Dimension(cm), hauteur, profondeur, largeur,Couleur, Enstock, Stock minimum, Prix-Client, Nb-Pièces/casier, Prix-Fourn 1, Delai-Fourn 1, Prix-Fourn 2, Delai-Fourn 2) VALUE('" + reference + "','" + code + "','" + dimension + "','" + height + "','" + width + "','" + depth + "','" + color + "','" + inStock + "','" + minStock + "','" + priceCustomer + "','" + qttyPart + "','" + priceFour1 + "','" + delayFour1 + "','" + priceFour2 + "','" + delayFour2 + "')";
-			MySqlCommand cmd = new MySqlCommand(query, conn);
-			cmd.ExecuteNonQuery();
-		}
-
-		public static void DeleteComponent(string code, MySqlConnection conn)
-		{
-
-			string query = "DELETE FROM PIECE WHERE Code ='" + code + "'"; 
 			MySqlCommand cmd = new MySqlCommand(query, conn);
 			cmd.ExecuteNonQuery();
 		}
