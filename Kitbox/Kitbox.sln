@@ -5,9 +5,16 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitboxCustomer", "KitboxCustomer.csproj", "{3C602FA4-A078-404D-9E26-D0A1BDE146F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitboxStoreKeeper", "..\KitboxStoreKeeper\KitboxStoreKeeper.csproj", "{14CE0D02-689A-4FD2-B2E6-A4082450EB28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KitboxStoreKeeper", "..\KitboxStoreKeeper\KitboxStoreKeeper.csproj", "{14CE0D02-689A-4FD2-B2E6-A4082450EB28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsDB", "..\MethodsDB\MethodsDB.csproj", "{5037F050-3ACA-4065-BA72-23008C26EDCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MethodsDB", "..\MethodsDB\MethodsDB.csproj", "{5037F050-3ACA-4065-BA72-23008C26EDCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockDB", "..\StockDB\StockDB.csproj", "{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EFEBE133-CF42-459C-B239-0331BE09C523}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +34,10 @@ Global
 		{5037F050-3ACA-4065-BA72-23008C26EDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5037F050-3ACA-4065-BA72-23008C26EDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5037F050-3ACA-4065-BA72-23008C26EDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDD262E-DC57-4456-B2E6-AF6E54F84B88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

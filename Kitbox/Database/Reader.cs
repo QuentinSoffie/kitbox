@@ -135,8 +135,6 @@ namespace Kitbox.Database
 
             return components;
 
-
-
         }
         private static Object ReaderData(MySqlDataReader component, Type type)
         {
