@@ -32,8 +32,8 @@
             this.pepButton2 = new KitboxEcamGUI.PepButton();
             this.pepButton3 = new KitboxEcamGUI.PepButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pepNumericUpDown1 = new KitboxEcamGUI.PepNumericUpDown();
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
+            this.pepNumericUpDown1 = new KitboxEcamGUI.PepNumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pepNumericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             this.pepButton2.TabIndex = 1;
             this.pepButton2.Text = "Decrease";
             this.pepButton2.UseVisualStyleBackColor = true;
+            this.pepButton2.Click += new System.EventHandler(this.pepButton2_Click);
             // 
             // pepButton3
             // 
@@ -91,6 +92,15 @@
             this.panel1.Size = new System.Drawing.Size(673, 418);
             this.panel1.TabIndex = 3;
             // 
+            // pepGroupBox1
+            // 
+            this.pepGroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pepGroupBox1.Location = new System.Drawing.Point(124, 65);
+            this.pepGroupBox1.Name = "pepGroupBox1";
+            this.pepGroupBox1.Size = new System.Drawing.Size(249, 272);
+            this.pepGroupBox1.TabIndex = 4;
+            this.pepGroupBox1.TabStop = false;
+            // 
             // pepNumericUpDown1
             // 
             this.pepNumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -107,15 +117,6 @@
             this.pepNumericUpDown1.Size = new System.Drawing.Size(155, 71);
             this.pepNumericUpDown1.TabIndex = 3;
             this.pepNumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // pepGroupBox1
-            // 
-            this.pepGroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pepGroupBox1.Location = new System.Drawing.Point(124, 65);
-            this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(249, 272);
-            this.pepGroupBox1.TabIndex = 4;
-            this.pepGroupBox1.TabStop = false;
             // 
             // ViewComponentSearch
             // 

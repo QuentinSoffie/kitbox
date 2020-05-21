@@ -24,15 +24,31 @@ namespace Kitbox.GUI.StoreKeeper.Views
             Component = component;
         }
 
-        private void pepButton1_Click(object sender, EventArgs e)
-        {
-            AddComponent(34);
-        }
-
-        public void AddComponent(int value)
+        public void Increase(int value)
         {
             Console.WriteLine(Component.Code);
             StockDB.StockMethod.AddQtty(Component.Code, value, DataBase);
+        }
+        public void Decrease(int value)
+        {
+            Console.WriteLine(Component.Code);
+            StockDB.StockMethod.DeleteQtty(Component.Code, value, DataBase);
+        }
+        public void DeleteComponent()
+        {
+            //StockDB.StockMethod.RemoveComponent(Component.Code, DataBase);
+        }
+
+
+        private void pepButton1_Click(object sender, EventArgs e)
+        {
+            Increase((int)pepNumericUpDown1.Value);
+        }
+
+
+        private void pepButton2_Click(object sender, EventArgs e)
+        {
+            Decrease((int)pepNumericUpDown1.Value);
         }
     }
 }
