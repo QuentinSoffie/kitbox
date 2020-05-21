@@ -12,6 +12,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using MySql.Data.MySqlClient;
 using DBMethods;
+using Kitbox.GUI;
+using Kitbox.GUI.StoreKeeper;
 
 namespace Kitbox
 {
@@ -27,9 +29,10 @@ namespace Kitbox
             LoadLangFile();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Authentication());
-            //MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
-            //Application.Run(new Customer(myDataBase, new Authentication(), "customer", "groupe2020"));
+            //Application.Run(new Authentication());
+
+            MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeep", "groupe2020");
+            Application.Run(new StoreKeeper(myDataBase, new Authentication(), "storekeep", "groupe2020"));
         }
 
         private static void LoadLangFile()
