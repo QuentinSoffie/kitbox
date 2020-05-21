@@ -60,6 +60,14 @@ namespace DBMethods
 
         }
 
+        public static void SqlUpdateCustomer(string param,string value, int id,  MySqlConnection conn)
+        {
+            conn.Open();
+            string query = "UPDATE users SET" + param + "= '" + value + "' WHERE id ='" + id + "'";
+            MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
         public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string value1, string value2, string value3, MySqlConnection conn)
         {
 
