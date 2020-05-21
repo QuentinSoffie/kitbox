@@ -29,7 +29,6 @@ namespace Kitbox.GUI.StoreKeeper
 
         public SearchOrder searchOrderView { get; set; }
         public SearchComponent searchComponentView { get; set; }
-        public SearchCustomer searchCustomerView { get; set; }
 
         public CreateComponent createComponentView { get; set; }
 
@@ -74,11 +73,6 @@ namespace Kitbox.GUI.StoreKeeper
             panel1.Controls.Add(searchComponentView);
             searchComponentView.Hide();
 
-            searchCustomerView = new SearchCustomer(DataBase, this);
-            ViewDictionary.Add("SearchCustomer", searchCustomerView);
-            searchCustomerView.Dock = DockStyle.Fill;
-            panel1.Controls.Add(searchCustomerView);
-            searchCustomerView.Hide();
 
             createComponentView = new CreateComponent(DataBase, this);
             ViewDictionary.Add("CreateComponent", createComponentView);
@@ -124,11 +118,6 @@ namespace Kitbox.GUI.StoreKeeper
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            searchCustomerView.Show();
-            ViewDictionary["SearchCustomer"].BringToFront();
-        }
 
         private void createNewComponentToolStripMenuItem_Click(object sender, EventArgs e)
         {

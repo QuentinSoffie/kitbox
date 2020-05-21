@@ -126,17 +126,11 @@
     <Compile Include="GUI\StoreKeeper\Views\SearchComponent.Designer.cs">
       <DependentUpon>SearchComponent.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\SearchCustomer.cs">
+    <Compile Include="GUI\StoreKeeper\Views\SearchInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\SearchCustomer.Designer.cs">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\SearchOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\SearchOrder.Designer.cs">
-      <DependentUpon>SearchOrder.cs</DependentUpon>
+    <Compile Include="GUI\StoreKeeper\Views\SearchInfo.Designer.cs">
+      <DependentUpon>SearchInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.cs">
       <SubType>UserControl</SubType>
@@ -151,11 +145,11 @@
     <Compile Include="GUI\Views\ViewBox.designer.cs">
       <DependentUpon>ViewBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSearch.cs">
+    <Compile Include="GUI\StoreKeeper\Views\ViewInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSearch.Designer.cs">
-      <DependentUpon>ViewOrderSearch.cs</DependentUpon>
+    <Compile Include="GUI\StoreKeeper\Views\ViewInfo.Designer.cs">
+      <DependentUpon>ViewInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Views\ViewCupboard.cs">
       <SubType>UserControl</SubType>
@@ -194,11 +188,8 @@
     <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchComponent.resx">
       <DependentUpon>SearchComponent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchCustomer.resx">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchOrder.resx">
-      <DependentUpon>SearchOrder.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchInfo.resx">
+      <DependentUpon>SearchInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewComponentSearch.resx">
       <DependentUpon>ViewComponentSearch.cs</DependentUpon>
@@ -206,8 +197,8 @@
     <EmbeddedResource Include="GUI\Views\ViewBox.resx">
       <DependentUpon>ViewBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrderSearch.resx">
-      <DependentUpon>ViewOrderSearch.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewInfo.resx">
+      <DependentUpon>ViewInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\ViewCupboard.resx">
       <DependentUpon>ViewCupboard.cs</DependentUpon>
@@ -237,6 +228,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

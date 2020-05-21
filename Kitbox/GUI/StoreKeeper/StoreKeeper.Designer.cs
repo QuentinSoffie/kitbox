@@ -32,7 +32,6 @@
             this.recherchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.componentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,8 +53,7 @@
             // 
             this.recherchesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orderToolStripMenuItem,
-            this.componentToolStripMenuItem,
-            this.customerToolStripMenuItem});
+            this.componentToolStripMenuItem});
             this.recherchesToolStripMenuItem.Name = "recherchesToolStripMenuItem";
             this.recherchesToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.recherchesToolStripMenuItem.Text = "Search";
@@ -63,23 +61,16 @@
             // orderToolStripMenuItem
             // 
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Text = "Informations";
             this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // componentToolStripMenuItem
             // 
             this.componentToolStripMenuItem.Name = "componentToolStripMenuItem";
-            this.componentToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.componentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.componentToolStripMenuItem.Text = "Component";
             this.componentToolStripMenuItem.Click += new System.EventHandler(this.componentToolStripMenuItem_Click);
-            // 
-            // customerToolStripMenuItem
-            // 
-            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.customerToolStripMenuItem.Text = "Customer";
-            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
@@ -132,7 +123,6 @@
         private System.Windows.Forms.ToolStripMenuItem recherchesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem componentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewComponentToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
