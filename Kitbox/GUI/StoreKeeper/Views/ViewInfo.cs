@@ -15,7 +15,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
     /// <summary>
     /// This is the order view, that shows the order details
     /// </summary>
-    public partial class ViewOrderSearch : UserControl
+    public partial class ViewInfo : UserControl
     {
         StoreKeeperOrder Order;
 
@@ -26,17 +26,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// This is the constructor of the order view. It takes one required argument.
         /// </summary>
         /// <param name="order"></param>
-        public ViewOrderSearch(StoreKeeperOrder order, MySqlConnection dataBase)
+        public ViewInfo(StoreKeeperOrder order, MySqlConnection dataBase)
         {
             this.DataBase = dataBase;
             this.Dock = DockStyle.Fill;
             InitializeComponent();
             this.Order = order;
-            AddChat(string.Format("Loading order n° {0} ...", this.Order.OrderNumber), Color.Yellow);
-            label1.Text = order.Name;
-            AddChat("Loading components ...", Color.Yellow);
             LoadComponents();
-            AddChat("Done", Color.Green);
         }
 
 
@@ -68,6 +64,14 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label7.Text = Customer["Address"].ToString();
         }
 
+        private void SetOrder()
+        {
+            foreach(KeyValuePair<String, object> component in Order.Components)
+            {
+                pepTreeView1.Nodes.Add(component.Key);
+            }
+        }
+
         /// <summary>
         /// This loads all the informations about the order
         /// </summary>
@@ -75,22 +79,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
         {
             FetchCustomerData();
             SetCustmer();
+            SetOrder();
             //TODO: Load the order details   
         }
 
-        /// <summary>
-        /// Add console text in the console in the view
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="color"></param>
-        private void AddChat(string message, Color color)
+        private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            string hours = DateTime.Now.ToString("[HH:mm:ss] ");
-            RichTextBox_console.RT.AppendText(hours + message + Environment.NewLine);
-            RichTextBox_console.RT.SelectionStart = RichTextBox_console.RT.Find(hours + message, RichTextBoxFinds.Reverse);
-            RichTextBox_console.RT.SelectionColor = color;
-            RichTextBox_console.RT.DeselectAll();
-            RichTextBox_console.RT.ScrollToCaret();
+
         }
     }
 }

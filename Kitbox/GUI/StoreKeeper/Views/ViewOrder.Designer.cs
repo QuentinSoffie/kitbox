@@ -1,6 +1,6 @@
 ﻿namespace Kitbox.GUI.StoreKeeper.Views
 {
-    partial class SearchCustomer
+    partial class ViewOrder
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -28,17 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // SearchCustomer
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Name = "SearchCustomer";
-            this.Size = new System.Drawing.Size(1230, 598);
-            this.ResumeLayout(false);
-
         }
 
         #endregion

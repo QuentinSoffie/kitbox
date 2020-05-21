@@ -88,9 +88,10 @@
             // 
             // pepButton1
             // 
+            this.pepButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton1.Location = new System.Drawing.Point(520, 558);
+            this.pepButton1.Location = new System.Drawing.Point(517, 547);
             this.pepButton1.Name = "pepButton1";
             this.pepButton1.Size = new System.Drawing.Size(319, 43);
             this.pepButton1.TabIndex = 0;
@@ -100,12 +101,13 @@
             // 
             // pepGroupBox1
             // 
+            this.pepGroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepGroupBox1.Controls.Add(this.label15);
             this.pepGroupBox1.Controls.Add(this.pepTextbox1);
             this.pepGroupBox1.Controls.Add(this.label2);
             this.pepGroupBox1.Controls.Add(this.label1);
             this.pepGroupBox1.Controls.Add(this.pepCombobox1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(91, 47);
+            this.pepGroupBox1.Location = new System.Drawing.Point(88, 36);
             this.pepGroupBox1.Name = "pepGroupBox1";
             this.pepGroupBox1.Size = new System.Drawing.Size(1087, 92);
             this.pepGroupBox1.TabIndex = 1;
@@ -191,12 +193,13 @@
             // 
             // pepGroupBox2
             // 
+            this.pepGroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepGroupBox2.Controls.Add(this.pepTextbox3);
             this.pepGroupBox2.Controls.Add(this.label7);
             this.pepGroupBox2.Controls.Add(this.pepGroupBox5);
             this.pepGroupBox2.Controls.Add(this.pepTextbox2);
             this.pepGroupBox2.Controls.Add(this.label3);
-            this.pepGroupBox2.Location = new System.Drawing.Point(91, 178);
+            this.pepGroupBox2.Location = new System.Drawing.Point(88, 167);
             this.pepGroupBox2.Name = "pepGroupBox2";
             this.pepGroupBox2.Size = new System.Drawing.Size(339, 352);
             this.pepGroupBox2.TabIndex = 3;
@@ -341,13 +344,14 @@
             // 
             // pepGroupBox3
             // 
+            this.pepGroupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepGroupBox3.Controls.Add(this.textBox1);
             this.pepGroupBox3.Controls.Add(this.pepNumericUpDown5);
             this.pepGroupBox3.Controls.Add(this.label10);
             this.pepGroupBox3.Controls.Add(this.label9);
             this.pepGroupBox3.Controls.Add(this.pepNumericUpDown4);
             this.pepGroupBox3.Controls.Add(this.label8);
-            this.pepGroupBox3.Location = new System.Drawing.Point(520, 178);
+            this.pepGroupBox3.Location = new System.Drawing.Point(517, 167);
             this.pepGroupBox3.Name = "pepGroupBox3";
             this.pepGroupBox3.Size = new System.Drawing.Size(319, 255);
             this.pepGroupBox3.TabIndex = 4;
@@ -423,9 +427,10 @@
             // 
             // pepGroupBox4
             // 
+            this.pepGroupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepGroupBox4.Controls.Add(this.pepGroupBox7);
             this.pepGroupBox4.Controls.Add(this.pepGroupBox6);
-            this.pepGroupBox4.Location = new System.Drawing.Point(926, 177);
+            this.pepGroupBox4.Location = new System.Drawing.Point(923, 166);
             this.pepGroupBox4.Name = "pepGroupBox4";
             this.pepGroupBox4.Size = new System.Drawing.Size(252, 353);
             this.pepGroupBox4.TabIndex = 4;
@@ -571,9 +576,10 @@
             // 
             // pepGroupBox8
             // 
+            this.pepGroupBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepGroupBox8.Controls.Add(this.label16);
             this.pepGroupBox8.Controls.Add(this.pepNumericUpDown8);
-            this.pepGroupBox8.Location = new System.Drawing.Point(520, 450);
+            this.pepGroupBox8.Location = new System.Drawing.Point(517, 439);
             this.pepGroupBox8.Name = "pepGroupBox8";
             this.pepGroupBox8.Size = new System.Drawing.Size(319, 80);
             this.pepGroupBox8.TabIndex = 0;
