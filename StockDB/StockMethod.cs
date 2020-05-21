@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using MySql.Data.MySqlClient;
 
 namespace StockDB
@@ -43,17 +44,19 @@ namespace StockDB
 
 		public static void AddComponent(string reference, string code, int dimension, int height, int width, int depth, string color, int inStock, int minStock, int priceCustomer, int qttyPart, int priceFour1, int delayFour1, int priceFour2, int delayFour2,  MySqlConnection conn)
 		{
-
+			conn.Open();
 			string query = "INSERT INTO PIECE (Ref, Code, Dimension(cm), hauteur, profondeur, largeur,Couleur, Enstock, Stock minimum, Prix-Client, Nb-Pièces/casier, Prix-Fourn 1, Delai-Fourn 1, Prix-Fourn 2, Delai-Fourn 2) VALUE('" + reference + "','" + code + "','" + dimension + "','" + height + "','" + width + "','" + depth + "','" + color + "','" + inStock + "','" + minStock + "','" + priceCustomer + "','" + qttyPart + "','" + priceFour1 + "','" + delayFour1 + "','" + priceFour2 + "','" + delayFour2 + "')";
 			MySqlCommand cmd = new MySqlCommand(query, conn);
 			cmd.ExecuteNonQuery();
+			conn.Close();
 		}
 		public static void DeleteComponent(string code, MySqlConnection conn)
 		{
-
+			conn.Open();
 			string query = "DELETE FROM PIECE WHERE Code ='" + code +"'";
 			MySqlCommand cmd = new MySqlCommand(query, conn);
 			cmd.ExecuteNonQuery();
+			conn.Close();
 		}
 
 		public static void AddQtty(string code,int qtty, MySqlConnection conn)
@@ -74,7 +77,7 @@ namespace StockDB
 			conn.Close();
 		}
 
-		public static void DeleteQtty(string code, int qtty, MySqlConnection conn)
+		public static bool DeleteQtty(string code, int qtty, MySqlConnection conn)
 		{
 			conn.Open();
 			string query1 = "SELECT * FROM Piece" + " WHERE " + "Code ='" + code + "'";
@@ -86,9 +89,17 @@ namespace StockDB
 			}
 			reader.Close();
 			int newStock = stock - qtty;
-			string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code + "'";
-			MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
-			SDA.SelectCommand.ExecuteNonQuery();
+			if (newStock > 0)
+			{
+				string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code + "'";
+				MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
+				SDA.SelectCommand.ExecuteNonQuery();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 			conn.Close();
 		}
 	}
