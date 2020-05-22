@@ -20,7 +20,7 @@ namespace Kitbox.GUI.Views
 
         MySqlConnection DataBase;
 
-        List<Dictionary<String, object>> Customers;
+        List<Dictionary<string, string>> Customers;
 
         public CreateCustomer(MySqlConnection dataBase, Customer parent)
         {
@@ -32,7 +32,7 @@ namespace Kitbox.GUI.Views
 
         private void pepButton3_Click(object sender, EventArgs e)
         {
-
+            pepTreeView1.Nodes.Clear();
             SearchCustomer();
         }
 
@@ -40,19 +40,19 @@ namespace Kitbox.GUI.Views
         {
             Customers = DBMethods.DataBaseMethods.SqlSearchCustomerByName(pepTextbox6.Text, DataBase);
             int i = 0;
-            foreach(Dictionary<String, object> customer in Customers)
+            foreach(Dictionary<string, string> customer in Customers)
             {
-                pepTreeView1.Nodes.Add($"{customer["surname"].ToString().ToUpper()} - {customer["firstname"].ToString()}");
-                pepTreeView1.Nodes[i].Tag = customer["id"].ToString();
+                pepTreeView1.Nodes.Add($"{customer["surname"].ToUpper()} - {customer["firstname"]}");
+                pepTreeView1.Nodes[i].Tag = customer["id"];
                 i++;
             }
         }
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            label4.Text = Customers[pepTreeView1.SelectedNode.Index]["surname"].ToString().ToUpper();
-            label5.Text = Customers[pepTreeView1.SelectedNode.Index]["firstname"].ToString();
-            label28.Text = Customers[pepTreeView1.SelectedNode.Index]["id"].ToString();
+            label4.Text = Customers[pepTreeView1.SelectedNode.Index]["surname"].ToUpper();
+            label5.Text = Customers[pepTreeView1.SelectedNode.Index]["firstname"];
+            label28.Text = Customers[pepTreeView1.SelectedNode.Index]["id"];
         }
 
         private void pepButton2_Click(object sender, EventArgs e)

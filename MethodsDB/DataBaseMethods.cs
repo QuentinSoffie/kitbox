@@ -17,7 +17,7 @@ namespace DBMethods
         public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, MySqlConnection conn)
         {
             conn.Open();
-            string query = "INSERT INTO users (surname, firstname, address, email, phone,) VALUE('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "');";
+            string query = "INSERT INTO users (surname, firstname, address, email, phone) VALUES ('" + firstname + "','" + surname + "','" + adress + "','" + email + "','" + phone + "');";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -62,6 +62,8 @@ namespace DBMethods
 
         public static List<Dictionary<string,string>> SqlSearchCustomerByName(string value, MySqlConnection conn)
         {
+            conn.Open();
+
             List<Dictionary<string,string>> customer = new List<Dictionary<string,string>>();
 
             string query = "SELECT * FROM users WHERE surname = '" + value + "'"; ;
@@ -81,6 +83,9 @@ namespace DBMethods
 
                 customer.Add(info);
             }
+
+            reader.Close();
+            conn.Close();
 
             return customer;
 
