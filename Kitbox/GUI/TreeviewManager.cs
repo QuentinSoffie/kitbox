@@ -23,19 +23,19 @@ namespace Kitbox.GUI
 
         private Order.Order OurOrder;
 
-        private MySqlConnection Database;
+        private MySqlConnection DataBase;
 
         public TreeviewManager(KitboxEcamGUI.PepTreeView mainTreeview, Control.ControlCollection viewCupboardList, Order.Order ourOrder, MySqlConnection database)
         {
             this.MainTreeview = mainTreeview;
             this.ViewList = viewCupboardList;
             this.OurOrder = ourOrder;
-            this.Database = database;
+            this.DataBase = database;
         }
 
         public void AddViewCupboard(int uid, Cupboard cupboard)
         {
-            Kitbox.GUI.ViewCupboard view = new Kitbox.GUI.ViewCupboard(uid, cupboard, this);
+            Kitbox.GUI.ViewCupboard view = new Kitbox.GUI.ViewCupboard(uid, cupboard, DataBase, this);
             view.Dock = DockStyle.Fill;
             ViewList.Add(view);
             view.BringToFront();
@@ -150,14 +150,14 @@ namespace Kitbox.GUI
         public String AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed ✓")
         {
             UidTreeview += 1;
-            Dictionary<string, Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+            Dictionary<string, Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, DataBase);
             foreach (KeyValuePair<string, Specs> component in components)
             {
                 if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
                 {
                     return component.Key;
                 }
-                else if (component.Value == new Specs(0, 0, 0, 0, 0, "", ""))
+                else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
                 {
                     return component.Key;
                 }

@@ -20,12 +20,15 @@ namespace Kitbox.GUI
         private TreeviewManager MainTreeView;
         public int Uid;
         private Cupboard Cupboard;
-        public ViewCupboard(int uid, Cupboard cupboard, TreeviewManager treeView)
+        public MySqlConnection DataBase;
+        public ViewCupboard(int uid, Cupboard cupboard, MySqlConnection dataBase, TreeviewManager treeView)
         {
             InitializeComponent();
             this.Uid = uid;
             this.Cupboard = cupboard;
             MainTreeView = treeView;
+            DataBase = dataBase;
+            pepCombobox6.SelectedIndex = 0;
             LoadGUI();
             
         }
@@ -302,23 +305,32 @@ namespace Kitbox.GUI
         {
             if(Cupboard.CountBox() > 0)
             {
-                CupboardAngle cupboardAngle = GetGoodCupAngle();
-                if (cupboardAngle is null)
+                Console.WriteLine(pepCombobox6.SelectedItem.ToString());
+                if (pepCombobox6.SelectedItem.ToString() != "Undefined")
                 {
-                    AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
-                    return;
-                }
-                if (MainTreeView.UpdateOrder(cupboardAngle))
-                {
-                    Cupboard.CupboardAngle = cupboardAngle;
-                    MainTreeView.UpdateTag(Uid, true);
-                    AddChat("✓ Your cupboard is approved !", Color.White);
+                    CupboardAngle cupboardAngle = GetGoodCupAngle();
+                    if (cupboardAngle is null)
+                    {
+                        AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
+                        return;
+                    }
+                    if (MainTreeView.UpdateOrder(cupboardAngle))
+                    {
+                        Cupboard.CupboardAngle = cupboardAngle;
+                        MainTreeView.UpdateTag(Uid, true);
+                        AddChat("✓ Your cupboard is approved !", Color.White);
+                    }
+                    else
+                    {
+                        AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                    }
                 }
                 else
                 {
-                    AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                    AddChat($"✗ Please select your angle color !", Color.Red);
                 }
             }
+            
             else
             {
                 AddChat($"✗ We are very sorry, your Cupboard contains 0 box. Please make your box.", Color.Red);
@@ -328,15 +340,17 @@ namespace Kitbox.GUI
         private CupboardAngle GetGoodCupAngle()
         {
             int totalHeight = Cupboard.ListeBoxes.Sum(o => o.Height);
-            List<CupboardAngle> sortedList = Database.Components.CupboardAngles.SortCupboardAngle();
-            for (int i = 0; i < sortedList.Count; i += 1)
-            {
-                if (sortedList[i].Height > totalHeight)
-                {
-                    return sortedList[i];
-                }
-            }
-            return null;
+            return Database.Reader.SearchCupboardAngle(totalHeight, pepCombobox6.SelectedItem.ToString(), DataBase);
+
+            //List<CupboardAngle> sortedList = Database.Components.CupboardAngles.SortCupboardAngle();
+            //for (int i = 0; i < sortedList.Count; i += 1)
+            //{
+            //    if (sortedList[i].Height > totalHeight)
+            //    {
+            //        return sortedList[i];
+            //    }
+            //}
+            //return null;
         }
 
         private void pepCombobox6_SelectedIndexChanged(object sender, EventArgs e)

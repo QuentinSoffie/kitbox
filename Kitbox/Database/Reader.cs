@@ -194,5 +194,18 @@ namespace Kitbox.Database
 
         }
 
+        public static CupboardAngle SearchCupboardAngle(int height, string color, MySqlConnection conn)
+        {
+            conn.Open();
+            var cupboardReader = DBMethods.DataBaseMethods.SqlSearchComponent("Piece", "Ref", "hauteur", "Couleur", "Couleur", "Cornieres", height.ToString(), color, color, conn);
+
+            cupboardReader.Read();
+            CupboardAngle cupboardAngle = new CupboardAngle(cupboardReader.GetString("Couleur"), cupboardReader.GetInt32("hauteur"), cupboardReader.GetInt32("largeur"), cupboardReader.GetInt32("profondeur"), cupboardReader.GetInt32("Enstock"), cupboardReader.GetInt32("Stock minimum"), cupboardReader.GetString("Code"), cupboardReader.GetString("Dimensions(cm)"));
+            cupboardReader.Close();
+            conn.Close();
+            return cupboardAngle;
+        }
+
+
     }
 }
