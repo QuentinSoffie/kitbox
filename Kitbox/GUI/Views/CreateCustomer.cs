@@ -39,6 +39,11 @@ namespace Kitbox.GUI.Views
         public void SearchCustomer()
         {
             Customers = DBMethods.DataBaseMethods.SqlSearchCustomerByName(pepTextbox6.Text, DataBase);
+            if (Customers.Count == 0)
+            {
+                MessageBox.Show("No customers found.", "Error");
+                return;
+            }
             int i = 0;
             foreach(Dictionary<string, string> customer in Customers)
             {
@@ -57,6 +62,7 @@ namespace Kitbox.GUI.Views
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            Parent.exportPDF();
             //TODO: finish command
         }
 
@@ -70,8 +76,16 @@ namespace Kitbox.GUI.Views
 
             if (surname != "" && firsname != "" && phone != "" && email != "" && address != "")
             {
-                DBMethods.DataBaseMethods.SqlAddCustomer(surname, firsname, phone, email, address, DataBase);
-                //TODO: finish command
+                try
+                {
+                    DBMethods.DataBaseMethods.SqlAddCustomer(surname, firsname, phone, email, address, DataBase);
+                    //TODO: finish command
+                    Parent.exportPDF();
+                } catch (MySqlException exception)
+                {
+                    Console.WriteLine(exception);
+                    MessageBox.Show("This email already exist", "Error");
+                }
             }
             else
             {

@@ -85,10 +85,18 @@ namespace GUI
             }
           
 		}
+
+		public void ClearWindow()
+		{
+			splitContainer1.Panel2.Controls.Clear();
+			splitContainer1.Panel2.Controls.Add(label1);
+			splitContainer1.Panel2.Controls.Add(pictureBox1);
+		}
       
 
         public void exportPDF()
         {
+			ClearWindow();
 
             try
             {
