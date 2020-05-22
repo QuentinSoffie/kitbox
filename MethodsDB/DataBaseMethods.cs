@@ -32,6 +32,15 @@ namespace DBMethods
             cmd.ExecuteNonQuery();
         }
 
+        public static void SqlAddOrder(string customer, string id, string json, string state, MySqlConnection conn)
+        {
+            conn.Open();
+            string query = "INSERT INTO `Orders`(`Customer`, `IdClient`, `NumOrder`, `ItemsCode`, `State`) VALUES ('" + customer + "','" + id + "','" + json + "','" + state + "')";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public static void SqlDelete(string table, string paramID, int valueID, MySqlConnection conn)
         {
             string query = "DELETE FROM " + table + " WHERE " + paramID + "=" + valueID;
