@@ -76,30 +76,21 @@ namespace Kitbox.Database
         /// <returns></returns>
         public static Dictionary<string, Specs> SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, MySqlConnection conn)
         {
-            Door doorBox;
-            List<Panel> panelBox = new List<Panel>();
-            List<Traverses> traverseBox = new List<Traverses>();
-            Slider sliderBox;
-            Cups cupsBox;
 
-            List<Specs> components = new List<Specs>();
             Dictionary<String, Specs> componentDict = new Dictionary<string, Specs>();
 
             conn.Open();
 
             var panelBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", width, height, colorPanel, "Panneau Ar", conn);
             componentDict.Add("PanelBack", (Panel)ReaderData(panelBack, typeof(Panel)));
-            //panelBox.Add((Panel)ReaderData(panelBack, typeof(Panel)));
             panelBack.Close();
 
             var panelSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", "Ref", depth, height, colorPanel, "Panneau GD",  conn);
             componentDict.Add("PanelSide", (Panel)ReaderData(panelSides, typeof(Panel)));
-            //panelBox.Add((Panel)ReaderData(panelSides, typeof(Panel)));
             panelSides.Close();
 
             var panelHB = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Couleur", "Ref", width, depth, colorPanel, "Panneau HB", conn);
             componentDict.Add("PanelHB", (Panel)ReaderData(panelHB, typeof(Panel)));
-            //panelBox.Add((Panel)ReaderData(panelHB, typeof(Panel)));
             panelHB.Close();
 
 
@@ -116,58 +107,35 @@ namespace Kitbox.Database
 
                 var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", size, (height).ToString(), colorDoor,"Porte", conn);
                 componentDict.Add("Door", (Specs)ReaderData(door, typeof(Door)));
-                //doorBox = (Door)ReaderData(door, typeof(Door));
                 door.Close();
             }
             else
             {
                 Console.WriteLine("No doors");
                 componentDict.Add("Door", null);
-                //doorBox = null;
             }
 
             var slider = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", "0", height, "", "Tasseau", conn);
             componentDict.Add("Slider", (Slider)ReaderData(slider, typeof(Slider)));
-            //sliderBox = (Slider)ReaderData(slider, typeof(Slider));
             slider.Close();
 
             var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Av", "Traverse Av", conn);
             componentDict.Add("TraverseFront", (Traverses)ReaderData(traverseFront, typeof(Traverses)));
-            //traverseBox.Add((Traverses)ReaderData(traverseFront, typeof(Traverses)));
             traverseFront.Close();
 
             var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Ar", "Traverse Ar", conn);
             componentDict.Add("TraverseBack", (Traverses)ReaderData(traverseBack, typeof(Traverses)));
-            //traverseBox.Add((Traverses)ReaderData(traverseBack, typeof(Traverses)));
             traverseBack.Close();
 
             var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", depth, "0", "Traverse GD", "Traverse GD", conn);
             componentDict.Add("TraverseSide", (Traverses)ReaderData(traverseSides, typeof(Traverses)));
-            //traverseBox.Add((Traverses)ReaderData(traverseSides, typeof(Traverses)));
             traverseSides.Close();
 
             var cups = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", "0", "0", "Coupelles", "Coupelles", conn);
             componentDict.Add("Cups", colorDoor !=  "I don't want a door" && colorDoor != "Verre" ? (Cups)ReaderData(cups, typeof(Cups)) : null);
-            //cupsBox = ((Cups)ReaderData(cups, typeof(Cups)));
             cups.Close();
 
             conn.Close();
-
-            //components.Add(doorBox);
-            //componentDict.Add("Door", doorBox);
-            //components.Add(sliderBox);
-            //componentDict.Add("Slider", sliderBox);
-
-            //foreach (Panel panelComponent in panelBox)
-            //{
-            //    components.Add(panelComponent);
-            //}
-            //foreach (Traverses traverseComponent in traverseBox)
-            //{
-            //    components.Add(traverseComponent);
-            //}
-
-            //components.Add(doorBox != null && colorDoor != "Verre" ? cupsBox : null );
 
             return componentDict;
 
@@ -184,11 +152,9 @@ namespace Kitbox.Database
             
             if (type.Name == "Door")
             {
-                Console.WriteLine("Door");
                 Specs door = new Specs(0, 0, 0, 0, 0, "", "");
                 while (component.Read())
                 {
-                    Console.WriteLine("reading");
                     door = new Door(component.GetString("Couleur"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 }
 
@@ -197,7 +163,6 @@ namespace Kitbox.Database
             }
             else if (type.Name == "Panel")
             {
-                Console.WriteLine("Panel");
                 component.Read();
                 Panel panel = new Panel(component.GetString("Couleur"), component.GetString("Ref").Replace("Panneau ", ""), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(panel);
@@ -205,7 +170,6 @@ namespace Kitbox.Database
             }
             else if (type.Name == "Slider")
             {
-                Console.WriteLine("Slider");
                 component.Read();
                 Slider slider = new Slider(component.GetInt32("hauteur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(slider);
@@ -214,21 +178,18 @@ namespace Kitbox.Database
             else if (type.Name == "Traverses")
             {
                 component.Read();
-                Console.WriteLine("Traverse");
                 Traverses traverses = new Traverses(component.GetString("Ref"), component.GetInt32("hauteur"), component.GetInt32("largeur"), component.GetInt32("profondeur"), component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(traverses);
                 return traverses;
             }
             else if (type.Name == "Cups")
             {
-                Console.WriteLine("Cups");
                 component.Read();
                 Cups cups = new Cups(component.GetInt32("Enstock"), component.GetInt32("Stock minimum"), component.GetString("Code"), component.GetString("Dimensions(cm)"));
                 Console.WriteLine(cups);
                 return cups;
             }
             
-
             return null;
 
         }
