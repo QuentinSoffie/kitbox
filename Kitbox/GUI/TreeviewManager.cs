@@ -15,7 +15,7 @@ namespace Kitbox.GUI
 {
     public class TreeviewManager
     {
-        private PepTreeView MainTreeview;
+        public PepTreeView MainTreeview;
        
         private Control.ControlCollection ViewList;
 
@@ -38,7 +38,7 @@ namespace Kitbox.GUI
             Kitbox.GUI.ViewCupboard view = new Kitbox.GUI.ViewCupboard(uid, cupboard, DataBase, this);
             view.Dock = DockStyle.Fill;
             ViewList.Add(view);
-            view.BringToFront();
+            view.Hide();
         }
 
         public void AddViewBox(int uidCupboard,int uid, Box box)
@@ -49,7 +49,6 @@ namespace Kitbox.GUI
             viewBox.BringToFront();
         }
        
-
         public void BringToFrontView(int uid)
         {
             foreach (Object view in ViewList)
@@ -72,6 +71,7 @@ namespace Kitbox.GUI
                     if (viewType.Uid == uid)
                     {
                         viewType.RefreshView();
+                        viewType.Show();
                         viewType.BringToFront();
                         break;
                     }
@@ -145,8 +145,8 @@ namespace Kitbox.GUI
             OurOrder.RemoveAt(uid);
             MainTreeview.Nodes.RemoveAt(ReturnIndexTreeview(uid)[0]);
             RemoveView(uid);
-
         }
+
         public String AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed ✓")
         {
             UidTreeview += 1;
@@ -167,11 +167,11 @@ namespace Kitbox.GUI
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
-          
 
             cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"], (Components.Slider)components["Slider"], new List<Panel>() { (Panel)components["PanelBack"], (Panel)components["PanelSide"], (Panel)components["PanelHB"]}, new List<Traverses>() { (Traverses)components["TraverseFront"], (Traverses)components["TraverseBack"], (Traverses)components["TraverseSide"] }, (Cups)components["Cups"], this);
             return null;
         }
+
         public void UpdateTag(int uidCupboard,bool certified = false)
         {
             if (certified == false)
@@ -193,9 +193,7 @@ namespace Kitbox.GUI
             OurOrder.RemoveAt(uid);
             UpdateTag(uidCupboard);
             BringToFrontView(uidCupboard);
-        
         }
-
 
         public bool UpdateOrder(CupboardAngle cupboardAngle)
         {
@@ -205,6 +203,7 @@ namespace Kitbox.GUI
             }
             return false;
         }
+
         public bool CheckIfAllCupboardAreVerified()
         {
             int allIsChecked = 0;

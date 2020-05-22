@@ -29,8 +29,7 @@ namespace Kitbox.GUI
             MainTreeView = treeView;
             DataBase = dataBase;
             pepCombobox6.SelectedIndex = 0;
-            LoadGUI();
-            
+            LoadGUI(); 
         }
 
         private void LoadGUI()
@@ -43,6 +42,8 @@ namespace Kitbox.GUI
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            MainTreeView.MainTreeview.ExpandAll();
+            MainTreeView.MainTreeview.SelectedNode = null;
             AddBox();
         }
 
@@ -59,7 +60,7 @@ namespace Kitbox.GUI
                 Console.WriteLine(result);
                 if (!(result is null))
                 {
-                    AddChat($"We are very sorry, your {result} is no longer available. Please select an another one.", Color.Red);
+                    AddChat($"We are very sorry, your {result.ToUpper()} is no longer available. Please select an another one.", Color.Red);
                 }
                 RefreshView();
             }
@@ -68,7 +69,6 @@ namespace Kitbox.GUI
                 AddChat("You have too many boxes in your cupboard !", Color.Red);
             }
         }
-
 
         private void AddChat(string message, Color color)
         {
@@ -268,7 +268,6 @@ namespace Kitbox.GUI
             label14.Visible = true;
             pictureBox9.Visible = true;
             pepProgressBar2.Visible = true;
-
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
@@ -287,7 +286,6 @@ namespace Kitbox.GUI
         private void RefreshProgressBar()
         {
             pepProgressBar1.Value = Cupboard.CountBox()*(15);
-
         }
 
         public void RefreshView()

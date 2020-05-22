@@ -145,7 +145,7 @@ namespace Kitbox.PDF
             Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
             Paragraph prgTotal = new Paragraph();
             prgTotal.Alignment = Element.ALIGN_LEFT;
-            prgTotal.Add(new Chunk("Le coût total de la commande revient à : " + cost, fntTotal));
+            prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
             document.Add(prgTotal);
 
 

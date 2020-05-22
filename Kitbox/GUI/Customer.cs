@@ -29,6 +29,7 @@ namespace GUI
 		private readonly string Username;
 		private readonly string Password;
 		private Kitbox.Order.Order OurOrder;
+		public CreateCustomer CustomerView;
 
 		public Customer(MySqlConnection database, Authentication authentification, string username, string password)
 		{
@@ -48,6 +49,11 @@ namespace GUI
 			OurOrder.RemoveAt(uid);
 		}
 
+		public void SetTreeviewSelectedIndex()
+		{
+			pepTreeView1.SelectedNode = null;
+		}
+
 		private void BeforeFormClosing(object sender, FormClosingEventArgs e)
 		{
 			Authentification.Visible = true;
@@ -55,7 +61,6 @@ namespace GUI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
 			MainTreeview.AddCupboard(OurOrder);
 		}
 
@@ -67,21 +72,18 @@ namespace GUI
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
             if (MainTreeview.CheckIfAllCupboardAreVerified())
             {
-				//exportPDF();
-				CreateCustomer customerView = new CreateCustomer(DataBase, this);
-				customerView.Dock = DockStyle.Fill;
-				splitContainer1.Panel2.Controls.Add(customerView);
-				customerView.BringToFront();
+				CustomerView = new CreateCustomer(DataBase, this);
+				CustomerView.Dock = DockStyle.Fill;
+				splitContainer1.Panel2.Controls.Add(CustomerView);
+				CustomerView.BringToFront();
 			}
             else
             {
                 CustomPopup obj = new CustomPopup("Please check each cupboard before confirming your order");
                 obj.Show(this);
             }
-          
 		}
       
         public void exportPDF(string customer, string id)

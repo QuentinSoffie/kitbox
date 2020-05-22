@@ -35,13 +35,19 @@ namespace Kitbox.GUI.Views
 
         private void pepButton3_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             pepTreeView1.Nodes.Clear();
             SearchCustomer();
+            Cursor.Current = Cursors.Default;
         }
 
         public void SearchCustomer()
         {
             Customers = DBMethods.DataBaseMethods.SqlSearchCustomerByName(pepTextbox6.Text, DataBase);
+            if (Customers.Count == 0)
+            {
+                MessageBox.Show($"No result for \"{pepTextbox6.Text}\" !", "Error");
+            }
             int i = 0;
             foreach(Dictionary<string, string> customer in Customers)
             {
@@ -60,6 +66,8 @@ namespace Kitbox.GUI.Views
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             if (pepTreeView1.SelectedNode != null)
             {
                 Customer = Customers[pepTreeView1.SelectedNode.Index]["surname"];
@@ -73,10 +81,14 @@ namespace Kitbox.GUI.Views
             {
                 MessageBox.Show("Please select or create a customer", "Error");
             }
+            Parent.CustomerView.Hide();
+            Cursor.Current = Cursors.Default;
         }
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             string surname = pepTextbox1.Text;
             string firsname = pepTextbox2.Text;
             string phone = pepTextbox3.Text;
@@ -103,6 +115,8 @@ namespace Kitbox.GUI.Views
             {
                 MessageBox.Show("Please complete all the fields.", "Error");
             }
+            Parent.CustomerView.Hide();
+            Cursor.Current = Cursors.Default;
         }
     }
 }
