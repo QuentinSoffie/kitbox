@@ -16,6 +16,7 @@ using iTextSharp.text;
 using System.IO;
 using Newtonsoft.Json;
 using Kitbox.GUI.Views;
+using System.Runtime.InteropServices;
 
 namespace GUI
 {
@@ -40,7 +41,6 @@ namespace GUI
 			Password = password;
 			Kitbox.Database.Reader.InitializeComponents(DataBase);
 			toolStripStatusLabel1.Text = "Welcome " + Username;
-
 		}
 
 		private void RemoveCupboardOrder(int uid)
@@ -59,7 +59,6 @@ namespace GUI
 			MainTreeview.AddCupboard(OurOrder);
 		}
 
-
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			int uidClicked = int.Parse(e.Node.Name);
@@ -76,7 +75,6 @@ namespace GUI
 				customerView.Dock = DockStyle.Fill;
 				splitContainer1.Panel2.Controls.Add(customerView);
 				customerView.BringToFront();
-
 			}
             else
             {
@@ -86,10 +84,8 @@ namespace GUI
           
 		}
       
-
         public void exportPDF(string customer, string id)
         {
-
             try
             {
                 Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
@@ -97,10 +93,7 @@ namespace GUI
 
                 string orderJsonString = JsonConvert.SerializeObject(orderJson.Command);
 
-				Console.WriteLine("----------");
-				Console.WriteLine(orderJsonString);
 				DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, "Complete", DataBase);
-				Console.WriteLine("----------");
 
 				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
 				Console.WriteLine(cost);
@@ -118,9 +111,12 @@ namespace GUI
 		{
 			About obj = new About();
 			obj.Show(this);
-
 		}
 
-	
+		private void storeKeeperToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Authentication auth = new Authentication();
+			auth.Show();
+		}
 	}
 }

@@ -14,8 +14,6 @@ namespace Kitbox.PDF
 {
     public class PDFUtils
     {
-        
-
         public static DataTable MakeBill(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
         {
             DataTable bill = new DataTable();
@@ -55,20 +53,7 @@ namespace Kitbox.PDF
 
                 //Création du JSON
                 orderDataBase.Command.Add(item[0], Int32.Parse(item[3]));
-                //orderDataBase.Code.Add(item[0]);
-                //orderDataBase.Quantity.Add(Int32.Parse(item[3]));
-
-
-                //List<string> prices = new List<string>();
-
-
-
-
             }
-                
-                
-
-            //}
             return bill;
         }
 
@@ -98,7 +83,7 @@ namespace Kitbox.PDF
         }
 
 
-            public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost)
+        public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost)
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -129,8 +114,6 @@ namespace Kitbox.PDF
 
             //Ajout d'un espace
             document.Add(new Chunk("\n", fntHead));
-
-
 
             //Ajout de la table
             PdfPTable table = new PdfPTable(dtblTable.Columns.Count);

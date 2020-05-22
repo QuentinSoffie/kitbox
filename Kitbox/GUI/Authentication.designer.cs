@@ -76,7 +76,6 @@
             this.pepTextbox1.Tag = "Username";
             this.pepTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox1.UseSystemPasswordChar = false;
-            this.pepTextbox1.TextChanged += new System.EventHandler(this.pepTextbox1_TextChanged);
             // 
             // pepTextbox2
             // 
@@ -95,7 +94,6 @@
             this.pepTextbox2.Tag = "Password";
             this.pepTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox2.UseSystemPasswordChar = true;
-            this.pepTextbox2.TextChanged += new System.EventHandler(this.pepTextbox2_TextChanged);
             this.pepTextbox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyUp);
             this.pepTextbox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyUp);
             // 

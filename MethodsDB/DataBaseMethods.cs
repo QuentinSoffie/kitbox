@@ -31,7 +31,6 @@ namespace DBMethods
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
         }
-
         public static void SqlAddOrder(string customer, string id, string json, string state, MySqlConnection conn)
         {
             conn.Open();
@@ -40,14 +39,12 @@ namespace DBMethods
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
         public static void SqlDelete(string table, string paramID, int valueID, MySqlConnection conn)
         {
             string query = "DELETE FROM " + table + " WHERE " + paramID + "=" + valueID;
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
         }
-
         public static void SqlSelect(string paramID, string table, MySqlConnection conn)
         {
             string query = "SELECT " + paramID + " FROM " + table;
@@ -57,18 +54,14 @@ namespace DBMethods
                 Console.WriteLine(reader[paramID]);
             }
             reader.Close();
-
         }
         public static MySqlDataReader SqlSearch(string table, string param, string value, MySqlConnection conn)
         {
-
             string query = "SELECT * FROM " + table + " WHERE " + param + "=" + value;
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
-
         }
-
         public static List<Dictionary<string,string>> SqlSearchCustomerByName(string value, MySqlConnection conn)
         {
             conn.Open();
@@ -97,9 +90,7 @@ namespace DBMethods
             conn.Close();
 
             return customer;
-
         }
-
         public static void SqlUpdateCustomer(string param, string value, int id, MySqlConnection conn)
         {
             conn.Open();
@@ -123,7 +114,6 @@ namespace DBMethods
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
-
         }
 
         public static MySqlDataReader SqlSearchCustomer( string id, MySqlConnection conn)
@@ -133,7 +123,6 @@ namespace DBMethods
 
             return reader;
         }
-
         public static String sha256_hash(String value)
         {
             StringBuilder Sb = new StringBuilder();
@@ -146,9 +135,7 @@ namespace DBMethods
                 foreach (Byte b in result)
                     Sb.Append(b.ToString("x2"));
             }
-
             return Sb.ToString();
         }
-
     }
 }

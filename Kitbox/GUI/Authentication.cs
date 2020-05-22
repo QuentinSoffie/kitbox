@@ -32,21 +32,13 @@ namespace GUI
                 myDataBase.Open();
                 myDataBase.Close();
 
-                if (pepTextbox1.Text == "customer")
-                {
-                    Customer obj = new Customer(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
-                    obj.Show();
-                    this.Visible = false;
-                }
-                else
+                if(pepTextbox1.Text == "storekeep")
                 {
                     StoreKeeper obj = new StoreKeeper(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
                     obj.Show();
                     this.Visible = false;
-
                 }
-                
-                
+
             }
             catch (Exception ex)
             {
@@ -62,24 +54,14 @@ namespace GUI
         private void pepButton1_Click(object sender, EventArgs e)
         {
             Connection();
-          
         }
 
-        private void pepTextbox2_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
         private void pepTextbox1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && Connecting == false)
             {
                 Connection();
             }
-        }
-
-        private void pepTextbox1_TextChanged(object sender, EventArgs e)
-        {
-             
         }
     }
 }

@@ -31,7 +31,6 @@ namespace Kitbox.GUI.Views
             InitializeComponent();
             Parent = parent;
             DataBase = dataBase;
-
         }
 
         private void pepButton3_Click(object sender, EventArgs e)
@@ -74,8 +73,6 @@ namespace Kitbox.GUI.Views
             {
                 MessageBox.Show("Please select or create a customer", "Error");
             }
-
-            //TODO: finish command
         }
 
         private void pepButton1_Click(object sender, EventArgs e)
@@ -101,7 +98,6 @@ namespace Kitbox.GUI.Views
                 reader.Close();
                 DataBase.Close();
                 Parent.exportPDF(Customer, Id);
-                //TODO: finish command
             }
             else
             {
