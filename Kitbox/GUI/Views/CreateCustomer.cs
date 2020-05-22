@@ -22,6 +22,10 @@ namespace Kitbox.GUI.Views
 
         List<Dictionary<string, string>> Customers;
 
+        string Customer;
+
+        string Id;
+
         public CreateCustomer(MySqlConnection dataBase, Customer parent)
         {
             InitializeComponent();
@@ -57,6 +61,12 @@ namespace Kitbox.GUI.Views
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            Customer = Customers[pepTreeView1.SelectedNode.Index]["surname"];
+            Id = Customers[pepTreeView1.SelectedNode.Index]["id"];
+            Console.WriteLine(Customer);
+            Console.WriteLine(Id);
+
+            Parent.exportPDF(Customer, Id);
             //TODO: finish command
         }
 
@@ -67,10 +77,22 @@ namespace Kitbox.GUI.Views
             string phone = pepTextbox3.Text;
             string email = pepTextbox4.Text;
             string address = pepTextbox5.Text;
+            Customer = pepTextbox1.Text;
 
             if (surname != "" && firsname != "" && phone != "" && email != "" && address != "")
             {
                 DBMethods.DataBaseMethods.SqlAddCustomer(surname, firsname, phone, email, address, DataBase);
+                DataBase.Open();
+                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("users", "surname", String.Format("'{0}'", Customer), DataBase);
+                
+
+                while(reader.Read())
+                {
+                    Id = reader["id"].ToString();
+                }
+                reader.Close();
+                DataBase.Close();
+                Parent.exportPDF(Customer, Id);
                 //TODO: finish command
             }
             else

@@ -87,7 +87,7 @@ namespace GUI
 		}
       
 
-        public void exportPDF()
+        public void exportPDF(string customer, string id)
         {
 
             try
@@ -96,8 +96,9 @@ namespace GUI
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
                 string orderJsonString = JsonConvert.SerializeObject(orderJson);
 
-				
-                Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture client");
+				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
+				Console.WriteLine(cost);
+                Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture : " + customer,  id, cost);
                 System.Diagnostics.Process.Start(@"bill.pdf");
                 this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             }

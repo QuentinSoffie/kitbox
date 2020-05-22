@@ -14,10 +14,12 @@ namespace Kitbox.PDF
 {
     public class PDFUtils
     {
-  
+        
+
         public static DataTable MakeBill(Kitbox.Order.Order order,Kitbox.Database.Json.Order orderDataBase)
         {
             DataTable bill = new DataTable();
+            float TotalBill = 0;
 
             //Define columns
             bill.Columns.Add("Code");
@@ -26,6 +28,7 @@ namespace Kitbox.PDF
             bill.Columns.Add("Quantité");
             bill.Columns.Add("Prix unitaire");
             bill.Columns.Add("Prix total");
+
 
             foreach (List<string> item in order.MakeOrder())
             {
@@ -41,6 +44,7 @@ namespace Kitbox.PDF
                     price = reader["Prix-Client"].ToString();
                 }
                 cost *= Int32.Parse(item[3]) * float.Parse(price);
+                TotalBill += cost;
                 reader.Close();
                 Console.WriteLine(price);
                 item.Add(price);
@@ -66,11 +70,34 @@ namespace Kitbox.PDF
             //}
             return bill;
         }
-     
 
-        
+        public static float CalculateCost(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
+        {
+            float TotalBill = 0;
+            foreach (List<string> item in order.MakeOrder())
+            {
+                float cost = 1;
+                string price = "";
 
-        public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader)
+                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection("customer", "groupe2020");
+                conn.Open();
+
+                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
+                while (reader.Read())
+                {
+
+                    price = reader["Prix-Client"].ToString();
+                }
+                cost *= Int32.Parse(item[3]) * float.Parse(price);
+                TotalBill += cost;
+                reader.Close();
+            }
+
+            return TotalBill;
+        }
+
+
+            public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost)
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -92,6 +119,7 @@ namespace Kitbox.PDF
             Paragraph prgAuthor = new Paragraph();
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
             prgAuthor.Add(new Chunk("Author : KitBox Company", fntAuthor));
+            prgAuthor.Add(new Chunk("\nClient number : " + id, fntAuthor));
             prgAuthor.Add(new Chunk("\nDate de la facture : " + DateTime.Now.ToShortDateString(), fntAuthor));
             document.Add(prgAuthor);
 
@@ -100,6 +128,8 @@ namespace Kitbox.PDF
 
             //Ajout d'un espace
             document.Add(new Chunk("\n", fntHead));
+
+
 
             //Ajout de la table
             PdfPTable table = new PdfPTable(dtblTable.Columns.Count);
@@ -124,6 +154,17 @@ namespace Kitbox.PDF
             }
 
             document.Add(table);
+
+            document.Add(new Chunk("\n", fntHead));
+
+            BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
+            Paragraph prgTotal = new Paragraph();
+            prgTotal.Alignment = Element.ALIGN_LEFT;
+            prgTotal.Add(new Chunk("Le coût total de la commande revient à : " + cost, fntTotal));
+            document.Add(prgTotal);
+
+
             document.Close();
             writer.Close();
             fs.Close();
