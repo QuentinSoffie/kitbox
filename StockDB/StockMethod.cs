@@ -142,8 +142,10 @@ namespace StockDB
 			}
 			reader.Close();
 			int newStock = qtty + stock;
-			if (newStock > 0)
+			Console.WriteLine("check new quantity");
+			if (newStock >= 0)
 			{
+				Console.WriteLine("updating...");
 				string query2 = "UPDATE Piece SET Enstock = '" + newStock + "' WHERE Code ='" + code + "'";
 				MySqlDataAdapter SDA = new MySqlDataAdapter(query2, conn);
 				SDA.SelectCommand.ExecuteNonQuery();
@@ -152,6 +154,7 @@ namespace StockDB
 			}
 			else
 			{
+				conn.Close();
 				return false;
 			}
 		}

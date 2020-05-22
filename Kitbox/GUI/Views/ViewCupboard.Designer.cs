@@ -161,7 +161,6 @@
             this.pepProgressBar1.TabIndex = 0;
             this.pepProgressBar1.Text = "0 / 7";
             this.pepProgressBar1.Value = 0;
-            this.pepProgressBar1.Click += new System.EventHandler(this.pepProgressBar1_Click);
             // 
             // panel2
             // 
@@ -614,7 +613,6 @@
             this.pictureBox6.Size = new System.Drawing.Size(35, 35);
             this.pictureBox6.TabIndex = 26;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -713,7 +711,6 @@
             this.pepProgressBar3.TabIndex = 7;
             this.pepProgressBar3.Text = "Completion percentage - 0%";
             this.pepProgressBar3.Value = 0;
-            this.pepProgressBar3.Click += new System.EventHandler(this.pepProgressBar3_Click);
             // 
             // pictureBox9
             // 
@@ -740,7 +737,6 @@
             this.label14.Text = "Angle color :";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.Visible = false;
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // pepButton2
             // 
@@ -799,7 +795,6 @@
             this.Controls.Add(this.panel2);
             this.Name = "ViewCupboard";
             this.Size = new System.Drawing.Size(774, 725);
-            this.Load += new System.EventHandler(this.ViewCupboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

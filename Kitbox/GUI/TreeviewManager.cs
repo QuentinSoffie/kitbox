@@ -50,8 +50,8 @@ namespace Kitbox.GUI
         }
        
 
-            public void BringToFrontView(int uid)
-            {
+        public void BringToFrontView(int uid)
+        {
             foreach (Object view in ViewList)
             {
                 if (view is Kitbox.GUI.ViewBox)
@@ -75,11 +75,8 @@ namespace Kitbox.GUI
                         viewType.BringToFront();
                         break;
                     }
-                }
-
-              
+                }              
             }
-
         }
 
         private void RemoveView(int uid)
@@ -150,24 +147,29 @@ namespace Kitbox.GUI
             RemoveView(uid);
 
         }
-        public Specs AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed ✓")
+        public String AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed ✓")
         {
             UidTreeview += 1;
-            List<Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
-            foreach (Specs component in components)
+            Dictionary<string, Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, Database);
+            foreach (KeyValuePair<string, Specs> component in components)
             {
-                if (!(component is null) && component.IsInStock(OurOrder.GetQuantityCode(component.Code) + component.CountComponents()) == false  )
+                if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
                 {
-                    return component;
+                    return component.Key;
+                }
+                else if (component.Value == new Specs(0, 0, 0, 0, 0, "", ""))
+                {
+                    return component.Key;
                 }
             }
+            Console.WriteLine("end foreach");
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {cupboard.CountBox() + 1} box";
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
           
 
-            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components[0], (Components.Slider)components[1], new List<Panel>() { (Panel)components[2], (Panel)components[3], (Panel)components[4]}, new List<Traverses>() { (Traverses)components[5], (Traverses)components[6], (Traverses)components[7] }, (Cups)components[8], this);
+            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"], (Components.Slider)components["Slider"], new List<Panel>() { (Panel)components["PanelBack"], (Panel)components["PanelSide"], (Panel)components["PanelHB"]}, new List<Traverses>() { (Traverses)components["TraverseFront"], (Traverses)components["TraverseBack"], (Traverses)components["TraverseSide"] }, (Cups)components["Cups"], this);
             return null;
         }
         public void UpdateTag(int uidCupboard,bool certified = false)

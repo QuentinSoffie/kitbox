@@ -79,7 +79,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             {
                 pepTreeView1.Nodes.Add(order.Key.Name);
                 pepTreeView1.Nodes[i].Tag = order.Key.State;
-
                 i++;
             }
         }

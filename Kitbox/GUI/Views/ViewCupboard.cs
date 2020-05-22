@@ -38,24 +38,6 @@ namespace Kitbox.GUI
             label4.Text = Uid.ToString();
         }
 
-
-
-        private void ViewCupboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void pepButton1_Click(object sender, EventArgs e)
         {
             AddBox();
@@ -70,10 +52,11 @@ namespace Kitbox.GUI
                 string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
-                Specs result = MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                string result = MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
+                Console.WriteLine(result);
                 if (!(result is null))
                 {
-                    AddChat($"We are very sorry, your {result.GetType().Name }({result.Code}) is no longer available. Please select an another one.",Color.Red);
+                    AddChat($"We are very sorry, your {result} is no longer available. Please select an another one.", Color.Red);
                 }
                 RefreshView();
             }
@@ -216,6 +199,18 @@ namespace Kitbox.GUI
         private void pepCombobox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             refreshProgressionCupboard();
+            Console.WriteLine(pepCombobox2.SelectedItem.ToString());
+            try
+            {
+                if (int.Parse(pepCombobox2.SelectedItem.ToString()) < 60)
+                {
+                    AddChat("Wait ! You can't have a door with this width.", Color.Orange);
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("error");
+            }
         }
 
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,10 +239,6 @@ namespace Kitbox.GUI
             MainTreeView.RemoveCupboard(Uid,Cupboard);
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ReduceGUI()
         {
             pepProgressBar3.Visible = false;
@@ -282,12 +273,13 @@ namespace Kitbox.GUI
             ReduceGUI();
             AddChat("Woh nice dimensions for your cupboard !", Color.White);
             EnlargesGUI();
+            if (int.Parse(pepCombobox2.SelectedItem.ToString()) < 60)
+            {
+                pepCombobox3.SelectedIndex = 1;
+                pepCombobox3.Enabled = false; 
+            }
         }
 
-        private void pepProgressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void RefreshProgressBar()
         {
@@ -295,10 +287,6 @@ namespace Kitbox.GUI
 
         }
 
-        private void pepProgressBar3_Click(object sender, EventArgs e)
-        {
-
-        }
         public void RefreshView()
         {
             pepProgressBar1.Text = string.Format("{0}/7", Cupboard.CountBox());
@@ -335,9 +323,6 @@ namespace Kitbox.GUI
             {
                 AddChat($"✗ We are very sorry, your Cupboard contains 0 box. Please make your box.", Color.Red);
             }
-           
-            
-           
         }
 
         private CupboardAngle GetGoodCupAngle()
