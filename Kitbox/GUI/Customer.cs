@@ -15,6 +15,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.IO;
 using Newtonsoft.Json;
+using Kitbox.GUI.Views;
 
 namespace GUI
 {
@@ -52,13 +53,6 @@ namespace GUI
 			Authentification.Visible = true;
 		}
 
-
-		private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-
 		private void button1_Click(object sender, EventArgs e)
 		{
 
@@ -75,10 +69,15 @@ namespace GUI
 		private void button2_Click(object sender, EventArgs e)
 		{
 
-            if (MainTreeview.CheckIfAllCupboardIsVerified())
+            if (MainTreeview.CheckIfAllCupboardAreVerified())
             {
-                exportPDF();
-            }
+				//exportPDF();
+				CreateCustomer customerView = new CreateCustomer(DataBase, this);
+				customerView.Dock = DockStyle.Fill;
+				splitContainer1.Panel2.Controls.Add(customerView);
+				customerView.BringToFront();
+
+			}
             else
             {
                 CustomPopup obj = new CustomPopup("Please check each cupboard before confirming your order");

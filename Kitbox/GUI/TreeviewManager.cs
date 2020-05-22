@@ -205,7 +205,7 @@ namespace Kitbox.GUI
             }
             return false;
         }
-        public bool CheckIfAllCupboardIsVerified()
+        public bool CheckIfAllCupboardAreVerified()
         {
             int allIsChecked = 0;
             for (int i = 0; i < MainTreeview.Nodes.Count; i++)
