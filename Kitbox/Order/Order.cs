@@ -175,31 +175,39 @@ namespace Kitbox.Order
                     if (codeMatrix[1] == "Porte")
                     {
                         codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + box.Door.CountComponents()).ToString();
+                        return true;
                     }
                     if (codeMatrix[1] == "Tasseau")
                     {
                         codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + box.Slider.CountComponents()).ToString();
+                        return true;
                     }
                     
                     if (codeMatrix[1] == "Coupelles")
                     {
                         codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + box.Cups.CountComponents()).ToString();
+                        return true;
                     }
                     foreach (Kitbox.Components.Panel panel in box.Panels)
                     {
                         if (codeMatrix[1] == "Panneau " + panel.Type)
                         {
                             codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + panel.CountComponents()).ToString();
+                            return true;
                         }
                     }
                     foreach (Traverses traverse in box.Traverses)
                     {
-                        if (codeMatrix[1] == "Traverse " + traverse.Type)
+                        Console.WriteLine(codeMatrix[1]);
+                        Console.WriteLine(traverse.Type);
+                        if (codeMatrix[1] == traverse.Type)
                         {
+                            Console.WriteLine("JE rajouter des traverses");
                             codeMatrix[3] = (Int32.Parse(codeMatrix[3]) + traverse.CountComponents()).ToString();
+                            return true;
                         }
                     }
-                    return true;
+
                 }
                 
             }
