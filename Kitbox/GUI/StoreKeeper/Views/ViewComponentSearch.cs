@@ -25,6 +25,19 @@ namespace Kitbox.GUI.StoreKeeper.Views
             DataBase = dataBase;
             Component = component;
             View = view;
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            label20.Text = Component.Code;
+            label24.Text = Component.Height;
+            label25.Text = Component.Width;
+            label26.Text = Component.Depth;
+            label21.Text = Component.Ref;
+            label22.Text = Component.Stock.ToString();
+            label23.Text = Component.Color;
+            label4.Text = Component.StockMin.ToString();
         }
 
         public void DeleteComponent()

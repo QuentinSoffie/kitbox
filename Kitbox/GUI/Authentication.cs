@@ -37,6 +37,7 @@ namespace GUI
                     StoreKeeper obj = new StoreKeeper(myDataBase, this, pepTextbox1.Text, pepTextbox2.Text);
                     obj.Show();
                     this.Visible = false;
+                    this.Close();
                 }
 
             }

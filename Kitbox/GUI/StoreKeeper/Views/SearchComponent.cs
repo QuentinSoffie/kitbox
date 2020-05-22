@@ -74,6 +74,9 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     { "Ref", reader["Ref"].ToString() },
                     { "Code", reader["Code"].ToString() },
                     { "Dimensions", reader["Dimensions(cm)"].ToString() },
+                    { "Height", reader["hauteur"].ToString() },
+                    { "Width", reader["profondeur"].ToString() },
+                    { "Depth", reader["largeur"].ToString() },
                     { "Couleur", reader["Couleur"].ToString() },
                     { "Stock", reader["Enstock"].ToString() },
                     { "StockMin", reader["Stock minimum"].ToString() },
@@ -93,7 +96,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             {
                 ClearWindow();
                 Parent.ShowError(String.Format("Error, no value found for \"{0}\"", pepTextbox1.Text));
-                
             }
             else
             {
@@ -130,7 +132,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (KeyValuePair<StoreKeeperComponent, ViewComponentSearch> component in ComponentViewDictionary)
             {
                 pepTreeView1.Nodes.Add(component.Key.Code);
-                pepTreeView1.Nodes[i].Tag = $"{component.Key.Stock.ToString()} item(s)";
+                if (component.Key.Stock > component.Key.StockMin)
+                {
+                    pepTreeView1.Nodes[i].Tag = $"{component.Key.Stock.ToString()} item(s) ✓";
+                }
+                else
+                {
+                    pepTreeView1.Nodes[i].Tag = $"{component.Key.Stock.ToString()} item(s)";
+                }
+                
 
                 i++;
             }

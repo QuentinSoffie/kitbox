@@ -12,7 +12,10 @@ namespace Kitbox.GUI.StoreKeeper.Models
         public string Ref { get; set; }
         public string Code { get; set; }
         public string Dimensions { get; set; }
-        public string Couleur { get; set; }
+        public string Height { get; set; }
+        public string Width { get; set; }
+        public string Depth { get; set; }
+        public string Color { get; set; }
         public int Stock { get; set; }
         public int StockMin { get; set; }
         public string SupplierOnePrice { get; set; }
@@ -25,7 +28,10 @@ namespace Kitbox.GUI.StoreKeeper.Models
             Ref = item["Ref"].ToString();
             Code = item["Code"].ToString();
             Dimensions = item["Dimensions"].ToString();
-            Couleur = item["Couleur"].ToString();
+            Height = item["Height"].ToString();
+            Width = item["Width"].ToString();
+            Depth = item["Depth"].ToString();
+            Color = item["Couleur"].ToString();
             Stock = int.Parse(item["Stock"].ToString());
             StockMin = int.Parse(item["StockMin"].ToString());
             SupplierOnePrice = item["SupplierOnePrice"].ToString();
