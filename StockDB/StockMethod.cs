@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using MySql.Data.MySqlClient;
 
@@ -17,6 +18,76 @@ namespace StockDB
 
 			//DANS LE READER RECUPERER LA VALEUR DU STOCK POUR POUVOIR L'ENVOYER DANS LA METHODE D'UPDATE DU STOCK
 
+		}
+
+		public static bool CheckStockForOrder(int qtty, int code, MySqlConnection conn)
+		{
+			string query = "SELECT * FROM Piece WHERE " + "Code ='" + code + "'";
+			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+			while(reader.Read())
+			{
+				int inStock = int.Parse(reader["Enstock"].ToString());
+
+				if( inStock >= qtty)
+				{
+					reader.Close();
+					conn.Close();
+					return true;
+				}
+				else
+				{
+					reader.Close();
+					conn.Close();
+					return false;
+				}
+			}
+
+			return false;
+		}
+
+		public static bool CheckStockForSupplier(string code, MySqlConnection conn)
+		{
+			List<string> Listcode = new List<string>();
+
+				string query = "SELECT * FROM Piece WHERE " + "Code ='" + code + "'";
+				MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+				while (reader.Read())
+				{
+					int inStock = int.Parse(reader["Enstock"].ToString());
+					int minStock = int.Parse(reader["Stock minimum"].ToString());
+
+					if (inStock < minStock)
+					{
+						reader.Close();
+						conn.Close();
+						return true;
+					}
+					else
+					{
+						reader.Close();
+						conn.Close();
+						return false;
+					}
+				}
+			return false;
+			}
+
+
+		public static List<string> GetCodeFromDB(MySqlConnection conn)
+		{
+			List<string> code = new List<string>() ;
+			string query = "SELECT * FROM Piece ";
+			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+			while(reader.Read())
+			{
+				code.Add(reader["Code"].ToString());
+			}
+
+			reader.Close();
+
+			return code;
 		}
 
 		public static MySqlDataReader SearchOrderByName(string customerName, MySqlConnection conn)
