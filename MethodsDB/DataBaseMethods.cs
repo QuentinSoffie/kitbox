@@ -60,16 +60,16 @@ namespace DBMethods
 
         }
 
-        public static List<Dictionary<string, string>> SqlSearchCustomerByName(string value, MySqlConnection conn)
+        public static List<Dictionary<string,string>> SqlSearchCustomerByName(string value, MySqlConnection conn)
         {
-            List<Dictionary<string, string>> customer = new List<Dictionary<string, string>>();
+            List<Dictionary<string,string>> customer = new List<Dictionary<string,string>>();
 
             string query = "SELECT * FROM users WHERE surname = '" + value + "'"; ;
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
-            while (reader.Read())
+            while(reader.Read())
             {
-                Dictionary<string, string> info = new Dictionary<string, string>();
+                Dictionary<string, string> info = new Dictionary<string, string>(); 
 
                 string surname = reader["surname"].ToString();
                 string firstname = reader["firstname"].ToString();
