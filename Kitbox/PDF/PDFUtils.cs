@@ -16,7 +16,7 @@ namespace Kitbox.PDF
     {
         
 
-        public static DataTable MakeBill(Kitbox.Order.Order order,Kitbox.Database.Json.Order orderDataBase)
+        public static DataTable MakeBill(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
         {
             DataTable bill = new DataTable();
             float TotalBill = 0;
@@ -40,12 +40,12 @@ namespace Kitbox.PDF
                 MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
                 while (reader.Read())
                 {
-                    
                     price = reader["Prix-Client"].ToString();
                 }
                 cost *= Int32.Parse(item[3]) * float.Parse(price);
                 TotalBill += cost;
                 reader.Close();
+                conn.Close();
                 Console.WriteLine(price);
                 item.Add(price);
                 item.Add(cost.ToString());
@@ -54,10 +54,11 @@ namespace Kitbox.PDF
                 bill.Rows.Add(item.ToArray());
 
                 //Création du JSON
-                orderDataBase.Code.Add(item[0]);
-                orderDataBase.Quantity.Add(Int32.Parse(item[3]));
-                
-                
+                orderDataBase.Command.Add(item[0], Int32.Parse(item[3]));
+                //orderDataBase.Code.Add(item[0]);
+                //orderDataBase.Quantity.Add(Int32.Parse(item[3]));
+
+
                 //List<string> prices = new List<string>();
 
 

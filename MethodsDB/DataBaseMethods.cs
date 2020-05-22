@@ -35,7 +35,7 @@ namespace DBMethods
         public static void SqlAddOrder(string customer, string id, string json, string state, MySqlConnection conn)
         {
             conn.Open();
-            string query = "INSERT INTO `Orders`(`Customer`, `IdClient`, `NumOrder`, `ItemsCode`, `State`) VALUES ('" + customer + "','" + id + "','" + json + "','" + state + "')";
+            string query = "INSERT INTO `Orders`(`Customer`, `IdClient`, `ItemsCode`, `State`) VALUES ('" + customer + "','" + id + "','" + json + "','" + state + "')";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();

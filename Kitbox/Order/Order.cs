@@ -54,7 +54,7 @@ namespace Kitbox.Order
             List<List<string>> matrix = new List<List<string>>();
             foreach (Cupboard cupboard in CupboardList)
             {
-                PrepareOrder(cupboard,matrix);
+                PrepareOrder(cupboard, matrix);
             }
             return matrix;
         }
@@ -65,11 +65,10 @@ namespace Kitbox.Order
             foreach (Cupboard cupboard in CupboardList)
             {
             
-                    if (!(cupboard.CupboardAngle is null) && cupboard.CupboardAngle.Code == code)
-                    {
-                        quantity += cupboard.CupboardAngle.CountComponents();
-                    }
-
+                if (!(cupboard.CupboardAngle is null) && cupboard.CupboardAngle.Code == code)
+                {
+                    quantity += cupboard.CupboardAngle.CountComponents();
+                }
 
 
                 foreach (Box box in cupboard.ListeBoxes)
@@ -213,8 +212,6 @@ namespace Kitbox.Order
             }
             return false;
         }
-
-
 
     }
 }

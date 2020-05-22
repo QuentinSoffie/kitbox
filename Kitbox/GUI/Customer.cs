@@ -94,7 +94,13 @@ namespace GUI
             {
                 Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
-                string orderJsonString = JsonConvert.SerializeObject(orderJson);
+
+                string orderJsonString = JsonConvert.SerializeObject(orderJson.Command);
+
+				Console.WriteLine("----------");
+				Console.WriteLine(orderJsonString);
+				DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, "Complete", DataBase);
+				Console.WriteLine("----------");
 
 				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
 				Console.WriteLine(cost);

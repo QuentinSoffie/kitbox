@@ -8,7 +8,8 @@ namespace Kitbox.Database.Json
 {
     public class Order
     {
-        public List<string> Code = new List<string>();
-        public List<int> Quantity = new List<int>();
+        //public List<string> Code = new List<string>();
+        //public List<int> Quantity = new List<int>();
+        public Dictionary<string, int> Command = new Dictionary<string, int>();
     }
 }

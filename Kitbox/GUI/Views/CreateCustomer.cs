@@ -61,12 +61,20 @@ namespace Kitbox.GUI.Views
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
-            Customer = Customers[pepTreeView1.SelectedNode.Index]["surname"];
-            Id = Customers[pepTreeView1.SelectedNode.Index]["id"];
-            Console.WriteLine(Customer);
-            Console.WriteLine(Id);
+            if (pepTreeView1.SelectedNode != null)
+            {
+                Customer = Customers[pepTreeView1.SelectedNode.Index]["surname"];
+                Id = Customers[pepTreeView1.SelectedNode.Index]["id"];
+                Console.WriteLine(Customer);
+                Console.WriteLine(Id);
 
-            Parent.exportPDF(Customer, Id);
+                Parent.exportPDF(Customer, Id);
+            }
+            else
+            {
+                MessageBox.Show("Please select or create a customer", "Error");
+            }
+
             //TODO: finish command
         }
 
