@@ -29,6 +29,10 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        public void Search() { 
             if (pepTextbox1.Text == "")
             {
                 Parent.ShowError("Please enter a component reference or a component code");
@@ -44,6 +48,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 GetComponents();
             }
         }
+
         public void GetComponents()
         {
             ComponentViewDictionary.Clear();
@@ -125,7 +130,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (KeyValuePair<StoreKeeperComponent, ViewComponentSearch> component in ComponentViewDictionary)
             {
                 pepTreeView1.Nodes.Add(component.Key.Code);
-                pepTreeView1.Nodes[i].Tag = component.Key.Stock.ToString();
+                pepTreeView1.Nodes[i].Tag = $"{component.Key.Stock.ToString()} item(s)";
 
                 i++;
             }
@@ -153,6 +158,14 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     component.Value.Show();
                     component.Value.BringToFront();
                 }
+            }
+        }
+
+        private void pepTextbox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Search();
             }
         }
     }

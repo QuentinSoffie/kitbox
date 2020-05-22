@@ -78,7 +78,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (KeyValuePair<StoreKeeperOrder, ViewInfo> order in OrderViewDictionary)
             {
                 pepTreeView1.Nodes.Add(order.Key.Name);
-                pepTreeView1.Nodes[i].Tag = order.Key.State;
+                if (order.Key.State == "Complete")
+                {
+                    pepTreeView1.Nodes[i].Tag = "Complete ✓";
+                }
+                else
+                {
+                    pepTreeView1.Nodes[i].Tag = "Not complete...";
+                }
+                
                 i++;
             }
         }
@@ -164,6 +172,11 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// <param name="e"></param>
         private void pepButton1_Click_1(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        public void Search()
+        {
             ClearWindow();
             if (pepTextbox1.Text == "")
             {
@@ -217,6 +230,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void pepCombobox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             pepTextbox1.Text = "";
+        }
+
+        private void pepTextbox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Console.WriteLine("Enter pressed");
+                Search();
+            }
         }
     }
 }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pepGroupBox5 = new KitboxEcamGUI.PepGroupBox();
+            this.pepButton3 = new KitboxEcamGUI.PepButton();
+            this.pepTextbox6 = new KitboxEcamGUI.PepTextbox();
+            this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
             this.pepButton2 = new KitboxEcamGUI.PepButton();
             this.pepGroupBox4 = new KitboxEcamGUI.PepGroupBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -51,19 +55,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
-            this.pepGroupBox5 = new KitboxEcamGUI.PepGroupBox();
-            this.pepTextbox6 = new KitboxEcamGUI.PepTextbox();
-            this.pepButton3 = new KitboxEcamGUI.PepButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pepGroupBox5.SuspendLayout();
             this.pepGroupBox4.SuspendLayout();
             this.pepGroupBox2.SuspendLayout();
             this.pepGroupBox3.SuspendLayout();
             this.pepGroupBox1.SuspendLayout();
-            this.pepGroupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -90,6 +90,69 @@
             this.splitContainer1.Size = new System.Drawing.Size(918, 551);
             this.splitContainer1.SplitterDistance = 458;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // pepGroupBox5
+            // 
+            this.pepGroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox5.Controls.Add(this.pepButton3);
+            this.pepGroupBox5.Controls.Add(this.pepTextbox6);
+            this.pepGroupBox5.Location = new System.Drawing.Point(14, 76);
+            this.pepGroupBox5.Name = "pepGroupBox5";
+            this.pepGroupBox5.Size = new System.Drawing.Size(427, 62);
+            this.pepGroupBox5.TabIndex = 2;
+            this.pepGroupBox5.TabStop = false;
+            this.pepGroupBox5.Text = "Search by customer name";
+            // 
+            // pepButton3
+            // 
+            this.pepButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton3.Location = new System.Drawing.Point(297, 27);
+            this.pepButton3.Name = "pepButton3";
+            this.pepButton3.Size = new System.Drawing.Size(114, 27);
+            this.pepButton3.TabIndex = 1;
+            this.pepButton3.Text = "Search !";
+            this.pepButton3.UseVisualStyleBackColor = true;
+            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
+            // 
+            // pepTextbox6
+            // 
+            this.pepTextbox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepTextbox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pepTextbox6.EnabledCalc = true;
+            this.pepTextbox6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pepTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepTextbox6.Location = new System.Drawing.Point(17, 27);
+            this.pepTextbox6.MaxLength = 32767;
+            this.pepTextbox6.MultiLine = false;
+            this.pepTextbox6.Name = "pepTextbox6";
+            this.pepTextbox6.ReadOnly = false;
+            this.pepTextbox6.Size = new System.Drawing.Size(267, 27);
+            this.pepTextbox6.TabIndex = 0;
+            this.pepTextbox6.Tag = "Ex: Neymar";
+            this.pepTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.pepTextbox6.UseSystemPasswordChar = false;
+            this.pepTextbox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pepTextbox6_KeyDown);
+            // 
+            // pepTreeView1
+            // 
+            this.pepTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pepTreeView1.Caption = false;
+            this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.pepTreeView1.ItemHeight = 40;
+            this.pepTreeView1.Location = new System.Drawing.Point(14, 156);
+            this.pepTreeView1.Name = "pepTreeView1";
+            this.pepTreeView1.Online = false;
+            this.pepTreeView1.Size = new System.Drawing.Size(427, 167);
+            this.pepTreeView1.TabIndex = 15;
+            this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
             // pepButton2
             // 
@@ -407,67 +470,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Create a customer";
             // 
-            // pepTreeView1
-            // 
-            this.pepTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pepTreeView1.Caption = false;
-            this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.pepTreeView1.ItemHeight = 40;
-            this.pepTreeView1.Location = new System.Drawing.Point(14, 156);
-            this.pepTreeView1.Name = "pepTreeView1";
-            this.pepTreeView1.Online = false;
-            this.pepTreeView1.Size = new System.Drawing.Size(427, 167);
-            this.pepTreeView1.TabIndex = 15;
-            this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
-            // 
-            // pepGroupBox5
-            // 
-            this.pepGroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepGroupBox5.Controls.Add(this.pepButton3);
-            this.pepGroupBox5.Controls.Add(this.pepTextbox6);
-            this.pepGroupBox5.Location = new System.Drawing.Point(14, 76);
-            this.pepGroupBox5.Name = "pepGroupBox5";
-            this.pepGroupBox5.Size = new System.Drawing.Size(427, 62);
-            this.pepGroupBox5.TabIndex = 2;
-            this.pepGroupBox5.TabStop = false;
-            this.pepGroupBox5.Text = "Search by customer name";
-            // 
-            // pepTextbox6
-            // 
-            this.pepTextbox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepTextbox6.EnabledCalc = true;
-            this.pepTextbox6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pepTextbox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepTextbox6.Location = new System.Drawing.Point(17, 27);
-            this.pepTextbox6.MaxLength = 32767;
-            this.pepTextbox6.MultiLine = false;
-            this.pepTextbox6.Name = "pepTextbox6";
-            this.pepTextbox6.ReadOnly = false;
-            this.pepTextbox6.Size = new System.Drawing.Size(267, 27);
-            this.pepTextbox6.TabIndex = 0;
-            this.pepTextbox6.Tag = "Ex: Neymar";
-            this.pepTextbox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.pepTextbox6.UseSystemPasswordChar = false;
-            // 
-            // pepButton3
-            // 
-            this.pepButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton3.Location = new System.Drawing.Point(297, 27);
-            this.pepButton3.Name = "pepButton3";
-            this.pepButton3.Size = new System.Drawing.Size(114, 27);
-            this.pepButton3.TabIndex = 1;
-            this.pepButton3.Text = "Search !";
-            this.pepButton3.UseVisualStyleBackColor = true;
-            this.pepButton3.Click += new System.EventHandler(this.pepButton3_Click);
-            // 
             // CreateCustomer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -479,6 +481,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pepGroupBox5.ResumeLayout(false);
             this.pepGroupBox4.ResumeLayout(false);
             this.pepGroupBox4.PerformLayout();
             this.pepGroupBox2.ResumeLayout(false);
@@ -487,7 +490,6 @@
             this.pepGroupBox3.PerformLayout();
             this.pepGroupBox1.ResumeLayout(false);
             this.pepGroupBox1.PerformLayout();
-            this.pepGroupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -35,6 +35,11 @@ namespace Kitbox.GUI.Views
 
         private void pepButton3_Click(object sender, EventArgs e)
         {
+            Search();
+        }
+
+        public void Search()
+        {
             Cursor.Current = Cursors.WaitCursor;
             pepTreeView1.Nodes.Clear();
             SearchCustomer();
@@ -117,6 +122,15 @@ namespace Kitbox.GUI.Views
             }
             Parent.CustomerView.Hide();
             Cursor.Current = Cursors.Default;
+        }
+
+        private void pepTextbox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Console.WriteLine("Enter pressed");
+                Search();
+            }
         }
     }
 }

@@ -116,6 +116,7 @@
             this.pepTextbox1.Tag = "Search by reference or by code...";
             this.pepTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox1.UseSystemPasswordChar = false;
+            this.pepTextbox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyDown);
             // 
             // label1
             // 

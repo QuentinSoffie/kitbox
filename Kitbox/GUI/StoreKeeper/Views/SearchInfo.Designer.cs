@@ -113,6 +113,7 @@
             this.pepTextbox1.Tag = "Search by name or by order...";
             this.pepTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.pepTextbox1.UseSystemPasswordChar = false;
+            this.pepTextbox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pepTextbox1_KeyDown);
             // 
             // label1
             // 
@@ -215,14 +216,14 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 266);
+            this.pictureBox1.Location = new System.Drawing.Point(457, 266);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(59, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // SearchOrder
+            // SearchInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -230,7 +231,7 @@
             this.Controls.Add(this.pepGroupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "SearchOrder";
+            this.Name = "SearchInfo";
             this.Size = new System.Drawing.Size(1284, 635);
             this.pepGroupBox1.ResumeLayout(false);
             this.pepGroupBox1.PerformLayout();
