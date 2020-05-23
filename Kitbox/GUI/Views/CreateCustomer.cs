@@ -80,7 +80,7 @@ namespace Kitbox.GUI.Views
                 Console.WriteLine(Customer);
                 Console.WriteLine(Id);
 
-                Parent.ExportPDF(Customer, Id);
+                Parent.ExportPDF(Customer, Id, "not complete");
             }
             else
             {
@@ -114,7 +114,7 @@ namespace Kitbox.GUI.Views
                 }
                 reader.Close();
                 DataBase.Close();
-                Parent.ExportPDF(Customer, Id);
+                Parent.ExportPDF(Customer, Id, "complete");
             }
             else
             {

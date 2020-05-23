@@ -86,17 +86,17 @@ namespace GUI
             }
 		}
       
-        public void ExportPDF(string customer, string id)
+        public void ExportPDF(string customer, string id, string state)
         {
             try
             {
                 Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
 
-				UpdateStock(customer, id, orderJson.Command);
+				UpdateStock(customer, id, orderJson.Command, state);
 
 				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
-				CreateAndOpenPDF(dtbl, customer, id, cost);
+				CreateAndOpenPDF(dtbl, customer, id, cost, state);
                 
             }
             catch (Exception ex)
@@ -105,10 +105,10 @@ namespace GUI
             }
         }
 
-		public void UpdateStock(string customer, string id, Dictionary<string, int> order)
+		public void UpdateStock(string customer, string id, Dictionary<string, int> order, string state)
 		{
 			string orderJsonString = JsonConvert.SerializeObject(order);
-			DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, "Complete", DataBase);
+			DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, state , DataBase);
 
 			foreach(KeyValuePair<string, int> component in order)
 			{
@@ -116,9 +116,9 @@ namespace GUI
 			}
 		}
 
-		public void CreateAndOpenPDF(DataTable dtbl, string customer, string id, float cost)
+		public void CreateAndOpenPDF(DataTable dtbl, string customer, string id, float cost, string state)
 		{
-			Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture : " + customer, id, cost);
+			Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture : " + customer, id, cost, state);
 			System.Diagnostics.Process.Start(@"bill.pdf");
 			this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
 		}

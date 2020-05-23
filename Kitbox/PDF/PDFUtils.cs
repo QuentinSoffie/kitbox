@@ -83,7 +83,7 @@ namespace Kitbox.PDF
         }
 
 
-        public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost)
+        public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost, string state)
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -141,12 +141,27 @@ namespace Kitbox.PDF
 
             document.Add(new Chunk("\n", fntHead));
 
-            BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
-            Paragraph prgTotal = new Paragraph();
-            prgTotal.Alignment = Element.ALIGN_LEFT;
-            prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
-            document.Add(prgTotal);
+            if(state == "complete")
+            {
+                BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
+                Paragraph prgTotal = new Paragraph();
+                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
+                document.Add(prgTotal);
+            }
+            if(state == "not complete")
+            {
+                BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
+                Paragraph prgTotal = new Paragraph();
+                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
+                prgTotal.Add(new Chunk($"\nAccompte à payer de  : {cost*0.2}€", fntTotal));
+                document.Add(prgTotal);
+            }
+
+           
 
 
             document.Close();
