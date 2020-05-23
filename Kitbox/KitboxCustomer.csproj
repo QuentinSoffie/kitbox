@@ -157,6 +157,12 @@
     <Compile Include="GUI\StoreKeeper\Views\ViewOrder.Designer.cs">
       <DependentUpon>ViewOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\ViewOrderSuppliers.Designer.cs">
+      <DependentUpon>ViewOrderSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TreeviewManager.cs" />
     <Compile Include="GUI\Views\CreateCustomer.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrder.resx">
       <DependentUpon>ViewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrderSuppliers.resx">
+      <DependentUpon>ViewOrderSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Views\CreateCustomer.resx">
       <DependentUpon>CreateCustomer.cs</DependentUpon>

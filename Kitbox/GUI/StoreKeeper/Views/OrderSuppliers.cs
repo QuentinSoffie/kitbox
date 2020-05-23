@@ -16,6 +16,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
         MySqlConnection DataBase;
         StoreKeeper Parent;
 
+        public Dictionary<string, ViewOrderSuppliers> ViewsDictionary = new Dictionary<string, ViewOrderSuppliers>();
+
         public OrderSuppliers(MySqlConnection dataBase, StoreKeeper parent)
         {
             InitializeComponent();
@@ -38,13 +40,19 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     pepTreeView1.Nodes.Add(component["Code"]);
                     pepTreeView1.Nodes[i].Tag = $"{component["Ref"]} - {component["Stock"]} item(s) left";
                     i++;
+
+                    ViewOrderSuppliers view = new ViewOrderSuppliers(this, component);
+                    splitContainer2.Panel1.Controls.Add(view);
+                    view.Hide();
+                    ViewsDictionary.Add(component["Code"], view);
                 }
             }
         }
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            ViewsDictionary[pepTreeView1.SelectedNode.Text].BringToFront();
+            ViewsDictionary[pepTreeView1.SelectedNode.Text].Show();
         }
 
         private void pepButton2_Click(object sender, EventArgs e)
