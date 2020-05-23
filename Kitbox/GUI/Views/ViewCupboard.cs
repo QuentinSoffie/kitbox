@@ -60,7 +60,9 @@ namespace Kitbox.GUI
                 Console.WriteLine(result);
                 if (!(result is null))
                 {
-                    AddChat($"We are very sorry, your {result.ToUpper()} is no longer available. Please select an another one.", Color.Red);
+                    //AddChat($"We are very sorry, your {result.ToUpper()} is no longer available. Please select an another one.", Color.Red);
+                    AddChat($"We are very sorry, your {result.ToLower()} is no longer available. Please continue, pay a deposit and get your order later or select an another {result.ToLower()}.", Color.Red);
+                    pepButton4.Visible = true;
                 }
                 RefreshView();
             }
@@ -320,7 +322,8 @@ namespace Kitbox.GUI
                     }
                     else
                     {
-                        AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                        //AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
+                        AddChat($"We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please continue, pay a deposit and get your order later or select an another CupboardAngle ({cupboardAngle.Code}).", Color.Red);
                     }
                 }
                 else
@@ -354,6 +357,11 @@ namespace Kitbox.GUI
         private void pepCombobox6_SelectedIndexChanged(object sender, EventArgs e)
         {
             MainTreeView.UpdateTag(Uid);
+        }
+
+        private void pepButton4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

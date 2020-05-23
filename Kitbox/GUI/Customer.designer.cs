@@ -35,6 +35,7 @@
             this.addCupboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderMyCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeKeeperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -46,7 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.storeKeeperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -63,8 +63,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.storeKeeperToolStripMenuItem});
+            this.storeKeeperToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1484, 24);
@@ -103,6 +103,14 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // storeKeeperToolStripMenuItem
+            // 
+            this.storeKeeperToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.storeKeeperToolStripMenuItem.Name = "storeKeeperToolStripMenuItem";
+            this.storeKeeperToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.storeKeeperToolStripMenuItem.Text = "StoreKeeper";
+            this.storeKeeperToolStripMenuItem.Click += new System.EventHandler(this.storeKeeperToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -212,7 +220,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(522, 368);
+            this.label1.Location = new System.Drawing.Point(518, 368);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 46);
@@ -223,7 +231,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(406, 329);
+            this.pictureBox1.Location = new System.Drawing.Point(402, 329);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(112, 122);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(112, 122);
@@ -250,14 +258,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(125, 17);
             this.toolStripStatusLabel1.Text = "    Welcome Username";
-            // 
-            // storeKeeperToolStripMenuItem
-            // 
-            this.storeKeeperToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.storeKeeperToolStripMenuItem.Name = "storeKeeperToolStripMenuItem";
-            this.storeKeeperToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.storeKeeperToolStripMenuItem.Text = "StoreKeeper";
-            this.storeKeeperToolStripMenuItem.Click += new System.EventHandler(this.storeKeeperToolStripMenuItem_Click);
             // 
             // Customer
             // 
