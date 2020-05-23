@@ -367,6 +367,7 @@ namespace Kitbox.GUI
         private CupboardAngle GetGoodCupAngle()
         {
             int totalHeight = Cupboard.ListeBoxes.Sum(o => o.Height);
+            Console.WriteLine(totalHeight);
             return Database.Reader.SearchCupboardAngle(totalHeight, pepCombobox6.SelectedItem.ToString(), DataBase);
 
             //List<CupboardAngle> sortedList = Database.Components.CupboardAngles.SortCupboardAngle();

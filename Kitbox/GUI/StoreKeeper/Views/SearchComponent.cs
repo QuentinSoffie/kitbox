@@ -85,7 +85,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     { "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
                     { "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() }
                 };
-
+                
                 resp.Add(component);
             }
 

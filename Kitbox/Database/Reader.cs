@@ -227,12 +227,52 @@ namespace Kitbox.Database
 
         public static CupboardAngle SearchCupboardAngle(int height, string color, MySqlConnection conn)
         {
-            conn.Open();
-            var cupboardReader = DBMethods.DataBaseMethods.SqlSearchComponent("Piece", "Ref", "hauteur", "Couleur", "Couleur", "Cornieres", height.ToString(), color, color, conn);
 
-            cupboardReader.Read();
-            CupboardAngle cupboardAngle = new CupboardAngle(cupboardReader.GetString("Couleur"), cupboardReader.GetInt32("hauteur"), cupboardReader.GetInt32("largeur"), cupboardReader.GetInt32("profondeur"), cupboardReader.GetInt32("Enstock"), cupboardReader.GetInt32("Stock minimum"), cupboardReader.GetString("Code"), cupboardReader.GetString("Dimensions(cm)"));
-            cupboardReader.Close();
+            CupboardAngle cupboardAngle;
+            conn.Open();
+
+            if (height%36 == 0 || height%46 == 0 || height%56 == 0)
+            {
+                var cupboardReader = DBMethods.DataBaseMethods.SqlSearchComponent("Piece", "Ref", "hauteur", "Couleur", "Couleur", "Cornieres", height.ToString(), color, color, conn);
+                cupboardReader.Read();
+
+                cupboardAngle = new CupboardAngle(cupboardReader.GetString("Couleur"), cupboardReader.GetInt32("hauteur"), cupboardReader.GetInt32("largeur"), cupboardReader.GetInt32("profondeur"), cupboardReader.GetInt32("Enstock"), cupboardReader.GetInt32("Stock minimum"), cupboardReader.GetString("Code"), cupboardReader.GetString("Dimensions(cm)"));
+
+                cupboardReader.Close();
+            }
+            else
+            {
+                var reader = DBMethods.DataBaseMethods.SqlSearchCupboardAngle(color, height, conn);
+
+                Dictionary<string, string> min = new Dictionary<string, string>() { {"Height", "50000"} };
+                while (reader.Read())
+                {
+                    if (int.Parse(reader["hauteur"].ToString()) < int.Parse(min["Height"]))
+                    {
+                        min = new Dictionary<string, string>(){
+                            { "Ref", reader["Ref"].ToString() },
+                            { "Code", reader["Code"].ToString() },
+                            { "Dimensions", reader["Dimensions(cm)"].ToString() },
+                            { "Height", reader["hauteur"].ToString() },
+                            { "Width", reader["largeur"].ToString() },
+                            { "Depth", reader["profondeur"].ToString() },
+                            { "Color", reader["Couleur"].ToString() },
+                            { "Stock", reader["Enstock"].ToString() },
+                            { "StockMin", reader["Stock minimum"].ToString() },
+                            { "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
+                            { "SupplierTwoPrice", reader["Prix-Fourn2"].ToString() },
+                            { "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
+                            { "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() },
+                        };
+                    }
+                }
+                Console.WriteLine($"Cupboard angle fund :{min["Height"]} cm !");
+                cupboardAngle = new CupboardAngle(min["Color"], int.Parse(min["Height"]), int.Parse(min["Width"]), int.Parse(min["Depth"]), int.Parse(min["Stock"]), int.Parse(min["StockMin"]), min["Code"], min["Dimensions"]);
+                reader.Close();
+            }
+
+
+
             conn.Close();
             return cupboardAngle;
         }

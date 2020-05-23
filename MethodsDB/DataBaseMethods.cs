@@ -27,7 +27,7 @@ namespace DBMethods
 
         public static MySqlDataReader SqlSearchCupboardAngle(string color, int height, MySqlConnection conn)
         {
-            string query = "SELECT * FROM Piece WHERE  Ref = Cornieres AND Couleur ='" + color + "'AND hauteur >'" + height + "'"; ;
+            string query = "SELECT * FROM Piece WHERE Ref= 'Cornieres' AND Couleur='" + color + "' AND Code LIKE '%DEC' AND hauteur>'" + height + "' ORDER BY hauteur";
             MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
             return reader;
