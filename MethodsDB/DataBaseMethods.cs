@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Security.Cryptography;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace DBMethods
 {
@@ -24,6 +24,15 @@ namespace DBMethods
 
             Console.WriteLine("User addes");
         }
+
+        public static MySqlDataReader SqlSearchCupboardAngle(string color, int height, MySqlConnection conn)
+        {
+            string query = "SELECT * FROM Piece WHERE  Ref = Cornieres AND Couleur ='" + color + "'AND hauteur >'" + height + "'"; ;
+            MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
+
+            return reader;
+        }
+
         public static void SqlAdd(string table, string paramage, string paramname, int valueAge, string valueNom, MySqlConnection conn)
         {
 
