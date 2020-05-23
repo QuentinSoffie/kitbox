@@ -27,8 +27,8 @@ namespace Kitbox.PDF
             bill.Columns.Add("Prix unitaire");
             bill.Columns.Add("Prix total");
 
-
-            foreach (List<string> item in order.MakeOrder())
+            List<List<string>> a = order.MakeOrder();
+            foreach (List<string> item in a)
             {
                 float cost = 1;
                 string price = "";

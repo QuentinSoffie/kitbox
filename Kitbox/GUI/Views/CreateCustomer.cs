@@ -80,8 +80,6 @@ namespace Kitbox.GUI.Views
                 Console.WriteLine(Customer);
                 Console.WriteLine(Id);
 
-                
-
                 Parent.ExportPDF(Customer, Id, Parent.OurOrder.CheckState());
             }
             else

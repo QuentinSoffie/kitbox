@@ -126,7 +126,7 @@ namespace Kitbox.Order
         private void PrepareOrder(Cupboard cupboard, List<List<string>> matrix)
         {
 
-            if (!(cupboard.CupboardAngle is null))
+            if (!(cupboard.CupboardAngle is null) && AddAngleQuantityToOrder(cupboard, cupboard.CupboardAngle.Code, matrix) == false)
             {
                 List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, cupboard.CupboardAngle.CountComponents().ToString() }; ;
                 matrix.Add(line);
@@ -169,11 +169,21 @@ namespace Kitbox.Order
                         matrix.Add(line);
                     }
                 }
-
             }
-           
         }
 
+        public bool AddAngleQuantityToOrder(Cupboard cupboard, string code, List<List<string>> matrix)
+        {
+            foreach (List<string> codeMatrix in matrix)
+            {
+                if(codeMatrix[1] == "Cornieres")
+                {
+                    codeMatrix[3] = (int.Parse(codeMatrix[3]) + cupboard.CupboardAngle.CountComponents()).ToString();
+                    return true;
+                }
+            }
+            return false;
+        }
 
         private bool AddQuantityToOrder(Box box, string code, List<List<string>> matrix) // Return index where order contains code (else -1)
         {

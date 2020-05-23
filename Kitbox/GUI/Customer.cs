@@ -88,26 +88,30 @@ namespace GUI
       
         public void ExportPDF(string customer, string id, string state)
         {
-            try
-            {
-                Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
+			//try
+			//{
+				Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
 
-				UpdateStock(customer, id, orderJson.Command, state);
-
+				if(!(state != "Not completed"))
+				{
+					UpdateStock(customer, id, orderJson.Command, state);
+				}
+				
 				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
 				CreateAndOpenPDF(dtbl, customer, id, cost, state);
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Message");
-            }
-        }
+
+			//}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error Message");
+            //}
+}
 
 		public void UpdateStock(string customer, string id, Dictionary<string, int> order, string state)
 		{
 			string orderJsonString = JsonConvert.SerializeObject(order);
+			Console.WriteLine(orderJsonString);
 			DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, state , DataBase);
 
 			foreach(KeyValuePair<string, int> component in order)
