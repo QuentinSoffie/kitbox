@@ -54,7 +54,7 @@ namespace Kitbox.GUI
             {
                 string colorPanel = pepCombobox4.SelectedItem == null || pepCombobox4.SelectedIndex == 0 ? "?" : pepCombobox4.SelectedItem.ToString();
                 string colorDoor = pepCombobox3.SelectedItem == null || pepCombobox3.SelectedIndex == 0 ? "?" : pepCombobox3.SelectedItem.ToString();
-                string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
+                string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : (int.Parse(pepCombobox5.SelectedItem.ToString()) - 4).ToString();
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 
@@ -248,7 +248,7 @@ namespace Kitbox.GUI
         {
             string colorPanel = pepCombobox4.SelectedItem == null || pepCombobox4.SelectedIndex == 0  ? "?" : pepCombobox4.SelectedItem.ToString();
             string colorDoor = pepCombobox3.SelectedItem == null || pepCombobox3.SelectedIndex == 0 ? "?" : pepCombobox3.SelectedItem.ToString();
-            string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
+            string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : (int.Parse(pepCombobox5.SelectedItem.ToString()) - 4).ToString();
             string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
             string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
 

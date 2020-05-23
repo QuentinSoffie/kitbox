@@ -35,7 +35,7 @@ namespace Kitbox.Database.Components
         {
             if (PanelList[index].Type == type)
             {
-                return PanelList[index].Height;
+                return PanelList[index].Height + 4;
             }
             return -1;
 
