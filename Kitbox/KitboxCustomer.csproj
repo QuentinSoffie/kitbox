@@ -127,6 +127,12 @@
     <Compile Include="GUI\StoreKeeper\Views\CreateComponent.Designer.cs">
       <DependentUpon>CreateComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\OrderSuppliers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\StoreKeeper\Views\OrderSuppliers.Designer.cs">
+      <DependentUpon>OrderSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\StoreKeeper\Views\SearchComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\CreateComponent.resx">
       <DependentUpon>CreateComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoreKeeper\Views\OrderSuppliers.resx">
+      <DependentUpon>OrderSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\SearchComponent.resx">
       <DependentUpon>SearchComponent.cs</DependentUpon>

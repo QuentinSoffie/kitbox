@@ -35,6 +35,7 @@
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.orderForSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,21 +62,22 @@
             // orderToolStripMenuItem
             // 
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.orderToolStripMenuItem.Text = "Informations";
             this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // componentToolStripMenuItem
             // 
             this.componentToolStripMenuItem.Name = "componentToolStripMenuItem";
-            this.componentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.componentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.componentToolStripMenuItem.Text = "Component";
             this.componentToolStripMenuItem.Click += new System.EventHandler(this.componentToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewComponentToolStripMenuItem});
+            this.createNewComponentToolStripMenuItem,
+            this.orderForSuppliersToolStripMenuItem});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.stockToolStripMenuItem.Text = "Stock";
@@ -95,6 +97,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1284, 637);
             this.panel1.TabIndex = 5;
+            // 
+            // orderForSuppliersToolStripMenuItem
+            // 
+            this.orderForSuppliersToolStripMenuItem.Name = "orderForSuppliersToolStripMenuItem";
+            this.orderForSuppliersToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.orderForSuppliersToolStripMenuItem.Text = "Order for suppliers";
+            this.orderForSuppliersToolStripMenuItem.Click += new System.EventHandler(this.orderForSuppliersToolStripMenuItem_Click);
             // 
             // StoreKeeper
             // 
@@ -126,5 +135,6 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewComponentToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem orderForSuppliersToolStripMenuItem;
     }
 }

@@ -50,42 +50,40 @@ namespace StockDB
 		{
 			List<Dictionary<string,string>> List = new List<Dictionary<string,string>>();
 
-				string query = "SELECT * FROM Piece";
-				MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
-				while (reader.Read())
-				{
-				Dictionary<string, string> component = new Dictionary<string, string>
-				{
-					{ "Ref", reader["Ref"].ToString() },
-					{ "Code", reader["Code"].ToString() },
-					{ "Dimensions", reader["Dimensions(cm)"].ToString() },
-					{ "Height", reader["hauteur"].ToString() },
-					{ "Width", reader["largeur"].ToString() },
-					{ "Depth", reader["profondeur"].ToString() },
-					{ "Couleur", reader["Couleur"].ToString() },
-					{ "Stock", reader["Enstock"].ToString() },
-					{ "StockMin", reader["Stock minimum"].ToString() },
-					{ "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
-					{ "SupplierTwoPrice", reader["Prix-Fourn2"].ToString() },
-					{ "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
-					{ "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() }
-				};
+			conn.Open();
 
-					int inStock = int.Parse(component["Enstock"].ToString());
-					int minStock = int.Parse(component["Stock minimum"].ToString());
+			string query = "SELECT * FROM Piece";
+			MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 
-				if (inStock < minStock)
-					{
-						reader.Close();
-						conn.Close();
-						List.Add(component);
-					}
-					else
-					{
-						reader.Close();
-						conn.Close();
-					}
+			while (reader.Read())
+			{
+			Dictionary<string, string> component = new Dictionary<string, string>
+			{
+				{ "Ref", reader["Ref"].ToString() },
+				{ "Code", reader["Code"].ToString() },
+				{ "Dimensions", reader["Dimensions(cm)"].ToString() },
+				{ "Height", reader["hauteur"].ToString() },
+				{ "Width", reader["largeur"].ToString() },
+				{ "Depth", reader["profondeur"].ToString() },
+				{ "Couleur", reader["Couleur"].ToString() },
+				{ "Stock", reader["Enstock"].ToString() },
+				{ "StockMin", reader["Stock minimum"].ToString() },
+				{ "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
+				{ "SupplierTwoPrice", reader["Prix-Fourn2"].ToString() },
+				{ "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
+				{ "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() }
+			};
+
+			int inStock = int.Parse(component["Stock"].ToString());
+			int minStock = int.Parse(component["StockMin"].ToString());
+
+			if (inStock < minStock)
+				{
+					List.Add(component);
 				}
+			}
+
+			conn.Close();
 			return List ;
 			}
 

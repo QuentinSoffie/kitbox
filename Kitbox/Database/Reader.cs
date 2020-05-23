@@ -271,8 +271,6 @@ namespace Kitbox.Database
                 reader.Close();
             }
 
-
-
             conn.Close();
             return cupboardAngle;
         }
