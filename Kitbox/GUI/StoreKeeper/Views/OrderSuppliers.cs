@@ -46,5 +46,10 @@ namespace Kitbox.GUI.StoreKeeper.Views
         {
 
         }
+
+        private void pepButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

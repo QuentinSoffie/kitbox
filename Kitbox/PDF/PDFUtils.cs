@@ -161,9 +161,6 @@ namespace Kitbox.PDF
                 document.Add(prgTotal);
             }
 
-           
-
-
             document.Close();
             writer.Close();
             fs.Close();
@@ -200,7 +197,6 @@ namespace Kitbox.PDF
                 Row.Add(toOrder.ToString());
                 Row.Add(price.ToString());
                 Row.Add(cost.ToString());
-
 
 
                 bill.Rows.Add(Row.ToArray());
