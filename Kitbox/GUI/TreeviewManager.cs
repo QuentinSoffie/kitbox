@@ -147,40 +147,95 @@ namespace Kitbox.GUI
             RemoveView(uid);
         }
 
-        public String AddBox(int uidCupboard, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, string tag = "Completed ✓")
+
+        public Dictionary<string, Dictionary<string, object>> GetBoxComponents(string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard)
+        {
+            return Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, OurOrder, DataBase);
+        }
+
+        public Dictionary<string, Specs> CheckBox(int uidCupboard, Dictionary<string, Dictionary<string, object>> components , string tag = "Completed ✓")
         {
             UidTreeview += 1;
-            Dictionary<string, Specs> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, DataBase);
-            foreach (KeyValuePair<string, Specs> component in components)
+            Dictionary<string, Specs> notAvailable = new Dictionary<string, Specs>();
+            foreach (KeyValuePair<string, Dictionary<string, object>> component in components)
             {
-                if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
+                if (!(component.Value["Component"] is null))
                 {
-                    return component.Key;
+                    if (component.Value["Available"] is false)
+                    {
+                        notAvailable.Add(component.Key, (Specs)component.Value["Component"]);
+                    }
                 }
-                else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
-                {
-                    return component.Key;
-                }
+
+                //if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
+                //{
+                //    return component.Key;
+                //}
+                //else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
+                //{
+                //    return component.Key;
+                //}
             }
-            Console.WriteLine("end foreach");
+
+            //Door door = (Components.Door)components["Door"]["Component"];
+            //Slider slider = (Components.Slider)components["Slider"]["Component"];
+            //Panel panelBack = (Panel)components["PanelBack"]["Component"];
+            //Panel panelSides = (Panel)components["PanelSides"]["Component"];
+            //Panel panelHB = (Panel)components["PanelHB"]["Component"];
+            //Traverses traverseFront = (Traverses)components["TraverseFront"]["Component"];
+            //Traverses traverseBack = (Traverses)components["TraverseBack"]["Component"];
+            //Traverses traverseSides = (Traverses)components["TraverseSides"]["Component"];
+            //Cups cups = (Cups)components["Cups"]["Component"];
+
+            return notAvailable;
+        }
+
+        public void AddBox(int uidCupboard, Dictionary<string, Dictionary<string, object>> components, Cupboard cupboard, string tag = "Completed ✓")
+        {
+            //UidTreeview += 1;
+            //Dictionary<string, Dictionary<string, object>> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, OurOrder, DataBase);
+            //Dictionary<string, Specs> notAvailable = new Dictionary<string, Specs>();
+            //foreach (KeyValuePair<string, Dictionary<string, object>> component in components)
+            //{
+            //    if (!(component.Value["Component"] is null))
+            //    {
+            //        if (component.Value["Available"] is false)
+            //        {
+            //            notAvailable.Add(component.Key, (Specs)component.Value["Component"]);
+            //        }       
+            //    }
+
+            //    //if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
+            //    //{
+            //    //    return component.Key;
+            //    //}
+            //    //else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
+            //    //{
+            //    //    return component.Key;
+            //    //}
+            //}
+
+
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {cupboard.CountBox() + 1} box";
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
 
-            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"], (Components.Slider)components["Slider"], new List<Panel>() { (Panel)components["PanelBack"], (Panel)components["PanelSide"], (Panel)components["PanelHB"]}, new List<Traverses>() { (Traverses)components["TraverseFront"], (Traverses)components["TraverseBack"], (Traverses)components["TraverseSide"] }, (Cups)components["Cups"], this);
-            return null;
+            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"]["Component"], (Components.Slider)components["Slider"]["Component"], new List<Panel>() { (Panel)components["PanelBack"]["Component"], (Panel)components["PanelSides"]["Component"], (Panel)components["PanelHB"]["Component"] }, new List<Traverses>() { (Traverses)components["TraverseFront"]["Component"], (Traverses)components["TraverseBack"]["Component"], (Traverses)components["TraverseSides"]["Component"] }, (Cups)components["Cups"]["Component"], tag, this);
         }
 
-        public void UpdateTag(int uidCupboard,bool certified = false)
+        public void UpdateTag(int uidCupboard, string certified = "false")
         {
-            if (certified == false)
+            if (certified == "false")
             {
                 MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box";
             }
-            else
+            else if (certified == "true")
             {
                 MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box ✓";
+            }
+            else if(certified is null){
+                MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Count} box (Components not in stock)";
             }
             MainTreeview.Refresh();
         }
@@ -195,7 +250,7 @@ namespace Kitbox.GUI
             BringToFrontView(uidCupboard);
         }
 
-        public bool UpdateOrder(CupboardAngle cupboardAngle)
+        public bool CheckAngle(CupboardAngle cupboardAngle)
         {
         if ((OurOrder.GetQuantityCode(cupboardAngle.Code) + cupboardAngle.CountComponents()) < cupboardAngle.AvailableStock + 1)
             {
@@ -209,7 +264,7 @@ namespace Kitbox.GUI
             int allIsChecked = 0;
             for (int i = 0; i < MainTreeview.Nodes.Count; i++)
             {
-                if (MainTreeview.Nodes[i].Tag.ToString().Contains("✓"))
+                if (MainTreeview.Nodes[i].Tag.ToString().Contains("✓") || MainTreeview.Nodes[i].Tag.ToString().Contains("stock"))
                 {
                     allIsChecked += 1;
                 }

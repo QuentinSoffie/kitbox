@@ -76,6 +76,7 @@
             this.pepGroupBox5 = new KitboxEcamGUI.PepGroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.pepButton4 = new KitboxEcamGUI.PepButton();
+            this.pepButton5 = new KitboxEcamGUI.PepButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -677,6 +678,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.pepButton5);
             this.splitContainer1.Panel2.Controls.Add(this.pepButton4);
             this.splitContainer1.Panel2.Controls.Add(this.pepGroupBox5);
             this.splitContainer1.Panel2.Controls.Add(this.pepGroupBox1);
@@ -800,6 +802,20 @@
             this.pepButton4.Visible = false;
             this.pepButton4.Click += new System.EventHandler(this.pepButton4_Click);
             // 
+            // pepButton5
+            // 
+            this.pepButton5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pepButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(166)))), ((int)(((byte)(0)))));
+            this.pepButton5.Location = new System.Drawing.Point(113, 401);
+            this.pepButton5.Name = "pepButton5";
+            this.pepButton5.Size = new System.Drawing.Size(157, 42);
+            this.pepButton5.TabIndex = 24;
+            this.pepButton5.Text = "Continue anyway !";
+            this.pepButton5.UseVisualStyleBackColor = true;
+            this.pepButton5.Visible = false;
+            this.pepButton5.Click += new System.EventHandler(this.pepButton5_Click);
+            // 
             // ViewCupboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -886,5 +902,6 @@
         private KitboxEcamGUI.PepGroupBox pepGroupBox5;
         private System.Windows.Forms.Button button2;
         private KitboxEcamGUI.PepButton pepButton4;
+        private KitboxEcamGUI.PepButton pepButton5;
     }
 }

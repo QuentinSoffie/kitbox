@@ -1,3 +1,3 @@
-{"PanelBack":"{"Code":"PAN52BR", "Available":true}"}  -> Si existe et présent dans le stock
-{"PanelFront":"{"Code":"PAN52BR", "Available":false}"}  -> Si existe et non présent dans le stock
+{"PanelBack":"{"Component":Panel, "Available":true}"}  -> Si existe et présent dans le stock
+{"PanelFront":"{"Component":Panel, "Available":false}"}  -> Si existe et non présent dans le stock
 {"Door":null} -> Si n'existe pas

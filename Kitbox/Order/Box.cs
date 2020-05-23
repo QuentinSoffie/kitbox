@@ -19,9 +19,9 @@ namespace Kitbox.Order
         public readonly int Height;
         public readonly int Width;
         public readonly int Depth;
+        public string State { get; set; }
 
-
-        public Box(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses,Cups cups)
+        public Box(int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, Cups cups)
         {
             this.Uid = uid;
             this.Door = door;

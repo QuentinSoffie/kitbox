@@ -141,7 +141,7 @@ namespace Kitbox.PDF
 
             document.Add(new Chunk("\n", fntHead));
 
-            if(state == "complete")
+            if(state == "Completed ✓")
             {
                 BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
@@ -150,7 +150,7 @@ namespace Kitbox.PDF
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
                 document.Add(prgTotal);
             }
-            if(state == "not complete")
+            if(state == "Not completed")
             {
                 BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);

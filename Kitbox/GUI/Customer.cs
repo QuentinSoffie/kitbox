@@ -28,7 +28,7 @@ namespace GUI
 		private TreeviewManager MainTreeview;
 		private readonly string Username;
 		private readonly string Password;
-		private Kitbox.Order.Order OurOrder;
+		public Kitbox.Order.Order OurOrder;
 		public CreateCustomer CustomerView;
 
 		public Customer(MySqlConnection database, Authentication authentification, string username, string password)

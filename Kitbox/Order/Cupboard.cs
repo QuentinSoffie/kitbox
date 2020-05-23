@@ -12,6 +12,7 @@ namespace Kitbox.Order
     {
         public int Uid { get; set; }
         public readonly List<Box> ListeBoxes;
+        public string State = "Completed ✓";
         public CupboardAngle CupboardAngle { get; set; }
        
 
@@ -21,9 +22,22 @@ namespace Kitbox.Order
             ListeBoxes = new List<Box>();
         }
 
-        public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses,Cups cups, TreeviewManager viewManager)
+        public string CheckState()
         {
-            Box newBox = new Box(uid, door, slider, panels, traverses,cups);
+            foreach (Box box in ListeBoxes)
+            {
+                if (box.State == "Not completed")
+                {
+                    State = box.State;
+                }
+            }
+            return State;
+        }
+
+        public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, Cups cups, string state, TreeviewManager viewManager)
+        {
+            Box newBox = new Box(uid, door, slider, panels, traverses, cups);
+            newBox.State = state;
             viewManager.AddViewBox(uidCupboard,uid, newBox);
             ListeBoxes.Add(newBox);
             return newBox;

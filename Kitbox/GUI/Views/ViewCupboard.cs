@@ -21,6 +21,7 @@ namespace Kitbox.GUI
         public int Uid;
         private Cupboard Cupboard;
         public MySqlConnection DataBase;
+        public Dictionary<string, Dictionary<string, object>> Components;
         public ViewCupboard(int uid, Cupboard cupboard, MySqlConnection dataBase, TreeviewManager treeView)
         {
             InitializeComponent();
@@ -56,15 +57,31 @@ namespace Kitbox.GUI
                 string height = pepCombobox5.SelectedItem == null || pepCombobox5.SelectedIndex == 0 ? "?" : pepCombobox5.SelectedItem.ToString();
                 string width = pepCombobox2.SelectedItem == null || pepCombobox2.SelectedIndex == 0 ? "?" : pepCombobox2.SelectedItem.ToString();
                 string depth = pepCombobox1.SelectedItem == null || pepCombobox1.SelectedIndex == 0 ? "?" : pepCombobox1.SelectedItem.ToString();
-                string result = MainTreeView.AddBox(Uid, width, depth, height, colorDoor, colorPanel, Cupboard);
-                Console.WriteLine(result);
-                if (!(result is null))
+
+                Components = MainTreeView.GetBoxComponents(width, depth, height, colorDoor, colorPanel, Cupboard);
+
+                Dictionary<string, Specs> result = MainTreeView.CheckBox(Uid, Components);
+
+                if (result.Count != 0)
                 {
-                    //AddChat($"We are very sorry, your {result.ToUpper()} is no longer available. Please select an another one.", Color.Red);
-                    AddChat($"We are very sorry, your {result.ToLower()} is no longer available. Please continue, pay a deposit and get your order later or select an another {result.ToLower()}.", Color.Red);
+                    AddChat("We are very sorry! This(Those) components is(are) no longer available :", Color.Red);
+
+                    foreach (KeyValuePair<string, Specs> component in result)
+                    {
+                        AddChat($"\"{component.Key}({component.Value.Code})\"", Color.LightCoral);
+                    }
+
+                    AddChat("Please continue, pay a deposit and get your order later or select other(s) component(s) ", Color.Red);
+
                     pepButton4.Visible = true;
                 }
+                else
+                {
+                    MainTreeView.AddBox(Uid, Components, Cupboard);
+                }
+
                 RefreshView();
+
             }
             else
             {
@@ -305,7 +322,6 @@ namespace Kitbox.GUI
         {
             if(Cupboard.CountBox() > 0)
             {
-                Console.WriteLine(pepCombobox6.SelectedItem.ToString());
                 if (pepCombobox6.SelectedItem.ToString() != "Undefined")
                 {
                     CupboardAngle cupboardAngle = GetGoodCupAngle();
@@ -314,16 +330,26 @@ namespace Kitbox.GUI
                         AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
                         return;
                     }
-                    if (MainTreeView.UpdateOrder(cupboardAngle))
+                    if (MainTreeView.CheckAngle(cupboardAngle))
                     {
                         Cupboard.CupboardAngle = cupboardAngle;
-                        MainTreeView.UpdateTag(Uid, true);
-                        AddChat("✓ Your cupboard is approved !", Color.White);
+                        if (Cupboard.CheckState() == "Completed ✓")
+                        {
+                            MainTreeView.UpdateTag(Uid, "true");
+                            AddChat("✓ Your cupboard is approved !", Color.White);
+                        }
+                        else
+                        {
+                            MainTreeView.UpdateTag(Uid, null);
+                            AddChat("Your cupboard is approved but some components are missing!", Color.White);
+                        }
                     }
                     else
                     {
                         //AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
-                        AddChat($"We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please continue, pay a deposit and get your order later or select an another CupboardAngle ({cupboardAngle.Code}).", Color.Red);
+                        AddChat($"We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please continue, pay a deposit and get your order later or select an another CupboardAngle.", Color.Red);
+                        // Afficher le button pour poursuivre
+                        pepButton5.Visible = true;
                     }
                 }
                 else
@@ -361,7 +387,17 @@ namespace Kitbox.GUI
 
         private void pepButton4_Click(object sender, EventArgs e)
         {
+            MainTreeView.AddBox(Uid, Components, Cupboard, "Not completed");
+            pepButton4.Visible = false;
+        }
 
+        private void pepButton5_Click(object sender, EventArgs e)
+        {
+            Cupboard.CupboardAngle = GetGoodCupAngle();
+            Cupboard.State = "Not completed";
+            MainTreeView.UpdateTag(Uid, null);
+            AddChat("Your cupboard is approved but some components are missing!", Color.White);
+            pepButton5.Visible = false;
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Kitbox.Order
    public class Order
     {
         private readonly List<Cupboard> CupboardList;
+        public string State = "Completed ✓";
 
         public Order()
         {
@@ -47,6 +48,18 @@ namespace Kitbox.Order
                     }
                 }
             }
+        }
+
+        public string CheckState()
+        {
+            foreach(Cupboard cupboard in CupboardList)
+            {
+                if(cupboard.CheckState() == "Not completed")
+                {
+                    State = cupboard.State;
+                }
+            }
+            return State;
         }
 
         public List<List<string>> MakeOrder()
