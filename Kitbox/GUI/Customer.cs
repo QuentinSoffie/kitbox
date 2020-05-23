@@ -93,7 +93,7 @@ namespace GUI
 				Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
 
-				if(!(state != "Not completed"))
+				if(state != "Not completed")
 				{
 					UpdateStock(customer, id, orderJson.Command, state);
 				}
