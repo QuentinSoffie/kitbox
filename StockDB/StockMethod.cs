@@ -46,11 +46,11 @@ namespace StockDB
 			return false;
 		}
 
-		public static bool CheckStockForSupplier(string code, MySqlConnection conn)
+		public static List<Dictionary<string,string>> CheckStockForSupplier(MySqlConnection conn)
 		{
 			List<string> Listcode = new List<string>();
 
-				string query = "SELECT * FROM Piece WHERE " + "Code ='" + code + "'";
+				string query = "SELECT * FROM Piece";
 				MySqlDataReader reader = new MySqlCommand(query, conn).ExecuteReader();
 				while (reader.Read())
 				{
@@ -61,16 +61,16 @@ namespace StockDB
 					{
 						reader.Close();
 						conn.Close();
-						return true;
+						return Listcode;
 					}
 					else
 					{
 						reader.Close();
 						conn.Close();
-						return false;
+						return Listcode;
 					}
 				}
-			return false;
+			return Listcode;
 			}
 
 
