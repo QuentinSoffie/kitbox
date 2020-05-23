@@ -175,5 +175,14 @@ namespace StockDB
 				return false;
 			}
 		}
+
+		public static void UpdateSuplierInfo(string code, string param, string value, MySqlConnection conn)
+		{
+			conn.Open();
+			string query = "UPDATE Piece SET " + param +  "= '" + value + "' WHERE Code ='" + code + "'";
+			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
+			SDA.SelectCommand.ExecuteNonQuery();
+			conn.Close();
+		}
 	}
 }
