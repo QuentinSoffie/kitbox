@@ -169,6 +169,48 @@ namespace Kitbox.PDF
             fs.Close();
         }
 
+        public static DataTable MakePurchase(List<Dictionary<string,string>> order)
+        {
+            DataTable bill = new DataTable();
+            float TotalBill = 0;
+
+            //Define columns
+            bill.Columns.Add("Code");
+            bill.Columns.Add("Pièce");
+            bill.Columns.Add("Dimension");
+            bill.Columns.Add("Quantité");
+            bill.Columns.Add("Prix unitaire");
+            bill.Columns.Add("Prix total");
+
+            foreach (Dictionary<string,string> component in order)
+            {
+                List<string> Row = new List<string>();
+
+                float price = float.Parse(component["CustomerPrice"].ToString());
+                int stockmin = int.Parse(component["StockMin"].ToString());
+                int qtty = int.Parse(component["Stock"].ToString());
+
+                int toOrder = ((stockmin *2) - qtty);
+                float cost = toOrder * price; 
+
+
+                Row.Add(component["Ref"]);
+                Row.Add(component["Code"]);
+                Row.Add(component["Dimensions"]);
+                Row.Add(toOrder.ToString());
+                Row.Add(price.ToString());
+                Row.Add(cost.ToString());
+
+
+
+                bill.Rows.Add(Row.ToArray());
+                TotalBill += cost;
+
+
+            }
+            return bill;
+        }
+
 
         public static void ExportOrderSupplierToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string name, float cost)
         {

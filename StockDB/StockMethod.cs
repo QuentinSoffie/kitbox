@@ -66,6 +66,7 @@ namespace StockDB
 				{ "Width", reader["largeur"].ToString() },
 				{ "Depth", reader["profondeur"].ToString() },
 				{ "Couleur", reader["Couleur"].ToString() },
+				{ "CustomerPrice", reader["Prix-Client"].ToString() },
 				{ "Stock", reader["Enstock"].ToString() },
 				{ "StockMin", reader["Stock minimum"].ToString() },
 				{ "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
