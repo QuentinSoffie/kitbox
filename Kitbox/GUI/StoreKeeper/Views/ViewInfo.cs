@@ -36,6 +36,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// This is the constructor of the order view. It takes one required argument.
         /// </summary>
         /// <param name="order"></param>
+        /// /// <param name="dataBase"></param>
+        /// /// <param name="parent"></param>
         public ViewInfo(StoreKeeperOrder order, MySqlConnection dataBase, SearchInfo parent)
         {
             this.Parent = parent;

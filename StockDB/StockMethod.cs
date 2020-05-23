@@ -57,32 +57,34 @@ namespace StockDB
 
 			while (reader.Read())
 			{
-			Dictionary<string, string> component = new Dictionary<string, string>
-			{
-				{ "Ref", reader["Ref"].ToString() },
-				{ "Code", reader["Code"].ToString() },
-				{ "Dimensions", reader["Dimensions(cm)"].ToString() },
-				{ "Height", reader["hauteur"].ToString() },
-				{ "Width", reader["largeur"].ToString() },
-				{ "Depth", reader["profondeur"].ToString() },
-				{ "Couleur", reader["Couleur"].ToString() },
-				{ "CustomerPrice", reader["Prix-Client"].ToString() },
-				{ "Stock", reader["Enstock"].ToString() },
-				{ "StockMin", reader["Stock minimum"].ToString() },
-				{ "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
-				{ "SupplierTwoPrice", reader["Prix-Fourn2"].ToString() },
-				{ "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
-				{ "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() }
-			};
+				Dictionary<string, string> component = new Dictionary<string, string>
+					{
+						{ "Ref", reader["Ref"].ToString() },
+						{ "Code", reader["Code"].ToString() },
+						{ "Dimensions", reader["Dimensions(cm)"].ToString() },
+						{ "Height", reader["hauteur"].ToString() },
+						{ "Width", reader["largeur"].ToString() },
+						{ "Depth", reader["profondeur"].ToString() },
+						{ "Color", reader["Couleur"].ToString() },
+						{ "CustomerPrice", reader["Prix-Client"].ToString() },
+						{ "Stock", reader["Enstock"].ToString() },
+						{ "StockMin", reader["Stock minimum"].ToString() },
+						{ "SupplierOnePrice", reader["Prix-Fourn 1"].ToString() },
+						{ "SupplierTwoPrice", reader["Prix-Fourn2"].ToString() },
+						{ "SupplierOneDelay", reader["Delai-Fourn 1"].ToString() },
+						{ "SupplierTwoDelay", reader["Delai-Fourn2"].ToString() }
+					};
+				
+				int inStock = int.Parse(component["Stock"].ToString());
+				int minStock = int.Parse(component["StockMin"].ToString());
 
-			int inStock = int.Parse(component["Stock"].ToString());
-			int minStock = int.Parse(component["StockMin"].ToString());
-
-			if (inStock < minStock)
+				if (inStock < minStock)
 				{
 					List.Add(component);
 				}
 			}
+
+			reader.Close();
 
 			conn.Close();
 			return List ;

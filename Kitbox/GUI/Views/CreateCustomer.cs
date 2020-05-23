@@ -16,7 +16,7 @@ namespace Kitbox.GUI.Views
 {
     public partial class CreateCustomer : UserControl
     {
-        Customer Parent;
+        new Customer Parent;
 
         MySqlConnection DataBase;
 

@@ -169,7 +169,6 @@ namespace Kitbox.PDF
         public static DataTable MakePurchase(List<Dictionary<string,string>> order)
         {
             DataTable bill = new DataTable();
-            float TotalBill = 0;
 
             //Define columns
             bill.Columns.Add("Code");
@@ -187,9 +186,8 @@ namespace Kitbox.PDF
                 int stockmin = int.Parse(component["StockMin"].ToString());
                 int qtty = int.Parse(component["Stock"].ToString());
 
-                int toOrder = ((stockmin *2) - qtty);
-                float cost = toOrder * price; 
-
+                int toOrder = ((stockmin * 2) - qtty);
+                float cost = toOrder * price;
 
                 Row.Add(component["Ref"]);
                 Row.Add(component["Code"]);
@@ -198,17 +196,33 @@ namespace Kitbox.PDF
                 Row.Add(price.ToString());
                 Row.Add(cost.ToString());
 
-
                 bill.Rows.Add(Row.ToArray());
-                TotalBill += cost;
-
 
             }
             return bill;
         }
 
+        public static string ComputeCost(List<Dictionary<string, string>> order)
+        {
+            float totalBill = 0;
+            foreach (Dictionary<string, string> component in order)
+            {
+                List<string> Row = new List<string>();
 
-        public static void ExportOrderSupplierToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string name, float cost)
+                float price = float.Parse(component["CustomerPrice"].ToString());
+                int stockmin = int.Parse(component["StockMin"].ToString());
+                int qtty = int.Parse(component["Stock"].ToString());
+
+                int toOrder = ((stockmin * 2) - qtty);
+                float cost = toOrder * price;
+
+                totalBill += cost;
+            }
+
+            return totalBill.ToString();
+        }
+
+        public static void ExportOrderSupplierToPDF(List<Dictionary<string, string>> order, string strPdfPath, string strHeader, string name)
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
@@ -241,6 +255,8 @@ namespace Kitbox.PDF
             document.Add(new Chunk("\n", fntHead));
 
             //Ajout de la table
+            DataTable dtblTable = MakePurchase(order);
+
             PdfPTable table = new PdfPTable(dtblTable.Columns.Count);
             //En-tête du tableau
             BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
@@ -263,13 +279,13 @@ namespace Kitbox.PDF
             }
 
             document.Add(table);
-
+            document.Add(new Chunk("\n", fntHead));
 
             BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
             Paragraph prgTotal = new Paragraph();
             prgTotal.Alignment = Element.ALIGN_LEFT;
-            prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
+            prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {ComputeCost(order)}€", fntTotal));
             document.Add(prgTotal);
 
             document.Add(new Chunk("\n", fntHead));

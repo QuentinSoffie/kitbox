@@ -32,13 +32,9 @@
             this.pepButton2 = new KitboxEcamGUI.PepButton();
             this.pepButton3 = new KitboxEcamGUI.PepButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pepButton5 = new KitboxEcamGUI.PepButton();
-            this.pepButton4 = new KitboxEcamGUI.PepButton();
-            this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pepNumericUpDown1 = new KitboxEcamGUI.PepNumericUpDown();
             this.pepGroupBox4 = new KitboxEcamGUI.PepGroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -54,13 +50,19 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pepButton5 = new KitboxEcamGUI.PepButton();
+            this.pepButton4 = new KitboxEcamGUI.PepButton();
+            this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pepNumericUpDown1 = new KitboxEcamGUI.PepNumericUpDown();
+            this.pepGroupBox2 = new KitboxEcamGUI.PepGroupBox();
+            this.pepGroupBox3 = new KitboxEcamGUI.PepGroupBox();
             this.panel1.SuspendLayout();
-            this.pepGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pepNumericUpDown1)).BeginInit();
             this.pepGroupBox4.SuspendLayout();
             this.pepGroupBox5.SuspendLayout();
+            this.pepGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pepNumericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // pepButton1
@@ -68,7 +70,7 @@
             this.pepButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton1.Location = new System.Drawing.Point(582, 413);
+            this.pepButton1.Location = new System.Drawing.Point(391, 407);
             this.pepButton1.Name = "pepButton1";
             this.pepButton1.Size = new System.Drawing.Size(155, 35);
             this.pepButton1.TabIndex = 0;
@@ -81,7 +83,7 @@
             this.pepButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pepButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton2.Location = new System.Drawing.Point(582, 454);
+            this.pepButton2.Location = new System.Drawing.Point(391, 448);
             this.pepButton2.Name = "pepButton2";
             this.pepButton2.Size = new System.Drawing.Size(155, 35);
             this.pepButton2.TabIndex = 1;
@@ -94,7 +96,7 @@
             this.pepButton3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pepButton3.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
             this.pepButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton3.Location = new System.Drawing.Point(582, 516);
+            this.pepButton3.Location = new System.Drawing.Point(391, 510);
             this.pepButton3.Name = "pepButton3";
             this.pepButton3.Size = new System.Drawing.Size(155, 63);
             this.pepButton3.TabIndex = 2;
@@ -108,6 +110,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.panel1.Controls.Add(this.pepGroupBox3);
+            this.panel1.Controls.Add(this.pepGroupBox2);
             this.panel1.Controls.Add(this.pepGroupBox4);
             this.panel1.Controls.Add(this.pepButton5);
             this.panel1.Controls.Add(this.pepButton4);
@@ -120,90 +124,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(972, 637);
             this.panel1.TabIndex = 3;
-            // 
-            // pepButton5
-            // 
-            this.pepButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pepButton5.ForeColor = System.Drawing.Color.Khaki;
-            this.pepButton5.Location = new System.Drawing.Point(210, 329);
-            this.pepButton5.Name = "pepButton5";
-            this.pepButton5.Size = new System.Drawing.Size(349, 250);
-            this.pepButton5.TabIndex = 5;
-            this.pepButton5.Text = "Confirm";
-            this.pepButton5.UseVisualStyleBackColor = true;
-            this.pepButton5.Visible = false;
-            this.pepButton5.Click += new System.EventHandler(this.pepButton5_Click);
-            // 
-            // pepButton4
-            // 
-            this.pepButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton4.Location = new System.Drawing.Point(210, 541);
-            this.pepButton4.Name = "pepButton4";
-            this.pepButton4.Size = new System.Drawing.Size(349, 37);
-            this.pepButton4.TabIndex = 2;
-            this.pepButton4.Text = "Validate";
-            this.pepButton4.UseVisualStyleBackColor = true;
-            this.pepButton4.Visible = false;
-            this.pepButton4.Click += new System.EventHandler(this.pepButton4_Click);
-            // 
-            // pepGroupBox1
-            // 
-            this.pepGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pepGroupBox1.Controls.Add(this.label2);
-            this.pepGroupBox1.Controls.Add(this.label1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(210, 310);
-            this.pepGroupBox1.MaximumSize = new System.Drawing.Size(437, 211);
-            this.pepGroupBox1.Name = "pepGroupBox1";
-            this.pepGroupBox1.Size = new System.Drawing.Size(349, 211);
-            this.pepGroupBox1.TabIndex = 4;
-            this.pepGroupBox1.TabStop = false;
-            this.pepGroupBox1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(125, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 55);
-            this.label2.TabIndex = 1;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Khaki;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(78, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Next value:";
-            // 
-            // pepNumericUpDown1
-            // 
-            this.pepNumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pepNumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pepNumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepNumericUpDown1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pepNumericUpDown1.Location = new System.Drawing.Point(582, 330);
-            this.pepNumericUpDown1.Maximum = new decimal(new int[] {
-            2000,
-            0,
-            0,
-            0});
-            this.pepNumericUpDown1.Name = "pepNumericUpDown1";
-            this.pepNumericUpDown1.Size = new System.Drawing.Size(155, 71);
-            this.pepNumericUpDown1.TabIndex = 3;
-            this.pepNumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pepGroupBox4
             // 
@@ -220,12 +140,37 @@
             this.pepGroupBox4.Controls.Add(this.label16);
             this.pepGroupBox4.Controls.Add(this.label14);
             this.pepGroupBox4.Controls.Add(this.label13);
-            this.pepGroupBox4.Location = new System.Drawing.Point(210, 50);
+            this.pepGroupBox4.Location = new System.Drawing.Point(19, 44);
             this.pepGroupBox4.Name = "pepGroupBox4";
             this.pepGroupBox4.Size = new System.Drawing.Size(527, 214);
             this.pepGroupBox4.TabIndex = 14;
             this.pepGroupBox4.TabStop = false;
-            this.pepGroupBox4.Text = "Infomations";
+            this.pepGroupBox4.Text = "Component\'s infomations";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(356, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(257, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 16);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Minimal stock :";
             // 
             // label23
             // 
@@ -410,30 +355,107 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Name :";
             // 
-            // label3
+            // pepButton5
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(257, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Minimal stock :";
+            this.pepButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepButton5.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pepButton5.ForeColor = System.Drawing.Color.Khaki;
+            this.pepButton5.Location = new System.Drawing.Point(19, 323);
+            this.pepButton5.Name = "pepButton5";
+            this.pepButton5.Size = new System.Drawing.Size(349, 250);
+            this.pepButton5.TabIndex = 5;
+            this.pepButton5.Text = "Confirm";
+            this.pepButton5.UseVisualStyleBackColor = true;
+            this.pepButton5.Visible = false;
+            this.pepButton5.Click += new System.EventHandler(this.pepButton5_Click);
             // 
-            // label4
+            // pepButton4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(356, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 16);
-            this.label4.TabIndex = 11;
+            this.pepButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.pepButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepButton4.Location = new System.Drawing.Point(19, 535);
+            this.pepButton4.Name = "pepButton4";
+            this.pepButton4.Size = new System.Drawing.Size(349, 37);
+            this.pepButton4.TabIndex = 2;
+            this.pepButton4.Text = "Validate";
+            this.pepButton4.UseVisualStyleBackColor = true;
+            this.pepButton4.Visible = false;
+            this.pepButton4.Click += new System.EventHandler(this.pepButton4_Click);
+            // 
+            // pepGroupBox1
+            // 
+            this.pepGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pepGroupBox1.Controls.Add(this.label2);
+            this.pepGroupBox1.Controls.Add(this.label1);
+            this.pepGroupBox1.Location = new System.Drawing.Point(19, 304);
+            this.pepGroupBox1.MaximumSize = new System.Drawing.Size(437, 211);
+            this.pepGroupBox1.Name = "pepGroupBox1";
+            this.pepGroupBox1.Size = new System.Drawing.Size(349, 211);
+            this.pepGroupBox1.TabIndex = 4;
+            this.pepGroupBox1.TabStop = false;
+            this.pepGroupBox1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(125, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 55);
+            this.label2.TabIndex = 1;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Khaki;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Location = new System.Drawing.Point(78, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(205, 42);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Next value:";
+            // 
+            // pepNumericUpDown1
+            // 
+            this.pepNumericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pepNumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pepNumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pepNumericUpDown1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pepNumericUpDown1.Location = new System.Drawing.Point(391, 324);
+            this.pepNumericUpDown1.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.pepNumericUpDown1.Name = "pepNumericUpDown1";
+            this.pepNumericUpDown1.Size = new System.Drawing.Size(155, 71);
+            this.pepNumericUpDown1.TabIndex = 3;
+            this.pepNumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pepGroupBox2
+            // 
+            this.pepGroupBox2.Location = new System.Drawing.Point(577, 44);
+            this.pepGroupBox2.Name = "pepGroupBox2";
+            this.pepGroupBox2.Size = new System.Drawing.Size(329, 214);
+            this.pepGroupBox2.TabIndex = 15;
+            this.pepGroupBox2.TabStop = false;
+            this.pepGroupBox2.Text = "Supplier\'s informations";
+            // 
+            // pepGroupBox3
+            // 
+            this.pepGroupBox3.Location = new System.Drawing.Point(577, 323);
+            this.pepGroupBox3.Name = "pepGroupBox3";
+            this.pepGroupBox3.Size = new System.Drawing.Size(329, 250);
+            this.pepGroupBox3.TabIndex = 16;
+            this.pepGroupBox3.TabStop = false;
+            this.pepGroupBox3.Text = "Update supplier\'s informations";
             // 
             // ViewComponentSearch
             // 
@@ -443,13 +465,13 @@
             this.Name = "ViewComponentSearch";
             this.Size = new System.Drawing.Size(972, 637);
             this.panel1.ResumeLayout(false);
-            this.pepGroupBox1.ResumeLayout(false);
-            this.pepGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pepNumericUpDown1)).EndInit();
             this.pepGroupBox4.ResumeLayout(false);
             this.pepGroupBox4.PerformLayout();
             this.pepGroupBox5.ResumeLayout(false);
             this.pepGroupBox5.PerformLayout();
+            this.pepGroupBox1.ResumeLayout(false);
+            this.pepGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pepNumericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -484,5 +506,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox2;
+        private KitboxEcamGUI.PepGroupBox pepGroupBox3;
     }
 }

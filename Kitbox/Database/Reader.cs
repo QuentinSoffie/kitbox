@@ -73,6 +73,7 @@ namespace Kitbox.Database
         /// <param name="colorPanel"></param>
         /// <param name="cupboard"></param>
         /// <param name="conn"></param>
+        /// <param name="order"></param>
         /// <returns></returns>
         public static Dictionary<string, Dictionary<string, object>> SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, Order.Order order, MySqlConnection conn)
         {
@@ -145,6 +146,7 @@ namespace Kitbox.Database
         /// </summary>
         /// <param name="component"></param>
         /// <param name="type"></param>
+        /// <param name="order"></param>
         /// <returns></returns>
         private static Dictionary<string, object> ReaderData(Order.Order order, MySqlDataReader component, Type type)
         {
