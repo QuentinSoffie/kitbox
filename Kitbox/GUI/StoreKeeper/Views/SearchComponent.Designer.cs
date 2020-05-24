@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchComponent));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pepGroupBox1 = new KitboxEcamGUI.PepGroupBox();
             this.pepButton1 = new KitboxEcamGUI.PepButton();
@@ -36,21 +37,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pepTreeView1 = new KitboxEcamGUI.PepTreeView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pepGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.panel1.Controls.Add(this.pepGroupBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1282, 76);
+            this.panel1.Size = new System.Drawing.Size(1281, 76);
             this.panel1.TabIndex = 10;
             // 
             // pepGroupBox1
@@ -60,7 +65,7 @@
             this.pepGroupBox1.Controls.Add(this.pepCombobox1);
             this.pepGroupBox1.Controls.Add(this.pepTextbox1);
             this.pepGroupBox1.Controls.Add(this.label1);
-            this.pepGroupBox1.Location = new System.Drawing.Point(133, -12);
+            this.pepGroupBox1.Location = new System.Drawing.Point(131, -12);
             this.pepGroupBox1.Name = "pepGroupBox1";
             this.pepGroupBox1.Size = new System.Drawing.Size(1017, 86);
             this.pepGroupBox1.TabIndex = 8;
@@ -71,7 +76,7 @@
             this.pepButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pepButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.pepButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pepButton1.Location = new System.Drawing.Point(849, 38);
+            this.pepButton1.Location = new System.Drawing.Point(849, 37);
             this.pepButton1.Name = "pepButton1";
             this.pepButton1.Size = new System.Drawing.Size(146, 28);
             this.pepButton1.TabIndex = 3;
@@ -137,53 +142,87 @@
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(69)))));
             this.splitContainer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Location = new System.Drawing.Point(3, 80);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.panel2);
             this.splitContainer1.Panel1.Controls.Add(this.pepTreeView1);
             this.splitContainer1.Panel1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.splitContainer1.Size = new System.Drawing.Size(1276, 549);
-            this.splitContainer1.SplitterDistance = 312;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.splitContainer1.Size = new System.Drawing.Size(1278, 552);
+            this.splitContainer1.SplitterDistance = 330;
             this.splitContainer1.SplitterWidth = 11;
             this.splitContainer1.TabIndex = 11;
             // 
             // pepTreeView1
             // 
+            this.pepTreeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pepTreeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.pepTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pepTreeView1.Caption = false;
-            this.pepTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pepTreeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.pepTreeView1.ItemHeight = 50;
             this.pepTreeView1.Location = new System.Drawing.Point(0, 0);
             this.pepTreeView1.Name = "pepTreeView1";
             this.pepTreeView1.Online = false;
-            this.pepTreeView1.Size = new System.Drawing.Size(312, 549);
+            this.pepTreeView1.Size = new System.Drawing.Size(325, 495);
             this.pepTreeView1.TabIndex = 0;
             this.pepTreeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.pepTreeView1_AfterSelect);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(0, 487);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(325, 65);
+            this.panel2.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(144, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 34);
+            this.button1.TabIndex = 1;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // SearchComponent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Name = "SearchComponent";
-            this.Size = new System.Drawing.Size(1282, 632);
+            this.Size = new System.Drawing.Size(1284, 635);
             this.panel1.ResumeLayout(false);
             this.pepGroupBox1.ResumeLayout(false);
             this.pepGroupBox1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -198,5 +237,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private KitboxEcamGUI.PepTreeView pepTreeView1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }

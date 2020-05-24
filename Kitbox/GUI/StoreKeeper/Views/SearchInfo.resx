@@ -118,6 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAA91JREFUWEftll1MU2cYx4+Lu4C+57yn5/SLArV1RQpWGAynTiIbOsIcuuHH4kd0
+        idulu3CJ7nK7NLvcFttTmB8ZOhLRskQjTuNGjM7NTE00kTBpKaWlXhhdgixV18fnJS9dD2Jtpbvjl/xz
+        kvf5vx/P+3mEOebIhiZJS/2iuBcEYR4vypvvCTF3yvLPPlHcyYtyAztedsLlGP9t1TLwUbqfF+eFZjQ6
+        frBbh4Y2vQ9n67wpbPNjHsqOT5LeZJ3Ht30Id3dshEtvNUAAZ4KHc0IjxPNjqT0R2dw22UZ8ezsctqoJ
+        Hn4+fkrrTzjLx2MftUFi6wdp/VK/BDRR3MVtWfFLUkOPw/4gipmzumNb1sNPbmfSR8hKbnk+bJp+rfNC
+        Akc+XX2LK1MBQtq5dUYC1NAcdDkmYhveS9c743E/wT2wllteDGbw2XmvB8awkenCTB6zTrhVBxsci8fa
+        W9P+s97KFLa3jVtyJyBJ208vWvhvfF0LjK3/T7F170LvAvsEOyHcOglbHsw0lentr60G9O3mlvzBjdfW
+        6yx/NNr6DsTXNqcVbX0bekptDzoIqeK+vReqF+k8l3EZNdHw1WRDs8FPyKqeMuvDkdWNEG9pSivS3Ahd
+        NmuiQxS/u7jEo4tdra8BXI5vZ3N/6DhAi+u6bZZ74ablEMOBTCmEd8RVzDSz7HpDLeDMHPtSEF7h1QsD
+        7uKKLrMpdmdFA8SaVsyom9h5JyVnNEF4lVcrLL6iotIjinFwADsaXblUp9tv1MAhWb6ilZQUc3vh6ZAk
+        5bBM/7iFu3t0eb1ON2uq/t/sO4uK7EeM8sBt7CiKMzCT/qyqYIM4WvD1x8zdXSqNDuLlFH3dm1aophqu
+        Vb6mK/vd7YIDhHxTsBPgk4trj5qUe3fwnI/gcZtS2FsJ3Wb1vkbF7ssuhy520VkOAYngRMwSfNEajyvy
+        eMjjhhGc3ilFPBVwUjVOsEeHZYp3wf7+crvOc6GsZHa3IHs8es1qMoxTGqlYqFPQYnrmPcCL54tzJVad
+        r89mgZd/B8ymJ8OuBRCZptMWU8pPyQZu1YG35qenMJ7pP4Xt5PUSapRs7jObYNhR9ozOWUyAb/on3Doj
+        WH/jSVV5HOZ12DeoKkm2nNySHXb3BxU5GbbbYDhD/WYVsJF93JYVjRrW9FD6zxCvG0Idl8RxtqG5JTu4
+        bi1BmSZDFjOEUZdUBTeU4Wsezgn2W9ctkr8HcTZZG3+hDolilIdfzNQgrihG6JQMB1/mXONyVR+j0t0B
+        TOC8UWa/dHt4KDf81LC6AzPHAz2fF+UN/lE7D4riDfzV+5wXzTFHBoLwFM9/Q/gcM4/pAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABAYAAAQACAYAAAByA1vEAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
@@ -2026,29 +2049,6 @@
         r9ckKRM02d74crfmcg0hhBBCCCGEEEI+g7TWTNSkH/yj8r7mdc1OzTRNLw0+nxBCCCGEEEIIIZ9hWmh+
         qnlEc1/j6+gKwCTA+ZpOGm4XIIQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIceUv/uL/AzJMiCvQ
         QO2bAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAA91JREFUWEftll1MU2cYx4+Lu4C+57yn5/SLArV1RQpWGAynTiIbOsIcuuHH4kd0
-        idulu3CJ7nK7NLvcFttTmB8ZOhLRskQjTuNGjM7NTE00kTBpKaWlXhhdgixV18fnJS9dD2Jtpbvjl/xz
-        kvf5vx/P+3mEOebIhiZJS/2iuBcEYR4vypvvCTF3yvLPPlHcyYtyAztedsLlGP9t1TLwUbqfF+eFZjQ6
-        frBbh4Y2vQ9n67wpbPNjHsqOT5LeZJ3Ht30Id3dshEtvNUAAZ4KHc0IjxPNjqT0R2dw22UZ8ezsctqoJ
-        Hn4+fkrrTzjLx2MftUFi6wdp/VK/BDRR3MVtWfFLUkOPw/4gipmzumNb1sNPbmfSR8hKbnk+bJp+rfNC
-        Akc+XX2LK1MBQtq5dUYC1NAcdDkmYhveS9c743E/wT2wllteDGbw2XmvB8awkenCTB6zTrhVBxsci8fa
-        W9P+s97KFLa3jVtyJyBJ208vWvhvfF0LjK3/T7F170LvAvsEOyHcOglbHsw0lentr60G9O3mlvzBjdfW
-        6yx/NNr6DsTXNqcVbX0bekptDzoIqeK+vReqF+k8l3EZNdHw1WRDs8FPyKqeMuvDkdWNEG9pSivS3Ahd
-        NmuiQxS/u7jEo4tdra8BXI5vZ3N/6DhAi+u6bZZ74ablEMOBTCmEd8RVzDSz7HpDLeDMHPtSEF7h1QsD
-        7uKKLrMpdmdFA8SaVsyom9h5JyVnNEF4lVcrLL6iotIjinFwADsaXblUp9tv1MAhWb6ilZQUc3vh6ZAk
-        5bBM/7iFu3t0eb1ON2uq/t/sO4uK7EeM8sBt7CiKMzCT/qyqYIM4WvD1x8zdXSqNDuLlFH3dm1aophqu
-        Vb6mK/vd7YIDhHxTsBPgk4trj5qUe3fwnI/gcZtS2FsJ3Wb1vkbF7ssuhy520VkOAYngRMwSfNEajyvy
-        eMjjhhGc3ilFPBVwUjVOsEeHZYp3wf7+crvOc6GsZHa3IHs8es1qMoxTGqlYqFPQYnrmPcCL54tzJVad
-        r89mgZd/B8ymJ8OuBRCZptMWU8pPyQZu1YG35qenMJ7pP4Xt5PUSapRs7jObYNhR9ozOWUyAb/on3Doj
-        WH/jSVV5HOZ12DeoKkm2nNySHXb3BxU5GbbbYDhD/WYVsJF93JYVjRrW9FD6zxCvG0Idl8RxtqG5JTu4
-        bi1BmSZDFjOEUZdUBTeU4Wsezgn2W9ctkr8HcTZZG3+hDolilIdfzNQgrihG6JQMB1/mXONyVR+j0t0B
-        TOC8UWa/dHt4KDf81LC6AzPHAz2fF+UN/lE7D4riDfzV+5wXzTFHBoLwFM9/Q/gcM4/pAAAAAElFTkSu
-        QmCC
 </value>
   </data>
 </root>

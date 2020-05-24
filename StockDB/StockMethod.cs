@@ -176,7 +176,7 @@ namespace StockDB
 			}
 		}
 
-		public static void UpdateSuplierInfo(string code, string param, string value, MySqlConnection conn)
+		public static void UpdateSupplierInfo(string code, string param, string value, MySqlConnection conn)
 		{
 			conn.Open();
 			string query = "UPDATE Piece SET " + param +  "= '" + value + "' WHERE Code ='" + code + "'";

@@ -16,15 +16,15 @@ namespace Kitbox.GUI.StoreKeeper.Views
     {
         MySqlConnection DataBase;
         StoreKeeperComponent Component;
-        SearchComponent View;
+        new SearchComponent Parent;
         int Value;
-        public ViewComponentSearch(SearchComponent view, StoreKeeperComponent component, MySqlConnection dataBase)
+        public ViewComponentSearch(SearchComponent parent, StoreKeeperComponent component, MySqlConnection dataBase)
         {
             InitializeComponent();
             this.Dock = DockStyle.Fill;
             DataBase = dataBase;
             Component = component;
-            View = view;
+            Parent = parent;
             LoadData();
         }
 
@@ -38,6 +38,11 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label22.Text = Component.Stock.ToString();
             label23.Text = Component.Color;
             label4.Text = Component.StockMin.ToString();
+
+            label5.Text = Component.SupplierOnePrice;
+            label7.Text = Component.SupplierOneDelay;
+            label11.Text = Component.SupplierTwoPrice;
+            label9.Text = Component.SupplierTwoDelay;
         }
 
         public void DeleteComponent()
@@ -47,16 +52,16 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         private void pepButton1_Click(object sender, EventArgs e)
         {
+            pepButton5.Visible = false;
             Value = int.Parse(pepNumericUpDown1.Value.ToString());
-            pepGroupBox1.Visible = true;
             label2.Text = (Component.Stock + Value).ToString();
             label2.ForeColor = Color.Green;
-            pepButton4.Visible = true;
         }
 
 
         private void pepButton2_Click(object sender, EventArgs e)
         {
+            pepButton5.Visible = false;
             Value = -int.Parse(pepNumericUpDown1.Value.ToString());
 
             if (Component.Stock + Value < 0)
@@ -65,10 +70,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
             }
             else
             {
-                pepGroupBox1.Visible = true;
                 label2.Text = (Component.Stock + Value).ToString();
                 label2.ForeColor = Color.Red;
-                pepButton4.Visible = true;
             }
         }
 
@@ -87,8 +90,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
             else
             {
                 StockDB.StockMethod.AddQtty(Component.Code, Value, DataBase);
-                View.ClearWindow();
-                View.GetComponents();
+                Parent.ClearWindow();
+                Parent.GetComponents();
                 Console.WriteLine("Done");
             }
         }
@@ -96,7 +99,49 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void pepButton5_Click(object sender, EventArgs e)
         {
             DeleteComponent();
-            View.ClearWindow();
+            Parent.ClearWindow();
+        }
+
+        private void KeyPressed(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void pepButton6_Click(object sender, EventArgs e)
+        {
+            UpdateSuppliers();
+        }
+
+        public void UpdateSuppliers()
+        {
+            if (textBox2.Text != "")
+            {
+                StockDB.StockMethod.UpdateSupplierInfo(Component.Code, "`Prix-Fourn 1`", textBox2.Text, DataBase);
+            }
+            if (textBox1.Text != "")
+            {
+                StockDB.StockMethod.UpdateSupplierInfo(Component.Code, "`Delai-Fourn 1`", textBox1.Text, DataBase);
+            }
+            if (textBox4.Text != "")
+            {
+                StockDB.StockMethod.UpdateSupplierInfo(Component.Code, "`Prix-Fourn2`", textBox4.Text, DataBase);
+            }
+            if (textBox3.Text != "")
+            {
+                StockDB.StockMethod.UpdateSupplierInfo(Component.Code, "`Delai-Fourn2`", textBox3.Text, DataBase);
+            }
+
+            Parent.ClearWindow();
+            Parent.GetComponents();
         }
     }
 }
