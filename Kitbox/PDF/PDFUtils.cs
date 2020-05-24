@@ -24,8 +24,8 @@ namespace Kitbox.PDF
             bill.Columns.Add("Pièce");
             bill.Columns.Add("Dimension");
             bill.Columns.Add("Quantité");
-            bill.Columns.Add("Prix unitaire");
-            bill.Columns.Add("Prix total");
+            bill.Columns.Add("Prix unitaire (€)");
+            bill.Columns.Add("Prix total (€)");
 
             List<List<string>> a = order.MakeOrder();
             foreach (List<string> item in a)
@@ -102,13 +102,13 @@ namespace Kitbox.PDF
             }
 
             Document document = new Document();
-            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            document.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
             document.Open();
 
             //Report Header
             BaseFont bfntHead = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font fntHead = new Font(bfntHead, 16, 1, BaseColor.GRAY);
+            Font fntHead = new Font(bfntHead, 24, 1, BaseColor.GRAY);
             Paragraph prgHeading = new Paragraph();
             prgHeading.Alignment = Element.ALIGN_CENTER;
             prgHeading.Add(new Chunk(strHeader.ToUpper(), fntHead));
@@ -153,6 +153,7 @@ namespace Kitbox.PDF
                 }
             }
 
+
             document.Add(table);
 
             document.Add(new Chunk("\n", fntHead));
@@ -162,7 +163,7 @@ namespace Kitbox.PDF
                 BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
                 Paragraph prgTotal = new Paragraph();
-                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Alignment = Element.ALIGN_RIGHT;
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
                 document.Add(prgTotal);
             }
@@ -171,7 +172,7 @@ namespace Kitbox.PDF
                 BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
                 Paragraph prgTotal = new Paragraph();
-                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Alignment = Element.ALIGN_RIGHT;
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
                 prgTotal.Add(new Chunk($"\nAcompte à payer de  : {Math.Round(cost*0.2,2)}€", fntTotal));
                 document.Add(prgTotal);
@@ -181,7 +182,7 @@ namespace Kitbox.PDF
                 BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
                 Paragraph prgTotal = new Paragraph();
-                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Alignment = Element.ALIGN_RIGHT;
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
                 prgTotal.Add(new Chunk($"\nIl vous reste à payer  : {Math.Round(cost - (cost * 0.2), 2)}€", fntTotal));
                 document.Add(prgTotal);
@@ -201,8 +202,8 @@ namespace Kitbox.PDF
             bill.Columns.Add("Pièce");
             bill.Columns.Add("Dimension");
             bill.Columns.Add("Quantité");
-            bill.Columns.Add("Prix unitaire");
-            bill.Columns.Add("Prix total");
+            bill.Columns.Add("Prix unitaire (€)");
+            bill.Columns.Add("Prix total (€)");
 
             foreach (Dictionary<string,string> component in order)
             {
@@ -307,13 +308,13 @@ namespace Kitbox.PDF
         {
             System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
             Document document = new Document();
-            document.SetPageSize(iTextSharp.text.PageSize.A4);
+            document.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
             document.Open();
 
             //Report Header
             BaseFont bfntHead = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-            Font fntHead = new Font(bfntHead, 16, 1, BaseColor.GRAY);
+            Font fntHead = new Font(bfntHead, 24, 1, BaseColor.GRAY);
             Paragraph prgHeading = new Paragraph();
             prgHeading.Alignment = Element.ALIGN_CENTER;
             prgHeading.Add(new Chunk(strHeader.ToUpper(), fntHead));
@@ -365,7 +366,7 @@ namespace Kitbox.PDF
             BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
             Paragraph prgTotal = new Paragraph();
-            prgTotal.Alignment = Element.ALIGN_LEFT;
+            prgTotal.Alignment = Element.ALIGN_RIGHT;
             prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {ComputeCost(order)}€", fntTotal));
             document.Add(prgTotal);
 

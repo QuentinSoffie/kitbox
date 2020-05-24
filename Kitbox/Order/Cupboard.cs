@@ -34,6 +34,25 @@ namespace Kitbox.Order
             return State;
         }
 
+        public Dictionary<string, string> GetSizes()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            string width = ListeBoxes[0].Width.ToString();
+            string depth = ListeBoxes[0].Depth.ToString();
+            int height = 0;
+
+            foreach (Box box in ListeBoxes)
+            {
+                height += box.Height;
+            }
+
+            dict.Add("Height", height.ToString());
+            dict.Add("Width", width);
+            dict.Add("Depth", depth);
+            return dict;
+        }
+
         public Box AddBox(int uidCupboard,int uid, Door door, Slider slider, List<Panel> panels, List<Traverses> traverses, Cups cups, string state, TreeviewManager viewManager)
         {
             Box newBox = new Box(uid, door, slider, panels, traverses, cups);

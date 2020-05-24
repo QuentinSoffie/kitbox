@@ -336,7 +336,7 @@ namespace Kitbox.GUI
                         if (Cupboard.CheckState() == "Completed ✓")
                         {
                             MainTreeView.UpdateTag(Uid, "true");
-                            AddChat("✓ Your cupboard is approved !", Color.White);
+                            AddChat($"✓ Your cupboard (height: {Cupboard.GetSizes()["Height"]} cm, width: {Cupboard.GetSizes()["Width"]} cm, depth: {Cupboard.GetSizes()["Depth"]} cm) is approved !", Color.White);
                         }
                         else
                         {

@@ -79,6 +79,13 @@ namespace Kitbox.GUI
             }
         }
 
+        public void ClearTreeview()
+        {
+            OurOrder.ClearCupboardList();
+            ViewList.Clear();
+            MainTreeview.Nodes.Clear();
+        }
+
         private void RemoveView(int uid)
         {
             foreach (Object view in ViewList)

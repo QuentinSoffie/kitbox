@@ -86,7 +86,10 @@ namespace Kitbox.GUI.Views
             {
                 MessageBox.Show("Please select or create a customer", "Error");
             }
+
             Parent.CustomerView.Hide();
+            Parent.ClearWindow();
+
             Cursor.Current = Cursors.Default;
         }
 
@@ -120,7 +123,10 @@ namespace Kitbox.GUI.Views
             {
                 MessageBox.Show("Please complete all the fields.", "Error");
             }
+
             Parent.CustomerView.Hide();
+            Parent.ClearWindow();
+
             Cursor.Current = Cursors.Default;
         }
 

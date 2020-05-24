@@ -132,5 +132,18 @@ namespace GUI
 			Authentication auth = new Authentication();
 			auth.Show();
 		}
+
+		private void deleteAllCupboardsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			ClearWindow();
+		}
+
+		public void ClearWindow()
+		{
+			MainTreeview.ClearTreeview();
+			splitContainer1.Panel2.Controls.Add(pictureBox1);
+			splitContainer1.Panel2.Controls.Add(label1);
+
+		}
 	}
 }

@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StoreKeeper));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.recherchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.componentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewComponentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.orderForSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +90,13 @@
             this.createNewComponentToolStripMenuItem.Text = "Create new compnent";
             this.createNewComponentToolStripMenuItem.Click += new System.EventHandler(this.createNewComponentToolStripMenuItem_Click);
             // 
+            // orderForSuppliersToolStripMenuItem
+            // 
+            this.orderForSuppliersToolStripMenuItem.Name = "orderForSuppliersToolStripMenuItem";
+            this.orderForSuppliersToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.orderForSuppliersToolStripMenuItem.Text = "Order for suppliers";
+            this.orderForSuppliersToolStripMenuItem.Click += new System.EventHandler(this.orderForSuppliersToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
@@ -97,13 +105,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1284, 637);
             this.panel1.TabIndex = 5;
-            // 
-            // orderForSuppliersToolStripMenuItem
-            // 
-            this.orderForSuppliersToolStripMenuItem.Name = "orderForSuppliersToolStripMenuItem";
-            this.orderForSuppliersToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.orderForSuppliersToolStripMenuItem.Text = "Order for suppliers";
-            this.orderForSuppliersToolStripMenuItem.Click += new System.EventHandler(this.orderForSuppliersToolStripMenuItem_Click);
             // 
             // StoreKeeper
             // 
@@ -114,6 +115,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimumSize = new System.Drawing.Size(1300, 700);

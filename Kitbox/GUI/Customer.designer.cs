@@ -34,8 +34,8 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCupboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderMyCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storeKeeperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -47,6 +47,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.deleteAllCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,7 +76,8 @@
             // 
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addCupboardToolStripMenuItem,
-            this.orderMyCupboardsToolStripMenuItem});
+            this.orderMyCupboardsToolStripMenuItem,
+            this.deleteAllCupboardsToolStripMenuItem});
             this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
@@ -86,23 +88,17 @@
             // 
             this.addCupboardToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addCupboardToolStripMenuItem.Image")));
             this.addCupboardToolStripMenuItem.Name = "addCupboardToolStripMenuItem";
-            this.addCupboardToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.addCupboardToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.addCupboardToolStripMenuItem.Text = "Add a cupboard";
+            this.addCupboardToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // orderMyCupboardsToolStripMenuItem
             // 
             this.orderMyCupboardsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("orderMyCupboardsToolStripMenuItem.Image")));
             this.orderMyCupboardsToolStripMenuItem.Name = "orderMyCupboardsToolStripMenuItem";
-            this.orderMyCupboardsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.orderMyCupboardsToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
             this.orderMyCupboardsToolStripMenuItem.Text = "Order my cupboards";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.orderMyCupboardsToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
             // 
             // storeKeeperToolStripMenuItem
             // 
@@ -111,6 +107,14 @@
             this.storeKeeperToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.storeKeeperToolStripMenuItem.Text = "StoreKeeper";
             this.storeKeeperToolStripMenuItem.Click += new System.EventHandler(this.storeKeeperToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -220,7 +224,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(518, 368);
+            this.label1.Location = new System.Drawing.Point(514, 368);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 46);
@@ -231,7 +235,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(402, 329);
+            this.pictureBox1.Location = new System.Drawing.Point(398, 329);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(112, 122);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(112, 122);
@@ -258,6 +262,13 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(125, 17);
             this.toolStripStatusLabel1.Text = "    Welcome Username";
+            // 
+            // deleteAllCupboardsToolStripMenuItem
+            // 
+            this.deleteAllCupboardsToolStripMenuItem.Name = "deleteAllCupboardsToolStripMenuItem";
+            this.deleteAllCupboardsToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.deleteAllCupboardsToolStripMenuItem.Text = "Delete all cupboards";
+            this.deleteAllCupboardsToolStripMenuItem.Click += new System.EventHandler(this.deleteAllCupboardsToolStripMenuItem_Click);
             // 
             // Customer
             // 
@@ -309,5 +320,6 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderMyCupboardsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem storeKeeperToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteAllCupboardsToolStripMenuItem;
     }
 }

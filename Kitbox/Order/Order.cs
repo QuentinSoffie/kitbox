@@ -29,6 +29,10 @@ namespace Kitbox.Order
             CupboardList.Add(cupboard);
         }
 
+        public void ClearCupboardList()
+        {
+            CupboardList.Clear();
+        }
        
         public void RemoveAt(int uid)
         {
