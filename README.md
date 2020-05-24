@@ -46,8 +46,8 @@ Run `Kitbox/Output/Kitbox.exe`
 
 ## Documentation
 
-Please read *RapportKitboxGroupe2.pdf*
+Please read *Rapport_Kitbox_Groupe_2.pdf*
 
 ## Screenshots
 
-Please read *RapportKitboxGroupe2.pdf*
+Please read *Rapport_Kitbox_Groupe_2.pdf*
