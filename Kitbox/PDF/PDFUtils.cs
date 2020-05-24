@@ -183,7 +183,7 @@ namespace Kitbox.PDF
                 Paragraph prgTotal = new Paragraph();
                 prgTotal.Alignment = Element.ALIGN_LEFT;
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
-                prgTotal.Add(new Chunk($"\nAIl vous reste à payer  : {cost - Math.Round(cost * 0.2, 2)}€", fntTotal));
+                prgTotal.Add(new Chunk($"\nIl vous reste à payer  : {Math.Round(cost - (cost * 0.2), 2)}€", fntTotal));
                 document.Add(prgTotal);
             }
 

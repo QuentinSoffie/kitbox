@@ -25,7 +25,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         MySqlConnection DataBase;
 
-        Dictionary<string, object> Customer;
+        Dictionary<string, string> Customer;
 
         Dictionary<string, string> Component;
 
@@ -56,7 +56,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearchCustomer(this.Order.CustomerId, DataBase);
             while (reader.Read())
             {
-                Customer = new Dictionary<string, object>
+                Customer = new Dictionary<string, string>
                 {
                     { "Email", reader["email"].ToString() },
                     { "Phone", reader["phone"].ToString() },
@@ -120,7 +120,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label25.Text = component["Width"].ToString();
             label26.Text = component["Depth"].ToString();
             label21.Text = component["Ref"].ToString();
-            label22.Text = Order.Components[label20.Text].ToString();
+            label22.Text = component["CustomerPrice"].ToString();
+            label29.Text = Order.Components[label20.Text].ToString();
             label23.Text = component["Color"].ToString();
         }
 
@@ -136,6 +137,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                     Component = new Dictionary<string, string>
                     {
                         {"Ref", reader["Ref"].ToString() },
+                        {"Code", reader["Code"].ToString() },
                         {"Color", reader["Couleur"].ToString() },
                         {"Dimensions", reader["Dimensions(cm)"].ToString() },
                         {"Height", reader["hauteur"].ToString() },
@@ -187,8 +189,14 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void pepButton2_Click(object sender, EventArgs e)
         {
             StockDB.StockMethod.UpdateOrderState(Order.OrderNumber, "Completed ✓", DataBase);
-            PDFUtils.MakePurchase(ListComponents);
 
+            DataTable dtbl = PDFUtils.MakeTable(ListComponents);
+            Kitbox.PDF.PDFUtils.ExportDataTableToPDF(dtbl, @"bill.pdf", "Facture : " + Customer["Surname"], Customer["IdClient"], float.Parse(PDFUtils.TotalCost(ListComponents)), "Finished");
+            System.Diagnostics.Process.Start(@"bill.pdf");
+
+
+            Parent.ClearWindow();
+            Parent.Search();
         }
     }
 }

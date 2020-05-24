@@ -54,11 +54,6 @@ namespace GUI
 			pepTreeView1.SelectedNode = null;
 		}
 
-		private void BeforeFormClosing(object sender, FormClosingEventArgs e)
-		{
-			Authentification.Visible = true;
-		}
-
 		private void button1_Click(object sender, EventArgs e)
 		{
 			MainTreeview.AddCupboard(OurOrder);

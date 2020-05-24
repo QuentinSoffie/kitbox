@@ -185,10 +185,10 @@ namespace StockDB
 			conn.Close();
 		}
 
-		public static void UpdateOrderState(string numOrder, string value, MySqlConnection conn)
+		public static void UpdateOrderState(string numOrder, string state, MySqlConnection conn)
 		{
 			conn.Open();
-			string query = "UPDATE Piece SET State = '" + value + "' WHERE NumOrder ='" + numOrder + "'";
+			string query = "UPDATE Orders SET State = '" + state + "' WHERE NumOrder ='" + numOrder + "'";
 			MySqlDataAdapter SDA = new MySqlDataAdapter(query, conn);
 			SDA.SelectCommand.ExecuteNonQuery();
 			conn.Close();
