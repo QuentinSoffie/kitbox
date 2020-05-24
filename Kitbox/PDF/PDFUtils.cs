@@ -218,6 +218,41 @@ namespace Kitbox.PDF
             return bill;
         }
 
+        public static DataTable MakeTable(List<Dictionary<string, string>> order)
+        {
+            DataTable bill = new DataTable();
+
+            //Define columns
+            bill.Columns.Add("Code");
+            bill.Columns.Add("Pièce");
+            bill.Columns.Add("Dimension");
+            bill.Columns.Add("Quantité");
+            bill.Columns.Add("Prix unitaire");
+            bill.Columns.Add("Prix total");
+
+            foreach (Dictionary<string, string> component in order)
+            {
+                List<string> Row = new List<string>();
+
+                float price = float.Parse(component["CustomerPrice"].ToString());
+                int qtty = int.Parse(component["Quantity"].ToString());
+
+   
+                float cost = qtty * price;
+
+                Row.Add(component["Ref"]);
+                Row.Add(component["Code"]);
+                Row.Add(component["Dimensions"]);
+                Row.Add(qtty.ToString());
+                Row.Add(price.ToString());
+                Row.Add(cost.ToString());
+
+                bill.Rows.Add(Row.ToArray());
+
+            }
+            return bill;
+        }
+
         public static string ComputeCost(List<Dictionary<string, string>> order)
         {
             float totalBill = 0;
