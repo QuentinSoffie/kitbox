@@ -7,7 +7,8 @@
   - [Dependencies](#dependencies)
     - [Others](#others)
     - [Ours](#ours)
-  - [Install & Run](#install--run)
+  - [Build](#build)
+  - [Run](#run)
   - [Documentation](#documentation)
   - [Screenshots](#screenshots)
 
@@ -25,22 +26,23 @@
 - MethodsDB
 - KitboxEcamGUI
 
-## Install & Run
+## Build
 
 First clone the repo : `git clone https://github.com/QuentinSoffie/kitbox.git`
 
-Then, build the dependencies : 
-1. Select "Release" on the top
-2. Select "MethodsDB" next to the debug button
-3. Press **Ctrl + Maj. + B** or click "Générer" - "Générer la solution"
-4. Repete step 2 and 3 with "StockDB" 
-  
-After that, build KitboxCustomer :
-1. Select "Release" on the top
-2. Select "KitboxCustomer" next to the debug button
-3. Press **Ctrl + Maj. + B** or click "Générer" - "Générer la solution"
+>You can build the project or open the last build in `Kitbox/Output/`.
 
-Finally, run `Kitbox/Kitbox/bin/Release/Kitbox.exe`
+For building : 
+1. Open the `Kitbox/Kitbox.sln`
+2. Make sure the different references are working
+3. Select "Release" on the top
+4. Press **Ctrl + Maj. + B** or click "Générer" - "Générer la solution"
+
+Then, run `Kitbox/Kitbox/bin/Release/Kitbox.exe`
+
+## Run 
+
+Run `Kitbox/Output/Kitbox.exe`
 
 ## Documentation
 
