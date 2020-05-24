@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-05-24T14:34:02.487Z" agent="5.0 (Windows)" etag="r9K8Fpaz5uQHECdRrMSA" version="13.1.3" type="github">
+<mxfile host="app.diagrams.net" modified="2020-05-24T15:31:04.101Z" agent="5.0 (Windows)" etag="lQEITIapa1OC_MupmvND" version="13.1.3" type="github">
   <diagram id="_nqqN67LRk4HF15CclCg" name="Page-1">
     <mxGraphModel dx="1038" dy="575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -108,11 +108,11 @@
         <mxCell id="e2dD077gLvljIYBreIsI-1" value="Manage stock" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FF8000;" parent="1" vertex="1">
           <mxGeometry x="330" y="420" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="e2dD077gLvljIYBreIsI-2" value="&lt;b&gt;Delete component&lt;br&gt;Add component&lt;br&gt;Update component&lt;br&gt;&lt;/b&gt;" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;fillColor=#FF8000;" parent="1" vertex="1">
-          <mxGeometry x="504" y="420" width="136" height="50" as="geometry" />
+        <mxCell id="e2dD077gLvljIYBreIsI-2" value="&lt;b&gt;Delete component&lt;br&gt;Add component&lt;br&gt;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Update component&lt;/b&gt;&lt;/div&gt;&lt;b&gt;Update information suppliers&lt;/b&gt;" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;spacingTop=-6;fillColor=#FF8000;" parent="1" vertex="1">
+          <mxGeometry x="504" y="415" width="176" height="60" as="geometry" />
         </mxCell>
         <mxCell id="9h_WLCqoFygfFq7jF_zg-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="230" y="30" width="570" height="750" as="geometry" />
+          <mxGeometry x="210" y="30" width="590" height="750" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
