@@ -160,6 +160,16 @@ namespace Kitbox.PDF
                 prgTotal.Add(new Chunk($"\nAccompte à payer de  : {Math.Round(cost*0.2,2)}€", fntTotal));
                 document.Add(prgTotal);
             }
+            if (state == "Finished")
+            {
+                BaseFont btnTotal = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                Font fntTotal = new Font(btnTotal, 16, 1, BaseColor.GRAY);
+                Paragraph prgTotal = new Paragraph();
+                prgTotal.Alignment = Element.ALIGN_LEFT;
+                prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
+                prgTotal.Add(new Chunk($"\nAIl vous reste à payer  : {cost - Math.Round(cost * 0.2, 2)}€", fntTotal));
+                document.Add(prgTotal);
+            }
 
             document.Close();
             writer.Close();
@@ -235,6 +245,26 @@ namespace Kitbox.PDF
 
             }
             return bill;
+        }
+
+
+
+        public static string TotalCost(List<Dictionary<string, string>> order)
+        {
+            float totalBill = 0;
+            foreach (Dictionary<string, string> component in order)
+            {
+                List<string> Row = new List<string>();
+
+                float price = float.Parse(component["CustomerPrice"].ToString());
+
+                int qtty = int.Parse(component["Quantity"].ToString());
+                float cost = qtty * price;
+
+                totalBill += cost;
+            }
+
+            return totalBill.ToString();
         }
 
         public static string ComputeCost(List<Dictionary<string, string>> order)
