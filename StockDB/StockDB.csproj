@@ -8,6 +8,10 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\bougu\OneDrive\Desktop\Kitbox\StockDB\StockDB.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\MethodsDB\MethodsDB.csproj" />
   </ItemGroup>

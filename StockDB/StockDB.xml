@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockDB</name>
+    </assembly>
+    <members>
+        <member name="T:StockDB.StockMethod">
+            <summary>
+            This is a list of methods used to CRUD stock's informations.
+            </summary>
+        </member>
+    </members>
+</doc>
