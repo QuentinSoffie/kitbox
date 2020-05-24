@@ -93,7 +93,7 @@ namespace Kitbox.PDF
                     fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
                     open = 1;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     System.Windows.Forms.MessageBox.Show("Please close your pdf file", "Error");
                 }
