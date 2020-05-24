@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Kitbox.Models.Components;
 using Kitbox.Models.Order;
 using MySql.Data.MySqlClient;
+
 namespace Kitbox.Customer.Views
 {
     /// <summary>

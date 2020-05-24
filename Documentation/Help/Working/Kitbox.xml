@@ -1,266 +1,227 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <doc>
-  <assembly>
-    <name>Kitbox</name>
-  </assembly>
-  <members>
-    <member name="T:Kitbox.Models.Components.Cups">
-      <summary>
+    <assembly>
+        <name>Kitbox</name>
+    </assembly>
+    <members>
+        <member name="T:Kitbox.Models.Components.Cups">
+            <summary>
             Cups class extends specs
             Represents the Cups of the door.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.CupboardAngle">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.CupboardAngle">
+            <summary>
             Cupboard angle class extends specs.
             Represents the Angle of the cupboard.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.Door">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.Door">
+            <summary>
             Doors class extends specs.
             Represents the Door of the box.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.Panel">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.Panel">
+            <summary>
             Panel class extends specs.
             Represents the Panel of the box.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.Slider">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.Slider">
+            <summary>
             Slider class extends specs.
             Represents the Slider of the box.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.Specs">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.Specs">
+            <summary>
             Represents the base of each components
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Components.Traverse">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Components.Traverse">
+            <summary>
             Tarverse class extends specs.
             Represent the Traverse of the box.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Database.Components.CupboardAngles">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Database.Components.CupboardAngles">
+            <summary>
             This class contains all the cupboard angles.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Database.Components.Doors">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Database.Components.Doors">
+            <summary>
             This class contains all the doors.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Database.Components.Panels">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Database.Components.Panels">
+            <summary>
             This class contains all the panels.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Database.Json.Order">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Database.Json.Order">
+            <summary>
             *DEPRECIATE* This class is used to serialize the order.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Database.Reader">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Database.Reader">
+            <summary>
             This class creates the boxes' components. It searches the best components in the database and instanciate them. 
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Order.Box">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Order.Box">
+            <summary>
             This is the box class. It's made of Specs.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Order.Cupboard">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Order.Cupboard">
+            <summary>
             This is the Cupboard class. It's made of boxes.
             </summary>
-    </member>
-    <member name="T:Kitbox.Models.Order.Order">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Models.Order.Order">
+            <summary>
             This is the order class. It's made of cupboard.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.About">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.About">
+            <summary>
             This is the about window. It displays the company's informations.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.Authentication">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.Authentication">
+            <summary>
             This is the auth window. It connects the storekeeper to the admin panel.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.CustomerWindow">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.CustomerWindow">
+            <summary>
             This is the customer window. It shows all the customer's views.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.CustomPopup">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.CustomPopup">
+            <summary>
             This is a custom popup used to show messages.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.Preview">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.Preview">
+            <summary>
             This is the preview window. It displays a preview of a box.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.TreeviewManager">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.TreeviewManager">
+            <summary>
             This is the treeview manager that manage the customer left-hand treeview.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.Views.CreateCustomer">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.Views.CreateCustomer">
+            <summary>
             This is the view used to create or select a customer after checking the command. 
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.Views.ViewBox">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.Views.ViewBox">
+            <summary>
             This is the box view. It displays the box's informations.
             </summary>
-    </member>
-    <member name="T:Kitbox.Customer.Views.ViewCupboard">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Customer.Views.ViewCupboard">
+            <summary>
             This is the cupboard view. It displays the cupboard's informations. 
             </summary>
-    </member>
-    <member name="F:Kitbox.Customer.Views.ViewCupboard.components">
-      <summary> 
+        </member>
+        <member name="F:Kitbox.Customer.Views.ViewCupboard.components">
+            <summary> 
             Variable nécessaire au concepteur.
             </summary>
-    </member>
-    <member name="M:Kitbox.Customer.Views.ViewCupboard.Dispose(System.Boolean)">
-      <summary> 
+        </member>
+        <member name="M:Kitbox.Customer.Views.ViewCupboard.Dispose(System.Boolean)">
+            <summary> 
             Nettoyage des ressources utilisées.
             </summary>
-      <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
-    </member>
-    <member name="M:Kitbox.Customer.Views.ViewCupboard.InitializeComponent">
-      <summary> 
+            <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        </member>
+        <member name="M:Kitbox.Customer.Views.ViewCupboard.InitializeComponent">
+            <summary> 
             Méthode requise pour la prise en charge du concepteur - ne modifiez pas 
             le contenu de cette méthode avec l'éditeur de code.
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Models.StoreKeeperComponent">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Models.StoreKeeperComponent">
+            <summary>
             This class instanciates the order given the json list from the database.
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Models.StoreKeeperOrder">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Models.StoreKeeperOrder">
+            <summary>
             This is the Order class used for the storekeeper. It instanciates the order with the json form the database 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.StoreKeeperWindow">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.StoreKeeperWindow">
+            <summary>
             This is the main form for the store keeper
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.CreateComponent">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.CreateComponent">
+            <summary>
             This is the view used to create a component in stock. 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.OrderSuppliers">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.OrderSuppliers">
+            <summary>
             This is the view used to order the minimal components to the suppliers. 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.SearchComponent">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.SearchComponent">
+            <summary>
             This is the view used to search components and update them. 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.SearchInfo">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.SearchInfo">
+            <summary>
             This is the view for searching order 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.ViewComponentSearch">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.ViewComponentSearch">
+            <summary>
             This is the view used to cupdate the components. 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers">
+            <summary>
             This is the view used to choose wich supplier the company want. 
             </summary>
-    </member>
-    <member name="T:Kitbox.StoreKeeper.Views.ViewInfo">
-      <summary>
+        </member>
+        <member name="T:Kitbox.StoreKeeper.Views.ViewInfo">
+            <summary>
             This is the order view, that shows the order details
             </summary>
-    </member>
-    <member name="T:Kitbox.PDF.PDFUtils">
-      <summary>
+        </member>
+        <member name="T:Kitbox.PDF.PDFUtils">
+            <summary>
             This is a list of tools used for creating and printing a pdf.
             </summary>
-    </member>
-    <member name="M:Kitbox.Program.Main">
-      <summary>
+        </member>
+        <member name="M:Kitbox.Program.Main">
+            <summary>
             Point d'entrée principal de l'application.
             </summary>
-    </member>
-    <member name="T:Kitbox.Properties.Resources">
-      <summary>
+        </member>
+        <member name="T:Kitbox.Properties.Resources">
+            <summary>
               Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
             </summary>
-    </member>
-    <member name="P:Kitbox.Properties.Resources.ResourceManager">
-      <summary>
+        </member>
+        <member name="P:Kitbox.Properties.Resources.ResourceManager">
+            <summary>
               Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
             </summary>
-    </member>
-    <member name="P:Kitbox.Properties.Resources.Culture">
-      <summary>
+        </member>
+        <member name="P:Kitbox.Properties.Resources.Culture">
+            <summary>
               Remplace la propriété CurrentUICulture du thread actuel pour toutes
               les recherches de ressources à l'aide de cette classe de ressource fortement typée.
             </summary>
-    </member>
-    <member name="N:Kitbox.Customer">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Customer.Views">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Models.Components">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Models.Database">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Models.Database.Components">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Models.Database.Json">
-      <summary />
-    </member>
-    <member name="N:Kitbox.Models.Order">
-      <summary />
-    </member>
-    <member name="N:Kitbox.PDF">
-      <summary />
-    </member>
-    <member name="N:Kitbox.StoreKeeper">
-      <summary />
-    </member>
-    <member name="N:Kitbox.StoreKeeper.Models">
-      <summary />
-    </member>
-    <member name="N:Kitbox.StoreKeeper.Views">
-      <summary />
-    </member>
-    <member name="N:MethodsDB">
-      <summary />
-    </member>
-    <member name="N:StockDB">
-      <summary />
-    </member>
-  </members>
+        </member>
+    </members>
 </doc>
