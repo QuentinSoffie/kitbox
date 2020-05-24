@@ -85,7 +85,22 @@ namespace Kitbox.PDF
 
         public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost, string state)
         {
-            System.IO.FileStream fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
+            System.IO.FileStream fs = null;
+
+            int open = 0;
+            while (open == 0)
+            {
+                try
+                {
+                    fs = new FileStream(strPdfPath, FileMode.Create, FileAccess.Write, FileShare.None);
+                    open = 1;
+                }
+                catch (Exception e)
+                {
+                    System.Windows.Forms.MessageBox.Show("Please close your pdf file", "Error");
+                }
+            }
+
             Document document = new Document();
             document.SetPageSize(iTextSharp.text.PageSize.A4);
             PdfWriter writer = PdfWriter.GetInstance(document, fs);
@@ -120,6 +135,7 @@ namespace Kitbox.PDF
             //En-tête du tableau
             BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             Font fntColumnHeader = new Font(btnColumnHeader, 10, 1, BaseColor.WHITE);
+
             for (int i = 0; i < dtblTable.Columns.Count; i++)
             {
                 PdfPCell cell = new PdfPCell();
@@ -157,7 +173,7 @@ namespace Kitbox.PDF
                 Paragraph prgTotal = new Paragraph();
                 prgTotal.Alignment = Element.ALIGN_LEFT;
                 prgTotal.Add(new Chunk($"Le coût total de la commande revient à : {cost}€", fntTotal));
-                prgTotal.Add(new Chunk($"\nAccompte à payer de  : {Math.Round(cost*0.2,2)}€", fntTotal));
+                prgTotal.Add(new Chunk($"\nAcompte à payer de  : {Math.Round(cost*0.2,2)}€", fntTotal));
                 document.Add(prgTotal);
             }
 

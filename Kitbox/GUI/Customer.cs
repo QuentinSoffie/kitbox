@@ -93,10 +93,7 @@ namespace GUI
 				Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
                 DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
 
-				if(state != "Not completed")
-				{
-					UpdateStock(customer, id, orderJson.Command, state);
-				}
+				UpdateStock(customer, id, orderJson.Command, state);
 				
 				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
 				CreateAndOpenPDF(dtbl, customer, id, cost, state);
@@ -111,12 +108,14 @@ namespace GUI
 		public void UpdateStock(string customer, string id, Dictionary<string, int> order, string state)
 		{
 			string orderJsonString = JsonConvert.SerializeObject(order);
-			Console.WriteLine(orderJsonString);
 			DBMethods.DataBaseMethods.SqlAddOrder(customer, id, orderJsonString, state , DataBase);
 
-			foreach(KeyValuePair<string, int> component in order)
+			if (state == "Completed ✓")
 			{
-				StockDB.StockMethod.AddQtty(component.Key, -(component.Value), DataBase);
+				foreach (KeyValuePair<string, int> component in order)
+				{
+					StockDB.StockMethod.AddQtty(component.Key, -(component.Value), DataBase);
+				}
 			}
 		}
 

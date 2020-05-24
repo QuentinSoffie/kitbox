@@ -10,33 +10,33 @@ namespace Kitbox.Order
     public class StoreKeeperOrder
     {
         public List<string> KeyList { get; set; }
-        public Dictionary<String, Object> Components { get; set; }
-        public String State { get; set; }
-        public String Customer { get; set; }
-        public String CustomerId { get; set; }
-        public String OrderNumber { get; set; }
+        public Dictionary<string, object> Components { get; set; }
+        public string State { get; set; }
+        public string Customer { get; set; }
+        public string CustomerId { get; set; }
+        public string OrderNumber { get; set; }
 
-        public String Name { get; set; }
+        public string Name { get; set; }
 
-        public StoreKeeperOrder(Dictionary<String, Object> item)
+        public StoreKeeperOrder(Dictionary<string, object> item)
         {
-            Components = JsonConvert.DeserializeObject<Dictionary<String, Object>>(item["Components"].ToString());
+            Components = JsonConvert.DeserializeObject<Dictionary<string, object>>(item["Components"].ToString());
             OrderNumber = item["OrderNumber"].ToString();
             State = item["State"].ToString();
             Customer = item["Customer"].ToString();
             CustomerId = item["IdClient"].ToString();
-            Name = String.Format("Order number : {0}, Owner : {1}", OrderNumber, Customer);
+            Name = string.Format("Order number : {0}, Owner : {1}", OrderNumber, Customer);
 
             KeyList = new List<string>(Components.Keys);
         }
 
         public override string ToString()
         {
-            String value = String.Format("--- Order n°{0}, owner : {1}, Status : {2} ---\n     Components :\n", OrderNumber, Customer, State);
+            string value = string.Format("--- Order n°{0}, owner : {1}, Status : {2} ---\n     Components :\n", OrderNumber, Customer, State);
 
-            foreach (KeyValuePair<String, Object> comp in Components)
+            foreach (KeyValuePair<string, object> comp in Components)
             {
-                value += String.Format("\t- {0}x{1}\n", comp.Key, comp.Value);
+                value += string.Format("\t- {0}x{1}\n", comp.Key, comp.Value);
             }
             return value;
         }

@@ -54,7 +54,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 splitContainer1.Panel2.Controls.Add(newView);
                 newView.Hide();
 
-                Console.WriteLine(newOrder);
             }
 
             ReloadTreeView();
@@ -78,15 +77,16 @@ namespace Kitbox.GUI.StoreKeeper.Views
             foreach (KeyValuePair<StoreKeeperOrder, ViewInfo> order in OrderViewDictionary)
             {
                 pepTreeView1.Nodes.Add(order.Key.Name);
-                if (order.Key.State == "Complete")
-                {
-                    pepTreeView1.Nodes[i].Tag = "Complete ✓";
-                }
-                else
-                {
-                    pepTreeView1.Nodes[i].Tag = "Not complete...";
-                }
-                
+                pepTreeView1.Nodes[i].Tag = order.Key.State.Replace('V', '✓');
+                //if (order.Key.State == "Completed")
+                //{
+                //    pepTreeView1.Nodes[i].Tag = "Complete ✓";
+                //}
+                //else
+                //{
+                //    pepTreeView1.Nodes[i].Tag = "Not complete...";
+                //}
+
                 i++;
             }
         }
@@ -236,7 +236,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Console.WriteLine("Enter pressed");
                 Search();
             }
         }

@@ -151,12 +151,6 @@
     <Compile Include="GUI\StoreKeeper\Views\ViewComponentSearch.Designer.cs">
       <DependentUpon>ViewComponentSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\StoreKeeper\Views\ViewOrder.Designer.cs">
-      <DependentUpon>ViewOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\StoreKeeper\Views\ViewOrderSuppliers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -228,9 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewComponentSearch.resx">
       <DependentUpon>ViewComponentSearch.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrder.resx">
-      <DependentUpon>ViewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\StoreKeeper\Views\ViewOrderSuppliers.resx">
       <DependentUpon>ViewOrderSuppliers.cs</DependentUpon>

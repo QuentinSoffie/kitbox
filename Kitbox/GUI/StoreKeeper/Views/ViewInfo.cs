@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Linq;
+using Kitbox.PDF;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
@@ -24,11 +25,11 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         MySqlConnection DataBase;
 
-        Dictionary<String, Object> Customer;
+        Dictionary<string, object> Customer;
 
-        Dictionary<String, Object> component;
+        Dictionary<string, string> Component;
 
-        List<Dictionary<string, object>> ListComponent;
+        List<Dictionary<string, string>> ListComponents;
 
         new SearchInfo Parent;
 
@@ -76,6 +77,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label6.Text = Customer["Email"].ToString();
             label7.Text = Customer["Address"].ToString();
             label28.Text = Customer["IdClient"].ToString();
+
             //TODO: Add customer number
         }
 
@@ -88,6 +90,10 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 pepTreeView1.Nodes[i].Tag = component.Value.ToString() + " item(s)";
                 i++;
             }
+            if (Order.State == "Not completed")
+            {
+                pepButton2.Visible = true;
+            }
         }
 
         /// <summary>
@@ -95,6 +101,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
         /// </summary>
         private void LoadComponents()
         {
+            Console.WriteLine(Order.State);
             FetchCustomerData();
             SetCustomer();
             SetOrder();
@@ -103,10 +110,10 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         private void pepTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            SetDetails(ListComponent[pepTreeView1.SelectedNode.Index]);
+            SetDetails(ListComponents[pepTreeView1.SelectedNode.Index]);
         }
 
-        public void SetDetails(Dictionary<String, object> component)
+        public void SetDetails(Dictionary<string, string> component)
         {
             label20.Text = Order.KeyList[pepTreeView1.SelectedNode.Index];
             label24.Text = component["Height"].ToString();
@@ -119,14 +126,14 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         private void GetDetailsFromDB(List<string> ListCode)
         {
-            ListComponent = new List<Dictionary<string, object>>();
+            ListComponents = new List<Dictionary<string, string>>();
             foreach (string code in ListCode)
             {
                 DataBase.Open();
                 MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", code), DataBase);
                 while (reader.Read())
                 {
-                    component = new Dictionary<string, object>
+                    Component = new Dictionary<string, string>
                     {
                         {"Ref", reader["Ref"].ToString() },
                         {"Color", reader["Couleur"].ToString() },
@@ -134,11 +141,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
                         {"Height", reader["hauteur"].ToString() },
                         {"Width", reader["largeur"].ToString() },
                         {"Depth", reader["profondeur"].ToString() },
+                        {"CustomerPrice", reader["Prix-Client"].ToString() },
+                        {"Quantity", this.Order.Components[code].ToString() },
                     };
                 }
                 reader.Close();
                 DataBase.Close();
-                ListComponent.Add(component);
+                ListComponents.Add(Component);
             }
         }
 
@@ -173,6 +182,13 @@ namespace Kitbox.GUI.StoreKeeper.Views
         private void pepButton1_Click(object sender, EventArgs e)
         {
             UpdateCustomer();
+        }
+
+        private void pepButton2_Click(object sender, EventArgs e)
+        {
+            StockDB.StockMethod.UpdateOrderState(Order.OrderNumber, "Completed ✓", DataBase);
+            PDFUtils.MakePurchase(ListComponents);
+
         }
     }
 }
