@@ -4,7 +4,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 
-namespace DBMethods
+namespace MethodsDB
 {
     /// <summary>
     /// This is a list of methods used to CRUD customer and order informations.

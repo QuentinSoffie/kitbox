@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using MySql.Data.MySqlClient;
+using Kitbox.Models.Order;
 
 namespace Kitbox.PDF
 {
@@ -13,7 +14,7 @@ namespace Kitbox.PDF
     /// </summary>
     public class PDFUtils
     {
-        public static DataTable MakeBill(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
+        public static DataTable MakeBill(Order order, Kitbox.Models.Database.Json.Order orderDataBase)
         {
             DataTable bill = new DataTable();
             float TotalBill = 0;
@@ -31,10 +32,10 @@ namespace Kitbox.PDF
             {
                 float cost = 1;
                 string price = "";
-                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection("customer", "groupe2020");
+                MySqlConnection conn = MethodsDB.DBUtils.GetDBConnection("customer", "groupe2020");
                 conn.Open();
 
-                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
+                MySqlDataReader reader = MethodsDB.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
                 while (reader.Read())
                 {
                     price = reader["Prix-Client"].ToString();
@@ -56,7 +57,7 @@ namespace Kitbox.PDF
             return bill;
         }
 
-        public static float CalculateCost(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
+        public static float CalculateCost(Order order, Kitbox.Models.Database.Json.Order orderDataBase)
         {
             float TotalBill = 0;
             foreach (List<string> item in order.MakeOrder())
@@ -64,10 +65,10 @@ namespace Kitbox.PDF
                 float cost = 1;
                 string price = "";
 
-                MySqlConnection conn = DBMethods.DBUtils.GetDBConnection("customer", "groupe2020");
+                MySqlConnection conn = MethodsDB.DBUtils.GetDBConnection("customer", "groupe2020");
                 conn.Open();
 
-                MySqlDataReader reader = DBMethods.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
+                MySqlDataReader reader = MethodsDB.DataBaseMethods.SqlSearch("Piece", "Code", string.Format("'{0}'", item[0]), conn);
                 while (reader.Read())
                 {
 

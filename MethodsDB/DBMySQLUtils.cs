@@ -1,7 +1,7 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 
-namespace DBMethods
+namespace MethodsDB
 {
     /// <summary>
     /// This is the class used to get the connection with the database.

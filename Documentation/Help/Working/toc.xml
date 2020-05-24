@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topics>
+  <topic id="N:Kitbox.Customer" project="_Namespaces" file="51d244dd-82f0-f6ca-962a-503957738216" sortOrder="2">
+    <topic id="T:Kitbox.Customer.About" project="Kitbox" file="81c1e5be-5d07-c261-5194-21d6fec7abd1">
+      <topic id="M:Kitbox.Customer.About.#ctor" project="Kitbox" file="c8e75937-d26e-e2b3-f3d5-94e9dbf1f5b7" />
+      <topic id="Properties.T:Kitbox.Customer.About" project="Kitbox" file="eb4336b0-3fc5-fa80-4b7e-073e7e8bc0c7" />
+      <topic id="Methods.T:Kitbox.Customer.About" project="Kitbox" file="0d20703c-3e3e-f757-cea8-b46bdc036672">
+        <topic id="Overload:Kitbox.Customer.About.Dispose" project="Kitbox" file="28435014-f5b7-c386-b17b-853eb76e5c34">
+          <topic id="M:Kitbox.Customer.About.Dispose(System.Boolean)" project="Kitbox" file="3f717c6c-e822-61e6-fc9e-fe4ed586510c" />
+        </topic>
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.About" project="Kitbox" file="6c461213-b53f-1b8c-a701-864680c3f466" />
+    </topic>
+    <topic id="T:Kitbox.Customer.Authentication" project="Kitbox" file="d4ce948d-3223-a7e7-73a2-15da52a22770">
+      <topic id="M:Kitbox.Customer.Authentication.#ctor" project="Kitbox" file="affa482b-4dc4-338a-641c-a78e8fdff623" />
+      <topic id="Properties.T:Kitbox.Customer.Authentication" project="Kitbox" file="69711222-61f3-7bb6-5bb0-9f3c613e4520" />
+      <topic id="Methods.T:Kitbox.Customer.Authentication" project="Kitbox" file="a4622c21-6be6-649a-52c6-e4f27b38c72f">
+        <topic id="Overload:Kitbox.Customer.Authentication.Dispose" project="Kitbox" file="eba100b9-eb6d-5efd-874a-b65a3f4efb38">
+          <topic id="M:Kitbox.Customer.Authentication.Dispose(System.Boolean)" project="Kitbox" file="dd87111d-df2d-6e8b-224e-5534ae85f873" />
+        </topic>
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.Authentication" project="Kitbox" file="5274fb7f-cdbe-745a-5816-39c46b98a008" />
+    </topic>
+    <topic id="T:Kitbox.Customer.CustomerWindow" project="Kitbox" file="6aa805e3-adf6-74f1-c413-b69e59c2c1e0">
+      <topic id="M:Kitbox.Customer.CustomerWindow.#ctor(MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="d80c6787-5ca5-bdf0-e1ce-117bcf38b852" />
+      <topic id="Properties.T:Kitbox.Customer.CustomerWindow" project="Kitbox" file="0c8ac7cb-7600-afcc-1c91-d031987ea03c" />
+      <topic id="Methods.T:Kitbox.Customer.CustomerWindow" project="Kitbox" file="5873baf3-11ab-5367-4d1d-d0076d3b08b1">
+        <topic id="M:Kitbox.Customer.CustomerWindow.ClearWindow" project="Kitbox" file="70a5c71d-2b3c-18d4-69dd-38dd2acf29e6" />
+        <topic id="M:Kitbox.Customer.CustomerWindow.CreateAndOpenPDF(System.Data.DataTable,System.String,System.String,System.Single,System.String)" project="Kitbox" file="709fe03e-3679-1e56-f865-3324b2c74e8f" />
+        <topic id="Overload:Kitbox.Customer.CustomerWindow.Dispose" project="Kitbox" file="f54d4e58-5e79-2a37-13c3-b78eda7da6bf">
+          <topic id="M:Kitbox.Customer.CustomerWindow.Dispose(System.Boolean)" project="Kitbox" file="570df84c-1ccb-40a1-b9c9-90a82a89509f" />
+        </topic>
+        <topic id="M:Kitbox.Customer.CustomerWindow.ExportPDF(System.String,System.String,System.String)" project="Kitbox" file="c39eb67a-1023-74a4-d22b-174301715424" />
+        <topic id="M:Kitbox.Customer.CustomerWindow.SetTreeviewSelectedIndex" project="Kitbox" file="2e6b835f-4d65-c993-eb02-cabe1ba2b81f" />
+        <topic id="M:Kitbox.Customer.CustomerWindow.UpdateStock(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Int32},System.String)" project="Kitbox" file="0ba5c596-34bc-1789-4a1b-0d31a6384b78" />
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.CustomerWindow" project="Kitbox" file="41a69df3-89fd-a34f-ce16-f31a39a97059" />
+      <topic id="Fields.T:Kitbox.Customer.CustomerWindow" project="Kitbox" file="f19a4c7f-d042-b76e-ccf5-cb1e933a1131">
+        <topic id="F:Kitbox.Customer.CustomerWindow.CustomerView" project="Kitbox" file="62f5bea5-523b-55ea-f5ef-164f24e20bf4" />
+        <topic id="F:Kitbox.Customer.CustomerWindow.OurOrder" project="Kitbox" file="037867e9-edd5-9be8-e1ba-c7d9e4912311" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Customer.CustomPopup" project="Kitbox" file="e22abc0e-dc66-0064-ca86-1897a5397b91">
+      <topic id="M:Kitbox.Customer.CustomPopup.#ctor(System.String)" project="Kitbox" file="ab1ca671-3373-5211-b5ef-f8fcdfbff03b" />
+      <topic id="Properties.T:Kitbox.Customer.CustomPopup" project="Kitbox" file="4647baab-b5b9-aa96-1179-30f73c912974" />
+      <topic id="Methods.T:Kitbox.Customer.CustomPopup" project="Kitbox" file="0abb667d-3f0f-388c-ebd5-c35bc979a2cf">
+        <topic id="Overload:Kitbox.Customer.CustomPopup.Dispose" project="Kitbox" file="cc794cd3-6992-d2da-a083-59679140da81">
+          <topic id="M:Kitbox.Customer.CustomPopup.Dispose(System.Boolean)" project="Kitbox" file="74b9beab-b220-441b-bfde-3ea41529940c" />
+        </topic>
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.CustomPopup" project="Kitbox" file="309d75ff-e063-1da7-f0e8-3b6eb2c23a68" />
+    </topic>
+    <topic id="T:Kitbox.Customer.Preview" project="Kitbox" file="0e2652b1-9f3e-472a-f614-fd1779fe43a0">
+      <topic id="M:Kitbox.Customer.Preview.#ctor(System.String,System.String,System.String,System.String,System.String)" project="Kitbox" file="617f427b-915f-af94-cc4f-b73b23b00b06" />
+      <topic id="Properties.T:Kitbox.Customer.Preview" project="Kitbox" file="8af9270d-d0e7-6a08-a8f7-5c1a73ef4504" />
+      <topic id="Methods.T:Kitbox.Customer.Preview" project="Kitbox" file="c62809da-4a52-0cfb-bd83-8f6edc747794">
+        <topic id="Overload:Kitbox.Customer.Preview.Dispose" project="Kitbox" file="aae2798c-d3d2-ae56-022e-e8ea3bd02ea0">
+          <topic id="M:Kitbox.Customer.Preview.Dispose(System.Boolean)" project="Kitbox" file="c41c0721-7f7e-ffa4-bd13-73eb21e4167c" />
+        </topic>
+        <topic id="M:Kitbox.Customer.Preview.InitializePicture(System.String,System.String,System.String,System.String,System.String)" project="Kitbox" file="73000501-ce49-a2d0-c6a9-fd7783bb95d5" />
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.Preview" project="Kitbox" file="23637ab2-176a-d5d4-a9ea-2b2608424b50" />
+    </topic>
+    <topic id="T:Kitbox.Customer.TreeviewManager" project="Kitbox" file="e3cf1251-bbe8-c48c-aded-fe741385982b">
+      <topic id="M:Kitbox.Customer.TreeviewManager.#ctor(KitboxEcamGUI.PepTreeView,System.Windows.Forms.Control.ControlCollection,Kitbox.Models.Order.Order,MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="cf32cbbb-2570-1f59-ac1a-d9cc8190696b" />
+      <topic id="Methods.T:Kitbox.Customer.TreeviewManager" project="Kitbox" file="cb09da6a-7418-dc12-671c-6e9077774124">
+        <topic id="M:Kitbox.Customer.TreeviewManager.AddBox(System.Int32,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Object}},Kitbox.Models.Order.Cupboard,System.String)" project="Kitbox" file="c0e7fa18-aa11-9ee0-d402-cef76f07391a" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.AddCupboard(Kitbox.Models.Order.Order,System.String)" project="Kitbox" file="1b8418a6-2976-de69-77c4-26802439c916" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.AddViewBox(System.Int32,System.Int32,Kitbox.Models.Order.Box)" project="Kitbox" file="1e6d8cea-9677-55da-a5e2-10e8abf08b14" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.AddViewCupboard(System.Int32,Kitbox.Models.Order.Cupboard)" project="Kitbox" file="ae09679d-96ee-0c82-4de4-96bbab2bdfab" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.BringToFrontView(System.Int32)" project="Kitbox" file="b246a5b9-c2ec-9740-35ec-b311f4b4ea9f" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.CheckAngle(Kitbox.Models.Components.CupboardAngle)" project="Kitbox" file="4d342853-310d-f4d3-c481-7bc2dec606aa" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.CheckBox(System.Int32,System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.Dictionary{System.String,System.Object}},System.String)" project="Kitbox" file="6e0e1076-de68-bd96-d3cf-a7784a77c353" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.CheckIfAllCupboardAreVerified" project="Kitbox" file="e4338765-34f9-104d-fc7e-03b0f2ed835e" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.ClearTreeview" project="Kitbox" file="8cbd00e1-98a1-e895-0517-528d13c22a62" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.GetBoxComponents(System.String,System.String,System.String,System.String,System.String,Kitbox.Models.Order.Cupboard)" project="Kitbox" file="96933c28-ab03-b6d2-541e-37246a81c0fd" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.RemoveBox(System.Int32,System.Int32)" project="Kitbox" file="0e7ecafa-39f7-35ce-e9d4-afbde32aaef6" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.RemoveCupboard(System.Int32,Kitbox.Models.Order.Cupboard)" project="Kitbox" file="10c6252e-e79f-d9fd-dd00-173f90fcbe40" />
+        <topic id="M:Kitbox.Customer.TreeviewManager.UpdateTag(System.Int32,System.String)" project="Kitbox" file="aafab801-c065-6c4d-5580-ae112019836b" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Customer.TreeviewManager" project="Kitbox" file="6354ca64-dd68-cf06-b4f5-724cb031094d">
+        <topic id="F:Kitbox.Customer.TreeviewManager.MainTreeview" project="Kitbox" file="f6c12f63-fc82-41e8-7c0e-e8976654c74e" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Customer.Views" project="_Namespaces" file="971d2d27-312f-1837-9280-8f95ed4071a1">
+    <topic id="T:Kitbox.Customer.Views.CreateCustomer" project="Kitbox" file="3b7e59a8-9a10-7748-5637-636f16861a10">
+      <topic id="M:Kitbox.Customer.Views.CreateCustomer.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.Customer.CustomerWindow)" project="Kitbox" file="59c0567a-a1c8-6415-4f4e-8fc5d7f381a2" />
+      <topic id="Properties.T:Kitbox.Customer.Views.CreateCustomer" project="Kitbox" file="90442fc7-92a0-c2e4-d54d-23004e0390f1" />
+      <topic id="Methods.T:Kitbox.Customer.Views.CreateCustomer" project="Kitbox" file="ed5cb66a-ea3f-a112-2c4f-66a9e0195d0b">
+        <topic id="Overload:Kitbox.Customer.Views.CreateCustomer.Dispose" project="Kitbox" file="74064f45-799c-aab7-16a3-ee026d1b75b7">
+          <topic id="M:Kitbox.Customer.Views.CreateCustomer.Dispose(System.Boolean)" project="Kitbox" file="5ab91238-d9d0-3485-149d-2f56ff1275f3" />
+        </topic>
+        <topic id="M:Kitbox.Customer.Views.CreateCustomer.Search" project="Kitbox" file="1dc2ef9b-ee9f-594d-f87f-f56287e58810" />
+        <topic id="M:Kitbox.Customer.Views.CreateCustomer.SearchCustomer" project="Kitbox" file="ccbc9657-4e97-9940-eda6-085fe88950c0" />
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.Views.CreateCustomer" project="Kitbox" file="46dba851-5008-8f76-a494-6fd86e901c67" />
+    </topic>
+    <topic id="T:Kitbox.Customer.Views.ViewBox" project="Kitbox" file="f5d85e6c-f5a7-5bb5-49f8-6a85c966d649">
+      <topic id="M:Kitbox.Customer.Views.ViewBox.#ctor(System.Int32,System.Int32,Kitbox.Models.Order.Box,Kitbox.Customer.TreeviewManager)" project="Kitbox" file="8e65d064-b8a0-0597-526b-61dcb5bb4e33" />
+      <topic id="Properties.T:Kitbox.Customer.Views.ViewBox" project="Kitbox" file="b3236bdf-3601-66fb-dea2-567dcaf07d2b">
+        <topic id="P:Kitbox.Customer.Views.ViewBox.Uid" project="Kitbox" file="a41ffe76-d6a2-e351-753f-252337ebdc3e" />
+        <topic id="P:Kitbox.Customer.Views.ViewBox.UidCupboard" project="Kitbox" file="649dbd96-3751-1e6f-f99d-3a614bd30549" />
+      </topic>
+      <topic id="Methods.T:Kitbox.Customer.Views.ViewBox" project="Kitbox" file="46e983b6-3bd1-6f82-9ec8-fa66769054d7">
+        <topic id="Overload:Kitbox.Customer.Views.ViewBox.Dispose" project="Kitbox" file="21d219b9-541b-2d69-cc3c-f519fbf2b19f">
+          <topic id="M:Kitbox.Customer.Views.ViewBox.Dispose(System.Boolean)" project="Kitbox" file="26ceeb70-92b1-0fa7-e9e9-81092acafa87" />
+        </topic>
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.Views.ViewBox" project="Kitbox" file="2856b602-2cc1-62e6-e378-bb68fdf1b047" />
+      <topic id="Fields.T:Kitbox.Customer.Views.ViewBox" project="Kitbox" file="112f8b64-7d65-b2b2-caaa-d504dad415ae">
+        <topic id="F:Kitbox.Customer.Views.ViewBox.Box" project="Kitbox" file="f829da3c-8e60-4b66-75f3-c6ea6feb9043" />
+        <topic id="F:Kitbox.Customer.Views.ViewBox.MainTreeView" project="Kitbox" file="91e488a3-6f24-43a6-d4d3-c2aa383fc467" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Customer.Views.ViewCupboard" project="Kitbox" file="93c9501b-ca06-1633-4d90-96d7748a9caa">
+      <topic id="M:Kitbox.Customer.Views.ViewCupboard.#ctor(System.Int32,Kitbox.Models.Order.Cupboard,MySql.Data.MySqlClient.MySqlConnection,Kitbox.Customer.TreeviewManager)" project="Kitbox" file="b573f068-48da-6f46-68e4-84bd6e32b0da" />
+      <topic id="Properties.T:Kitbox.Customer.Views.ViewCupboard" project="Kitbox" file="752e6eed-6000-64ff-c6e3-3949bd9725be" />
+      <topic id="Methods.T:Kitbox.Customer.Views.ViewCupboard" project="Kitbox" file="b04b9b7b-a8ff-f5df-11b5-fbac5ba225c2">
+        <topic id="Overload:Kitbox.Customer.Views.ViewCupboard.Dispose" project="Kitbox" file="1ad633e9-135f-e5ef-b7bd-55f96c92c640">
+          <topic id="M:Kitbox.Customer.Views.ViewCupboard.Dispose(System.Boolean)" project="Kitbox" file="6fc8aae7-77aa-4787-e4bf-5d870aa5dd1b" />
+        </topic>
+        <topic id="M:Kitbox.Customer.Views.ViewCupboard.RefreshView" project="Kitbox" file="79106ad9-c8c9-b582-f9a4-18a793a08712" />
+      </topic>
+      <topic id="Events.T:Kitbox.Customer.Views.ViewCupboard" project="Kitbox" file="c32ab4da-a154-60cd-fd7d-a248b8bfbcdc" />
+      <topic id="Fields.T:Kitbox.Customer.Views.ViewCupboard" project="Kitbox" file="f46b12d9-41fa-bd40-c7b6-3ed67fee470d">
+        <topic id="F:Kitbox.Customer.Views.ViewCupboard.Components" project="Kitbox" file="427f4c8b-2532-725e-30ab-4f602d0708ee" />
+        <topic id="F:Kitbox.Customer.Views.ViewCupboard.DataBase" project="Kitbox" file="09e4eac4-9366-2f48-edfa-1a6b0fb5cb76" />
+        <topic id="F:Kitbox.Customer.Views.ViewCupboard.Uid" project="Kitbox" file="912041df-0576-5855-5995-501a3b550807" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Models.Components" project="_Namespaces" file="5404affd-9383-3e95-e1e5-91a5ff35559d">
+    <topic id="T:Kitbox.Models.Components.CupboardAngle" project="Kitbox" file="05eb890b-6499-16c3-e294-0e5aa2fe9c51">
+      <topic id="M:Kitbox.Models.Components.CupboardAngle.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="1a8a4e3a-0a76-2015-466e-aea5c58a5e76" />
+      <topic id="Methods.T:Kitbox.Models.Components.CupboardAngle" project="Kitbox" file="c5f2b9c6-2d35-0020-da10-fd2534b19b4b">
+        <topic id="M:Kitbox.Models.Components.CupboardAngle.CountComponents" project="Kitbox" file="8e2a5ff8-0ae9-01fc-5b20-4812d3e2e4d5" />
+        <topic id="M:Kitbox.Models.Components.CupboardAngle.ToString" project="Kitbox" file="2fc1af66-f52f-e769-256d-5e659853ca5d" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.CupboardAngle" project="Kitbox" file="69a23b87-5b86-f84f-6187-69c8972445e0">
+        <topic id="F:Kitbox.Models.Components.CupboardAngle.Color" project="Kitbox" file="bf4bea81-6673-50df-967b-6b3d463af914" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Cups" project="Kitbox" file="2b75293e-6ba2-d5e7-78fe-e5177b3d13ac">
+      <topic id="M:Kitbox.Models.Components.Cups.#ctor(System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="acc1ea00-34db-c17d-8317-e7b76f10d0b8" />
+      <topic id="Methods.T:Kitbox.Models.Components.Cups" project="Kitbox" file="a45a5222-4836-7d2c-0e3d-a7c8e7a5995a">
+        <topic id="M:Kitbox.Models.Components.Cups.CountComponents" project="Kitbox" file="183a7917-6d92-f288-6f3f-49aa16e57132" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Cups" project="Kitbox" file="a559b48e-e605-fff3-eb93-cc9ec8234d9b" />
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Door" project="Kitbox" file="78e5ac0f-bc4f-c1f1-c99e-673075903c5d">
+      <topic id="M:Kitbox.Models.Components.Door.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="0d5408c5-001a-64b7-6453-4e340ce7bdeb" />
+      <topic id="Methods.T:Kitbox.Models.Components.Door" project="Kitbox" file="4dd9045c-58bc-9d4f-7861-8a03519aa188">
+        <topic id="M:Kitbox.Models.Components.Door.CountComponents" project="Kitbox" file="5edf69dd-4612-c4d1-9e12-2afda570684d" />
+        <topic id="M:Kitbox.Models.Components.Door.ToString" project="Kitbox" file="1089662c-5c95-3e33-fbe8-d6ea012fdc33" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Door" project="Kitbox" file="95d9754b-72b3-1c23-ecd5-14aeb3e1398a">
+        <topic id="F:Kitbox.Models.Components.Door.Color" project="Kitbox" file="8e8c96f3-d001-588e-2921-4280b77e8d52" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Panel" project="Kitbox" file="9f0e5f64-65b8-5fc8-9712-4a22e73d0987">
+      <topic id="M:Kitbox.Models.Components.Panel.#ctor(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="a7af8667-d9cc-329a-df3a-dd2c98d8f71e" />
+      <topic id="Methods.T:Kitbox.Models.Components.Panel" project="Kitbox" file="a4465e2f-d74a-fa10-ae45-8edb39d47f4d">
+        <topic id="M:Kitbox.Models.Components.Panel.CountComponents" project="Kitbox" file="b30dc6bf-2a4c-38eb-9c9f-1a1912ce7933" />
+        <topic id="M:Kitbox.Models.Components.Panel.ToString" project="Kitbox" file="8848cd75-760a-c887-be88-6237218fedb3" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Panel" project="Kitbox" file="7d11e412-8594-47f1-d54a-2cf0044fc5b9">
+        <topic id="F:Kitbox.Models.Components.Panel.Color" project="Kitbox" file="1e2203b0-cd60-782a-fa88-3fbb05e0353d" />
+        <topic id="F:Kitbox.Models.Components.Panel.Type" project="Kitbox" file="a81999ff-2fa1-e4ad-794d-ee852382a36f" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Slider" project="Kitbox" file="22d8ed8e-7c91-a1cd-ca64-24fc3cdf69d0">
+      <topic id="M:Kitbox.Models.Components.Slider.#ctor(System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="6aa5ab86-b84b-69c7-4795-065da600599c" />
+      <topic id="Methods.T:Kitbox.Models.Components.Slider" project="Kitbox" file="e9d86783-96f2-32eb-c125-81e4c51640ea">
+        <topic id="M:Kitbox.Models.Components.Slider.CountComponents" project="Kitbox" file="7db14669-369b-40e7-b5c9-5824fef754ca" />
+        <topic id="M:Kitbox.Models.Components.Slider.ToString" project="Kitbox" file="9b83e0f9-3f89-0f5a-4175-f9921ce4420a" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Slider" project="Kitbox" file="3d2a30b2-b017-c2e9-23c9-a5e48bf06f24" />
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Specs" project="Kitbox" file="99b6ac10-5cd0-59ee-28bb-95e847af10c7">
+      <topic id="M:Kitbox.Models.Components.Specs.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="886a1e90-5635-ae6a-a075-884b73fcc849" />
+      <topic id="Methods.T:Kitbox.Models.Components.Specs" project="Kitbox" file="e6343673-3f0c-2ce5-e964-830ae53f7606">
+        <topic id="M:Kitbox.Models.Components.Specs.CountComponents" project="Kitbox" file="0a9deb9f-3bd0-0fb6-a038-c4b0f07ed751" />
+        <topic id="M:Kitbox.Models.Components.Specs.IsInStock(System.Int32)" project="Kitbox" file="fb7df613-a88a-83e1-997b-8f7d2a340526" />
+        <topic id="M:Kitbox.Models.Components.Specs.ToString" project="Kitbox" file="84dc36fb-9d11-cdc5-f8ea-1bc13c03db46" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Specs" project="Kitbox" file="f1f86433-d820-2ca7-92f9-90ecc6fd82fd">
+        <topic id="F:Kitbox.Models.Components.Specs.AvailableStock" project="Kitbox" file="3c7ae212-3c37-d8eb-d647-12dc1ef32f77" />
+        <topic id="F:Kitbox.Models.Components.Specs.Code" project="Kitbox" file="f2e6d634-52b9-c9ca-82c9-2dc0703b10d4" />
+        <topic id="F:Kitbox.Models.Components.Specs.Depth" project="Kitbox" file="2fc696e5-ab39-b49b-8f34-77cdae95583f" />
+        <topic id="F:Kitbox.Models.Components.Specs.DimensionsToString" project="Kitbox" file="fcfbdf60-9168-4f9d-1fb2-83f7e1122240" />
+        <topic id="F:Kitbox.Models.Components.Specs.Height" project="Kitbox" file="120e7564-3622-5160-93ab-b9da79e5d914" />
+        <topic id="F:Kitbox.Models.Components.Specs.MinStock" project="Kitbox" file="1eed9a35-9f82-792b-91b5-2e507a93d0d4" />
+        <topic id="F:Kitbox.Models.Components.Specs.Width" project="Kitbox" file="5033f80a-3921-a722-ac9c-41a9a6e06b87" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Components.Traverse" project="Kitbox" file="e3d3b303-a4b7-b378-1ddd-6785bc43825e">
+      <topic id="M:Kitbox.Models.Components.Traverse.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="d1f6e566-c66d-009b-e1a1-5c279ef8ffd0" />
+      <topic id="Methods.T:Kitbox.Models.Components.Traverse" project="Kitbox" file="2621ca1f-8b9b-1b74-fd64-12b192a1a9bf">
+        <topic id="M:Kitbox.Models.Components.Traverse.CountComponents" project="Kitbox" file="d3492ab5-d780-c6c3-10e1-bc71780d31d1" />
+        <topic id="M:Kitbox.Models.Components.Traverse.ToString" project="Kitbox" file="ba11e6ea-9593-732f-fba5-3ab72a8ba20d" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Components.Traverse" project="Kitbox" file="78c735e6-f8c6-1542-c3d7-45296ee4ea19">
+        <topic id="F:Kitbox.Models.Components.Traverse.Type" project="Kitbox" file="a947fe8f-c9aa-45e9-9c78-bb97e417688d" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Models.Database" project="_Namespaces" file="c049e12b-f48f-29db-5015-530baa37976b">
+    <topic id="T:Kitbox.Models.Database.Reader" project="Kitbox" file="080616aa-b29e-b76a-7628-ba859b33124f">
+      <topic id="M:Kitbox.Models.Database.Reader.#ctor" project="Kitbox" file="03da4f4c-91bf-50d9-e7c5-ecb699008253" />
+      <topic id="Methods.T:Kitbox.Models.Database.Reader" project="Kitbox" file="5c9643b9-3cd2-b22a-a3bd-5630cf540214">
+        <topic id="M:Kitbox.Models.Database.Reader.CheckAvailable(Kitbox.Models.Order.Order,Kitbox.Models.Components.Specs)" project="Kitbox" file="bf303e44-7d26-7e6c-df37-ec9cbde826f6" />
+        <topic id="M:Kitbox.Models.Database.Reader.InitializeComponents(MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="b25b641e-309b-11e8-b7ef-8db7bfda6fa5" />
+        <topic id="M:Kitbox.Models.Database.Reader.SearchComponent(System.Int32,System.String,System.String,System.String,System.String,System.String,Kitbox.Models.Order.Cupboard,Kitbox.Models.Order.Order,MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="316e07a4-85b9-e4df-f75a-53763e02627f" />
+        <topic id="M:Kitbox.Models.Database.Reader.SearchCupboardAngle(System.Int32,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="9e9b80c6-1100-2345-ce08-9e7c8bd27b23" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Models.Database.Components" project="_Namespaces" file="a0f966f9-f019-e170-e8d9-ccf517802690">
+    <topic id="T:Kitbox.Models.Database.Components.CupboardAngles" project="Kitbox" file="9b3aaf7b-9c2a-5d3a-521c-38267062b9e0">
+      <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.#ctor" project="Kitbox" file="381e2466-3a06-4494-66e4-028e82012209" />
+      <topic id="Methods.T:Kitbox.Models.Database.Components.CupboardAngles" project="Kitbox" file="448210ff-35a6-a119-85a9-7cb8e0102b65">
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.AddCupboardAngle(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="a4f62ff1-0194-506f-bc4e-a7f478a364ac" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.ClearCupboardAngle" project="Kitbox" file="de344bae-ec70-6a29-5e8a-cd36bda99d03" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.CountCupboardAngle" project="Kitbox" file="04c9f180-1ee7-64d7-7d7e-d6bade21c90b" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.GetColorCupboardAngle(System.Int32)" project="Kitbox" file="fb0ceee8-8c3f-2f57-38f0-b6d161bd257c" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.GetDepthCupboardAngle(System.Int32)" project="Kitbox" file="2baf95b6-a2d5-74f8-9ee0-dc3e35b2e8be" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.GetHeightCupboardAngle(System.Int32)" project="Kitbox" file="5689180a-eda1-3efc-cebc-e96b5bc0d76d" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.GetWidthCupboardAngle(System.Int32)" project="Kitbox" file="3d485280-652d-5f59-7c3e-05c6b4f0dacb" />
+        <topic id="M:Kitbox.Models.Database.Components.CupboardAngles.SortCupboardAngle" project="Kitbox" file="5c627749-4b0f-2ea6-427d-486c8cbd530d" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Database.Components.Doors" project="Kitbox" file="30b93d41-d2e2-409c-a5c2-226d8003e452">
+      <topic id="M:Kitbox.Models.Database.Components.Doors.#ctor" project="Kitbox" file="fad2db7d-4306-7b4c-3948-c55589215976" />
+      <topic id="Methods.T:Kitbox.Models.Database.Components.Doors" project="Kitbox" file="ea1a9fe9-6916-7df8-6cd5-de203d37f871">
+        <topic id="M:Kitbox.Models.Database.Components.Doors.AddDoor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="3e5103be-8dff-15aa-405c-bc351d9b6e83" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.ClearDoor" project="Kitbox" file="a727ffc6-1255-2556-fc35-be39f558e816" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.CountDoor" project="Kitbox" file="91342d39-e850-c864-a21b-39c17c0714ad" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.GetColorDoor(System.Int32)" project="Kitbox" file="83c1610d-e28c-5edd-0e63-2622fd737097" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.GetDepthDoor(System.Int32)" project="Kitbox" file="b7b58cc2-dde9-2029-2327-6043726140df" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.GetHeightDoor(System.Int32)" project="Kitbox" file="8f6b8f8f-e14f-a7b1-1503-beb12dc4f978" />
+        <topic id="M:Kitbox.Models.Database.Components.Doors.GetWidthDoor(System.Int32)" project="Kitbox" file="614827f9-23e0-9c8c-d302-41e68e4ba9c4" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Database.Components.Panels" project="Kitbox" file="db19f5c7-7da1-7b0b-c3b2-339e5022a2ba">
+      <topic id="M:Kitbox.Models.Database.Components.Panels.#ctor" project="Kitbox" file="d0a6f8dd-07c8-aa4e-ee52-daf0277b14a6" />
+      <topic id="Methods.T:Kitbox.Models.Database.Components.Panels" project="Kitbox" file="5b2bffc1-4fd1-aa46-3cbf-bfc65b7351ba">
+        <topic id="M:Kitbox.Models.Database.Components.Panels.AddPanel(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)" project="Kitbox" file="577c242a-be3b-50c9-fa29-94190041ed61" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.ClearPanel" project="Kitbox" file="1a9d77fe-bb1c-acf5-9348-551ec54ea224" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.CountPanel" project="Kitbox" file="811e9733-e16c-f5ed-2b9a-6b2e4c0b4569" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.GetColorPanel(System.Int32,System.String)" project="Kitbox" file="34f499ef-71a9-cd72-8067-7583643f62fa" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.GetDepthPanel(System.Int32,System.String)" project="Kitbox" file="81f3731b-3391-ce50-8324-fbab19d3bd80" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.GetHeightPanel(System.Int32,System.String)" project="Kitbox" file="6278ebe2-25d7-4f4a-c6d6-52311b3535f8" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.GetTypePanel(System.Int32)" project="Kitbox" file="d580359e-a78e-03e6-2453-5c12c57f0bba" />
+        <topic id="M:Kitbox.Models.Database.Components.Panels.GetWidthPanel(System.Int32,System.String)" project="Kitbox" file="5897a6b9-c511-5782-508b-0fc1d2110700" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Models.Database.Json" project="_Namespaces" file="074c62c5-0c0c-035b-e587-400e1594cdde">
+    <topic id="T:Kitbox.Models.Database.Json.Order" project="Kitbox" file="2e760a79-da0e-843b-3b1c-90d7ed494844">
+      <topic id="M:Kitbox.Models.Database.Json.Order.#ctor" project="Kitbox" file="1ebeda44-44d4-05d6-c2bd-13826e1538db" />
+      <topic id="Methods.T:Kitbox.Models.Database.Json.Order" project="Kitbox" file="39eb3417-1085-30a1-7a8e-4145165c8de8" />
+      <topic id="Fields.T:Kitbox.Models.Database.Json.Order" project="Kitbox" file="8738a0d4-ad58-8011-5c2b-0d4569fdb693">
+        <topic id="F:Kitbox.Models.Database.Json.Order.Command" project="Kitbox" file="6b716866-35bf-68be-961d-7e78d15b4e25" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.Models.Order" project="_Namespaces" file="4c2144a7-100a-a436-f236-fd102b5fe950">
+    <topic id="T:Kitbox.Models.Order.Box" project="Kitbox" file="30c39cdc-b944-d9ab-b2fd-2ec2abe1c125">
+      <topic id="M:Kitbox.Models.Order.Box.#ctor(System.Int32,Kitbox.Models.Components.Door,Kitbox.Models.Components.Slider,System.Collections.Generic.List{Kitbox.Models.Components.Panel},System.Collections.Generic.List{Kitbox.Models.Components.Traverse},Kitbox.Models.Components.Cups)" project="Kitbox" file="99caab3b-b5e0-44dd-2735-5841a344a882" />
+      <topic id="Properties.T:Kitbox.Models.Order.Box" project="Kitbox" file="39bd1f48-f659-9666-4af8-d71f40c370f6">
+        <topic id="P:Kitbox.Models.Order.Box.State" project="Kitbox" file="ef3b3abb-0ba6-5aed-f417-7eceab09a79b" />
+        <topic id="P:Kitbox.Models.Order.Box.Uid" project="Kitbox" file="183ea4d0-93a6-f83a-6aed-c2441535b663" />
+      </topic>
+      <topic id="Methods.T:Kitbox.Models.Order.Box" project="Kitbox" file="fe30d0b8-673f-f011-494b-9bcec68c4b24">
+        <topic id="M:Kitbox.Models.Order.Box.ToString" project="Kitbox" file="751b0363-c5da-eda4-9ff4-33953a4905e1" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Order.Box" project="Kitbox" file="0838a501-c8e3-0c44-a346-0d5a8352d07f">
+        <topic id="F:Kitbox.Models.Order.Box.Cups" project="Kitbox" file="b2d572bb-e101-8565-9a5d-c1622997ca52" />
+        <topic id="F:Kitbox.Models.Order.Box.Depth" project="Kitbox" file="cf3746df-5424-6b71-21b9-d978b012ee8d" />
+        <topic id="F:Kitbox.Models.Order.Box.Door" project="Kitbox" file="6fa30103-c881-c67f-1bd3-4a0bfd77e65b" />
+        <topic id="F:Kitbox.Models.Order.Box.Height" project="Kitbox" file="44f9bdfb-6e23-5431-dbd5-7e8dd7915e66" />
+        <topic id="F:Kitbox.Models.Order.Box.Panels" project="Kitbox" file="644acd99-f233-587e-0ffb-2c2695aa70a2" />
+        <topic id="F:Kitbox.Models.Order.Box.Slider" project="Kitbox" file="3b9eaf6c-c381-c64e-6319-b0f9a30ab589" />
+        <topic id="F:Kitbox.Models.Order.Box.Traverse" project="Kitbox" file="d1a29b47-0d5c-c0ee-2a69-a7f758d51550" />
+        <topic id="F:Kitbox.Models.Order.Box.Width" project="Kitbox" file="1f3d6687-26b2-9fa2-aa37-397250c98542" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Order.Cupboard" project="Kitbox" file="fa5aae4a-b7af-2628-1ea1-5aa0b2a82713">
+      <topic id="M:Kitbox.Models.Order.Cupboard.#ctor(System.Int32)" project="Kitbox" file="8f8dd92d-0c54-2add-0deb-7e0c2eb5f760" />
+      <topic id="Properties.T:Kitbox.Models.Order.Cupboard" project="Kitbox" file="f253e292-214b-6f7d-05e8-36225169d7f7">
+        <topic id="P:Kitbox.Models.Order.Cupboard.CupboardAngle" project="Kitbox" file="e1b3d29f-a037-3b48-0317-bdd3ed32dc37" />
+        <topic id="P:Kitbox.Models.Order.Cupboard.Uid" project="Kitbox" file="5f8c2ab6-56f1-5b3a-abc1-e76d1602fdcd" />
+      </topic>
+      <topic id="Methods.T:Kitbox.Models.Order.Cupboard" project="Kitbox" file="52cb5f07-e00c-6f0f-7fb3-53b001f399ea">
+        <topic id="M:Kitbox.Models.Order.Cupboard.AddBox(System.Int32,System.Int32,Kitbox.Models.Components.Door,Kitbox.Models.Components.Slider,System.Collections.Generic.List{Kitbox.Models.Components.Panel},System.Collections.Generic.List{Kitbox.Models.Components.Traverse},Kitbox.Models.Components.Cups,System.String,Kitbox.Customer.TreeviewManager)" project="Kitbox" file="6435e99a-7671-67a8-9455-680d5290dd69" />
+        <topic id="M:Kitbox.Models.Order.Cupboard.CheckState" project="Kitbox" file="d3f5797a-b80d-dad5-77f5-1318a31b6766" />
+        <topic id="M:Kitbox.Models.Order.Cupboard.CountBox" project="Kitbox" file="aed073df-9f11-6409-7708-c98fc2df3f30" />
+        <topic id="M:Kitbox.Models.Order.Cupboard.GetSizes" project="Kitbox" file="0d8bc269-ddd3-5beb-4794-d1da9666e8af" />
+        <topic id="M:Kitbox.Models.Order.Cupboard.RemoveAt(System.Int32)" project="Kitbox" file="cb21b0f5-e423-fc76-bd95-0d8a9bed7ccf" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Order.Cupboard" project="Kitbox" file="272490e5-5620-b1d3-45e8-93270ac22d42">
+        <topic id="F:Kitbox.Models.Order.Cupboard.ListeBoxes" project="Kitbox" file="54bbe61b-1573-fcc1-1d8f-bbafb8600296" />
+        <topic id="F:Kitbox.Models.Order.Cupboard.State" project="Kitbox" file="1d7a7ca1-3f0e-3c26-7c02-3d7e1d17e06a" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.Models.Order.Order" project="Kitbox" file="bf93278f-6f7d-6c6f-ca8d-1d3f3527d13c">
+      <topic id="M:Kitbox.Models.Order.Order.#ctor" project="Kitbox" file="540aa434-46d0-d776-ad4a-e326f1476e0c" />
+      <topic id="Methods.T:Kitbox.Models.Order.Order" project="Kitbox" file="1fb17c7e-25ac-d2de-8064-fef5d1a6059a">
+        <topic id="M:Kitbox.Models.Order.Order.Add(System.Int32,Kitbox.Customer.TreeviewManager)" project="Kitbox" file="da4fc249-b83c-2489-1d8d-4b9893929bd8" />
+        <topic id="M:Kitbox.Models.Order.Order.AddAngleQuantityToOrder(Kitbox.Models.Order.Cupboard,System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.String}})" project="Kitbox" file="983e00d0-5a82-08d7-06e0-1978b4ae01b8" />
+        <topic id="M:Kitbox.Models.Order.Order.CheckState" project="Kitbox" file="d37c6a0a-12f4-3d81-01b5-95ab614d208d" />
+        <topic id="M:Kitbox.Models.Order.Order.ClearCupboardList" project="Kitbox" file="bb56af0e-b08d-e695-81e0-6ae761ac4b91" />
+        <topic id="M:Kitbox.Models.Order.Order.GetQuantityCode(System.String)" project="Kitbox" file="305594e3-bb79-09a6-73b1-a413bfc4ff6a" />
+        <topic id="M:Kitbox.Models.Order.Order.MakeOrder" project="Kitbox" file="c3cb81d3-d0af-ef9f-1936-bf56ff95df90" />
+        <topic id="M:Kitbox.Models.Order.Order.RemoveAt(System.Int32)" project="Kitbox" file="aa8d335b-0665-626b-985a-fa67ee6bb5be" />
+      </topic>
+      <topic id="Fields.T:Kitbox.Models.Order.Order" project="Kitbox" file="237785a8-2543-a157-c089-261e9403f5db">
+        <topic id="F:Kitbox.Models.Order.Order.State" project="Kitbox" file="cd3233cf-a466-ba10-5c16-bc59b583b349" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.PDF" project="_Namespaces" file="27e6becf-66ff-64a7-d5d9-e2ec7cfa6bd6">
+    <topic id="T:Kitbox.PDF.PDFUtils" project="Kitbox" file="a073da2e-a251-35b4-6663-5834635509bf">
+      <topic id="M:Kitbox.PDF.PDFUtils.#ctor" project="Kitbox" file="b1f86057-6c45-8968-c2b4-ab563fedca8c" />
+      <topic id="Methods.T:Kitbox.PDF.PDFUtils" project="Kitbox" file="37253132-1859-501b-e95d-18e3ba6efa40">
+        <topic id="M:Kitbox.PDF.PDFUtils.CalculateCost(Kitbox.Models.Order.Order,Kitbox.Models.Database.Json.Order)" project="Kitbox" file="fbc42223-46dd-25b0-6709-58fef0dbf503" />
+        <topic id="M:Kitbox.PDF.PDFUtils.ComputeCost(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})" project="Kitbox" file="cc793a4c-cbbc-65f8-2dfa-fd748ad6fdce" />
+        <topic id="M:Kitbox.PDF.PDFUtils.ExportDataTableToPDF(System.Data.DataTable,System.String,System.String,System.String,System.Single,System.String)" project="Kitbox" file="65e824fd-c514-8e5b-3ae4-94c42d9e9a3c" />
+        <topic id="M:Kitbox.PDF.PDFUtils.ExportOrderSupplierToPDF(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.String,System.String,System.String)" project="Kitbox" file="49d07540-314f-dc9c-aaf1-1d4d01a422c2" />
+        <topic id="M:Kitbox.PDF.PDFUtils.MakeBill(Kitbox.Models.Order.Order,Kitbox.Models.Database.Json.Order)" project="Kitbox" file="8f815eed-a01a-124a-afba-fcddd2dfec8f" />
+        <topic id="M:Kitbox.PDF.PDFUtils.MakePurchase(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})" project="Kitbox" file="3dc268a0-7812-54ea-8add-ad340a7e67fa" />
+        <topic id="M:Kitbox.PDF.PDFUtils.MakeTable(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})" project="Kitbox" file="23fb373a-0f13-244d-c4f5-36d1383e823d" />
+        <topic id="M:Kitbox.PDF.PDFUtils.TotalCost(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}})" project="Kitbox" file="480ec45a-505c-4b42-bf4a-c78a21587da7" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.StoreKeeper" project="_Namespaces" file="501826c5-5a01-4f6d-edf6-cb5d8a3f831e">
+    <topic id="T:Kitbox.StoreKeeper.StoreKeeperWindow" project="Kitbox" file="703a802c-0069-20bb-e94a-822aaac7e145">
+      <topic id="M:Kitbox.StoreKeeper.StoreKeeperWindow.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.Customer.Authentication,System.String,System.String)" project="Kitbox" file="c8fc57ec-b1fc-9496-dd54-2b046a11c6c8" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.StoreKeeperWindow" project="Kitbox" file="cbe80957-b05f-ac73-646b-2570c0d70e7c">
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.Authentification" project="Kitbox" file="2895a5dc-3d4f-776d-893a-3e1b2805719e" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.createComponentView" project="Kitbox" file="5ed8f91e-c45e-7d13-64fa-9c602e01e6c9" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.DataBase" project="Kitbox" file="16fadbde-a3cf-622e-2612-cf670277efc4" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.OrderSuppliersView" project="Kitbox" file="5c638e4e-b97d-0285-acb5-bfba3ff5597e" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.searchComponentView" project="Kitbox" file="6a9574aa-7185-4fc7-0ef5-e4347b390e67" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.searchOrderView" project="Kitbox" file="ac7a44c3-5318-62a9-7a3c-7e199003b266" />
+        <topic id="P:Kitbox.StoreKeeper.StoreKeeperWindow.ViewDictionary" project="Kitbox" file="e6a2f44f-a1d7-fc94-d3f6-4b9750fef288" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.StoreKeeperWindow" project="Kitbox" file="85b14d12-84b2-d7c1-4d8e-d7c99b30d79d">
+        <topic id="Overload:Kitbox.StoreKeeper.StoreKeeperWindow.Dispose" project="Kitbox" file="ee43930a-a13b-f1f9-90cf-b7b7c2ddb581">
+          <topic id="M:Kitbox.StoreKeeper.StoreKeeperWindow.Dispose(System.Boolean)" project="Kitbox" file="a0bf185b-111f-beb1-2948-290268996987" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.StoreKeeperWindow.LoadViews" project="Kitbox" file="f8985690-41a6-8583-5dd7-aa9997a06937" />
+        <topic id="M:Kitbox.StoreKeeper.StoreKeeperWindow.ShowError(System.String)" project="Kitbox" file="db3ae080-ab10-b75c-0364-9ee8f59b7fa8" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.StoreKeeperWindow" project="Kitbox" file="15ae8f7c-afd3-ef6e-d0ca-cd7220b4a262" />
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.StoreKeeper.Models" project="_Namespaces" file="160dad88-6616-2e5f-e976-e008fc013f81">
+    <topic id="T:Kitbox.StoreKeeper.Models.StoreKeeperComponent" project="Kitbox" file="c0722796-d854-13bd-bbc0-e9268a37cab4">
+      <topic id="M:Kitbox.StoreKeeper.Models.StoreKeeperComponent.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})" project="Kitbox" file="f3ff9464-e292-dfe4-4e87-c92b8b47861f" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Models.StoreKeeperComponent" project="Kitbox" file="782ea1c3-4152-8e69-24c3-494cd9b823cc">
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Code" project="Kitbox" file="3a6ac5e1-fe84-5b40-0a34-d6b5942790ba" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Color" project="Kitbox" file="9af369d5-7fe9-46c1-d2ba-555d19059b37" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Depth" project="Kitbox" file="89b56a90-a0e2-c7b2-927d-de8c33f5e94e" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Dimensions" project="Kitbox" file="2cb062a3-4561-bcc1-dd5d-8fc682fd537a" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Height" project="Kitbox" file="c713bf84-97c0-71aa-01c6-6b5283a7cdf4" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Ref" project="Kitbox" file="caa1ecc2-3e84-1805-0366-d8fefe40ddb5" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Stock" project="Kitbox" file="7dbbf895-a416-3845-fc07-ee4c3895daa1" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.StockMin" project="Kitbox" file="ca699455-3908-524f-fc43-42572fa3b010" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.SupplierOneDelay" project="Kitbox" file="488ef11e-5209-dff6-f475-6c747c88cdae" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.SupplierOnePrice" project="Kitbox" file="dee2b372-c350-7319-7b6f-62730d3c14a7" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.SupplierTwoDelay" project="Kitbox" file="a2ed42e4-5875-5da2-cb17-02ecc5d9a343" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.SupplierTwoPrice" project="Kitbox" file="d65fa12e-6100-4888-1688-cf555af57bed" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperComponent.Width" project="Kitbox" file="4652d8e4-c19f-f242-d855-ba3d2de06e60" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.Models.StoreKeeperComponent" project="Kitbox" file="71bdf8a0-3936-6bd6-39bf-59ec1d8daf14">
+        <topic id="M:Kitbox.StoreKeeper.Models.StoreKeeperComponent.ToString" project="Kitbox" file="999e4ba0-b544-c236-1c3e-88ad2c6372ec" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Models.StoreKeeperOrder" project="Kitbox" file="2528eb13-d9b2-d8e0-d3dd-df5af595ad92">
+      <topic id="M:Kitbox.StoreKeeper.Models.StoreKeeperOrder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})" project="Kitbox" file="d5a95504-871e-29f4-48e2-1f5db1c4ad34" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Models.StoreKeeperOrder" project="Kitbox" file="b020f2ed-2b86-bf1a-2c56-e14ba0babe2b">
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.Components" project="Kitbox" file="e585b288-da60-d9f0-ad29-d1404bce3b75" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.Customer" project="Kitbox" file="a1765e32-38d8-8d76-3be5-5e2eba1fe16c" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.CustomerId" project="Kitbox" file="9a8793b5-0543-6f25-b119-c4d1354fd7fe" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.KeyList" project="Kitbox" file="b6f29352-099a-f0bd-8c70-571ddbf4a4c0" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.Name" project="Kitbox" file="1976f8f4-e04e-3584-9a2f-09b815f25784" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.OrderNumber" project="Kitbox" file="4c172d11-6765-6ccc-c24b-34d51a2aab27" />
+        <topic id="P:Kitbox.StoreKeeper.Models.StoreKeeperOrder.State" project="Kitbox" file="ce25d7f3-1347-9d2a-4f85-88ca10ca275b" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.Models.StoreKeeperOrder" project="Kitbox" file="c98dc83f-f94d-9fc2-660c-354c07a27acb">
+        <topic id="M:Kitbox.StoreKeeper.Models.StoreKeeperOrder.ToString" project="Kitbox" file="bbc7793f-90d8-cd37-ff6c-e9c1df832ade" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:Kitbox.StoreKeeper.Views" project="_Namespaces" file="5a09cead-810d-1ffa-709d-56599f57c136">
+    <topic id="T:Kitbox.StoreKeeper.Views.CreateComponent" project="Kitbox" file="23b765f2-eb7a-eddb-2aa5-07b8ce40cc1a">
+      <topic id="M:Kitbox.StoreKeeper.Views.CreateComponent.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.StoreKeeper.StoreKeeperWindow)" project="Kitbox" file="0f174e9b-70dd-4176-b17c-78cda8815909" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.CreateComponent" project="Kitbox" file="f7179353-321e-73a1-8ab2-1f8c06c8cdc9">
+        <topic id="P:Kitbox.StoreKeeper.Views.CreateComponent.DataBase" project="Kitbox" file="1c398a95-d2aa-439a-303a-0c8e9d48a08b" />
+        <topic id="P:Kitbox.StoreKeeper.Views.CreateComponent.Parent" project="Kitbox" file="082871ae-4ecd-1975-9514-b1a0fecdb548" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.CreateComponent" project="Kitbox" file="25ba3ca4-b48e-f898-6f37-0b7838976378">
+        <topic id="Overload:Kitbox.StoreKeeper.Views.CreateComponent.Dispose" project="Kitbox" file="8e5a1bb0-b94e-0cee-1a70-a8e771cd073e">
+          <topic id="M:Kitbox.StoreKeeper.Views.CreateComponent.Dispose(System.Boolean)" project="Kitbox" file="68e8f82b-1b97-7e38-6769-1519b3791392" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.CreateComponent.KeyPressed(System.Object,System.Windows.Forms.KeyPressEventArgs)" project="Kitbox" file="df784965-b341-aec2-9ad8-57fa56906f3b" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.CreateComponent" project="Kitbox" file="3727ae93-1942-ad57-ed74-2800ce2648d6" />
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.OrderSuppliers" project="Kitbox" file="3cabd822-13ce-4e73-2f0c-e948f8a930c3">
+      <topic id="M:Kitbox.StoreKeeper.Views.OrderSuppliers.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.StoreKeeper.StoreKeeperWindow)" project="Kitbox" file="21cfad29-b1f4-e154-c071-2bf534e2b82e" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.OrderSuppliers" project="Kitbox" file="fd579e83-4cc8-a584-78ed-df4c1b24042a" />
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.OrderSuppliers" project="Kitbox" file="3eb2c446-2ad2-57ee-c49e-54c2c9604707">
+        <topic id="M:Kitbox.StoreKeeper.Views.OrderSuppliers.AddToTreeView1(System.String,System.String)" project="Kitbox" file="3db44f2b-a019-3f62-f803-03eefc8396b2" />
+        <topic id="M:Kitbox.StoreKeeper.Views.OrderSuppliers.AddToTreeView2(System.String,System.String)" project="Kitbox" file="07c5f90f-9b56-5f6f-5752-5b9585b0e59a" />
+        <topic id="Overload:Kitbox.StoreKeeper.Views.OrderSuppliers.Dispose" project="Kitbox" file="cbc3406f-afc7-4658-4951-acf319f9f71e">
+          <topic id="M:Kitbox.StoreKeeper.Views.OrderSuppliers.Dispose(System.Boolean)" project="Kitbox" file="5423fe1d-d2a7-6240-55a0-107ba9e4f844" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.OrderSuppliers.RemoveTreeViewAt(System.Int32)" project="Kitbox" file="a8e50bc5-8677-b514-6268-e489668e40d3" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.OrderSuppliers" project="Kitbox" file="eb7098a0-a6e5-dfc0-fa3d-7888e89d40e6" />
+      <topic id="Fields.T:Kitbox.StoreKeeper.Views.OrderSuppliers" project="Kitbox" file="0b3e0cbe-38c3-67a7-d2ca-3c52e9cd9f22">
+        <topic id="F:Kitbox.StoreKeeper.Views.OrderSuppliers.ListSupplier1" project="Kitbox" file="d75a148d-5590-11f4-bfcc-08e58722b027" />
+        <topic id="F:Kitbox.StoreKeeper.Views.OrderSuppliers.ListSupplier2" project="Kitbox" file="3b228265-984e-9018-4478-598a1522d272" />
+        <topic id="F:Kitbox.StoreKeeper.Views.OrderSuppliers.ViewsDictionary" project="Kitbox" file="759c714e-6d1c-a046-d3ee-fc39726d9565" />
+      </topic>
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.SearchComponent" project="Kitbox" file="2e78301c-8a1c-ab44-fd6f-e15e12b19420">
+      <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.StoreKeeper.StoreKeeperWindow)" project="Kitbox" file="2ac75ae2-bdf0-0def-f3f3-933883ba20bb" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.SearchComponent" project="Kitbox" file="3ac75e78-ef6f-c0dd-f331-eef4897b6d67">
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchComponent.ComponentViewDictionary" project="Kitbox" file="e3b13434-20c5-6e2a-a541-c76d4e906525" />
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchComponent.DataBase" project="Kitbox" file="f79fdace-0ea4-4b20-927d-adca715e33e3" />
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchComponent.Parent" project="Kitbox" file="c82d30af-cfa9-4f46-8f71-62216a929250" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.SearchComponent" project="Kitbox" file="910911ef-7acd-1b46-70cb-536c4629f0ae">
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.AddItems(System.Collections.Generic.List{System.Object})" project="Kitbox" file="85c2b835-35fb-1e56-b3d5-2d4cd52f61df" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.ClearWindow" project="Kitbox" file="af83e6a1-5c19-9176-b13e-b9de043f747f" />
+        <topic id="Overload:Kitbox.StoreKeeper.Views.SearchComponent.Dispose" project="Kitbox" file="d48ae66e-18c8-d445-8b02-a4a6fcf5be24">
+          <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.Dispose(System.Boolean)" project="Kitbox" file="007f982e-0672-7a32-6bbf-5d1ff53ce4b0" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.GetComponents" project="Kitbox" file="e8ae9f38-ff58-65c7-7805-67b52e8088a4" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.ReloadTreeView" project="Kitbox" file="faaf6a54-65b1-74eb-f779-11aeca88e9e3" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchComponent.Search" project="Kitbox" file="cb51e263-bb5f-e2bd-0b0c-d6c5807d10e7" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.SearchComponent" project="Kitbox" file="87709a80-ba30-f314-9cf8-9a91a72632a8" />
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.SearchInfo" project="Kitbox" file="ea9314b5-88fb-34c0-cfd3-e48f688ae125">
+      <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.#ctor(MySql.Data.MySqlClient.MySqlConnection,Kitbox.StoreKeeper.StoreKeeperWindow)" project="Kitbox" file="a6896078-49b1-fcc7-51a2-d959cf4429d5" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.SearchInfo" project="Kitbox" file="19d7e3bd-3ede-08d4-25df-5270cbd6dd8f">
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchInfo.DataBase" project="Kitbox" file="2e04caff-7edb-f7c7-698b-dc1785e0949c" />
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchInfo.OrderViewDictionary" project="Kitbox" file="0f47c82f-a448-1dba-bcf0-337fbc03a632" />
+        <topic id="P:Kitbox.StoreKeeper.Views.SearchInfo.Parent" project="Kitbox" file="4f8c3bf3-d24d-8d3e-034f-330c059b6005" />
+      </topic>
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.SearchInfo" project="Kitbox" file="db5bcb24-ca95-ffef-c088-845d6cf7fb27">
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.AddItems(System.Collections.Generic.List{System.Object})" project="Kitbox" file="cccf2b0e-ccf6-7603-626b-49c4b57b3d5b" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.ClearWindow" project="Kitbox" file="d1c1bdb4-e606-1e9a-3b65-5c6f9345da77" />
+        <topic id="Overload:Kitbox.StoreKeeper.Views.SearchInfo.Dispose" project="Kitbox" file="1f6db497-2340-0fb2-f211-21fb42b0943b">
+          <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.Dispose(System.Boolean)" project="Kitbox" file="f4e4bf43-555d-a0be-ed81-31dcc2481a14" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.GetOrder" project="Kitbox" file="0f404f9e-9d52-5004-04a5-014c6d1f2411" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.ReloadTreeView" project="Kitbox" file="e1aea4ec-1a33-43f8-13f5-5c96666b3c80" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.RemoveItem(System.Windows.Forms.TreeNode)" project="Kitbox" file="03349709-4fbe-b622-be58-efaaa366b7aa" />
+        <topic id="M:Kitbox.StoreKeeper.Views.SearchInfo.Search" project="Kitbox" file="f46cf067-2316-105e-c303-be8916e3811d" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.SearchInfo" project="Kitbox" file="61cab873-95a7-77d2-749a-ce95b60c4fbb" />
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.ViewComponentSearch" project="Kitbox" file="d875f5e8-f104-9467-a95a-8eb0c6502552">
+      <topic id="M:Kitbox.StoreKeeper.Views.ViewComponentSearch.#ctor(Kitbox.StoreKeeper.Views.SearchComponent,Kitbox.StoreKeeper.Models.StoreKeeperComponent,MySql.Data.MySqlClient.MySqlConnection)" project="Kitbox" file="af28a030-8731-6701-46ef-14fa625c7bf8" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.ViewComponentSearch" project="Kitbox" file="fbd2cea5-9cd4-2956-639e-cadefed34ce0" />
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.ViewComponentSearch" project="Kitbox" file="fd4344be-2cdb-7723-8459-3b58b58aa339">
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewComponentSearch.DeleteComponent" project="Kitbox" file="e84c7737-aae6-a930-9d5c-21f52d013bf6" />
+        <topic id="Overload:Kitbox.StoreKeeper.Views.ViewComponentSearch.Dispose" project="Kitbox" file="268a1a55-1c32-f530-3906-23548d0d8f07">
+          <topic id="M:Kitbox.StoreKeeper.Views.ViewComponentSearch.Dispose(System.Boolean)" project="Kitbox" file="776c0f88-ccdd-5d30-26e0-183d02db4713" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewComponentSearch.LoadData" project="Kitbox" file="a3ace55b-b752-f43f-a9e0-58da67b4bf18" />
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewComponentSearch.UpdateSuppliers" project="Kitbox" file="e7ca8d0b-8e8c-0371-d077-d73e832f7563" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.ViewComponentSearch" project="Kitbox" file="e1409f12-7748-0b6a-eae5-6673111e79ac" />
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.ViewInfo" project="Kitbox" file="ea8df02d-da28-3d32-8d63-7fc130c64cb0">
+      <topic id="M:Kitbox.StoreKeeper.Views.ViewInfo.#ctor(Kitbox.StoreKeeper.Models.StoreKeeperOrder,MySql.Data.MySqlClient.MySqlConnection,Kitbox.StoreKeeper.Views.SearchInfo)" project="Kitbox" file="77e8a327-d8c2-ce9f-df27-0486c2fec94c" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.ViewInfo" project="Kitbox" file="c8b9ed28-d86c-11ac-0a57-647de79e159a" />
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.ViewInfo" project="Kitbox" file="c17cc418-9d9c-db1b-093d-50a12f46d801">
+        <topic id="Overload:Kitbox.StoreKeeper.Views.ViewInfo.Dispose" project="Kitbox" file="2e96e922-8bc8-6800-ee39-e5cddbf77c3a">
+          <topic id="M:Kitbox.StoreKeeper.Views.ViewInfo.Dispose(System.Boolean)" project="Kitbox" file="ea4be54b-ad08-492c-8cc9-3c117f2986d5" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewInfo.SetDetails(System.Collections.Generic.Dictionary{System.String,System.String})" project="Kitbox" file="aea5789a-782d-dbff-1b7b-a1cb4cd2dc66" />
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewInfo.UpdateCustomer" project="Kitbox" file="9236ee99-848b-bf13-7668-02434396e767" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.ViewInfo" project="Kitbox" file="dcc4d8c3-eafb-f17b-2dc9-bd7ad7855d8b" />
+    </topic>
+    <topic id="T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers" project="Kitbox" file="60dfe1ab-5fa8-b41e-fdef-2cf1a2440fd4">
+      <topic id="M:Kitbox.StoreKeeper.Views.ViewOrderSuppliers.#ctor(Kitbox.StoreKeeper.Views.OrderSuppliers,System.Collections.Generic.Dictionary{System.String,System.String})" project="Kitbox" file="2b1754b4-fb0f-3a8d-c5f7-c21e778958e4" />
+      <topic id="Properties.T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers" project="Kitbox" file="040629f3-5b63-f64a-b5a8-080d74ba0a9b" />
+      <topic id="Methods.T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers" project="Kitbox" file="619e5eaa-154f-8e66-6105-f34c11c9a37a">
+        <topic id="Overload:Kitbox.StoreKeeper.Views.ViewOrderSuppliers.Dispose" project="Kitbox" file="9ce73a6c-32b8-4be0-2b22-f9207345950a">
+          <topic id="M:Kitbox.StoreKeeper.Views.ViewOrderSuppliers.Dispose(System.Boolean)" project="Kitbox" file="8b7cb872-e6cd-7215-3233-0aab7bdee89b" />
+        </topic>
+        <topic id="M:Kitbox.StoreKeeper.Views.ViewOrderSuppliers.LoadComponents" project="Kitbox" file="e78fbee5-ddf1-4ac8-88ea-241f572528bf" />
+      </topic>
+      <topic id="Events.T:Kitbox.StoreKeeper.Views.ViewOrderSuppliers" project="Kitbox" file="31c955d3-f08c-4150-6e8f-526bc2e7069e" />
+    </topic>
+  </topic>
+  <topic id="N:MethodsDB" project="_Namespaces" file="616beac1-7e4c-a8cc-dd80-f59536e5b0f0">
+    <topic id="T:MethodsDB.DataBaseMethods" project="MethodsDB" file="1229c24e-8d47-cc22-05d3-90ee8d27744f">
+      <topic id="Methods.T:MethodsDB.DataBaseMethods" project="MethodsDB" file="1421e865-2e2d-d9c8-0b4c-78f65175eb8b">
+        <topic id="M:MethodsDB.DataBaseMethods.sha256_hash(System.String)" project="MethodsDB" file="5935935a-590c-29dd-9ba9-0e5c656f3954" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlAdd(System.String,System.String,System.String,System.Int32,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="7f0e9467-453f-44cf-5a3b-91a9c977d880" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlAddCustomer(System.String,System.String,System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="2d8076e0-564b-758e-242d-3b514925d1fd" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlAddOrder(System.String,System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="b46edac6-4edd-143d-e52e-5a897f76f0e4" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlDelete(System.String,System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="1386f16e-53d9-4701-e74c-5969f507a19f" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSearch(System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="5929eaf5-a500-1565-0443-0359d42fe276" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSearchComponent(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="2700a05a-2988-0eb5-dd4b-50f22c62ba27" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSearchCupboardAngle(System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="2d81bd8d-3ca1-d6e1-0a16-602a1bd003e2" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSearchCustomer(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="a22c10f6-59fe-6b03-084e-6ea8b8a4d2b1" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSearchCustomerByName(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="931e6343-8c1c-4bfb-e94a-0bda4c76518c" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlSelect(System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="c9bc5bb9-d0b1-02fb-520a-b3f87c3dec4c" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlUpdateCustomer(System.String,System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="4428eabd-dc0f-99ac-bf4f-03923234f2a4" />
+        <topic id="M:MethodsDB.DataBaseMethods.SqlUpdateCustomerOrder(System.String,System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="MethodsDB" file="246d2a19-cdb7-3449-adea-4db13a3f77e6" />
+      </topic>
+    </topic>
+    <topic id="T:MethodsDB.DBMySQLUtils" project="MethodsDB" file="dd7dcb2c-9903-2591-7a28-06a816f09822">
+      <topic id="M:MethodsDB.DBMySQLUtils.#ctor" project="MethodsDB" file="295c2d7e-fb08-6ed4-ae44-8836efae97ec" />
+      <topic id="Methods.T:MethodsDB.DBMySQLUtils" project="MethodsDB" file="7dc6452a-4584-7f09-3db7-4f0873339805">
+        <topic id="M:MethodsDB.DBMySQLUtils.GetDBConnection(System.String,System.Int32,System.String,System.String,System.String)" project="MethodsDB" file="c1e51fa9-2db1-ec0c-7503-12ee97dc5728" />
+      </topic>
+    </topic>
+    <topic id="T:MethodsDB.DBUtils" project="MethodsDB" file="29791c1e-aee5-35ce-51a7-c7d56d170738">
+      <topic id="M:MethodsDB.DBUtils.#ctor" project="MethodsDB" file="210625c9-31ee-f730-50cb-79a8a6f269bd" />
+      <topic id="Methods.T:MethodsDB.DBUtils" project="MethodsDB" file="806ed040-23e9-efd6-e487-fa9e18fd2a17">
+        <topic id="M:MethodsDB.DBUtils.GetDBConnection(System.String,System.String)" project="MethodsDB" file="fd3b4f11-a72a-e7a5-bdc8-44f73aff2e16" />
+      </topic>
+    </topic>
+  </topic>
+  <topic id="N:StockDB" project="_Namespaces" file="6cfd8a31-a419-ca23-1b1d-093a704f59b4">
+    <topic id="T:StockDB.StockMethod" project="StockDB" file="828f4dba-a50d-4530-502a-5ba710e7da7e">
+      <topic id="M:StockDB.StockMethod.#ctor" project="StockDB" file="e064b591-460a-98b8-521c-6dc2d733174b" />
+      <topic id="Methods.T:StockDB.StockMethod" project="StockDB" file="2fd3ac17-58e6-62a4-fb30-f3c9ed2055e6">
+        <topic id="M:StockDB.StockMethod.AddComponent(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="362e01e9-30a1-a3d2-6ff3-4953ad2f5ef0" />
+        <topic id="M:StockDB.StockMethod.AddQtty(System.String,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="d8daada4-07d3-a609-9751-b8204cd7d7ad" />
+        <topic id="M:StockDB.StockMethod.CheckStockForOrder(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="3fd3be0c-214a-a1d7-a5c3-fd13381a66f1" />
+        <topic id="M:StockDB.StockMethod.CheckStockForSupplier(MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="83b72e06-605e-e89d-124f-73fbe2fe76a9" />
+        <topic id="M:StockDB.StockMethod.DeleteComponent(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="3337e9e2-f4e9-895e-69d8-2456455bae9c" />
+        <topic id="M:StockDB.StockMethod.GetCodeFromDB(MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="81c4af8d-3cc1-4b6e-ca46-e68e60fd7066" />
+        <topic id="M:StockDB.StockMethod.SearchComponent(System.String,System.Int32,System.Int32,System.Int32,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="43042db7-b527-7d73-fbd8-6ef339c4f234" />
+        <topic id="M:StockDB.StockMethod.SearchOrderById(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="bac02c2d-186f-f4f8-1439-3d74b9512864" />
+        <topic id="M:StockDB.StockMethod.SearchOrderByName(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="a09e5322-5ef0-49af-63ad-d100393030c8" />
+        <topic id="M:StockDB.StockMethod.SearchOrderByNum(System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="0f15c1c4-6c3b-a2fb-3d4e-c6d512b24b9e" />
+        <topic id="M:StockDB.StockMethod.UpdateOrderState(System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="1dbecbdb-7cb1-aa7f-c480-1fd2f3fe15b1" />
+        <topic id="M:StockDB.StockMethod.UpdateSupplierInfo(System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlConnection)" project="StockDB" file="8edc64f0-06cb-4c1c-ff89-043fc4246488" />
+      </topic>
+    </topic>
+  </topic>
+</topics>

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using GUI;
 using MySql.Data.MySqlClient;
-using DBMethods;
+using MethodsDB;
+using Kitbox.Customer;
 
 namespace Kitbox
 {
@@ -18,7 +18,7 @@ namespace Kitbox
             Application.SetCompatibleTextRenderingDefault(false);
 
             MySqlConnection myDataBase = DBUtils.GetDBConnection("customer", "groupe2020");
-            Application.Run(new Customer(myDataBase));
+            Application.Run(new CustomerWindow(myDataBase));
 
             //MySqlConnection myDataBase = DBUtils.GetDBConnection("storekeep", "groupe2020");
             //Application.Run(new StoreKeeper(myDataBase, new Authentication(), "storekeep", "groupe2020"));
