@@ -1,12 +1,12 @@
 ﻿using Kitbox.Components;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kitbox.Database.Components
 {
+    /// <summary>
+    /// This class contains all the doors.
+    /// </summary>
     public class Doors
     {
         private readonly static List<Door> DoorList = new List<Door>();
@@ -46,7 +46,6 @@ namespace Kitbox.Database.Components
         {
             DoorList.Clear();
         }
-
         #endregion
     }
 }

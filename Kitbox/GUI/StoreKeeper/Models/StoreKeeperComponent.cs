@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kitbox.GUI.StoreKeeper.Models
 {
+    /// <summary>
+    /// This class instanciates the order given the json list from the database.
+    /// </summary>
     public class StoreKeeperComponent
     {
-
         public string Ref { get; set; }
         public string Code { get; set; }
         public string Dimensions { get; set; }
@@ -39,6 +38,7 @@ namespace Kitbox.GUI.StoreKeeper.Models
             SupplierOneDelay = item["SupplierOneDelay"].ToString();
             SupplierTwoDelay = item["SupplierTwoDelay"].ToString();
         }
+
         public override string ToString()
         {
             String value = String.Format("--- Component {0} ---", Code);

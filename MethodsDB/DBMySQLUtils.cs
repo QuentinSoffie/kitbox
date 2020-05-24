@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using MySql.Data.MySqlClient;
 
 namespace DBMethods
 {
+    /// <summary>
+    /// This is the class used to get the connection with the database.
+    /// </summary>
     public class DBMySQLUtils
     {
         public static MySqlConnection

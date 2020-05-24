@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Kitbox.GUI.StoreKeeper.Models;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
+    /// <summary>
+    /// This is the view used to search components and update them. 
+    /// </summary>
     public partial class SearchComponent : UserControl
     {
         public MySqlConnection DataBase { get; set; }
         public new StoreKeeper Parent { get; set; }
-
         public Dictionary<StoreKeeperComponent, ViewComponentSearch> ComponentViewDictionary { get; set; }
+
         public SearchComponent(MySqlConnection database, StoreKeeper parent) 
         {
             InitializeComponent();
@@ -89,7 +86,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 resp.Add(component);
             }
 
-
             DataBase.Close();
 
             if (resp.Count == 0)
@@ -125,7 +121,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
 
         public void ReloadTreeView()
         {
-
             pepTreeView1.Nodes.Clear();
             int i = 0;
 
@@ -140,8 +135,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 {
                     pepTreeView1.Nodes[i].Tag = $"{component.Key.Stock.ToString()} item(s)";
                 }
-                
-
+               
                 i++;
             }
         }

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using Kitbox.Components;
 
 namespace Kitbox.Order
 {
+    /// <summary>
+    /// This is the box class. It's made of Specs.
+    /// </summary>
     public class Box
     {
         public int Uid { get; set; }

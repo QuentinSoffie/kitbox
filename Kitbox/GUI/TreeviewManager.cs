@@ -1,28 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Kitbox.Components;
 using KitboxEcamGUI;
 using System.Windows.Forms;
 using Kitbox.Order;
 using MySql.Data.MySqlClient;
 using Kitbox.Database;
-using Panel = Kitbox.Components.Panel;
 
 namespace Kitbox.GUI
 {
+    /// <summary>
+    /// This is the treeview manager that manage the customer left-hand treeview.
+    /// </summary>
     public class TreeviewManager
     {
         public PepTreeView MainTreeview;
-       
         private Control.ControlCollection ViewList;
-
         private int UidTreeview = 0;
-
         private Order.Order OurOrder;
-
         private MySqlConnection DataBase;
 
         public TreeviewManager(KitboxEcamGUI.PepTreeView mainTreeview, Control.ControlCollection viewCupboardList, Order.Order ourOrder, MySqlConnection database)
@@ -154,7 +149,6 @@ namespace Kitbox.GUI
             RemoveView(uid);
         }
 
-
         public Dictionary<string, Dictionary<string, object>> GetBoxComponents(string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard)
         {
             return Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, OurOrder, DataBase);
@@ -173,62 +167,19 @@ namespace Kitbox.GUI
                         notAvailable.Add(component.Key, (Specs)component.Value["Component"]);
                     }
                 }
-
-                //if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
-                //{
-                //    return component.Key;
-                //}
-                //else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
-                //{
-                //    return component.Key;
-                //}
             }
-
-            //Door door = (Components.Door)components["Door"]["Component"];
-            //Slider slider = (Components.Slider)components["Slider"]["Component"];
-            //Panel panelBack = (Panel)components["PanelBack"]["Component"];
-            //Panel panelSides = (Panel)components["PanelSides"]["Component"];
-            //Panel panelHB = (Panel)components["PanelHB"]["Component"];
-            //Traverses traverseFront = (Traverses)components["TraverseFront"]["Component"];
-            //Traverses traverseBack = (Traverses)components["TraverseBack"]["Component"];
-            //Traverses traverseSides = (Traverses)components["TraverseSides"]["Component"];
-            //Cups cups = (Cups)components["Cups"]["Component"];
 
             return notAvailable;
         }
 
         public void AddBox(int uidCupboard, Dictionary<string, Dictionary<string, object>> components, Cupboard cupboard, string tag = "Completed ✓")
         {
-            //UidTreeview += 1;
-            //Dictionary<string, Dictionary<string, object>> components = Reader.SearchComponent(UidTreeview, width, depth, height, colorDoor, colorPanel, cupboard, OurOrder, DataBase);
-            //Dictionary<string, Specs> notAvailable = new Dictionary<string, Specs>();
-            //foreach (KeyValuePair<string, Dictionary<string, object>> component in components)
-            //{
-            //    if (!(component.Value["Component"] is null))
-            //    {
-            //        if (component.Value["Available"] is false)
-            //        {
-            //            notAvailable.Add(component.Key, (Specs)component.Value["Component"]);
-            //        }       
-            //    }
-
-            //    //if (!(component.Value is null) && component.Value.IsInStock(OurOrder.GetQuantityCode(component.Value.Code) + component.Value.CountComponents()) == false  )
-            //    //{
-            //    //    return component.Key;
-            //    //}
-            //    //else if (component.Value == new Specs(0, 0, 0, 0 ,0, "", ""))
-            //    //{
-            //    //    return component.Key;
-            //    //}
-            //}
-
-
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Tag = $"Contains {cupboard.CountBox() + 1} box";
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes.Add(UidTreeview.ToString(), "Box - Uid " + UidTreeview);
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].Tag = tag;
             MainTreeview.Nodes[ReturnIndexTreeview(uidCupboard)[0]].Nodes[ReturnIndexTreeview(UidTreeview)[1]].ImageIndex = 0;
 
-            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"]["Component"], (Components.Slider)components["Slider"]["Component"], new List<Panel>() { (Panel)components["PanelBack"]["Component"], (Panel)components["PanelSides"]["Component"], (Panel)components["PanelHB"]["Component"] }, new List<Traverses>() { (Traverses)components["TraverseFront"]["Component"], (Traverses)components["TraverseBack"]["Component"], (Traverses)components["TraverseSides"]["Component"] }, (Cups)components["Cups"]["Component"], tag, this);
+            cupboard.AddBox(uidCupboard, UidTreeview, (Components.Door)components["Door"]["Component"], (Components.Slider)components["Slider"]["Component"], new List<Components.Panel>() { (Components.Panel)components["PanelBack"]["Component"], (Components.Panel)components["PanelSides"]["Component"], (Components.Panel)components["PanelHB"]["Component"] }, new List<Components.Traverses>() { (Components.Traverses)components["TraverseFront"]["Component"], (Components.Traverses)components["TraverseBack"]["Component"], (Components.Traverses)components["TraverseSides"]["Component"] }, (Components.Cups)components["Cups"]["Component"], tag, this);
         }
 
         public void UpdateTag(int uidCupboard, string certified = "false")

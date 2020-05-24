@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kitbox.Database;
 using Kitbox.Order;
 using MySql.Data.MySqlClient;
 
@@ -15,6 +10,9 @@ using Kitbox.Components;
 
 namespace Kitbox.GUI
 {
+    /// <summary>
+    /// This is the cupboard view. It displays the cupboard's informations. 
+    /// </summary>
     public partial class ViewCupboard : UserControl
     {
         private TreeviewManager MainTreeView;
@@ -81,7 +79,6 @@ namespace Kitbox.GUI
                 }
 
                 RefreshView();
-
             }
             else
             {
@@ -122,7 +119,6 @@ namespace Kitbox.GUI
                     pepCombobox6.Items.Add(Kitbox.Database.Components.CupboardAngles.GetColorCupboardAngle(i));
                 }
             }
-
 
             for (int i = 0; i < Kitbox.Database.Components.Panels.CountPanel(); i += 1)
             {
@@ -168,16 +164,20 @@ namespace Kitbox.GUI
             {
                 totalCompletion += 1;
             }
+
             int percentage = Convert.ToInt32((Math.Round((Convert.ToDouble((Convert.ToDouble(totalCompletion) / 3)) * 100))));
-            if (percentage == 100) {
+
+            if (percentage == 100) 
+            {
                 pepButton1.Enabled = true;
-            } else {
+            } 
+            else 
+            {
                 pepButton1.Enabled = false;
             }
-            pepProgressBar2.Value = percentage;
-            
-            pepProgressBar2.Text = "Add box progress - " + percentage +"%";
 
+            pepProgressBar2.Value = percentage;
+            pepProgressBar2.Text = "Add box progress - " + percentage +"%";
         }
 
         private void refreshProgressionCupboard()
@@ -301,7 +301,6 @@ namespace Kitbox.GUI
             }
         }
 
-
         private void RefreshProgressBar()
         {
             pepProgressBar1.Value = Cupboard.CountBox()*(15);
@@ -330,6 +329,7 @@ namespace Kitbox.GUI
                         AddChat($"✗ We are very sorry, we cannot find CupboardAngle. Please select an another one.", Color.Red);
                         return;
                     }
+
                     if (MainTreeView.CheckAngle(cupboardAngle))
                     {
                         Cupboard.CupboardAngle = cupboardAngle;
@@ -338,20 +338,21 @@ namespace Kitbox.GUI
                             MainTreeView.UpdateTag(Uid, "true");
                             AddChat($"✓ Your cupboard (height: {Cupboard.GetSizes()["Height"]} cm, width: {Cupboard.GetSizes()["Width"]} cm, depth: {Cupboard.GetSizes()["Depth"]} cm) is approved !", Color.White);
                         }
+
                         else
                         {
                             MainTreeView.UpdateTag(Uid, null);
                             AddChat("Your cupboard is approved but some components are missing!", Color.White);
                         }
                     }
+
                     else
                     {
-                        //AddChat($"✗ We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please select an another one.", Color.Red);
                         AddChat($"We are very sorry, your CupboardAngle ({cupboardAngle.Code}) is no longer available. Please continue, pay a deposit and get your order later or select an another CupboardAngle.", Color.Red);
-                        // Afficher le button pour poursuivre
                         pepButton5.Visible = true;
                     }
                 }
+
                 else
                 {
                     AddChat($"✗ Please select your angle color !", Color.Red);
@@ -369,16 +370,6 @@ namespace Kitbox.GUI
             int totalHeight = Cupboard.ListeBoxes.Sum(o => o.Height);
             Console.WriteLine(totalHeight);
             return Database.Reader.SearchCupboardAngle(totalHeight, pepCombobox6.SelectedItem.ToString(), DataBase);
-
-            //List<CupboardAngle> sortedList = Database.Components.CupboardAngles.SortCupboardAngle();
-            //for (int i = 0; i < sortedList.Count; i += 1)
-            //{
-            //    if (sortedList[i].Height > totalHeight)
-            //    {
-            //        return sortedList[i];
-            //    }
-            //}
-            //return null;
         }
 
         private void pepCombobox6_SelectedIndexChanged(object sender, EventArgs e)

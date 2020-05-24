@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Kitbox.GUI.StoreKeeper.Models;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
+    /// <summary>
+    /// This is the view used to cupdate the components. 
+    /// </summary>
     public partial class ViewComponentSearch : UserControl
     {
         MySqlConnection DataBase;
         StoreKeeperComponent Component;
         new SearchComponent Parent;
         int Value;
+
         public ViewComponentSearch(SearchComponent parent, StoreKeeperComponent component, MySqlConnection dataBase)
         {
             InitializeComponent();

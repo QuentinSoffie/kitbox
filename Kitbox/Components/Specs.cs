@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kitbox.Components
+﻿namespace Kitbox.Components
 {
+    /// <summary>
+    /// Represents the base of each components
+    /// </summary>
     public class Specs
     {
         public readonly int Height;
@@ -27,11 +24,6 @@ namespace Kitbox.Components
             this.DimensionsToString = dimensionsToString;
         }
 
-        public void Show()
-        {
-            Console.WriteLine(string.Format("Height: {0}, Width: {1}, Depth: {2}", Height, Width, Depth));
-        }
-
         public bool IsInStock(int quantity)
         {
             return quantity + 1 < AvailableStock;
@@ -41,9 +33,6 @@ namespace Kitbox.Components
         {
             return 1;
         }
-        
-
-
 
         public override string ToString()
         {

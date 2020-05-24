@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Kitbox.Components;
 using Kitbox.GUI;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
-
 
 namespace Kitbox.Order
 {
+    /// <summary>
+    /// This is the order class. It's made of cupboard.
+    /// </summary>
    public class Order
     {
         private readonly List<Cupboard> CupboardList;
@@ -20,8 +16,8 @@ namespace Kitbox.Order
         public Order()
         {
             CupboardList = new List<Cupboard>();   
-           
         }
+
         public void Add(int uid, TreeviewManager ViewManager)
         {
             Cupboard cupboard = new Cupboard(uid);
@@ -87,7 +83,6 @@ namespace Kitbox.Order
                     quantity += cupboard.CupboardAngle.CountComponents();
                 }
 
-
                 foreach (Box box in cupboard.ListeBoxes)
                 {
                    
@@ -121,7 +116,6 @@ namespace Kitbox.Order
                             quantity += panel.CountComponents();
                         }
                     }
-
                 }
             }
             return quantity;
@@ -129,7 +123,6 @@ namespace Kitbox.Order
 
         private void PrepareOrder(Cupboard cupboard, List<List<string>> matrix)
         {
-
             if (!(cupboard.CupboardAngle is null) && AddAngleQuantityToOrder(cupboard, cupboard.CupboardAngle.Code, matrix) == false)
             {
                 List<string> line = new List<string>() { cupboard.CupboardAngle.Code, "Cornieres", cupboard.CupboardAngle.DimensionsToString, cupboard.CupboardAngle.CountComponents().ToString() }; ;
@@ -233,12 +226,9 @@ namespace Kitbox.Order
                             return true;
                         }
                     }
-
                 }
-                
             }
             return false;
         }
-
     }
 }

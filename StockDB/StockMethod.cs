@@ -5,9 +5,11 @@ using MySql.Data.MySqlClient;
 
 namespace StockDB
 {
+	/// <summary>
+	/// This is a list of methods used to CRUD stock's informations.
+	/// </summary>
 	public class StockMethod
 	{
-
 
 		public static MySqlDataReader SearchComponent(string name, int height, int width, int depth, string color, MySqlConnection conn)
 		{
@@ -17,7 +19,6 @@ namespace StockDB
 			return reader;
 
 			//DANS LE READER RECUPERER LA VALEUR DU STOCK POUR POUVOIR L'ENVOYER DANS LA METHODE D'UPDATE DU STOCK
-
 		}
 
 		public static bool CheckStockForOrder(int qtty, int code, MySqlConnection conn)
@@ -90,7 +91,6 @@ namespace StockDB
 			return List ;
 			}
 
-
 		public static List<string> GetCodeFromDB(MySqlConnection conn)
 		{
 			List<string> code = new List<string>() ;
@@ -122,6 +122,7 @@ namespace StockDB
 
 			return reader;
 		}
+
 		public static MySqlDataReader SearchOrderById(string id, MySqlConnection conn)
 		{
 			string query = "SELECT * FROM Orders" + " WHERE " + "IdClient ='" + id + "'";
@@ -138,6 +139,7 @@ namespace StockDB
 			cmd.ExecuteNonQuery();
 			conn.Close();
 		}
+
 		public static void DeleteComponent(string code, MySqlConnection conn)
 		{
 			conn.Open();
@@ -146,7 +148,6 @@ namespace StockDB
 			cmd.ExecuteNonQuery();
 			conn.Close();
 		}
-
 		public static bool AddQtty(string code,int qtty, MySqlConnection conn)
 		{
 			conn.Open();

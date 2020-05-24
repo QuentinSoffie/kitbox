@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DBMethods
 {
+    /// <summary>
+    /// This is a list of methods used to CRUD customer and order informations.
+    /// </summary>
     public static class DataBaseMethods
     {
         public static void SqlAddCustomer(string firstname, string surname, string adress, string email, string phone, MySqlConnection conn)
@@ -40,6 +37,7 @@ namespace DBMethods
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
         }
+
         public static void SqlAddOrder(string customer, string id, string json, string state, MySqlConnection conn)
         {
             conn.Open();
@@ -48,12 +46,14 @@ namespace DBMethods
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+
         public static void SqlDelete(string table, string paramID, int valueID, MySqlConnection conn)
         {
             string query = "DELETE FROM " + table + " WHERE " + paramID + "=" + valueID;
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.ExecuteNonQuery();
         }
+
         public static void SqlSelect(string paramID, string table, MySqlConnection conn)
         {
             string query = "SELECT " + paramID + " FROM " + table;
@@ -64,6 +64,7 @@ namespace DBMethods
             }
             reader.Close();
         }
+
         public static MySqlDataReader SqlSearch(string table, string param, string value, MySqlConnection conn)
         {
             string query = "SELECT * FROM " + table + " WHERE " + param + "=" + value;
@@ -71,6 +72,7 @@ namespace DBMethods
 
             return reader;
         }
+
         public static List<Dictionary<string,string>> SqlSearchCustomerByName(string value, MySqlConnection conn)
         {
             conn.Open();
@@ -100,6 +102,7 @@ namespace DBMethods
 
             return customer;
         }
+
         public static void SqlUpdateCustomer(string param, string value, int id, MySqlConnection conn)
         {
             conn.Open();
@@ -108,6 +111,7 @@ namespace DBMethods
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();
         }
+
         public static void SqlUpdateCustomerOrder(string param, string value, int id, MySqlConnection conn)
         {
             conn.Open();
@@ -116,6 +120,7 @@ namespace DBMethods
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();
         }
+
         public static MySqlDataReader SqlSearchComponent(string table, string param1, string param2, string param3, string param4, string value1, string value2, string value3, string value4, MySqlConnection conn)
         {
 
@@ -132,6 +137,7 @@ namespace DBMethods
 
             return reader;
         }
+
         public static String sha256_hash(String value)
         {
             StringBuilder Sb = new StringBuilder();

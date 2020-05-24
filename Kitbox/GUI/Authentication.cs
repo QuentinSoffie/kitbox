@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using DBMethods;
@@ -14,14 +7,17 @@ using Kitbox.GUI.StoreKeeper;
 
 namespace GUI
 {
+    /// <summary>
+    /// This is the auth window. It connects the storekeeper to the admin panel.
+    /// </summary>
     public partial class Authentication : Form
     {
+        private bool Connecting = false;
+
         public Authentication()
         {
             InitializeComponent();
         }
-
-        private bool Connecting = false; 
 
         private void Connection(){
             try
@@ -46,6 +42,7 @@ namespace GUI
                 CustomPopup obj = new CustomPopup("Unable to connect to the database : " + ex.Message);
                 obj.Show(this);
             }
+
             pepTextbox1.Text = "";
             pepTextbox2.Text = "";
             pepButton1.Enabled = true;

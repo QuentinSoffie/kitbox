@@ -4,14 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DBMethods;
 using MySql.Data.MySqlClient;
 
 namespace Kitbox.PDF
 {
+    /// <summary>
+    /// This is a list of tools used for creating and printing a pdf.
+    /// </summary>
     public class PDFUtils
     {
         public static DataTable MakeBill(Kitbox.Order.Order order, Kitbox.Database.Json.Order orderDataBase)
@@ -81,7 +80,6 @@ namespace Kitbox.PDF
 
             return TotalBill;
         }
-
 
         public static void ExportDataTableToPDF(DataTable dtblTable, string strPdfPath, string strHeader, string id, float cost, string state)
         {
@@ -153,7 +151,6 @@ namespace Kitbox.PDF
                 }
             }
 
-
             document.Add(table);
 
             document.Add(new Chunk("\n", fntHead));
@@ -224,8 +221,8 @@ namespace Kitbox.PDF
                 Row.Add(cost.ToString());
 
                 bill.Rows.Add(Row.ToArray());
-
             }
+
             return bill;
         }
 
@@ -248,7 +245,6 @@ namespace Kitbox.PDF
                 float price = float.Parse(component["CustomerPrice"].ToString());
                 int qtty = int.Parse(component["Quantity"].ToString());
 
-   
                 float cost = qtty * price;
 
                 Row.Add(component["Ref"]);
@@ -259,12 +255,10 @@ namespace Kitbox.PDF
                 Row.Add(cost.ToString());
 
                 bill.Rows.Add(Row.ToArray());
-
             }
+
             return bill;
         }
-
-
 
         public static string TotalCost(List<Dictionary<string, string>> order)
         {

@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
+    /// <summary>
+    /// This is the view used to choose wich supplier the company want. 
+    /// </summary>
     public partial class ViewOrderSuppliers : UserControl
     {
 

@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.Order;
 using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json.Linq;
 using Kitbox.PDF;
 
 namespace Kitbox.GUI.StoreKeeper.Views
@@ -22,23 +14,12 @@ namespace Kitbox.GUI.StoreKeeper.Views
     public partial class ViewInfo : UserControl
     {
         StoreKeeperOrder Order;
-
         MySqlConnection DataBase;
-
         Dictionary<string, string> Customer;
-
         Dictionary<string, string> Component;
-
         List<Dictionary<string, string>> ListComponents;
-
         new SearchInfo Parent;
 
-        /// <summary>
-        /// This is the constructor of the order view. It takes one required argument.
-        /// </summary>
-        /// <param name="order"></param>
-        /// /// <param name="dataBase"></param>
-        /// /// <param name="parent"></param>
         public ViewInfo(StoreKeeperOrder order, MySqlConnection dataBase, SearchInfo parent)
         {
             this.Parent = parent;
@@ -48,7 +29,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             this.Order = order;
             LoadComponents();
         }
-
 
         private void FetchCustomerData()
         {
@@ -77,8 +57,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             label6.Text = Customer["Email"].ToString();
             label7.Text = Customer["Address"].ToString();
             label28.Text = Customer["IdClient"].ToString();
-
-            //TODO: Add customer number
         }
 
         private void SetOrder()
@@ -96,9 +74,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             }
         }
 
-        /// <summary>
-        /// This loads all the informations about the order
-        /// </summary>
         private void LoadComponents()
         {
             Console.WriteLine(Order.State);
@@ -147,6 +122,7 @@ namespace Kitbox.GUI.StoreKeeper.Views
                         {"Quantity", this.Order.Components[code].ToString() },
                     };
                 }
+
                 reader.Close();
                 DataBase.Close();
                 ListComponents.Add(Component);

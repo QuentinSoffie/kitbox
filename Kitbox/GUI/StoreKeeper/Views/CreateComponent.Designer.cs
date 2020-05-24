@@ -2,15 +2,8 @@
 {
     partial class CreateComponent
     {
-        /// <summary> 
-        /// Variable nécessaire au concepteur.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
-        /// Nettoyage des ressources utilisées.
-        /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Code généré par le Concepteur de composants
 
-        /// <summary> 
-        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas 
-        /// le contenu de cette méthode avec l'éditeur de code.
-        /// </summary>
         private void InitializeComponent()
         {
             this.pepButton1 = new KitboxEcamGUI.PepButton();
@@ -369,7 +358,7 @@
             this.textBox1.Size = new System.Drawing.Size(120, 27);
             this.textBox1.TabIndex = 5;
             this.textBox1.Tag = "Ex: 1.87";
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
             // 
             // pepNumericUpDown5
             // 
@@ -484,7 +473,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(120, 26);
             this.textBox3.TabIndex = 17;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
             // 
             // pepNumericUpDown7
             // 
@@ -551,7 +540,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(120, 26);
             this.textBox2.TabIndex = 16;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
             // 
             // pepNumericUpDown8
             // 

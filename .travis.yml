@@ -1,5 +1,0 @@
-language: csharp
-solution: Kitbox/Kitbox.sln
-mono: latest
-script:
-  - msbuild /p:Configuration=Release Kitbox/Kitbox.sln

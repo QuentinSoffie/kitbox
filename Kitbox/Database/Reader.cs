@@ -1,18 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using DBMethods;
 using Kitbox.Components;
-
 using Kitbox.Order;
-using System.Drawing;
 
 namespace Kitbox.Database
 {
+    /// <summary>
+    /// This class creates the boxes' components. It searches the best components in the database and instanciate them. 
+    /// </summary>
     public class Reader
     {
         public static void InitializeComponents(MySqlConnection conn)
@@ -28,6 +25,7 @@ namespace Kitbox.Database
             SetCupboardAnglesComponents("Cornieres", conn);
             conn.Close();
         }
+
         private static void SetDoorComponents(string value, MySqlConnection conn)
         {
             var reader = DataBaseMethods.SqlSearch("Piece", "Ref", "'" + value + "'", conn);
@@ -50,7 +48,6 @@ namespace Kitbox.Database
             reader.Close();
         }
 
-
         private static void SetCupboardAnglesComponents(string value, MySqlConnection conn)
         {
             var reader = DataBaseMethods.SqlSearch("Piece", "Ref", "'" + value + "'", conn);
@@ -62,22 +59,8 @@ namespace Kitbox.Database
             reader.Close();
         }
 
-        /// <summary>
-        /// Search all the components with the box dimensions
-        /// </summary>
-        /// <param name="uid"></param>
-        /// <param name="width"></param>
-        /// <param name="depth"></param>
-        /// <param name="height"></param>
-        /// <param name="colorDoor"></param>
-        /// <param name="colorPanel"></param>
-        /// <param name="cupboard"></param>
-        /// <param name="conn"></param>
-        /// <param name="order"></param>
-        /// <returns></returns>
         public static Dictionary<string, Dictionary<string, object>> SearchComponent(int uid, string width, string depth, string height, string colorDoor, string colorPanel, Cupboard cupboard, Order.Order order, MySqlConnection conn)
         {
-
             Dictionary<string, Dictionary<string, object>> componentDict = new Dictionary<string, Dictionary<string, object>>();
 
             conn.Open();
@@ -86,11 +69,9 @@ namespace Kitbox.Database
             componentDict.Add("PanelBack", ReaderData(order, panelBack, typeof(Panel)));
 
             var panelSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "hauteur", "Couleur", "Ref", depth, height, colorPanel, "Panneau GD", conn);
-            //componentDict.Add("PanelSide", (Panel)ReaderData(panelSides, typeof(Panel)));
             componentDict.Add("PanelSides", ReaderData(order, panelSides, typeof(Panel)));
 
             var panelHB = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Couleur", "Ref", width, depth, colorPanel, "Panneau HB", conn);
-            //componentDict.Add("PanelHB", (Panel)ReaderData(panelHB, typeof(Panel)));
             componentDict.Add("PanelHB", ReaderData(order, panelHB, typeof(Panel)));
 
 
@@ -106,7 +87,6 @@ namespace Kitbox.Database
                 }
 
                 var door = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", size, (height).ToString(), colorDoor, "Porte", conn);
-                //componentDict.Add("Door", (Specs)ReaderData(door, typeof(Door)));
                 componentDict.Add("Door", ReaderData(order, door, typeof(Door)));
             }
             else
@@ -116,41 +96,27 @@ namespace Kitbox.Database
             }
 
             var slider = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "hauteur", "Couleur", "Ref", "0", height, "", "Tasseau", conn);
-            //componentDict.Add("Slider", (Slider)ReaderData(slider, typeof(Slider)));
             componentDict.Add("Slider", ReaderData(order, slider, typeof(Slider)));
 
             var traverseFront = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Av", "Traverse Av", conn);
-            //componentDict.Add("TraverseFront", (Traverses)ReaderData(traverseFront, typeof(Traverses)));
             componentDict.Add("TraverseFront", ReaderData(order, traverseFront, typeof(Traverses)));
 
             var traverseBack = DataBaseMethods.SqlSearchComponent("Piece", "largeur", "profondeur", "Ref", "Ref", width, "0", "Traverse Ar", "Traverse Ar", conn);
-            //componentDict.Add("TraverseBack", (Traverses)ReaderData(traverseBack, typeof(Traverses)));
             componentDict.Add("TraverseBack", ReaderData(order, traverseBack, typeof(Traverses)));
 
             var traverseSides = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", depth, "0", "Traverse GD", "Traverse GD", conn);
-            //componentDict.Add("TraverseSide", (Traverses)ReaderData(traverseSides, typeof(Traverses)));
             componentDict.Add("TraverseSides", ReaderData(order, traverseSides, typeof(Traverses)));
 
             var cups = DataBaseMethods.SqlSearchComponent("Piece", "profondeur", "largeur", "Ref", "Ref", "0", "0", "Coupelles", "Coupelles", conn);
-            //componentDict.Add("Cups", colorDoor !=  "I don't want a door" && colorDoor != "Verre" ? (Cups)ReaderData(cups, typeof(Cups)) : null);
             componentDict.Add("Cups", colorDoor != "I don't want a door" && colorDoor != "Verre" ? ReaderData(order, cups, typeof(Cups)) : new Dictionary<string, object>() { {"Component", null} });
 
             conn.Close();
 
             return componentDict;
-
         }
 
-        /// <summary>
-        /// Transform the given reader to the component of type type
-        /// </summary>
-        /// <param name="component"></param>
-        /// <param name="type"></param>
-        /// <param name="order"></param>
-        /// <returns></returns>
         private static Dictionary<string, object> ReaderData(Order.Order order, MySqlDataReader component, Type type)
         {
- 
             if (type.Name == "Panel")
             {
                 component.Read();
@@ -217,9 +183,8 @@ namespace Kitbox.Database
 
                 return dict;
             }
-            
-            return null;
 
+            return null;
         }
 
         public static bool CheckAvailable(Order.Order order, Specs component)
@@ -268,6 +233,7 @@ namespace Kitbox.Database
                         };
                     }
                 }
+
                 Console.WriteLine($"Cupboard angle fund :{min["Height"]} cm !");
                 cupboardAngle = new CupboardAngle(min["Color"], int.Parse(min["Height"]), int.Parse(min["Width"]), int.Parse(min["Depth"]), int.Parse(min["Stock"]), int.Parse(min["StockMin"]), min["Code"], min["Dimensions"]);
                 reader.Close();
@@ -276,7 +242,5 @@ namespace Kitbox.Database
             conn.Close();
             return cupboardAngle;
         }
-
-
     }
 }

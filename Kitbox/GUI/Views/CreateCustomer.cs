@@ -1,29 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kitbox.GUI.StoreKeeper.Views;
 using GUI;
 using MySql.Data.MySqlClient;
-using System.Net.Sockets;
+
 
 namespace Kitbox.GUI.Views
 {
+    /// <summary>
+    /// This is the view used to create or select a customer after checking the command. 
+    /// </summary>
     public partial class CreateCustomer : UserControl
     {
         new Customer Parent;
-
         MySqlConnection DataBase;
-
         List<Dictionary<string, string>> Customers;
-
         string Customer;
-
         string Id;
 
         public CreateCustomer(MySqlConnection dataBase, Customer parent)

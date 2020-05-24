@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Kitbox.GUI.StoreKeeper.Views
 {
+    /// <summary>
+    /// This is the view used to create a component in stock. 
+    /// </summary>
     public partial class CreateComponent : UserControl
     {
         public new StoreKeeper Parent { get; set; }
         public MySqlConnection DataBase { get; set; }
+
         public CreateComponent(MySqlConnection dataBase, StoreKeeper parent)
         {
             InitializeComponent();
@@ -33,39 +30,8 @@ namespace Kitbox.GUI.StoreKeeper.Views
             }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        public void KeyPressed(object sender, KeyPressEventArgs e)
         {
-            Console.WriteLine("Key pressed");
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Console.WriteLine("Key pressed");
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Console.WriteLine("Key pressed");
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -96,8 +62,6 @@ namespace Kitbox.GUI.StoreKeeper.Views
             string priceFourn2 = textBox3.Text;
             int delivery2 = int.Parse(pepNumericUpDown7.Value.ToString());
 
-            Console.WriteLine(initStock);
-
             if (code != "" && dimensions != "" && color != "" && initStock != 0 && minStock != 0 && price != "" && qttyPart != 0)
             {
                 StockDB.StockMethod.AddComponent(reference, code, dimensions, height, width, depth, color, initStock, minStock, price, qttyPart, priceFourn1, deleivery1, priceFourn2, delivery2, DataBase);
@@ -107,6 +71,5 @@ namespace Kitbox.GUI.StoreKeeper.Views
                 MessageBox.Show("Please complete all the fields", "Error");
             }
         }
-
     }
 }

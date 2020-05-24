@@ -183,10 +183,9 @@
       <DependentUpon>ViewCupboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Order\Box.cs" />
-    <Compile Include="Order\ChoosePart.cs" />
     <Compile Include="Order\Cupboard.cs" />
     <Compile Include="Order\Order.cs" />
-    <Compile Include="Order\StoreKeeperOrder.cs" />
+    <Compile Include="GUI\StoreKeeper\Models\StoreKeeperOrder.cs" />
     <Compile Include="PDF\PDFUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -244,7 +243,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <None Include="Langs\langEn.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,38 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kitbox.GUI
 {
+    /// <summary>
+    /// This is the preview window. It displays a preview of a box.
+    /// </summary>
     public partial class Preview : Form
     {
-       
-    
         private readonly List<int> EdgeFirstFloor = new List<int>() { 116,103,110, 123 };
         private readonly List<List<Point>> Rectangles = new List<List<Point>>();
         private readonly int HeightMap = 12;
         private readonly int WidthMap = 7;
         private  Graphics PreviewBox;
 
-        public Preview(string colorPanel, string colorDoor,string height, string width,string depth)
+        public Preview(string colorPanel, string colorDoor, string height, string width,string depth)
         {
             InitializeComponent();
             InitializePicture(colorPanel,colorDoor,height,width,depth);
         }
-       
         
         public void InitializePicture(string colorPanel, string colorDoor, string height, string width, string depth)
         {
             int x = 0;
             int y = 0;
             Bitmap b = new Bitmap(550,550);
-             PreviewBox = Graphics.FromImage(b);
+            PreviewBox = Graphics.FromImage(b);
             int cellNumber = 0;
             for (int j = 0; j <= ((HeightMap * 2) - 1); j++)
             {
@@ -41,11 +36,12 @@ namespace Kitbox.GUI
                     if (j % 2 != 0)
                     {
                         x = i * 64 + 64;
-                            }
+                    }
                     else
                     {
                         x = i * 64 + 32;
                     }
+
                     y = j * 18 + 18;
                     cellNumber += 1;
                     Color couleur = ColorTranslator.FromHtml("#ffffff");
@@ -53,10 +49,10 @@ namespace Kitbox.GUI
                     Point centre = new Point(x, y);
                    
                     var brush = new SolidBrush(couleur);
-                     Point[] points = new Point[4];
-                      points[0] = new Point(centre.X, centre.Y - 18);
+                    Point[] points = new Point[4];
+                    points[0] = new Point(centre.X, centre.Y - 18);
                     points[1] = new Point(centre.X + 32, centre.Y);
-                     points[2] = new Point(centre.X, centre.Y + 18);
+                    points[2] = new Point(centre.X, centre.Y + 18);
                     points[3] = new Point(centre.X - 32, centre.Y);
                     PreviewBox.FillPolygon(brush, points);
                     Pen Box = Pens.LightSlateGray;
@@ -84,8 +80,6 @@ namespace Kitbox.GUI
                         PreviewBox.DrawLine(Pens.Green, points[2], new Point(points[2].X, points[2].Y - 72));
                         Rectangles.Add(new List<Point>() { points[2] });
                     }
-
-
                 }
             }
         
@@ -127,22 +121,10 @@ namespace Kitbox.GUI
             PreviewBox.DrawString("Color door : " + colorDoor, new Font("Tahoma", 10), Brushes.Green, 250, 390);
 
             //Panel
-            //g.FillEllipse(new SolidBrush(Color.Green), 218, 283, 10, 10);
-            //g.FillEllipse(new SolidBrush(Color.Green), 233, 237, 10, 10);
-            //g.FillEllipse(new SolidBrush(Color.Green), 268, 290, 10, 10);
-            //g.FillEllipse(new SolidBrush(Color.Green), 316, 228, 10, 10);
-
-              PreviewBox.FillEllipse(new SolidBrush(Color.Red), 92, 193, 10, 10);
+            PreviewBox.FillEllipse(new SolidBrush(Color.Red), 92, 193, 10, 10);
             PreviewBox.DrawString("Color panel : " + colorPanel, new Font("Tahoma", 10), Brushes.Red, 105, 190);
-            //Pen Datted = new Pen(Color.Green, 1);
-            //Datted.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            //g.DrawLine(Datted, 320,233, 160, 197);
-            //g.DrawLine(Datted, 237, 243, 160, 197);
-            //g.DrawLine(Datted, 222, 288, 160, 197);
-
         }
 
-      
         private void DrawRectangle(int floor)
         {
             PreviewBox.DrawLine(Pens.Red, Rectangles[floor][0], Rectangles[floor+1][0]);
@@ -154,16 +136,6 @@ namespace Kitbox.GUI
             PreviewBox.DrawLine(Pens.Green, Rectangles[floor + 1][0].X, Rectangles[floor+1][0].Y - 72, Rectangles[floor + 3][0].X, Rectangles[floor + 3][0].Y - 72);
             PreviewBox.DrawLine(Pens.Red, Rectangles[floor + 2][0].X, Rectangles[floor+2][0].Y - 72, Rectangles[floor][0].X, Rectangles[floor ][0].Y - 72);
             PreviewBox.DrawLine(Pens.Red, Rectangles[floor + 3][0].X, Rectangles[floor+3][0].Y - 72, Rectangles[floor + 2][0].X, Rectangles[floor + 2][0].Y - 72);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Kitbox.Database.Json
 {
+    /// <summary>
+    /// *DEPRECIATE* This class is used to serialize the order.
+    /// </summary>
     public class Order
     {
         public Dictionary<string, int> Command = new Dictionary<string, int>();

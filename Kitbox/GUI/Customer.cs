@@ -1,47 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kitbox.GUI;
-using Kitbox.Components;
-using DBMethods;
 using MySql.Data.MySqlClient;
-using Kitbox.Order;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
-using System.IO;
 using Newtonsoft.Json;
 using Kitbox.GUI.Views;
-using System.Runtime.InteropServices;
 
 namespace GUI
 {
+	/// <summary>
+	/// This is the customer window. It shows all the customer's views.
+	/// </summary>
 	public partial class Customer : Form
 	{
-
 		private MySqlConnection DataBase;
-		private Authentication Authentification;
 		private TreeviewManager MainTreeview;
-		private readonly string Username;
-		private readonly string Password;
 		public Kitbox.Order.Order OurOrder;
 		public CreateCustomer CustomerView;
 
-		public Customer(MySqlConnection database, Authentication authentification, string username, string password)
+		public Customer(MySqlConnection database)
 		{
 			InitializeComponent();
 			DataBase = database;
 			OurOrder = new Kitbox.Order.Order();
 			MainTreeview = new TreeviewManager(pepTreeView1, splitContainer1.Panel2.Controls, OurOrder, DataBase);
-			Authentification = authentification;
-			Username = username;
-			Password = password;
 			Kitbox.Database.Reader.InitializeComponents(DataBase);
-			toolStripStatusLabel1.Text = "Welcome " + Username;
+			toolStripStatusLabel1.Text = "Welcome customer!";
 		}
 
 		private void RemoveCupboardOrder(int uid)
@@ -83,22 +68,14 @@ namespace GUI
       
         public void ExportPDF(string customer, string id, string state)
         {
-			//try
-			//{
-				Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
-                DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
+			Kitbox.Database.Json.Order orderJson = new Kitbox.Database.Json.Order();
+            DataTable dtbl = Kitbox.PDF.PDFUtils.MakeBill(OurOrder, orderJson);
 
-				UpdateStock(customer, id, orderJson.Command, state);
+			UpdateStock(customer, id, orderJson.Command, state);
 				
-				float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
-				CreateAndOpenPDF(dtbl, customer, id, cost, state);
-
-			//}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error Message");
-            //}
-}
+			float cost = Kitbox.PDF.PDFUtils.CalculateCost(OurOrder, orderJson);
+			CreateAndOpenPDF(dtbl, customer, id, cost, state);
+		}
 
 		public void UpdateStock(string customer, string id, Dictionary<string, int> order, string state)
 		{
@@ -143,7 +120,6 @@ namespace GUI
 			MainTreeview.ClearTreeview();
 			splitContainer1.Panel2.Controls.Add(pictureBox1);
 			splitContainer1.Panel2.Controls.Add(label1);
-
 		}
 	}
 }

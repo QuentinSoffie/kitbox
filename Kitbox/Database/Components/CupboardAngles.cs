@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Kitbox.Components;
 namespace Kitbox.Database.Components
 {
+    /// <summary>
+    /// This class contains all the cupboard angles.
+    /// </summary>
     public class CupboardAngles
     {
         private readonly static List<CupboardAngle> CupboardAngleList = new List<CupboardAngle>();
@@ -40,7 +40,6 @@ namespace Kitbox.Database.Components
         {
             return CupboardAngleList[index].Width;
         }
-
         public static int GetDepthCupboardAngle(int index)
         {
             return CupboardAngleList[index].Depth;

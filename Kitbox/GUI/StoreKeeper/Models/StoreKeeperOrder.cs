@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Kitbox.Order
 {
+    /// <summary>
+    /// This is the Order class used for the storekeeper. It instanciates the order with the json form the database 
+    /// </summary>
     public class StoreKeeperOrder
     {
         public List<string> KeyList { get; set; }
@@ -15,7 +18,6 @@ namespace Kitbox.Order
         public string Customer { get; set; }
         public string CustomerId { get; set; }
         public string OrderNumber { get; set; }
-
         public string Name { get; set; }
 
         public StoreKeeperOrder(Dictionary<string, object> item)
@@ -40,6 +42,5 @@ namespace Kitbox.Order
             }
             return value;
         }
-
     }
 }

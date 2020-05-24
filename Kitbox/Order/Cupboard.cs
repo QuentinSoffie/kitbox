@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Kitbox.GUI;
 using Kitbox.Components;
 
 namespace Kitbox.Order
 {
+    /// <summary>
+    /// This is the Cupboard class. It's made of boxes.
+    /// </summary>
    public  class Cupboard
     {
         public int Uid { get; set; }
@@ -15,7 +15,6 @@ namespace Kitbox.Order
         public string State = "Completed ✓";
         public CupboardAngle CupboardAngle { get; set; }
        
-
         public Cupboard(int uid)
         {
             this.Uid = uid;

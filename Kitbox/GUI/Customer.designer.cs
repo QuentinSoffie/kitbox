@@ -2,15 +2,8 @@
 {
     partial class Customer
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -34,6 +23,7 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCupboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderMyCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteAllCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storeKeeperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -47,7 +37,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.deleteAllCupboardsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -60,7 +49,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
@@ -78,7 +67,7 @@
             this.addCupboardToolStripMenuItem,
             this.orderMyCupboardsToolStripMenuItem,
             this.deleteAllCupboardsToolStripMenuItem});
-            this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.fichierToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(8, 0, 4, 0);
             this.fichierToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
@@ -96,13 +85,20 @@
             // 
             this.orderMyCupboardsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("orderMyCupboardsToolStripMenuItem.Image")));
             this.orderMyCupboardsToolStripMenuItem.Name = "orderMyCupboardsToolStripMenuItem";
-            this.orderMyCupboardsToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.orderMyCupboardsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.orderMyCupboardsToolStripMenuItem.Text = "Order my cupboards";
             this.orderMyCupboardsToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
             // 
+            // deleteAllCupboardsToolStripMenuItem
+            // 
+            this.deleteAllCupboardsToolStripMenuItem.Name = "deleteAllCupboardsToolStripMenuItem";
+            this.deleteAllCupboardsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.deleteAllCupboardsToolStripMenuItem.Text = "Delete all cupboards";
+            this.deleteAllCupboardsToolStripMenuItem.Click += new System.EventHandler(this.deleteAllCupboardsToolStripMenuItem_Click);
+            // 
             // storeKeeperToolStripMenuItem
             // 
-            this.storeKeeperToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.storeKeeperToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.storeKeeperToolStripMenuItem.Name = "storeKeeperToolStripMenuItem";
             this.storeKeeperToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.storeKeeperToolStripMenuItem.Text = "StoreKeeper";
@@ -110,7 +106,7 @@
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
@@ -224,7 +220,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(514, 368);
+            this.label1.Location = new System.Drawing.Point(510, 368);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(262, 46);
@@ -235,7 +231,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(398, 329);
+            this.pictureBox1.Location = new System.Drawing.Point(394, 329);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(112, 122);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(112, 122);
@@ -262,13 +258,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(125, 17);
             this.toolStripStatusLabel1.Text = "    Welcome Username";
-            // 
-            // deleteAllCupboardsToolStripMenuItem
-            // 
-            this.deleteAllCupboardsToolStripMenuItem.Name = "deleteAllCupboardsToolStripMenuItem";
-            this.deleteAllCupboardsToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
-            this.deleteAllCupboardsToolStripMenuItem.Text = "Delete all cupboards";
-            this.deleteAllCupboardsToolStripMenuItem.Click += new System.EventHandler(this.deleteAllCupboardsToolStripMenuItem_Click);
             // 
             // Customer
             // 
