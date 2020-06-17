@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\bougu\OneDrive\Desktop\Kitbox\MethodsDB\MethodsDB.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
